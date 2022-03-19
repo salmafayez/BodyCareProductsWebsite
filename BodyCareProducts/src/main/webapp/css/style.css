@@ -34,9 +34,11 @@
 html,
 body {
 	height: 100%;
-	font-family: "Muli", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+	background-color:#f5f5f5;
+	color: #2B394A;
 }
 
 h1,
@@ -46,9 +48,9 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	color: #111111;
+	
 	font-weight: 400;
-	font-family: "Muli", sans-serif;
+	font-family: 'Karla', sans-serif;
 }
 
 h1 {
@@ -77,7 +79,7 @@ h6 {
 
 p {
 	font-size: 16px;
-	font-family: "Muli", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	color: #636363;
 	font-weight: 400;
 	line-height: 26px;
@@ -130,7 +132,7 @@ ol {
 }
 
 .section-title h2 {
-	color: #252525;
+	color: #2B394A;
 	font-size: 36px;
 	font-weight: 700;
 	margin-bottom: 38px;
@@ -193,6 +195,7 @@ ol {
 	color: #ffffff;
 	background: #e7ab3c;
 	border: 1px solid #e7ab3c;
+	border-radius: 15px;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -295,7 +298,7 @@ ol {
 
 .ht-right .lan-selector .ddcommon .ddTitle .ddArrow:before {
 	content: "3";
-	font-family: "ElegantIcons";
+	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	color: #636363;
 	float: right;
@@ -411,7 +414,9 @@ ol {
 	display: inline-block;
 	margin-left: 15px;
 }
-
+.navBarContainer{
+	background-color: #6C4A4A;
+}
 .inner-header {
 	padding: 39px 0;
 }
@@ -458,14 +463,15 @@ ol {
 	right: 11px;
 	top: 10px;
 	content: "3";
-	font-family: "ElegantIcons";
+	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	color: #b2b2b2;
 }
 
 .inner-header .advanced-search .input-group {
-	max-width: 70%;
+	max-width: 100%;
 	height: 100%;
+	
 }
 
 .inner-header .advanced-search .input-group input {
@@ -475,6 +481,9 @@ ol {
 	font-size: 16px;
 	color: #d1d1d1;
 	padding-left: 20px;
+	
+	
+	border-radius: 15px 0px 0px 15px;
 }
 
 .inner-header .advanced-search .input-group button {
@@ -483,10 +492,11 @@ ol {
 	position: absolute;
 	right: -3px;
 	top: -1px;
-	border: 1px solid #e7ab3c;
-	background: #e7ab3c;
+	border: 1px solid #FDA5A4;
+	background: #FDA5A4;
 	padding: 12px 16px 12px;
 	cursor: pointer;
+	border-radius: 0px 15px 15px 0px;
 }
 
 .inner-header .nav-right {
@@ -512,7 +522,7 @@ ol {
 	top: -1px;
 	height: 15px;
 	width: 15px;
-	background: #e7ab3c;
+	background: #FDA5A4;
 	color: #ffffff;
 	border-radius: 50%;
 	font-size: 11px;
@@ -543,7 +553,7 @@ ol {
 	top: -1px;
 	height: 15px;
 	width: 15px;
-	background: #e7ab3c;
+	background: #FDA5A4;
 	color: #ffffff;
 	border-radius: 50%;
 	font-size: 11px;
@@ -627,7 +637,7 @@ ol {
 	letter-spacing: 2px;
 	display: block;
 	text-align: center;
-	background: #191919;
+	background: #FDA5A4;
 	color: #ffffff;
 	padding: 15px 30px 12px;
 	margin-bottom: 10px;
@@ -649,7 +659,7 @@ ol {
 }
 
 .nav-item {
-	background: #252525;
+	background: #2B394A;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -660,12 +670,17 @@ ol {
 }
 
 .nav-item .nav-depart .depart-btn {
-	background: #3b3b3b;
+	background: #2B394A;
 	color: #ffffff;
 	padding: 14px 84px 14px 18px;
 	cursor: pointer;
 	position: relative;
 }
+
+.nav-item .nav-depart .depart-btn:hover {
+	background: #354455;
+}
+
 
 .nav-item .nav-depart .depart-btn:hover .depart-hover {
 	top: 52px;
@@ -717,7 +732,7 @@ ol {
 }
 
 .nav-item .nav-depart .depart-btn .depart-hover li.active a {
-	color: #e7ab3c;
+	color: #FDA5A4;
 }
 
 .nav-item .nav-depart .depart-btn .depart-hover li a {
@@ -751,7 +766,7 @@ ol {
 }
 
 .nav-item .nav-menu li.active a {
-	background: #e7ab3c;
+	background: #926666;;
 }
 
 .nav-item .nav-menu li a {
@@ -768,13 +783,14 @@ ol {
 }
 
 .nav-item .nav-menu li:hover>a {
-	background: #e7ab3c;
+	background: #354455;
 }
 
 .nav-item .nav-menu li:hover .dropdown {
 	opacity: 1;
 	visibility: visible;
 	top: 52px;
+	
 }
 
 .nav-item .nav-menu li .dropdown {
@@ -783,17 +799,19 @@ ol {
 	top: 82px;
 	width: 200px;
 	z-index: 99;
-	background: #252525;
+	background: white;
 	opacity: 0;
 	visibility: hidden;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
+	
 }
 
 .nav-item .nav-menu li .dropdown li {
 	display: block;
 	margin-left: 0;
+	
 }
 
 .nav-item .nav-menu li .dropdown li:hover>a {
@@ -805,12 +823,19 @@ ol {
 	border-right: 0;
 	padding: 13px 20px 12px 30px;
 	text-transform: capitalize;
+	color: #2B394A;
 }
 
 .slicknav_menu {
 	display: none;
 }
+/* --------
+login sectionnnnnn
+------------*/
 
+.loginInputs{
+	border-radius: 15px;
+}
 /*---------------------
   Hero Section
 -----------------------*/
@@ -1500,7 +1525,7 @@ ol {
 -----------------------*/
 
 .footer-section {
-	background: #191919;
+	background: #2B394A;
 	padding-top: 75px;
 }
 
@@ -1518,7 +1543,7 @@ ol {
 
 .footer-left ul li {
 	list-style: none;
-	color: #b2b2b2;
+	color: #ffffff;
 	font-size: 16px;
 	line-height: 30px;
 }
@@ -1531,7 +1556,7 @@ ol {
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background: #434445;
+	background: #D8B9C3;
 	color: #ffffff;
 	text-align: center;
 	line-height: 40px;
@@ -1551,7 +1576,7 @@ ol {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background: #e7ab3c;
+	background: #f2dbc9;
 	content: "";
 	border-radius: 50%;
 	opacity: 0;
@@ -1605,6 +1630,7 @@ ol {
 	font-size: 16px;
 	border: none;
 	padding-left: 20px;
+	
 }
 
 .newslatter-item .subscribe-form input::-webkit-input-placeholder {
@@ -3764,7 +3790,7 @@ ol {
 
 .register-form h2,
 .login-form h2 {
-	color: #252525;
+	color: #2B394A;
 	font-weight: 700;
 	text-align: center;
 	margin-bottom: 35px;
@@ -3809,7 +3835,7 @@ ol {
 
 .register-form .switch-login .or-login,
 .login-form .switch-login .or-login {
-	color: #252525;
+	color: #2B394A;;
 	font-size: 14px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -3865,6 +3891,7 @@ ol {
 	width: 13px;
 	border: 1px solid #6C6C6C;
 	border-radius: 2px;
+	
 }
 
 .login-form .group-input .gi-more label .checkmark:after {
