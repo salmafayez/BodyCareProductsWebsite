@@ -2648,14 +2648,14 @@ ol {
 .cart-table table {
 	width: 100%;
 	min-width: 480px;
-	border: 1px solid #ebebeb;
+	border: 1px solid #C5D0DD;
 }
 
 .cart-table table tr th {
 	font-size: 16px;
-	color: #252525;
+	color: #2B394A;
 	font-weight: 700;
-	border-bottom: 1px solid #ebebeb;
+	border-bottom: 1px solid #C5D0DD;
 	text-align: center;
 	padding: 18px 0 19px;
 	text-transform: uppercase;
@@ -2683,7 +2683,7 @@ ol {
 }
 
 .cart-table table tr td.cart-title h5 {
-	color: #252525;
+	color: #2B394A;
 }
 
 .cart-table table tr td.p-price {
@@ -2692,7 +2692,7 @@ ol {
 
 .cart-table table tr td.p-price,
 .cart-table table tr td.total-price {
-	color: #e7ab3c;
+	color: #C5D0DD;
 	font-size: 16px;
 	font-weight: 700;
 }
@@ -2713,14 +2713,14 @@ ol {
 .cart-table table tr td.qua-col .pro-qty {
 	width: 123px;
 	height: 46px;
-	border: 2px solid #ebebeb;
+	border: 2px solid #C5D0DD;
 	padding: 0 15px;
 	float: left;
 }
 
 .cart-table table tr td.qua-col .pro-qty .qtybtn {
 	font-size: 24px;
-	color: #b2b2b2;
+	color: #2B394A;
 	float: left;
 	line-height: 38px;
 	cursor: pointer;
@@ -2737,7 +2737,7 @@ ol {
 	font-size: 14px;
 	font-weight: 700;
 	border: none;
-	color: #4c4c4c;
+	color: #2B394A;
 	line-height: 40px;
 	float: left;
 }
@@ -2748,7 +2748,7 @@ ol {
 
 .cart-table table tr td.close-td {
 	font-size: 16px;
-	color: #252525;
+	color: #2B394A;
 	width: 8%;
 }
 
@@ -2761,8 +2761,8 @@ ol {
 }
 
 .cart-buttons .continue-shop {
-	color: #b2b2b2;
-	border: 2px solid #ebebeb;
+	color: #2B394A;
+	border: 2px solid #C5D0DD;
 	background: #ffffff;
 	margin-right: 8px;
 	padding: 12px 20px 12px 20px;
@@ -2770,9 +2770,9 @@ ol {
 }
 
 .cart-buttons .up-cart {
-	color: #252525;
-	background: #f3f3f3;
-	border: 2px solid #ebebeb;
+	color: #2B394A;
+	background: #C5D0DD;
+	border: 2px solid #C5D0DD;
 	padding: 12px 20px 12px 20px;
 }
 
@@ -2781,7 +2781,7 @@ ol {
 }
 
 .discount-coupon h6 {
-	color: #232530;
+	color: #2B394A;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 16px;
@@ -2794,8 +2794,8 @@ ol {
 .discount-coupon .coupon-form input {
 	width: 100%;
 	height: 46px;
-	border: 2px solid #ebebeb;
-	color: #b2b2b2;
+	border: 2px solid #C5D0DD;
+	color: #2B394A;
 	font-size: 14px;
 	padding-left: 20px;
 }
@@ -2804,15 +2804,15 @@ ol {
 	position: absolute;
 	right: 0;
 	top: 0;
-	color: #252525;
+	color: #2B394A;
 	background: transparent;
 	border: 1px solid transparent;
 	padding: 13px 25px 10px 35px;
 }
 
 .proceed-checkout ul {
-	border: 2px solid #ebebeb;
-	background: #f3f3f3;
+	border: 2px solid #C5D0DD;
+	background: #C5D0DD;
 	padding-left: 25px;
 	padding-right: 25px;
 	padding-top: 16px;
@@ -2823,7 +2823,7 @@ ol {
 	list-style: none;
 	font-size: 16px;
 	font-weight: 700;
-	color: #252525;
+	color: #2B394A;
 	text-transform: uppercase;
 	overflow: hidden;
 }
@@ -2844,7 +2844,7 @@ ol {
 }
 
 .proceed-checkout ul li.cart-total span {
-	color: #e7ab3c;
+	color: #fa8684;
 }
 
 .proceed-checkout ul li span {
@@ -2855,7 +2855,7 @@ ol {
 	font-size: 14px;
 	font-weight: 700;
 	color: #ffffff;
-	background: #252525;
+	background: #2B394A;
 	text-transform: uppercase;
 	padding: 15px 25px 14px 25px;
 	display: block;
