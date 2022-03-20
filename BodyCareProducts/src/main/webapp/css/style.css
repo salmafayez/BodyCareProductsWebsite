@@ -2648,14 +2648,14 @@ ol {
 .cart-table table {
 	width: 100%;
 	min-width: 480px;
-	border: 1px solid #C5D0DD;
+	/* border: 1px solid #C5D0DD; */
 }
 
 .cart-table table tr th {
 	font-size: 16px;
 	color: #2B394A;
 	font-weight: 700;
-	border-bottom: 1px solid #C5D0DD;
+	border-bottom: 1px solid #d79681;
 	text-align: center;
 	padding: 18px 0 19px;
 	text-transform: uppercase;
@@ -2692,7 +2692,7 @@ ol {
 
 .cart-table table tr td.p-price,
 .cart-table table tr td.total-price {
-	color: #C5D0DD;
+	color: #d79681;
 	font-size: 16px;
 	font-weight: 700;
 }
@@ -2713,14 +2713,14 @@ ol {
 .cart-table table tr td.qua-col .pro-qty {
 	width: 123px;
 	height: 46px;
-	border: 2px solid #C5D0DD;
+	border: 2px solid #d79681;
 	padding: 0 15px;
 	float: left;
 }
 
 .cart-table table tr td.qua-col .pro-qty .qtybtn {
 	font-size: 24px;
-	color: #2B394A;
+	color: #d79681;
 	float: left;
 	line-height: 38px;
 	cursor: pointer;
@@ -2740,6 +2740,7 @@ ol {
 	color: #2B394A;
 	line-height: 40px;
 	float: left;
+	background-color: #f5f5f5;
 }
 
 .cart-table table tr td.total-price {
@@ -2762,7 +2763,7 @@ ol {
 
 .cart-buttons .continue-shop {
 	color: #2B394A;
-	border: 2px solid #C5D0DD;
+	border: 2px solid #d79681;
 	background: #ffffff;
 	margin-right: 8px;
 	padding: 12px 20px 12px 20px;
@@ -2770,9 +2771,9 @@ ol {
 }
 
 .cart-buttons .up-cart {
-	color: #2B394A;
-	background: #C5D0DD;
-	border: 2px solid #C5D0DD;
+	color: #ffffff;
+	background: #d79681;
+	border: 2px solid #d79681;
 	padding: 12px 20px 12px 20px;
 }
 
@@ -2811,8 +2812,8 @@ ol {
 }
 
 .proceed-checkout ul {
-	border: 2px solid #C5D0DD;
-	background: #C5D0DD;
+	border: 2px solid #d79681;
+	background: white;
 	padding-left: 25px;
 	padding-right: 25px;
 	padding-top: 16px;
@@ -2831,7 +2832,7 @@ ol {
 .proceed-checkout ul li.subtotal {
 	font-weight: 400;
 	text-transform: capitalize;
-	border-bottom: 1px solid #ffffff;
+	border-bottom: 1px solid #d79681;
 	padding-bottom: 14px;
 }
 
@@ -2844,7 +2845,7 @@ ol {
 }
 
 .proceed-checkout ul li.cart-total span {
-	color: #fa8684;
+	color: #d79681;
 }
 
 .proceed-checkout ul li span {
@@ -2855,7 +2856,7 @@ ol {
 	font-size: 14px;
 	font-weight: 700;
 	color: #ffffff;
-	background: #2B394A;
+	background: #d79681;
 	text-transform: uppercase;
 	padding: 15px 25px 14px 25px;
 	display: block;
