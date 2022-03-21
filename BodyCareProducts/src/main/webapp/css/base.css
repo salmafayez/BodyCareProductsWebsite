@@ -21,7 +21,7 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	
+	color: #2B394A;
 	font-weight: 400;
 	font-family: 'Karla', sans-serif;
 }
@@ -160,14 +160,14 @@ ol {
 	font-weight: 700;
 	padding: 12px 30px;
 	color: #ffffff;
-	background: #e7ab3c;
+	background: #FDA5A4;
 	text-transform: uppercase;
 }
 
 .site-btn {
 	color: #ffffff;
-	background: #e7ab3c;
-	border: 1px solid #e7ab3c;
+	background: #2B394A;
+	border: 1px solid #2B394A;
 	border-radius: 15px;
 	font-size: 14px;
 	font-weight: 700;
