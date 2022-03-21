@@ -653,7 +653,7 @@ ol {
 }
 
 .nav-item {
-	background: #252525;
+	background: #2B394A;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -664,7 +664,7 @@ ol {
 }
 
 .nav-item .nav-depart .depart-btn {
-	background: #3b3b3b;
+	background: #2B394A;
 	color: #ffffff;
 	padding: 14px 84px 14px 18px;
 	cursor: pointer;
@@ -721,7 +721,7 @@ ol {
 }
 
 .nav-item .nav-depart .depart-btn .depart-hover li.active a {
-	color: #e7ab3c;
+	color: #d79681;
 }
 
 .nav-item .nav-depart .depart-btn .depart-hover li a {
@@ -737,7 +737,7 @@ ol {
 }
 
 .nav-item .nav-depart .depart-btn .depart-hover li a:hover {
-	color: #e7ab3c;
+	color: #d79681;
 }
 
 .nav-item .nav-menu {
