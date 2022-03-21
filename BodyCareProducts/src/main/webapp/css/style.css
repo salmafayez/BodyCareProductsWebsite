@@ -412,6 +412,9 @@ ol {
 	margin-left: 15px;
 }
 
+.navBarContainer{
+	background-color: #6C4A4A;
+}
 .inner-header {
 	padding: 39px 0;
 }
