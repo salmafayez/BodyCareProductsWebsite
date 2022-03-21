@@ -3598,7 +3598,7 @@ ol {
 
 .map-inner .icon i {
 	font-size: 48px;
-	color: #e7ab3c;
+	color: #FDA5A4;
 }
 
 /*---------------------
@@ -3615,7 +3615,7 @@ ol {
 }
 
 .contact-title h4 {
-	color: #252525;
+	color: #2B394A;
 	font-weight: 700;
 	margin-bottom: 16px;
 }
@@ -3653,12 +3653,12 @@ ol {
 
 .contact-widget .cw-item .ci-text p {
 	font-size: 18px;
-	color: #252525;
+	color: #2B394A;
 	margin-bottom: 0;
 }
 
 .contact-form .leave-comment h4 {
-	color: #292f3b;
+	color: #2B394A;
 	font-weight: 700;
 	margin-bottom: 20px;
 }
@@ -3670,7 +3670,7 @@ ol {
 .contact-form .leave-comment .comment-form input {
 	width: 100%;
 	font-size: 16px;
-	color: #636363;
+	color: #2B394A;
 	height: 50px;
 	border: 1px solid #ebebeb;
 	border-radius: 5px;
@@ -3682,7 +3682,7 @@ ol {
 	width: 100%;
 	resize: none;
 	font-size: 16px;
-	color: #636363;
+	color: #2B394A;
 	height: 150px;
 	border: 1px solid #ebebeb;
 	border-radius: 5px;
