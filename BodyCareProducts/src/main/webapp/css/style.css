@@ -28,17 +28,15 @@
 -------------------------------------------------------------------*/
 
 /*----------------------------------------*/
-/* Template default CSS done
+/* Template default CSS
 /*----------------------------------------*/
 
 html,
 body {
 	height: 100%;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Muli", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
-	background-color:#f5f5f5;
-	color: #2B394A;
 }
 
 h1,
@@ -48,9 +46,9 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	
+	color: #111111;
 	font-weight: 400;
-	font-family: 'Karla', sans-serif;
+	font-family: "Muli", sans-serif;
 }
 
 h1 {
@@ -79,7 +77,7 @@ h6 {
 
 p {
 	font-size: 16px;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Muli", sans-serif;
 	color: #636363;
 	font-weight: 400;
 	line-height: 26px;
@@ -109,11 +107,6 @@ ol {
 	padding: 0;
 	margin: 0;
 }
-/*-------------------------------------
-
-
-
-
 
 /*---------------------
   Helper CSS
@@ -137,7 +130,7 @@ ol {
 }
 
 .section-title h2 {
-	color: #2B394A;
+	color: #252525;
 	font-size: 36px;
 	font-weight: 700;
 	margin-bottom: 38px;
@@ -184,7 +177,7 @@ ol {
 	color: #fff;
 }
 
-/* buttons done */ 
+/* buttons */
 
 .primary-btn {
 	display: inline-block;
@@ -209,7 +202,7 @@ ol {
 	cursor: pointer;
 }
 
-/* Preloder done*/
+/* Preloder */
 
 #preloder {
 	position: fixed;
@@ -304,7 +297,7 @@ ol {
 
 .ht-right .lan-selector .ddcommon .ddTitle .ddArrow:before {
 	content: "3";
-	font-family: 'Roboto', sans-serif;
+	font-family: "ElegantIcons";
 	font-size: 14px;
 	color: #636363;
 	float: right;
@@ -342,8 +335,6 @@ ol {
 	letter-spacing: 0.325px;
 }
 
-
-/*****************
 .header-top {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -423,8 +414,6 @@ ol {
 	margin-left: 15px;
 }
 
-*/
-
 .inner-header {
 	padding: 39px 0;
 }
@@ -471,15 +460,14 @@ ol {
 	right: 11px;
 	top: 10px;
 	content: "3";
-	font-family: 'Roboto', sans-serif;
+	font-family: "ElegantIcons";
 	font-size: 16px;
 	color: #b2b2b2;
 }
 
 .inner-header .advanced-search .input-group {
-	max-width: 100%;
+	max-width: 70%;
 	height: 100%;
-	
 }
 
 .inner-header .advanced-search .input-group input {
@@ -489,10 +477,7 @@ ol {
 	font-size: 16px;
 	color: #d1d1d1;
 	padding-left: 20px;
-	
-	
 	border-radius: 15px ;
-}
 
 .inner-header .advanced-search .input-group button {
 	font-size: 17px;
@@ -504,7 +489,6 @@ ol {
 	background: #d79681;
 	padding: 12px 16px 12px;
 	cursor: pointer;
-	border-radius: 0px 15px 15px 0px;
 }
 
 .inner-header .nav-right {
@@ -645,7 +629,7 @@ ol {
 	letter-spacing: 2px;
 	display: block;
 	text-align: center;
-	background: #FDA5A4;
+	background: #191919;
 	color: #ffffff;
 	padding: 15px 30px 12px;
 	margin-bottom: 10px;
@@ -667,7 +651,7 @@ ol {
 }
 
 .nav-item {
-	background: #2B394A;
+	background: #252525;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -678,17 +662,12 @@ ol {
 }
 
 .nav-item .nav-depart .depart-btn {
-	background: #2B394A;
+	background: #3b3b3b;
 	color: #ffffff;
 	padding: 14px 84px 14px 18px;
 	cursor: pointer;
 	position: relative;
 }
-
-.nav-item .nav-depart .depart-btn:hover {
-	background: #354455;
-}
-
 
 .nav-item .nav-depart .depart-btn:hover .depart-hover {
 	top: 52px;
@@ -740,7 +719,7 @@ ol {
 }
 
 .nav-item .nav-depart .depart-btn .depart-hover li.active a {
-	color: #FDA5A4;
+	color: #e7ab3c;
 }
 
 .nav-item .nav-depart .depart-btn .depart-hover li a {
@@ -774,7 +753,7 @@ ol {
 }
 
 .nav-item .nav-menu li.active a {
-	background: #926666;;
+	background: #e7ab3c;
 }
 
 .nav-item .nav-menu li a {
@@ -791,14 +770,13 @@ ol {
 }
 
 .nav-item .nav-menu li:hover>a {
-	background: #354455;
+	background: #e7ab3c;
 }
 
 .nav-item .nav-menu li:hover .dropdown {
 	opacity: 1;
 	visibility: visible;
 	top: 52px;
-	
 }
 
 .nav-item .nav-menu li .dropdown {
@@ -807,19 +785,17 @@ ol {
 	top: 82px;
 	width: 200px;
 	z-index: 99;
-	background: white;
+	background: #252525;
 	opacity: 0;
 	visibility: hidden;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
-	
 }
 
 .nav-item .nav-menu li .dropdown li {
 	display: block;
 	margin-left: 0;
-	
 }
 
 .nav-item .nav-menu li .dropdown li:hover>a {
@@ -831,19 +807,12 @@ ol {
 	border-right: 0;
 	padding: 13px 20px 12px 30px;
 	text-transform: capitalize;
-	color: #2B394A;
 }
 
 .slicknav_menu {
 	display: none;
 }
-/* --------
-login sectionnnnnn
-------------*/
 
-.loginInputs{
-	border-radius: 15px;
-}
 /*---------------------
   Hero Section
 -----------------------*/
@@ -1533,7 +1502,7 @@ login sectionnnnnn
 -----------------------*/
 
 .footer-section {
-	background: #2B394A;
+	background: #191919;
 	padding-top: 75px;
 }
 
@@ -1551,7 +1520,7 @@ login sectionnnnnn
 
 .footer-left ul li {
 	list-style: none;
-	color: #ffffff;
+	color: #b2b2b2;
 	font-size: 16px;
 	line-height: 30px;
 }
@@ -1584,7 +1553,7 @@ login sectionnnnnn
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background: #f2dbc9;
+	background: #e7ab3c;
 	content: "";
 	border-radius: 50%;
 	opacity: 0;
@@ -1639,7 +1608,6 @@ login sectionnnnnn
 	border: none;
 	padding-left: 20px;
 	border-radius: 15px;
-	
 }
 
 .newslatter-item .subscribe-form input::-webkit-input-placeholder {
@@ -2056,7 +2024,7 @@ login sectionnnnnn
 	line-height: 39px;
 }
 
-.product-list .product-item {
+.prduct-list .product-item {
 	margin-bottom: 25px;
 }
 
@@ -2914,11 +2882,11 @@ login sectionnnnnn
 
 .checkout-content .content-btn,
 .checkout-content input {
-	color: #252525;
+	color: #2B394A;
 	font-size: 16px;
-	border: 2px solid #ebebeb;
+	border: 2px solid #C5D0DD;
 	padding: 14px 20px;
-	background: #f3f3f3;
+	background: #C5D0DD;
 	text-align: center;
 	display: block;
 }
@@ -2928,13 +2896,13 @@ login sectionnnnnn
 }
 
 .checkout-form h4 {
-	color: #252525;
+	color: #2B394A;
 	font-weight: 700;
 	margin-bottom: 30px;
 }
 
 .checkout-form label {
-	color: #252525;
+	color: #2B394A;
 	font-size: 16px;
 	margin-bottom: 5px;
 }
@@ -2965,7 +2933,7 @@ login sectionnnnnn
 	padding-left: 32px;
 	margin-bottom: 0;
 	font-size: 14px;
-	color: #252525;
+	color: #2B394A;
 }
 
 .checkout-form .create-item label input {
@@ -2974,8 +2942,8 @@ login sectionnnnnn
 }
 
 .checkout-form .create-item label input:checked~span {
-	background: #e7ab3c;
-	border-color: #e7ab3c;
+	background: #C5D0DD;
+	border-color: #C5D0DD;
 }
 
 .checkout-form .create-item label .checkmark {
@@ -3014,7 +2982,7 @@ login sectionnnnnn
 
 .checkout-form .place-order .order-total .order-table li {
 	list-style: none;
-	color: #252525;
+	color: #2B394A;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -3039,7 +3007,7 @@ login sectionnnnnn
 }
 
 .checkout-form .place-order .order-total .order-table li.total-price span {
-	color: #e7ab3c;
+	color: #C5D0DD;
 }
 
 .checkout-form .place-order .order-total .order-table li span {
@@ -3056,7 +3024,7 @@ login sectionnnnnn
 	padding-left: 32px;
 	margin-bottom: 0;
 	font-size: 14px;
-	color: #252525;
+	color: #2B394A;
 }
 
 .checkout-form .place-order .order-total .payment-check .pc-item label input {
@@ -3065,8 +3033,8 @@ login sectionnnnnn
 }
 
 .checkout-form .place-order .order-total .payment-check .pc-item label input:checked~span {
-	background: #e7ab3c;
-	border-color: #e7ab3c;
+	background: #C5D0DD;
+	border-color: #C5D0DD;
 }
 
 .checkout-form .place-order .order-total .payment-check .pc-item label .checkmark {
@@ -3097,8 +3065,8 @@ login sectionnnnnn
 
 .checkout-form .place-order .order-total .order-btn .place-btn {
 	padding: 13px 40px 11px;
-	background: #000000;
-	border-color: #000000;
+	background: #2B394A;
+	border-color: #2B394A;
 }
 
 /*---------------------
@@ -3801,7 +3769,7 @@ login sectionnnnnn
 
 .register-form h2,
 .login-form h2 {
-	color: #2B394A;
+	color: #252525;
 	font-weight: 700;
 	text-align: center;
 	margin-bottom: 35px;
@@ -3846,7 +3814,7 @@ login sectionnnnnn
 
 .register-form .switch-login .or-login,
 .login-form .switch-login .or-login {
-	color: #2B394A;;
+	color: #252525;
 	font-size: 14px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -3902,7 +3870,6 @@ login sectionnnnnn
 	width: 13px;
 	border: 1px solid #6C6C6C;
 	border-radius: 2px;
-	
 }
 
 .login-form .group-input .gi-more label .checkmark:after {
