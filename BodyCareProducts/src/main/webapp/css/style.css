@@ -186,13 +186,15 @@ ol {
 	padding: 12px 30px;
 	color: #ffffff;
 	background: #e7ab3c;
+
 	text-transform: uppercase;
 }
 
 .site-btn {
 	color: #ffffff;
-	background: #e7ab3c;
-	border: 1px solid #e7ab3c;
+	background: #d79681;
+	border: 1px solid #d79681;
+	border-radius: 15px;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -475,16 +477,16 @@ ol {
 	font-size: 16px;
 	color: #d1d1d1;
 	padding-left: 20px;
-}
+	border-radius: 15px ;
 
 .inner-header .advanced-search .input-group button {
-	font-size: 16px;
+	font-size: 17px;
 	color: #ffffff;
 	position: absolute;
 	right: -3px;
 	top: -1px;
-	border: 1px solid #e7ab3c;
-	background: #e7ab3c;
+	border: 1px solid #d79681;
+	background: #d79681;
 	padding: 12px 16px 12px;
 	cursor: pointer;
 }
@@ -501,7 +503,7 @@ ol {
 }
 
 .inner-header .nav-right li.heart-icon a {
-	color: #252525;
+	color: #ffffff;
 	position: relative;
 	display: inline-block;
 }
@@ -512,7 +514,7 @@ ol {
 	top: -1px;
 	height: 15px;
 	width: 15px;
-	background: #e7ab3c;
+	background: #d79681;
 	color: #ffffff;
 	border-radius: 50%;
 	font-size: 11px;
@@ -532,7 +534,7 @@ ol {
 }
 
 .inner-header .nav-right li.cart-icon a {
-	color: #252525;
+	color: #ffffff;
 	position: relative;
 	display: inline-block;
 }
@@ -543,7 +545,7 @@ ol {
 	top: -1px;
 	height: 15px;
 	width: 15px;
-	background: #e7ab3c;
+	background: #d79681;
 	color: #ffffff;
 	border-radius: 50%;
 	font-size: 11px;
@@ -593,11 +595,11 @@ ol {
 }
 
 .inner-header .nav-right li.cart-icon .cart-hover .select-items table tr td.si-text .product-selected h6 {
-	color: #232530;
+	color: #ffffff;
 }
 
 .inner-header .nav-right li.cart-icon .cart-hover .select-items table tr td.si-close {
-	color: #252525;
+	color: #ffffff;
 	font-size: 16px;
 	cursor: pointer;
 }
@@ -645,7 +647,7 @@ ol {
 .inner-header .nav-right li.cart-price {
 	font-size: 18px;
 	font-weight: 700;
-	color: #252525;
+	color: #ffffff;
 }
 
 .nav-item {
@@ -1531,7 +1533,7 @@ ol {
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background: #434445;
+	background: #d79681;
 	color: #ffffff;
 	text-align: center;
 	line-height: 40px;
@@ -1579,7 +1581,7 @@ ol {
 .footer-widget ul li a {
 	line-height: 36px;
 	font-size: 16px;
-	color: #b2b2b2;
+	color: #ffffff;
 }
 
 .newslatter-item h5 {
@@ -1589,7 +1591,7 @@ ol {
 }
 
 .newslatter-item p {
-	color: #b2b2b2;
+	color: #ffffff;
 	line-height: 26px;
 }
 
@@ -1599,47 +1601,49 @@ ol {
 
 .newslatter-item .subscribe-form input {
 	color: #b2b2b2;
-	background: #303030;
+	background: #ffffff;
 	width: 100%;
 	height: 46px;
 	font-size: 16px;
 	border: none;
 	padding-left: 20px;
+	border-radius: 15px;
 }
 
 .newslatter-item .subscribe-form input::-webkit-input-placeholder {
-	color: #b2b2b2;
+	color: #ffffff;
 }
 
 .newslatter-item .subscribe-form input::-moz-placeholder {
-	color: #b2b2b2;
+	color: #ffffff;
 }
 
 .newslatter-item .subscribe-form input:-ms-input-placeholder {
-	color: #b2b2b2;
+	color: #ffffff;
 }
 
 .newslatter-item .subscribe-form input::-ms-input-placeholder {
-	color: #b2b2b2;
+	color: #ffffff;
 }
 
 .newslatter-item .subscribe-form input::placeholder {
-	color: #b2b2b2;
+	color: #b1b1b1;
 }
 
 .newslatter-item .subscribe-form button {
 	display: inline-block;
 	color: #ffffff;
-	background: #e7ab3c;
-	font-size: 13px;
+	background: #d79681;
+	font-size: 11.5px;
 	font-weight: 700;
 	text-transform: uppercase;
-	border: 1px solid #e7ab3c;
+	border: 2px solid #d79681;
 	position: absolute;
 	right: 0;
 	top: 0;
 	padding: 13px 20px 12px;
 	cursor: pointer;
+	border-radius: 0px 15px 15px 0px;
 }
 
 .copyright-reserved {
@@ -1651,11 +1655,11 @@ ol {
 .copyright-reserved .copyright-text {
 	float: left;
 	font-size: 16px;
-	color: #b2b2b2;
+	color: #ffffff;
 }
 
 .copyright-reserved .copyright-text a {
-	color: #b2b2b2;
+	color: #ffffff;
 }
 
 .copyright-reserved .copyright-text i {
@@ -2648,14 +2652,14 @@ ol {
 .cart-table table {
 	width: 100%;
 	min-width: 480px;
-	border: 1px solid #C5D0DD;
+	/* border: 1px solid #C5D0DD; */
 }
 
 .cart-table table tr th {
 	font-size: 16px;
 	color: #2B394A;
 	font-weight: 700;
-	border-bottom: 1px solid #C5D0DD;
+	border-bottom: 1px solid #d79681;
 	text-align: center;
 	padding: 18px 0 19px;
 	text-transform: uppercase;
@@ -2692,7 +2696,7 @@ ol {
 
 .cart-table table tr td.p-price,
 .cart-table table tr td.total-price {
-	color: #C5D0DD;
+	color: #d79681;
 	font-size: 16px;
 	font-weight: 700;
 }
@@ -2713,14 +2717,14 @@ ol {
 .cart-table table tr td.qua-col .pro-qty {
 	width: 123px;
 	height: 46px;
-	border: 2px solid #C5D0DD;
+	border: 2px solid #d79681;
 	padding: 0 15px;
 	float: left;
 }
 
 .cart-table table tr td.qua-col .pro-qty .qtybtn {
 	font-size: 24px;
-	color: #2B394A;
+	color: #d79681;
 	float: left;
 	line-height: 38px;
 	cursor: pointer;
@@ -2740,6 +2744,7 @@ ol {
 	color: #2B394A;
 	line-height: 40px;
 	float: left;
+	background-color: #f5f5f5;
 }
 
 .cart-table table tr td.total-price {
@@ -2762,7 +2767,7 @@ ol {
 
 .cart-buttons .continue-shop {
 	color: #2B394A;
-	border: 2px solid #C5D0DD;
+	border: 2px solid #d79681;
 	background: #ffffff;
 	margin-right: 8px;
 	padding: 12px 20px 12px 20px;
@@ -2770,9 +2775,9 @@ ol {
 }
 
 .cart-buttons .up-cart {
-	color: #2B394A;
-	background: #C5D0DD;
-	border: 2px solid #C5D0DD;
+	color: #ffffff;
+	background: #d79681;
+	border: 2px solid #d79681;
 	padding: 12px 20px 12px 20px;
 }
 
@@ -2811,8 +2816,8 @@ ol {
 }
 
 .proceed-checkout ul {
-	border: 2px solid #C5D0DD;
-	background: #C5D0DD;
+	border: 2px solid #d79681;
+	background: white;
 	padding-left: 25px;
 	padding-right: 25px;
 	padding-top: 16px;
@@ -2831,7 +2836,7 @@ ol {
 .proceed-checkout ul li.subtotal {
 	font-weight: 400;
 	text-transform: capitalize;
-	border-bottom: 1px solid #ffffff;
+	border-bottom: 1px solid #d79681;
 	padding-bottom: 14px;
 }
 
@@ -2844,7 +2849,7 @@ ol {
 }
 
 .proceed-checkout ul li.cart-total span {
-	color: #fa8684;
+	color: #d79681;
 }
 
 .proceed-checkout ul li span {
@@ -2855,7 +2860,7 @@ ol {
 	font-size: 14px;
 	font-weight: 700;
 	color: #ffffff;
-	background: #2B394A;
+	background: #d79681;
 	text-transform: uppercase;
 	padding: 15px 25px 14px 25px;
 	display: block;
