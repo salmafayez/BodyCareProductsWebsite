@@ -22,6 +22,17 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/preloader.css" type="text/css">
+    <link rel="stylesheet" href="css/header-navbar.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive-design.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="stylesheet" href="css/breadcrumb.css" type="text/css">
+    <link rel="stylesheet" href="css/product-item.css" type="text/css">
+    <link rel="stylesheet" href="css/footer.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    
+
 </head>
 
 <body>
@@ -31,164 +42,184 @@
     </div>
 
     <!-- Header Section Begin -->
-    <div class="container ">
-        <div class="inner-header">
-            <div class="row">
-                <div class="col-lg-2 col-md-2">
-                    <div class="logo">
-                        <a href="./index.html">
-                            <img src="img/logo.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-lg-7">
-                    <div class="advanced-search" style="border: none;">
-                        <form action="#" class="input-group" >
-                            <input type="text" placeholder="What do you need?">
-                            <button type="button"><i class="ti-search"></i></button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-3 text-right col-lg-3">
-                    <ul class="nav-right">
-                        <li class="heart-icon"><a href="#">
-                                <i class="icon_heart_alt"></i>
-                                <span>1</span>
+    <header>
+        <div class="container ">
+            <div class="inner-header">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="img/logo.png" alt="">
                             </a>
-                        </li>
-                        <li class="cart-icon"><a href="#">
-                                <i class="icon_bag_alt"></i>
-                                <span>3</span>
-                            </a>
-                            <div class="cart-hover">
-                                <div class="select-items">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                <td class="si-text">
-                                                    <div class="product-selected">
-                                                        <p>$60.00 x 1</p>
-                                                        <h6>Kabino Bedside Table</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="si-close">
-                                                    <i class="ti-close"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                <td class="si-text">
-                                                    <div class="product-selected">
-                                                        <p>$60.00 x 1</p>
-                                                        <h6>Kabino Bedside Table</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="si-close">
-                                                    <i class="ti-close"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-lg-7">
+                        <div class="advanced-search" style="border: none;">
+                            <form action="#" class="input-group" >
+                                <input type="text" placeholder="What do you need?">
+                                <button type="button"><i class="ti-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-right col-lg-3">
+                        <ul class="nav-right">
+                            <li class="heart-icon"><a href="#">
+                                    <i class="icon_heart_alt"></i>
+                                    <span>1</span>
+                                </a>
+                            </li>
+                            <li class="cart-icon"><a href="#">
+                                    <i class="icon_bag_alt"></i>
+                                    <span>3</span>
+                                </a>
+                                <div class="cart-hover">
+                                    <div class="select-items">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
+                                                    <td class="si-text">
+                                                        <div class="product-selected">
+                                                            <p>$60.00 x 1</p>
+                                                            <h6>Kabino Bedside Table</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="si-close">
+                                                        <i class="ti-close"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
+                                                    <td class="si-text">
+                                                        <div class="product-selected">
+                                                            <p>$60.00 x 1</p>
+                                                            <h6>Kabino Bedside Table</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="si-close">
+                                                        <i class="ti-close"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="select-total">
+                                        <span>total:</span>
+                                        <h5>$120.00</h5>
+                                    </div>
+                                    <div class="select-button">
+                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
+                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                    </div>
                                 </div>
-                                <div class="select-total">
-                                    <span>total:</span>
-                                    <h5>$120.00</h5>
-                                </div>
-                                <div class="select-button">
-                                    <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                    <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="cart-price">$150.00</li>
-                    </ul>
+                            </li>
+                            <li class="cart-price">$150.00</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="nav-item ">
-        <div class="container " style="">
-            <div class="nav-depart">
-                <div class="depart-btn">
-                    <i class="ti-menu"></i>
-                    <span>All departments</span>
-                    <ul class="depart-hover">
-                        <li class="active"><a href="#">Women’s Clothing</a></li>
-                        <li><a href="#">Men’s Clothing</a></li>
-                        <li><a href="#">Underwear</a></li>
-                        <li><a href="#">Kid's Clothing</a></li>
-                        <li><a href="#">Brand Fashion</a></li>
-                        <li><a href="#">Accessories/Shoes</a></li>
-                        <li><a href="#">Luxury Brands</a></li>
-                        <li><a href="#">Brand Outdoor Apparel</a></li>
-                    </ul>
+        <div class="nav-item ">
+            <div class="container " style="">
+                <div class="nav-depart">
+                    <div class="depart-btn">
+                        <i class="ti-menu"></i>
+                        <span>All departments</span>
+                        <ul class="depart-hover">
+                            <li class="active"><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Underwear</a></li>
+                            <li><a href="#">Kid's Clothing</a></li>
+                            <li><a href="#">Brand Fashion</a></li>
+                            <li><a href="#">Accessories/Shoes</a></li>
+                            <li><a href="#">Luxury Brands</a></li>
+                            <li><a href="#">Brand Outdoor Apparel</a></li>
+                        </ul>
+                    </div>
                 </div>
+                <nav class="nav-menu mobile-menu">
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./shop.html">Shop</a></li>
+                        <li><a href="#">Collection</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Men's</a></li>
+                                <li><a href="#">Women's</a></li>
+                                <li><a href="#">Kid's</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./blog.html">Blog</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="#">Pages</a>
+                            <ul class="dropdown">
+                                <li><a href="./blog-details.html">Blog Details</a></li>
+                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                                <li><a href="./check-out.html">Checkout</a></li>
+                                <li><a href="./faq.html">Faq</a></li>
+                                <li><a href="./register.html">Register</a></li>
+                                <li><a href="./login.html">Login</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="mobile-menu-wrap"></div>
             </div>
-            <nav class="nav-menu mobile-menu">
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./shop.html">Shop</a></li>
-                    <li><a href="#">Collection</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Men's</a></li>
-                            <li><a href="#">Women's</a></li>
-                            <li><a href="#">Kid's</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                    <li><a href="#">Pages</a>
-                        <ul class="dropdown">
-                            <li><a href="./blog-details.html">Blog Details</a></li>
-                            <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                            <li><a href="./check-out.html">Checkout</a></li>
-                            <li><a href="./faq.html">Faq</a></li>
-                            <li><a href="./register.html">Register</a></li>
-                            <li><a href="./login.html">Login</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div id="mobile-menu-wrap"></div>
         </div>
-    </div>
-</header>
+    </header>
     <!-- Header End -->
 
     <!-- Hero Section Begin -->
     <section class="hero-section">
         <div class="hero-items owl-carousel">
-            <div class="single-hero-items set-bg" data-setbg="img/hero-1.jpg">
+            <div class="single-hero-items set-bg" data-setbg="img/index/slider2.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
+                            <h1>Body Care</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore</p>
                             <a href="#" class="primary-btn">Shop Now</a>
                         </div>
                     </div>
-                    <div class="off-card">
-                        <h2>Sale <span>50%</span></h2>
-                    </div>
+                    <!--
+                        <div class="off-card">
+                            <h2>Sale <span>50%</span></h2>
+                        </div>
+                    -->
                 </div>
             </div>
-            <div class="single-hero-items set-bg" data-setbg="img/hero-2.jpg">
+            <div class="single-hero-items set-bg" data-setbg="img/index/slider4.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
+                            <h1>Body Care</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore</p>
                             <a href="#" class="primary-btn">Shop Now</a>
                         </div>
                     </div>
-                    <div class="off-card">
-                        <h2>Sale <span>50%</span></h2>
+                    <!--
+                        <div class="off-card">
+                            <h2>Sale <span>50%</span></h2>
+                        </div>
+                    -->
+                </div>
+            </div>
+            <div class="single-hero-items set-bg" data-setbg="img/index/slider3.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <h1>Body Care</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore</p>
+                            <a href="#" class="primary-btn">Shop Now</a>
+                        </div>
                     </div>
+                    <!--
+                        <div class="off-card">
+                            <h2>Sale <span>50%</span></h2>
+                        </div>
+                    -->
                 </div>
             </div>
         </div>
@@ -201,25 +232,25 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/banner-1.jpg" alt="">
+                        <img src="img/index/shower.jpg" alt="">
                         <div class="inner-text">
-                            <h4>Men’s</h4>
+                            <h4>Bath & Shower</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/banner-2.jpg" alt="">
+                        <img src="img/index/fragrance.jpg" alt="">
                         <div class="inner-text">
-                            <h4>Women’s</h4>
+                            <h4>Fragrance</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/banner-3.jpg" alt="">
+                        <img src="img/index/candles.jpg" alt="">
                         <div class="inner-text">
-                            <h4>Kid’s</h4>
+                            <h4>Candles</h4>
                         </div>
                     </div>
                 </div>
@@ -233,7 +264,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="product-large set-bg" data-setbg="img/products/women-large.jpg">
+                    <div class="product-large set-bg" data-setbg="img/index/sideImage.jpg">
                         <h2>Women’s</h2>
                         <a href="#">Discover More</a>
                     </div>
