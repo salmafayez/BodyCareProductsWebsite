@@ -410,3 +410,7 @@
 	text-transform: capitalize;
 	color: #2B394A;
 }
+
+.slicknav_menu {
+	display: none;
+}
