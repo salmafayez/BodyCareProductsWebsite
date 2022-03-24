@@ -1176,6 +1176,7 @@ ol {
 
 .product-item .pi-pic img {
 	min-width: 100%;
+	border-radius: 15px;
 }
 
 .product-item .pi-pic .sale {
@@ -1191,6 +1192,7 @@ ol {
 
 .product-item .pi-pic .sale.pp-sale {
 	background: #d79681;
+
 }
 
 .product-item .pi-pic .icon {
@@ -1204,6 +1206,7 @@ ol {
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
 	opacity: 0;
+
 }
 
 .product-item .pi-pic ul {
@@ -1221,6 +1224,9 @@ ol {
 	list-style: none;
 	display: inline-block;
 	background: #ffffff;
+	border-radius: 15px;
+
+	
 }
 
 .product-item .pi-pic ul li.w-icon.active a {
@@ -1233,7 +1239,10 @@ ol {
 	font-weight: 700;
 	color: #252525;
 	display: block;
+	background-color: transparent;
 	padding: 16px 18px 12px 19px;
+	border-radius: 15px;
+
 }
 
 .product-item .pi-text {
@@ -1727,8 +1736,7 @@ ol {
 }
 
 .filter-widget .fw-title {
-	color: #252525;
-	font-size: 22px;
+	color: #000;
 	font-weight: 700;
 	margin-bottom: 26px;
 }
@@ -1739,9 +1747,9 @@ ol {
 
 .filter-widget .filter-catagories li a {
 	display: inline-block;
-	color: #636363;
-	font-size: 16px;
 	line-height: 39px;
+	color: #636363;
+	font-size: 14px;
 }
 
 .filter-widget .fw-brand-check .bc-item {
@@ -1752,6 +1760,8 @@ ol {
 	position: relative;
 	cursor: pointer;
 	padding-left: 28px;
+	font-size: 14px;
+
 }
 
 .filter-widget .fw-brand-check .bc-item label input {
@@ -1809,7 +1819,7 @@ ol {
 }
 
 .filter-widget .filter-range-wrap .range-slider .price-input input {
-	font-size: 16px;
+	font-size: 14px;
 	color: #252525;
 	max-width: 20%;
 	text-align: center;
@@ -1857,9 +1867,9 @@ ol {
 	font-weight: 700;
 	background: #d79681;
 	padding: 7px 20px 5px;
-	border-radius: 2px;
 	display: inline-block;
 	text-transform: uppercase;
+	border-radius: 15px;
 }
 
 .filter-widget .fw-color-choose .cs-item {
@@ -1927,7 +1937,7 @@ ol {
 }
 
 .filter-widget .fw-size-choose .sc-item label {
-	font-size: 16px;
+	font-size: 12px;
 	color: #252525;
 	font-weight: 700;
 	height: 40px;
@@ -1946,7 +1956,7 @@ ol {
 
 .filter-widget .fw-tags a {
 	display: inline-block;
-	font-size: 16px;
+	font-size: 14px;
 	color: #636363;
 	padding: 5px 15px;
 	border: 1px solid #ebebeb;
@@ -2143,7 +2153,7 @@ ol {
 .product-details .pd-title span {
 	display: block;
 	font-size: 12px;
-	color: #b2b2b2;
+	color: #636363;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: 700;
@@ -2152,6 +2162,11 @@ ol {
 
 .product-details .pd-title h3 {
 	color: #252525;
+	font-weight: 700;
+}
+
+.product-details .pd-title h5 {
+	color: #000;
 	font-weight: 700;
 }
 
@@ -2178,27 +2193,65 @@ ol {
 	font-size: 12px;
 	color: #999591;
 }
-
 .product-details .pd-desc {
 	margin-bottom: 24px;
 }
 
 .product-details .pd-desc p {
 	color: #636363;
+	font-size: 14px;
+
 }
 
 .product-details .pd-desc h4 {
 	color: #d79681;
 	font-weight: 700;
 }
+.product-details .pd-desc h5 {
+	color: #000;
+	font-weight: 700;
+}
+.product-details .pd-desc h6 {
+	color: #636363;
+	font-size: 12px;
+}
+.product-details .pd-desc a {
+	color: rgb(192, 50, 50);
+	font-weight: 500;
+	text-decoration: underline;
+	font-size: 14px;
+}
 
-.product-details .pd-desc h4 span {
+
+.product-details .pd-desc h5 span {
 	font-size: 18px;
 	font-weight: 400;
 	color: #b7b7b7;
 	text-decoration: line-through;
 	display: inline-block;
 	margin-left: 13px;
+}
+.product-details .pd-description{
+	margin-bottom: 24px;
+}
+
+.product-details .pd-description p {
+	color: #636363;
+	font-size: 14px;
+
+}
+
+.product-details .pd-description h4 {
+	color: #d79681;
+	font-weight: 700;
+}
+.product-details .pd-description h5 {
+	color: #000;
+	font-weight: 700;
+}
+.product-details .pd-description h6 {
+	color: #636363;
+	font-size: 12px;
 }
 
 .product-details .pd-color {
@@ -2293,6 +2346,8 @@ ol {
 	padding: 0 15px;
 	float: left;
 	margin-right: 14px;
+	border-radius: 15px;
+
 }
 
 .product-details .quantity .pro-qty .qtybtn {
@@ -2302,10 +2357,12 @@ ol {
 	line-height: 38px;
 	cursor: pointer;
 	width: 18px;
+
 }
 
 .product-details .quantity .pro-qty .qtybtn.dec {
 	font-size: 30px;
+
 }
 
 .product-details .quantity .pro-qty input {
@@ -2317,10 +2374,12 @@ ol {
 	color: #4c4c4c;
 	line-height: 40px;
 	float: left;
+
 }
 
 .product-details .quantity .primary-btn.pd-cart {
 	padding: 14px 70px 10px;
+	border-radius: 15px;
 }
 
 .product-details .pd-tags {
@@ -2363,6 +2422,7 @@ ol {
 
 .product-tab {
 	padding-top: 60px;
+	
 }
 
 .tab-item ul li:nth-child(1) a {
@@ -2388,6 +2448,7 @@ ol {
 	border-top: 1px solid #ebebeb;
 	border-left: 1px solid #ebebeb;
 	border-bottom: 1px solid #ebebeb;
+	border-radius: 15px;
 }
 
 .tab-item ul li a.active {
@@ -2407,6 +2468,7 @@ ol {
 	background: #d79681;
 	content: "";
 	opacity: 0;
+	border-radius: 15px;
 }
 
 .product-content {
@@ -2455,7 +2517,7 @@ ol {
 .specification-table table tr td .pd-rating i {
 	font-size: 12px;
 	display: inline-block;
-	color: #d79681;
+	color: #FAC451;
 	margin-right: -3px;
 }
 
@@ -2465,7 +2527,7 @@ ol {
 }
 
 .specification-table table tr td .p-price {
-	color: #d79681;
+	color: #000;
 	font-size: 16px;
 	font-weight: 700;
 }
@@ -2721,6 +2783,7 @@ ol {
 	border: 2px solid #d79681;
 	padding: 0 15px;
 	float: left;
+	border-radius: 15px;
 }
 
 .cart-table table tr td.qua-col .pro-qty .qtybtn {
@@ -3794,6 +3857,7 @@ ol {
 	font-size: 18px;
 	color: #252525;
 	margin-bottom: 13px;
+
 }
 
 .register-form form .group-input input,
@@ -3803,6 +3867,7 @@ ol {
 	width: 100%;
 	padding-left: 20px;
 	padding-right: 15px;
+	border-radius: 15px;
 }
 
 .register-form form .register-btn,
@@ -3812,6 +3877,7 @@ ol {
 	width: 100%;
 	letter-spacing: 2px;
 	margin-top: 5px;
+	border-radius: 15px;
 }
 
 .register-form .switch-login,
@@ -3953,8 +4019,18 @@ ol {
 	.product-shop .product-item .pi-pic ul li a {
 		padding: 16px 12px 12px 11px;
 	}
+	.product-shop .product-item .pi-pic img {
+		padding: 16px 12px 12px 11px;
+		border-radius: 15px;
+	}
+	
 	.related-products .product-item .pi-pic ul li a {
 		padding: 16px 12px 12px 11px;
+	}
+	
+	.related-products .product-item .pi-pic img {
+		padding: 16px 12px 12px 11px;
+		border-radius: 15px;
 	}
 }
 
