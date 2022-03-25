@@ -30,11 +30,19 @@
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
+.defaultBorders{
+	border-radius: 15px;
+}
 
+.selectRegion{
+	border: 1px solid #ebebeb;
+    height: 50px;
+    width: 100%;
+}
 html,
 body {
 	height: 100%;
-	font-family: "Muli", sans-serif;
+	font-family: 'Karla', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 }
@@ -48,7 +56,7 @@ h6 {
 	margin: 0px;
 	color: #2B394A;
 	font-weight: 400;
-	font-family: "Muli", sans-serif;
+	font-family: 'Karla', sans-serif;
 }
 
 h1 {
@@ -77,7 +85,7 @@ h6 {
 
 p {
 	font-size: 16px;
-	font-family: "Muli", sans-serif;
+	font-family: 'Karla', sans-serif;
 	color: #2B394A;
 	font-weight: 400;
 	line-height: 26px;
@@ -130,7 +138,7 @@ ol {
 }
 
 .section-title h2 {
-	color: #252525;
+	color: #2B394A;
 	font-size: 36px;
 	font-weight: 700;
 	margin-bottom: 38px;
@@ -429,10 +437,11 @@ ol {
 
 .inner-header .advanced-search {
 	height: 50px;
-	border: 1px solid #ebebeb;
+	border: none;
+	border-radius: 15px;
 }
 
-.inner-header .advanced-search .category-btn {
+/* .inner-header .advanced-search .category-btn {
 	max-width: 30%;
 	float: left;
 	background: transparent;
@@ -464,10 +473,10 @@ ol {
 	font-family: "ElegantIcons";
 	font-size: 16px;
 	color: #b2b2b2;
-}
+} */
 
 .inner-header .advanced-search .input-group {
-	max-width: 70%;
+	max-width: 100%;
 	height: 100%;
 }
 
@@ -478,7 +487,10 @@ ol {
 	font-size: 16px;
 	color: #d1d1d1;
 	padding-left: 20px;
+	
 	border-radius: 15px ;
+	border: 1px solid #d4d3d3;
+	
 }
 
 .inner-header .advanced-search .input-group button {
@@ -491,6 +503,7 @@ ol {
 	background: #d79681;
 	padding: 12px 16px 12px;
 	cursor: pointer;
+	border-radius: 0px 15px 15px 0px;
 }
 
 .inner-header .nav-right {
@@ -1619,6 +1632,7 @@ ol {
 	font-size: 16px;
 	border: none;
 	padding-left: 20px;
+	border-radius:  15px ;
 }
 
 .newslatter-item .subscribe-form input::-webkit-input-placeholder {
@@ -1644,7 +1658,7 @@ ol {
 	display: inline-block;
 	color: #ffffff;
 	background: #d79681;
-	font-size: 11.5px;
+	font-size: 12px;
 	font-weight: 700;
 	text-transform: uppercase;
 	border: 2px solid #d79681;
@@ -3826,16 +3840,27 @@ ol {
   Register Form
 -----------------------*/
 .pageBody{
+	
 	background:url(../img/skinCarePics/22.png) ;
 	background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+}
+.registerLabel{
+	
+		display: block;
+		font-size: 18px;
+		color: #2B394A;
+		
+		font-weight: normal;
 }
 
 .register-login-section {
 	padding-top: 72px;
 	padding-bottom: 80px;
 	font-weight: bold;
+	
 }
 
 .register-form h2,
@@ -3855,10 +3880,11 @@ ol {
 .login-form form .group-input label {
 	display: block;
 	font-size: 18px;
-	color: #252525;
+	color: #2B394A;
 	margin-bottom: 13px;
-
+	font-weight: normal;
 }
+
 
 .register-form form .group-input input,
 .login-form form .group-input input {
@@ -3963,7 +3989,7 @@ ol {
 	line-height: 20px;
 	margin-top: -2px;
 	font-size: 14px;
-	color: #2B394A
+	color: #2B394A;
 }
 
 /* ------------------------------ Responsive Media Styles ---------------------------- */
