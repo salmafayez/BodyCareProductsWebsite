@@ -102,7 +102,9 @@ button:focus,
 textarea:focus {
 	outline: none;
 }
-
+a{
+	text-decoration: none;
+}
 a:hover,
 a:focus {
 	text-decoration: none;
@@ -190,7 +192,7 @@ ol {
 .primary-btn {
 	display: inline-block;
 	font-size: 14px;
-	font-weight: 700;
+	font-weight: 400;
 	padding: 12px 30px;
 	color: #ffffff;
 	background: #d79681;
@@ -202,7 +204,7 @@ ol {
 	background: #d79681;
 	border: 1px solid #d79681;
 	font-size: 14px;
-	font-weight: 700;
+	font-weight: 400;
 	text-transform: uppercase;
 	padding: 13px 45px 11px;
 	cursor: pointer;
@@ -1237,7 +1239,7 @@ ol {
 	list-style: none;
 	display: inline-block;
 	background: #ffffff;
-	border-radius: 15px;
+	border-radius:10px 15px 0px 0px;
 
 	
 }
@@ -1254,7 +1256,7 @@ ol {
 	display: block;
 	background-color: transparent;
 	padding: 16px 18px 12px 19px;
-	border-radius: 15px;
+	border-radius: 15px 0px 0px 0px;
 
 }
 
@@ -3919,8 +3921,13 @@ ol {
 	color: #2B394A;
 	font-size: 14px;
 	letter-spacing: 2px;
+	text-decoration: none;
 	text-transform: uppercase;
 	position: relative;
+}
+.sign-in:hover{
+	background-color: #2B394A;
+	color:#ffffff
 }
 
 .register-form .switch-login .or-login:before,
