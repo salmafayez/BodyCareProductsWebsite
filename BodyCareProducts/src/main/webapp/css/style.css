@@ -170,6 +170,7 @@ ol {
 	margin: 0;
 }
 
+
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -882,7 +883,9 @@ ol {
 .slicknav_menu {
 	display: none;
 }
-
+.account-name{
+	font-size: larger;
+}
 /*---------------------
   Hero Section
 -----------------------*/
@@ -4063,6 +4066,11 @@ ol {
 	color: #2B394A;
 }
 
+.product-image{
+	color: #2B394A;
+	border-radius: 15px;
+	font-size: medium;
+}
 /*---------------------
   order-history
 -----------------------*/
