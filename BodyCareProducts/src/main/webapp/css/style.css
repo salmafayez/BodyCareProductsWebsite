@@ -30,6 +30,58 @@
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
+
+/* #genderCheck i,small{
+	visibility: hidden;
+} */
+
+
+
+.group-input i{
+
+	position: absolute;
+	top: 55px;
+	right: 25px;
+	font-size: 20px;
+	visibility: hidden;
+
+}
+
+.group-input small{
+	
+	visibility: hidden;
+
+}
+
+
+
+.group-input.error .fa-exclamation-circle{
+	visibility: visible;
+	color: rgb(238, 0, 0);
+
+}
+
+.group-input.success  .fa-check-circle{
+	visibility: visible;
+	color: rgb(0, 112, 47);
+
+}
+.group-input.error small{
+	/* margin-left: 5px; */
+	
+	visibility: visible;
+
+}
+
+/* .group-input.error #phoneError{
+	margin-left: 5px;
+	visibility: visible;
+
+} */
+
+
+
+
 .defaultBorders{
 	border-radius: 15px;
 }
@@ -3898,6 +3950,16 @@ ol {
 	padding-left: 20px;
 	padding-right: 15px;
 	border-radius: 15px;
+}
+
+.register-form form .group-input.error input{
+	border-color: rgb(238, 0, 0);
+
+}
+
+.register-form form .group-input.success input{
+	border-color:  rgb(0, 112, 47);
+
 }
 
 .register-form form .register-btn,
