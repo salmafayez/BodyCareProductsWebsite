@@ -183,7 +183,7 @@
                                 <div class="register-form">
                                     <h2>Add product</h2>
 
-                                    <form action="#" id="myRegisterForm" name="myRegisterForm" class="row g-3">
+                                    <form action="addproduct" method="POST" id="myRegisterForm" name="myRegisterForm" class="row g-3">
 
                                         <!--  Name -->
 
