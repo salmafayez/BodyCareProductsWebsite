@@ -9,32 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fashi | Template</title>
 
-   
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:wght@100&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:wght@100&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Karla:400,700%7CMartel:400,700" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-
-    <!-- Bootstrap5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <%@ include file="commons.jsp" %>
 </head>
 
 <body>
@@ -204,58 +179,65 @@
         <section class="shopping-cart spad">
             <div class="container">
                 <div class="row" style="justify-content: center;">
-                    <div class="col-lg-3 px-4 py-4" style="background-color: #f5f5f5; border-radius: 15px 0px 0px 15px;">
-                        
-                        <h4>My Account</h4>
-                        <br>
-                        <ul class="my-account">
-                            <li>
-                                <a href="order-history.html">Orders</a>
-                            </li>
-                            <li>
-                                <a href="contact-details.html"class="active" >Contact Details</a>
-                            </li>
-                        </ul>
-                
-                    </div>
+                    <div class="col-lg-12" style="background-color: #f5f5f5; border-radius: 15px">
+                        <h2 class="text-center px-5 py-5" style="color: #2B394A;">Order History</h2>
+                        <div class="order-history-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Username</th>
+                                        <th>Address</th>
+                                        <th>Description</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">#10001</a></td>
+                                        <td>Christine</td>
+                                        <td>cairo,Egypt</td>
+                                        <td>x1 ROSE VANILLA</td>
+                                        <td>01/01/2015</td>
+                                        <td>$200.00</td>
+                                        <td>Delievered</td>
+                                      </tr>
 
-                    <div class="col-lg-8 px-4 py-4" style="background-color: #f5f5f5; border-radius: 0px 15px 15px 0px;">
-                        <div class="card-body">
-                            <div class="register-form">
-                                <h4 style="color: #2B394A; margin-bottom: 30px;">Contact Details</h4>
-                                <form action="#" class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="group-input ">
-                                            <label for="username" class="registerLabel">Username *</label>
-                                            <input type="text" id="username" class="defaultBorders" srequired>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="group-input defaultBorders">
-                                            <label for="phoneNumber" class="registerLabel">PhoneNumber *</label>
-                                            <input type="text" id="phoneNumber" class="defaultBorders" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="group-input ">
-                                            <label for="email" class="registerLabel">Email *</label>
-                                            <input type="email" id="email" class="defaultBorders" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="group-input defaultBorders">
-                                            <label for="address" class="registerLabel">Address *</label>
-                                            <input type="text" id="address" class="defaultBorders" required>
-                                        </div>
-                                    </div>
+                                      <tr>
+                                        <td><a href="#">#10001</a></td>
+                                        <td>Christine</td>
+                                        <td>cairo,Egypt</td>
+                                        <td>x1 ROSE VANILLA</td>
+                                        <td>01/01/2015</td>
+                                        <td>$200.00</td>
+                                        <td>Delievered</td>
+                                      </tr>
 
-                                    
-                                    <div class="col-md-12" style="text-align: center;">
-                                        <button type="submit" class="site-btn register-btn defaultBorders"
-                                            style="width: 30vw;">Save</button>
-                                    </div>
-                                </form>
-                            </div>
+                                      <tr>
+                                        <td><a href="#">#10001</a></td>
+                                        <td>Christine</td>
+                                        <td>cairo,Egypt</td>
+                                        <td>x1 ROSE VANILLA<br>
+                                            x2 PARIS AMOUR
+                                        </td>
+                                        <td>01/01/2015</td>
+                                        <td>$200.00</td>
+                                        <td>Delievered</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td><a href="#">#10001</a></td>
+                                        <td>Christine</td>
+                                        <td>cairo,Egypt</td>
+                                        <td>x1 ROSE VANILLA</td>
+                                        <td>01/01/2015</td>
+                                        <td>$200.00</td>
+                                        <td>Delievered</td>
+                                      </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

@@ -9,31 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fashi | Template</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:wght@100&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:wght@100&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Karla:400,700%7CMartel:400,700" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-
-    <!-- Bootstrap5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+   
+    <%@ include file="commons.jsp" %>
 </head>
 
 <body>
@@ -43,10 +20,9 @@
     </div>
 
     <!-- Header Section Begin -->
-
     <header class="header-section">
         <div class="container">
-            <div class="inner-header">
+            <!-- <div class="inner-header">
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
@@ -56,9 +32,9 @@
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5">
-                        <div class="advanced-search">
+                        <div class="advanced-search" > -->
                             <!-- <button type="button" class="category-btn">All Categories</button> -->
-                            <form action="#" class="input-group" name="myRegisterForm" id="myRegisterForm">
+                            <!-- <form action="#" class="input-group">
                                 <input type="text" placeholder="What do you need?">
                                 <button type="button"><i class="ti-search"></i></button>
                             </form>
@@ -127,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="nav-item ">
             <div class="container">
@@ -181,130 +157,88 @@
     <!-- Header End -->
 
     <!-- Breadcrumb Section Begin -->
-    <!--<div class="breacrumb-section">
-
+    <!--
+    <div class="breacrumb-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Login</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
-    <!-- Breadcrumb Form Section Begin -->
-
-    <!-- Register Section Begin -->
-    <div class="container-fluid pageBody ">
-        <div class="register-login-section spad">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-lg-8 m-auto">
-                        <div class="card px-4 py-4" style="color:white;border-radius: 15px;background-color: #f5f5f5;">
-                            <div class="card-body">
-                                <div class="register-form">
-                                    <h2>Edit product</h2>
-
-                                    <form action="#" id="myRegisterForm" name="myRegisterForm" class="row g-3">
-
-                                        <!--  Name -->
-
-                                        <div class="col-md-6">
-                                            <div class="group-input ">
-                                                <label for="productName" class="registerLabel">Name *</label>
-                                                <input type="text" id="productName" name="productName"
-                                                    class="defaultBorders " required>
-
-                                                <i class="fa fa-check-circle" aria-hidden="true"></i><br>
-                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-
-                                                <small style="color: rgb(238, 0, 0);font-size: 12px;"></small>
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Price -->
-                                        <div class="col-md-6">
-                                            <div class="group-input defaultBorders ">
-                                                <label for="price" class="registerLabel">Price *</label>
-                                                <input type="text" id="price" name="price" class="defaultBorders "
-                                                    required>
-                                                <i class="fa fa-check-circle" aria-hidden="true"></i><br>
-                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-
-                                                <small style="color: rgb(238, 0, 0);font-size: 12px;"></small>
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Description-->
-
-                                        <div class="col-md-12">
-                                            <div class="group-input ">
-                                                <label for="description" class="registerLabel">Description *</label>
-                                                <input type="email" id="description" name="description"
-                                                    class="defaultBorders" required>
-                                                <i class="fa fa-check-circle" aria-hidden="true"></i><br>
-                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-
-                                                <small style="color: rgb(238, 0, 0);font-size: 12px;"></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Category -->
-
-                                        <div class="col-md-6 defaultBorders">
-                                            <label for="countriesLabel"
-                                                class="form-label registerLabel">Categories *</label>
-                                            <select id="category" name="category" class="form-select selectRegion"
-                                                style="margin-top: 13px;border-radius: 15px;">
-                                                <option value="Afghanistan">Bath & Shower</option>
-                                                <option value="Åland Islands">Fragrance</option>
-                                                <option value="Åland Islands">Candles</option>
-                                            </select>
-                                        </div>
-                                        <!-- PHONENUMBER -->
-                                        <div class="col-md-6">
-                                            <div class="group-input defaultBorders ">
-                                                <label for="quantity" class="registerLabel">Quantity *</label>
-                                                <input type="number" id="quantity" name="quantity"
-                                                    class="defaultBorders " required>
-                                                <i class="fa fa-check-circle" aria-hidden="true"></i><br>
-                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-
-                                                <small style="color: rgb(238, 0, 0);font-size: 12px;"></small>
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Image -->
-
-                                        <div class="col-md-12 mb-3">
-                                            <div class="defaultBorders">
-                                                <label for="productImage" class="registerLabel">Image *</label>
-                                                <input class="form-control form-control-lg product-image" type="file" id="formFileMultiple" id="productImage"  class="defaultBorders" name="productImage" required>
-                                              
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12" style="text-align: center;">
-                                            <button type="submit" class="site-btn register-btn defaultBorders"
-                                                style="width: 30vw;" id="register">Edit Product</button>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="breadcrumb-text product-more">
+                        <a href="./home.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="./shop.html">Shop</a>
+                        <span>Shopping Cart</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Register Form Section End -->
+    -->
+    <!-- Breadcrumb Section Begin -->
 
+    <!-- Shopping Cart Section Begin -->
+    <div class="container-fluid"
+        style="background-image: url(img/background_img.jpg); background-repeat: no-repeat; background-size: cover;">
+        <section class="shopping-cart spad">
+            <div class="container">
+                <div class="row" style="justify-content: center;">
+                    <div class="col-lg-3 px-4 py-4" style="background-color: #f5f5f5; border-radius: 15px 0px 0px 15px;">
+                        
+                        <h4>Users</h4>
+                        <br>
+                        <ul class="my-account">
+                            <li>
+                                <a href="user-history-admin.html">User Details</a>
+                            </li>
+                            <li>
+                                <a href="add-user-admin.html"class="active" >Add a user</a>
+                            </li>
+                        </ul>
+                
+                    </div>
+
+                    <div class="col-lg-8 px-4 py-4" style="background-color: #f5f5f5; border-radius: 0px 15px 15px 0px;">
+                        <div class="card-body">
+                            <div class="register-form">
+                                <h4 style="color: #2B394A; margin-bottom: 30px;">Add User</h4>
+                                <form action="#" class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="group-input ">
+                                            <label for="username" class="registerLabel">Username *</label>
+                                            <input type="text" id="username" class="defaultBorders" srequired>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="group-input defaultBorders">
+                                            <label for="phoneNumber" class="registerLabel">PhoneNumber *</label>
+                                            <input type="text" id="phoneNumber" class="defaultBorders" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="group-input ">
+                                            <label for="email" class="registerLabel">Email *</label>
+                                            <input type="email" id="email" class="defaultBorders" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="group-input defaultBorders">
+                                            <label for="address" class="registerLabel">Address *</label>
+                                            <input type="text" id="address" class="defaultBorders" required>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="col-md-12" style="text-align: center;">
+                                        <button type="submit" class="site-btn register-btn defaultBorders"
+                                            style="width: 30vw;">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    </div>
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
@@ -385,8 +319,6 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-
-
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>

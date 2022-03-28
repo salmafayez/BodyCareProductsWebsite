@@ -9,31 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fashi | Template</title>
 
-   <!-- Google Font -->
-   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-   <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E" />
-   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:wght@100&display=swap"
-       rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:wght@100&display=swap"
-       rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Karla:400,700%7CMartel:400,700" rel="stylesheet">
-
-   <!-- Css Styles -->
-   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-   <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-   <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
-   <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-   <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-   <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-   <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-   <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-
-   <!-- Bootstrap5 -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   <link rel="stylesheet" href="css/style.css" type="text/css">
+   
+    <%@ include file="commons.jsp" %>
 </head>
 
 <body>
@@ -45,7 +22,7 @@
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="container">
-            <div class="inner-header">
+            <!-- <div class="inner-header">
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
@@ -53,17 +30,17 @@
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>
-                    </div>
-                    <div class="col-lg-5 col-md-5">
-                        <div class="advanced-search" >
+                    </div> -->
+                    <!-- <div class="col-lg-5 col-md-5">
+                        <div class="advanced-search" > -->
                             <!-- <button type="button" class="category-btn">All Categories</button> -->
-                            <form action="#" class="input-group">
+                            <!-- <form action="#" class="input-group">
                                 <input type="text" placeholder="What do you need?">
                                 <button type="button"><i class="ti-search"></i></button>
                             </form>
                         </div>
-                    </div>
-                    <div class="col-lg-2 text-right col-md-2">
+                    </div> -->
+                    <!-- <div class="col-lg-2 text-right col-md-2">
                         <ul class="nav-right">
                             <li class="heart-icon"><a href="#">
                                     <i class="icon_heart_alt"></i>
@@ -117,16 +94,16 @@
                             </li>
                             <li class="cart-price">$150.00</li>
                         </ul>
-                    </div>
+                    </div> -->
 
-                    <div class="col-lg-3 col-md-3">
+                    <!-- <div class="col-lg-3 col-md-3">
                         <div>
                             <button class="btn primary-btn sign-in">Sign in</button>
                             <button class="btn primary-btn sign-in">Sign up</button>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </div> -->
+                <!-- </div>
+            </div> -->
         </div>
         <div class="nav-item ">
             <div class="container">
@@ -185,9 +162,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Contact</span>
+                    <div class="breadcrumb-text product-more">
+                        <a href="./home.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="./shop.html">Shop</a>
+                        <span>Shopping Cart</span>
                     </div>
                 </div>
             </div>
@@ -196,132 +174,114 @@
     -->
     <!-- Breadcrumb Section Begin -->
 
-    <!-- Map Section Begin -->
-    <!-- <div class="map spad">
-        <div class="container">
-            <div class="map-inner">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48158.305462977965!2d-74.13283844036356!3d41.02757295168286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2e440473470d7%3A0xcaf503ca2ee57958!2sSaddle%20River%2C%20NJ%2007458%2C%20USA!5e0!3m2!1sen!2sbd!4v1575917275626!5m2!1sen!2sbd"
-                    height="610" style="border:0" allowfullscreen="">
-                </iframe>
-                <div class="icon">
-                    <i class="fa fa-map-marker"></i>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Map Section Begin -->
-
-    <!-- Contact Section Begin -->
-    <div class="container-fluid" style="background-image: url(img/background_img.jpg); background-repeat: no-repeat; background-size: cover;">
-    <section class="contact-section spad"> 
-        
-        <!-- <div class="container px-5 py-5"  style="background-color: #f5f5f5"> -->
-           <div class="container px-5 py-5" style="border-style:solid; border-radius: 30px; background-color: #f5f5f5; border-color: #f5f5f5;">
-            <div class="row">
+    <!-- Shopping Cart Section Begin -->
+    <div class="container-fluid"
+        style="background-image: url(img/background_img.jpg); background-repeat: no-repeat; background-size: cover;">
+        <section class="shopping-cart spad">
+            <div class="container">
+                <div class="row" style="justify-content: center;">
+                    <div class="col-lg-3 px-4 py-4" style="background-color: #f5f5f5; border-radius: 15px 0px 0px 15px;">
+                        
+                        <h4>Users</h4>
+                        <br>
+                        <ul class="my-account">
+                            <li>
+                                <a href="order-history-admin.html" class="active">User Details</a>
+                            </li>
+                            <li>
+                                <a href="add-user-admin.html" >Add a user</a>
+                            </li>
+                        </ul>
                 
-                <div class="col-lg-5" >
-                    <div class="contact-title">
-                        <h4>Contacts us</h4>
-                        <!-- <p>We always here for you :).</p> -->
                     </div>
-                    <div class="contact-widget">
-                        <div class="cw-item">
-                            <div class="ci-icon">
-                                <i class="ti-location-pin"></i>
-                            </div>
-                            <div class="ci-text">
-                                <span>Address:</span>
-                                <p>60-49 Road 11378 New York</p>
-                            </div>
-                        </div>
-                        <div class="cw-item">
-                            <div class="ci-icon">
-                                <i class="ti-mobile"></i>
-                            </div>
-                            <div class="ci-text">
-                                <span>Phone:</span>
-                                <p>+65 11.188.888</p>
-                            </div>
-                        </div>
-                        <div class="cw-item">
-                            <div class="ci-icon">
-                                <i class="ti-email"></i>
-                            </div>
-                            <div class="ci-text">
-                                <span>Email:</span>
-                                <p>fatakat@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <div class="contact-form">
-                        <div class="leave-comment">
-                            <h4>Leave a comment</h4>
-                            <p>Our staff will call back later and answer your questions.</p>
-                            <form action="#" class="comment-form">
-                                <div class="row">
-                                    <div class="ci-icon">
-                                    <div  class="ci-text">
 
-                                        <input type="text" style="border-color: #f5f5f5; border-radius: 10px;" placeholder="Your name">
-                                    
-                                    <div class="ci-text">
-                                        <input type="text" style="border-color: #f5f5f5; border-radius: 10px;" placeholder="Your email">
-                                    </div></div>
-                                    <div class="ci-text">
-                                        <textarea placeholder="Your message"  style="border-color: #f5f5f5; border-radius: 10px;"></textarea>
-                                        <button type="submit" class="site-btn" style="border-style:solid; border-radius: 10px;  border-color: #f5f5f5;">Send message</button>
-                                    </div>
-                                    </div></div>
-                                </div>
-                            </form>
+                    <div class="col-lg-8" style="background-color: #f5f5f5; border-radius: 0px 15px 15px 0px;">
+                        <div class="order-history-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>User Name</th>
+                                        <th>Email</th>
+                                        <th>Phone number</th>
+                                        <th>Address</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">User 1</a></td>
+                                        <td>sondos@gmail.com</td>
+                                        <td>01025840171</td>
+                                        <td>cairo</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td><a href="#">#10002</a></td>
+                                        <td>01/02/2020</td>
+                                        <td>$450.00</td>
+                                       
+                                      </tr>
+                                      <tr>
+                                        <td><a href="#">#10002</a></td>
+                                        <td>01/02/2020</td>
+                                        <td>$450.00</td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td><a href="#">#10002</a></td>
+                                        <td>01/02/2020</td>
+                                        <td>$450.00</td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td><a href="#">#10002</a></td>
+                                        <td>01/02/2020</td>
+                                        <td>$450.00</td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td><a href="#">#10002</a></td>
+                                        <td>01/02/2020</td>
+                                        <td>$450.00</td>
+                                       
+                                      </tr>
+                                      <tr>
+                                        <td><a href="#">#10002</a></td>
+                                        <td>01/02/2020</td>
+                                        <td>$450.00</td>
+                                       
+                                      </tr>
+                                      <tr>
+                                        <td><a href="#">#10002</a></td>
+                                        <td>01/02/2020</td>
+                                        <td>$450.00</td>
+                                      
+                                      </tr>
+                                    <!-- <tr>
+                                        <td class="cart-pic first-row"><img src="img/cart-page/product-1.jpg" alt=""
+                                                style="border-radius: 15px;"></td>
+                                        <td class="cart-title first-row">
+                                            <h5>Pure Pineapple</h5>
+                                        </td>
+                                        <td class="p-price first-row">$60.00</td>
+                                        <td class="qua-col first-row">
+                                            <div class="quantity">
+                                                <div class="pro-qty">
+                                                    <input type="text" value="1">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="total-price first-row">$60.00</td>
+                                        <td class="close-td first-row"><i class="ti-close"></i></td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    
-    </section>
-</div>
-    <!-- Contact Section End -->
-
-    <!-- Partner Logo Section Begin -->
-    <!--
-    <div class="partner-logo">
-        <div class="container">
-            <div class="logo-carousel owl-carousel">
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-1.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-2.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-3.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-4.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-5.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    -->
-    <!-- Partner Logo Section End -->
+    </section>
+    </div>
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
@@ -385,8 +345,11 @@
                     <div class="col-lg-12">
                         <div class="copyright-text">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </div>
                         <div class="payment-pic">
                             <img src="img/payment-method.png" alt="">
