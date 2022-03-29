@@ -113,7 +113,7 @@
                         -->
                         <li><a href="contact.jsp">Contact</a></li>
                         <li><a href="shopping-cart.jsp"> Cart</a></li>
-                        <li><a href="./contact.html">Wishlist</a></li>
+                        <li><a href="addproduct">Wishlist</a></li>
                         <li><a href="check-out.jsp">Check-out</a></li>
                         <!--
                         <li><a href="#">Pages</a>

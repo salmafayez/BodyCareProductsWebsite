@@ -257,13 +257,13 @@
 
                                         <!-- Image -->
 
-                                        <div class="col-md-12 mb-3">
+                                        <%-- <div class="col-md-12 mb-3">
                                             <div class="defaultBorders">
                                                 <label for="productImage" class="registerLabel">Image *</label>
                                                 <input class="form-control form-control-lg product-image" type="file" id="formFileMultiple" id="productImage"  class="defaultBorders" name="productImage" required>
                                               
                                             </div>
-                                        </div>
+                                        </div> --%>
 
                                         <div class="col-md-12" style="text-align: center;">
                                             <button type="submit" class="site-btn register-btn defaultBorders"
