@@ -4,9 +4,13 @@ package gov.iti.jets.persistence.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-@Table(name="products")
-public class Product {
+@Table(name = "products", catalog = "skincareapp")
+public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +28,28 @@ public class Product {
 
     @Column(name="product_description",length = 1500)
     private String description;
-    // @Column(name="product_image")
-    // private String image;
 
-    // @ManyToOne
-    // private Category category;
+     @Column(name="product_image")
+     private String image;
+
+     @ManyToOne(fetch=FetchType.LAZY)
+     private Category category;
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="product")
+    private List<CartProducts> cartProductsList = new ArrayList<>();
+
+    public Product() {
+    }
+
+    public Product(String name, double price, int quantity, String description, String image, Category category) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+        this.description = description;
+        this.image = image;
+        this.category = category;
+    }
 
     public int getId() {
         return id;
@@ -70,26 +91,41 @@ public class Product {
         this.description = description;
     }
 
-    // public Category getCategory() {
-    //     return category;
-    // }
+    public String getImage() {
+        return image;
+    }
 
-    // public void setCategory(Category category) {
-    //     this.category = category;
-    // }
+    public void setImage(String image) {
+        this.image = image;
+    }
 
-    // @OneToMany(mappedBy = "product")
-    // private List<CartProducts> cartList = new ArrayList<>();
+    public Category getCategory() {
+        return category;
+    }
 
-    // @OneToMany(mappedBy = "product")
-    // private List<OrderProducts> ordersList = new ArrayList<>();
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
-    // public String getImage() {
-    //     return this.image;
-    // }
+    public List<CartProducts> getCartProductsList() {
+        return cartProductsList;
+    }
 
-    // public void setImage(String image) {
-    //     this.image = image;
-    // }
-    
+    public void setCartProductsList(List<CartProducts> cartProductsList) {
+        this.cartProductsList = cartProductsList;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", description='" + description + '\'' +
+                ", image='" + image + '\'' +
+                ", category=" + category +
+                ", cartProductsList=" + cartProductsList +
+                '}';
+    }
 }
