@@ -2,13 +2,7 @@ package gov.iti.jets.persistence.entities;
 
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="products")
@@ -30,9 +24,11 @@ public class Product {
 
     @Column(name="product_description",length = 1500)
     private String description;
+    // @Column(name="product_image")
+    // private String image;
 
-    @ManyToOne
-    private Category category;
+    // @ManyToOne
+    // private Category category;
 
     public int getId() {
         return id;
@@ -74,18 +70,26 @@ public class Product {
         this.description = description;
     }
 
-    public Category getCategory() {
-        return category;
-    }
+    // public Category getCategory() {
+    //     return category;
+    // }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
+    // public void setCategory(Category category) {
+    //     this.category = category;
+    // }
 
     // @OneToMany(mappedBy = "product")
     // private List<CartProducts> cartList = new ArrayList<>();
 
     // @OneToMany(mappedBy = "product")
     // private List<OrderProducts> ordersList = new ArrayList<>();
+
+    // public String getImage() {
+    //     return this.image;
+    // }
+
+    // public void setImage(String image) {
+    //     this.image = image;
+    // }
     
 }
