@@ -3,13 +3,7 @@ package gov.iti.jets.persistence.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="categories")
@@ -23,8 +17,9 @@ public class Category {
     @Column(name="category_name",length = 25)
     private String name;
 
-    @OneToMany(mappedBy = "category")
-    private List<Product> products = new ArrayList<>();
+
+    //@OneToMany(mappedBy = "category")
+   //private List<Product> products = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -41,14 +36,14 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
-
+/*
     public List<Product> getProducts() {
         return products;
     }
 
     public void setProducts(List<Product> products) {
         this.products = products;
-    }
+    }*/
 }
     
 

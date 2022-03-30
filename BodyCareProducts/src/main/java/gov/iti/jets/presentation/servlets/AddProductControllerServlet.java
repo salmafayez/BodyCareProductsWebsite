@@ -26,6 +26,8 @@ public class AddProductControllerServlet extends HttpServlet{
         // Part part = request.getPart("productImage");
         // product.setImage(part.getSubmittedFileName());
         DomainFacade.addProduct(product);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("add-product.jsp");
+        requestDispatcher.include(request, response);
 
     }  
 }
