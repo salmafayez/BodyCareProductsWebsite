@@ -183,7 +183,7 @@
                                 <div class="register-form">
                                     <h2>Add product</h2>
 
-                                    <form action="addproduct" method="POST" id="myRegisterForm" name="myRegisterForm" class="row g-3">
+                                    <form action="addproduct" method="POST" id="myRegisterForm" name="myRegisterForm" class="row g-3" enctype="multipart/form-data">
 
                                         <!--  Name -->
 
@@ -236,9 +236,9 @@
                                                 class="form-label registerLabel">Categories *</label>
                                             <select id="category" name="category" class="form-select selectRegion"
                                                 style="margin-top: 13px;border-radius: 15px;">
-                                                <option value="Afghanistan">Bath & Shower</option>
-                                                <option value="Åland Islands">Fragrance</option>
-                                                <option value="Åland Islands">Candles</option>
+                                                <option value="bath">Bath & Shower</option>
+                                                <option value="fragrance">Fragrance</option>
+                                                <option value="candles">Candles</option>
                                             </select>
                                         </div>
                                         <!-- PHONENUMBER -->
@@ -257,13 +257,13 @@
 
                                         <!-- Image -->
 
-                                        <%-- <div class="col-md-12 mb-3">
+                                        <div class="col-md-12 mb-3">
                                             <div class="defaultBorders">
                                                 <label for="productImage" class="registerLabel">Image *</label>
                                                 <input class="form-control form-control-lg product-image" type="file" id="formFileMultiple" id="productImage"  class="defaultBorders" name="productImage" required>
                                               
                                             </div>
-                                        </div> --%>
+                                        </div> 
 
                                         <div class="col-md-12" style="text-align: center;">
                                             <button type="submit" class="site-btn register-btn defaultBorders"
