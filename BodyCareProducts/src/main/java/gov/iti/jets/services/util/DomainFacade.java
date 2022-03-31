@@ -5,9 +5,11 @@ import gov.iti.jets.services.AddProductService;
 import gov.iti.jets.services.impl.AddProductServiceImpl;
 
 public class DomainFacade {
+
     private static AddProductService addProductService = new AddProductServiceImpl();
-    public static void addProduct(Product product){
-        addProductService.addProduct(product);
+
+    public static boolean addProduct(Product product){
+        return addProductService.addProduct(product);
     }
     
 }

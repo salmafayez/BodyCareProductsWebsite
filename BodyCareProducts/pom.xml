@@ -137,12 +137,12 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <username>root</username>
-          <password>root</password>
-          <url>http://localhost:9191/manager/text</url>
+          <username>admin</username>
+          <password>admin</password>
+          <url>http://localhost:9797/manager/text</url>
           <path>/skincareapp</path>
-          <username>root</username>
-          <password>root</password>
+          <username>admin</username>
+          <password>admin</password>
         </configuration>
       </plugin>
 
