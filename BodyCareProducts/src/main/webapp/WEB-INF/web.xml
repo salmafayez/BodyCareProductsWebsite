@@ -11,15 +11,5 @@
     <url-pattern>/addproduct</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-    <servlet-name>LoginControllerServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.LoginControllerServlet</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>LoginControllerServlet</servlet-name>
-    <url-pattern>/login</url-pattern>
-  </servlet-mapping>
-
 
 </web-app>
