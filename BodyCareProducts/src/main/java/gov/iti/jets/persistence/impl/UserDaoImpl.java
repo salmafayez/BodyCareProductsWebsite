@@ -9,7 +9,7 @@ import java.util.List;
 
 public class UserDaoImpl implements UserDao {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     public UserDaoImpl (EntityManager entityManager){
         this.entityManager = entityManager;
@@ -25,10 +25,18 @@ public class UserDaoImpl implements UserDao {
 
         entityManager.close();
 
-        if(userList.size() > 0){
-            return true;
-        }else {
-            return false;
-        }
+        return userList.size() > 0;
+    }
+
+    @Override
+    public boolean insert(User user) {
+
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        entityManager.persist(user);
+        transaction.commit();
+        entityManager.close();
+
+        return true;
     }
 }

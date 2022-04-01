@@ -14,8 +14,8 @@ const creditLimit = document.getElementById("creditLimit");
 const gender = document.getElementById("gender");
 
 var counterSuccess=0;
-
 var passwordValue;
+
 form.addEventListener('submit', (e) => {
 
     if(!isAllInputsValid()){
@@ -99,11 +99,14 @@ function validateEmail(){
         }else if(!isEmail(emailValue)){
 
             setErrorMessage(email,'Email format is not valid !!');
-        }else{
-            setSuccess(email);
-            checkEmailAjax(emailValue);
         }
-}
+        else{
+
+            checkEmailAjax(emailValue);
+
+        }
+     }
+
 
 function validatePassword(){
          passwordValue = password.value.trim();
@@ -311,14 +314,41 @@ function checkEmailAjax(emailajax) {
     console.log("hree");
     req = new XMLHttpRequest();
     req.open("POST","checkemail?email="+emailajax);
-    req.onreadystatechange = handleCheckMail;
     req.send();
+    req.onreadystatechange = handleCheckMail;
+
+
 
 }
     function handleCheckMail() {
-        if (req.readyState == 4)
-            if (req.status == 200)
-                console.log(req.responseText);
-            else
-                console.log("Error code " + req.responseText);
+        if (req.readyState == 4){
+
+        if (req.status == 200){
+
+            console.log("reeee"+req.responseText);
+            console.log(typeof req.responseText);
+
+            if(req.responseText=='true'){
+
+                console.log("faileddddddd");
+                setErrorMessage(email,'Email already exists!!');
+
+            }else{
+                  setSuccess(email);
+                  console.log("successss");
+            }
+
+
+        }
+        else{
+
+            console.log("Error code " + req.responseText);
+            //emailAjaxResponse=req.responseText;
+
+        }
+
+
+        }
+
     }
+
