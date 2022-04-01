@@ -49,7 +49,7 @@
                                             <div class="gi-more">
                                                 <label for="save-pass">
                                                     Save Password
-                                                    <input type="checkbox" id="save-pass">
+                                                    <input type="checkbox" name="remember" id="save-pass">
                                                     <span class="checkmark"></span>
                                                 </label>
                                                 <a href="#" class="forget-pass">Forget your Password</a>
