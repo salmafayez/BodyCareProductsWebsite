@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fashi | Template</title>
     <%@ include file="commons.jsp" %>
-  
+
 </head>
 
 <body>

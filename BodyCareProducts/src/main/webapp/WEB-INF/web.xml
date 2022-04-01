@@ -21,5 +21,15 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>LogoutControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.LogoutControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LogoutControllerServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+
 
 </web-app>

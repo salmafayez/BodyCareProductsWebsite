@@ -1,4 +1,5 @@
 <!-- Header Section Begin -->
+
     <header class="header-section">
         <div class="container">
             <div class="inner-header">
@@ -83,7 +84,7 @@
                 %>
                    
                     <span class="account-name"><%= (String)session.getAttribute("userName") %></span>
-                    <button class="btn primary-btn sign-in mx-3">Sign out</button>
+                    <a href="logout"><button class="btn primary-btn sign-in mx-3">Sign out</button></a>
                        
                 <%
                 }
