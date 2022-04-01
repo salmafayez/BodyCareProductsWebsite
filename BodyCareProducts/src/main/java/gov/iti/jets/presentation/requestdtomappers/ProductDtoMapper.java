@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.Part;
 
 public class ProductDtoMapper implements RequestMapper<Product>{
-
     @Override
     public Product map(HttpServletRequest request) throws IOException, ServletException {
         Product product = new Product();

@@ -48,7 +48,7 @@
                                 <div class="register-form">
                                     <h2>Register</h2>
 
-                                    <form action="index.jsp" id="myRegisterForm" name="myRegisterForm" class="row g-3" >
+                                    <form action="registeruser" id="myRegisterForm" name="myRegisterForm" class="row g-3" >
 
                                         <!--     USERNAME -->
 

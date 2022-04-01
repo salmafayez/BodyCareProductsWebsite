@@ -1,9 +1,9 @@
 package gov.iti.jets;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import gov.iti.jets.persistence.entities.User;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 /**
  * Hello world!
@@ -13,17 +13,17 @@ public class App
 {
     public static void main( String[] args )
     {
-        Persistence.createEntityManagerFactory("myapp");
-//        EntityManager entityManager = entityManagerFactory.createEntityManager();
-//
-//        EntityTransaction transaction = entityManager.getTransaction();
-//        transaction.begin();
-//
-//
-//        transaction.commit();
-//
-//
-//        entityManager.close();
-//        entityManagerFactory.close();
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myapp");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        String email = "hafsamoh@gmail.com";
+
+        List<User> userList = entityManager.createQuery(
+                "select e from User e where e.email = ?1")
+                .setParameter(1, email)
+                .getResultList();
+        userList.forEach(System.out::println);
+
+        entityManager.close();
+        entityManagerFactory.close();
     }
 }

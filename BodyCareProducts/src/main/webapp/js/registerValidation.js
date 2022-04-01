@@ -20,9 +20,7 @@ form.addEventListener('submit', (e) => {
 
     if(!isAllInputsValid()){
         console.log("successCounter="+counterSuccess);
-        console.log("hiiiiiiii")
         e.preventDefault();
-        checkInputs();
     }
 
 })
@@ -49,11 +47,7 @@ address.addEventListener('blur',validateAddress);
 creditLimit.addEventListener('blur',validateCreditLimit);
 
 
-
 }
-
-
-
 
 
 function validateUserName(){
@@ -107,6 +101,7 @@ function validateEmail(){
             setErrorMessage(email,'Email format is not valid !!');
         }else{
             setSuccess(email);
+            checkEmailAjax(emailValue);
         }
 }
 
@@ -130,8 +125,6 @@ function validatePassword(){
         }else {
             setSuccess(password);
         }
-
-
 }
 
 function validateConfirmPassword(){
@@ -156,7 +149,6 @@ function validateBirthday(){
 
             setErrorMessage(birthday,'Field can not be blank!!');
 
-
         }
         else if(!isValidBirthday(birthdayValue)){
             setErrorMessage(birthday,'not a valid date of birth,you should be over 12 years old!!');
@@ -174,7 +166,6 @@ function validateJob(){
 
             setErrorMessage(job,'Field can not be blank!!');
 
-
         }else if(jobValue.length <5){
             setErrorMessage(job,'Specify enough information about your job ');
         }
@@ -190,7 +181,6 @@ function validateAddress(){
         if(addressValue ===''){
 
             setErrorMessage(address,'Field can not be blank!!');
-
 
         }else if(addressValue.length <15){
             setErrorMessage(address,'Specify enough information about your address');
@@ -208,13 +198,12 @@ function validateCreditLimit(){
 
             setErrorMessage(creditLimit,'Field can not be blank!!');
 
-
         }else if(!isNumber(creditLimitValue)){
 
             setErrorMessage(creditLimit,'Credit should contain only numbers');
 
         }else if(creditLimitValue<50){
-            setErrorMessage(creditLimit,'You sould start with at least 50 pounds');
+            setErrorMessage(creditLimit,'You should start with at least 50 pounds');
         }else if(creditLimitValue>10000){
 
             setErrorMessage(creditLimit,'Your wallet range starts from 50 pounds till 10,000 pounds');
@@ -225,13 +214,9 @@ function validateCreditLimit(){
         }
 }
 function setSuccess(input){
-    const groupInput=input.parentElement;//.group-input
+    const groupInput=input.parentElement;
 
     groupInput.className='group-input success';
-
-
-
-
 
 }
 
@@ -241,7 +226,6 @@ function setErrorMessage(input,message){
     small.innerText=message;
     console.log("emptyUserName in error");
     groupInput.className='group-input error';
-
 
 }
 
@@ -267,16 +251,10 @@ function isNumber(inputValue){
 
 function isValidBirthday(birthdayValue){
 
-
     const date12YrsAgo = new Date();
-
     date12YrsAgo.setFullYear(date12YrsAgo.getFullYear() - 12);
-
-
-    // check if the date of birth is before that date
     return new Date(birthdayValue).getYear() <= date12YrsAgo.getYear();
 }
-
 
 function isAllInputsValid(){
 
@@ -323,9 +301,24 @@ function isAllInputsValid(){
                  counterSuccess++;
             }
 
-
-
         console.log(counterSuccess == 8)
         return counterSuccess == 8;
 
 }
+
+var req = null;
+function checkEmailAjax(emailajax) {
+    console.log("hree");
+    req = new XMLHttpRequest();
+    req.open("POST","checkemail?email="+emailajax);
+    req.onreadystatechange = handleCheckMail;
+    req.send();
+
+}
+    function handleCheckMail() {
+        if (req.readyState == 4)
+            if (req.status == 200)
+                console.log(req.responseText);
+            else
+                console.log("Error code " + req.responseText);
+    }
