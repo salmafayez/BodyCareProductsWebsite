@@ -47,14 +47,14 @@
                                 <div class="card-body">
                                     <div class="login-form">
                                         <h2>Login</h2>
-                                        <form action="#">
+                                        <form action="login" method="post" >
                                             <div class="group-input">
-                                                <label for="username">Email address *</label>
-                                                <input type="text" id="username" class="defaultBorders">
+                                                <label for="email">Email address *</label>
+                                                <input type="email" id="email" class="defaultBorders">
                                             </div>
                                             <div class="group-input">
-                                                <label for="pass">Password *</label>
-                                                <input type="text" id="pass" class="defaultBorders">
+                                                <label for="password">Password *</label>
+                                                <input type="password" id="password" class="defaultBorders">
                                             </div>
                                             <div class="group-input gi-check">
                                                 <div class="gi-more">
