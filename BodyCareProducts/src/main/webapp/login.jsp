@@ -50,11 +50,11 @@
                                         <form action="login" method="post" >
                                             <div class="group-input">
                                                 <label for="email">Email address *</label>
-                                                <input type="email" id="email" class="defaultBorders">
+                                                <input type="email" id="email" name="email" class="defaultBorders">
                                             </div>
                                             <div class="group-input">
                                                 <label for="password">Password *</label>
-                                                <input type="password" id="password" class="defaultBorders">
+                                                <input type="password" id="password" name="password" class="defaultBorders">
                                             </div>
                                             <div class="group-input gi-check">
                                                 <div class="gi-more">

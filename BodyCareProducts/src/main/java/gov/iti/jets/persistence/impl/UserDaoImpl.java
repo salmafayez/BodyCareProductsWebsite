@@ -7,6 +7,7 @@ import gov.iti.jets.persistence.UserDao;
 import gov.iti.jets.persistence.entities.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
 
 public class UserDaoImpl implements UserDao {
@@ -16,16 +17,16 @@ public class UserDaoImpl implements UserDao {
         this.entityManager=entityManager;
     }
     @Override
-    public User login(String email, String password) {
+    public User login(String email, String password) throws NoResultException {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
+        User user = null;
         String select = "SELECT user FROM User user WHERE user.email=:email and user.password=:password";
         Query query = entityManager.createQuery(select);
         query.setParameter("email", email);
         query.setParameter("password", password);
-        User user = (User) query.getSingleResult();
+        user = (User) query.getSingleResult(); 
         entityManager.close();
         return user;
     }
-    
 }
