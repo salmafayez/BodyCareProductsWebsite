@@ -17,14 +17,13 @@ public class UserDaoImpl implements UserDao {
         this.entityManager=entityManager;
     }
     @Override
-    public User login(String email, String password) throws NoResultException {
+    public User login(String email) throws NoResultException {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
         User user = null;
-        String select = "SELECT user FROM User user WHERE user.email=:email and user.password=:password";
+        String select = "SELECT user FROM User user WHERE user.email=:email";
         Query query = entityManager.createQuery(select);
         query.setParameter("email", email);
-        query.setParameter("password", password);
         user = (User) query.getSingleResult(); 
         entityManager.close();
         return user;

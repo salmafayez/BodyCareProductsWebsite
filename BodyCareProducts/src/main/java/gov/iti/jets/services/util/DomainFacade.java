@@ -6,6 +6,7 @@ import gov.iti.jets.services.AddProductService;
 import gov.iti.jets.services.LoginService;
 import gov.iti.jets.services.impl.AddProductServiceImpl;
 import gov.iti.jets.services.impl.LoginServiceImpl;
+import jakarta.persistence.NoResultException;
 
 public class DomainFacade {
 
@@ -17,8 +18,8 @@ public class DomainFacade {
         return addProductService.addProduct(product);
     }
 
-    public static User login(String email, String password){
-        return loginService.login(email, password);
+    public static User login(String email) throws NoResultException{
+        return loginService.login(email);
     }
     
 }

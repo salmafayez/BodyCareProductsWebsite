@@ -4,6 +4,6 @@ import gov.iti.jets.persistence.entities.User;
 import jakarta.persistence.NoResultException;
 
 public interface UserDao {
-    public User login(String email, String password) throws NoResultException;
+    public User login(String email) throws NoResultException;
     
 }

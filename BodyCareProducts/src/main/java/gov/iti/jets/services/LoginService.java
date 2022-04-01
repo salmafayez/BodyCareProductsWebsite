@@ -1,8 +1,9 @@
 package gov.iti.jets.services;
 
 import gov.iti.jets.persistence.entities.User;
+import jakarta.persistence.NoResultException;
 
 public interface LoginService {
-    public User login(String email, String password);
+    User login(String email) throws NoResultException;
     
 }
