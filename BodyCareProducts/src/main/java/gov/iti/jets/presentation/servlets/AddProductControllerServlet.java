@@ -19,7 +19,7 @@ public class AddProductControllerServlet extends HttpServlet{
     private static final RequestMapper<Product> productMapper= new ProductDtoMapper();
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("add-product.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin-add-product.jsp");
         requestDispatcher.forward(request, response);
 
     }    
@@ -28,7 +28,7 @@ public class AddProductControllerServlet extends HttpServlet{
         boolean result = DomainFacade.addProduct(product);
         request.setAttribute("addProduct", result);
         log(result+"");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("add-product.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin-add-product.jsp");
         requestDispatcher.forward(request, response);
 
     }  
