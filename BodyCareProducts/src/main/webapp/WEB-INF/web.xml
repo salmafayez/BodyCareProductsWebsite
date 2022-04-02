@@ -6,9 +6,29 @@
     <servlet-class>gov.iti.jets.presentation.servlets.AddProductControllerServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>RegisterUserControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.RegisterUserControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>CheckEmailAjaxServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.CheckEmailAjaxServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>AddProductServlet</servlet-name>
     <url-pattern>/addproduct</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RegisterUserControllerServlet</servlet-name>
+    <url-pattern>/registeruser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>CheckEmailAjaxServlet</servlet-name>
+    <url-pattern>/checkemail</url-pattern>
   </servlet-mapping>
 
 

@@ -78,7 +78,7 @@
                     <div class="col-lg-3 col-md-3">
                         <div>
                             <a href="login.jsp"><button class="btn primary-btn sign-in">Sign in</button></a>
-                            <a href="register.jsp"><button class="btn primary-btn sign-in">Sign up</button></a>
+                            <a href="registeruser"><button class="btn primary-btn sign-in">Sign up</button></a>
                         </div>
                     </div>
                 </div>

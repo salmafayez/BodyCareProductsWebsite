@@ -12,7 +12,7 @@
     <%@ include file="commons.jsp" %>
 </head>
 
-<body >
+<body onload="checkInputs();">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -48,7 +48,7 @@
                                 <div class="register-form">
                                     <h2>Register</h2>
 
-                                    <form action="#" id="myRegisterForm" name="myRegisterForm" class="row g-3" >
+                                    <form method="post" action="registeruser" id="myRegisterForm" name="myRegisterForm" class="row g-3" >
 
                                         <!--     USERNAME -->
 
