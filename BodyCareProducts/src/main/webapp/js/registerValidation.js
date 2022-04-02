@@ -89,18 +89,23 @@ function validatePhoneNumber(){
 }
 
 function validateEmail(){
+            console.log("hereerrerererre 1 Email");
 
     var emailValue = email.value.trim();
     if(emailValue ===''){
             console.log("emptyUser Email");
+                        console.log("hereerrerererre 2 Email");
+
             setErrorMessage(email,'Field can not be blank!!');
 
-
         }else if(!isEmail(emailValue)){
+
+            console.log("hereerrerererre 3 Email");
 
             setErrorMessage(email,'Email format is not valid !!');
         }
         else{
+            console.log("hereerrerererre 4 Email");
 
             checkEmailAjax(emailValue);
 
@@ -321,14 +326,11 @@ function checkEmailAjax(emailajax) {
 }
     function handleCheckMail() {
         if (req.readyState == 4){
-
         if (req.status == 200){
-
             console.log("reeee"+req.responseText);
             console.log(typeof req.responseText);
 
             if(req.responseText=='true'){
-
                 console.log("faileddddddd");
                 setErrorMessage(email,'Email already exists!!');
 
@@ -351,28 +353,6 @@ function checkEmailAjax(emailajax) {
 
     }
 
-
-//    const cities = {
-//    	"async": true,
-//    	"crossDomain": true,
-//    	"url": "https://andruxnet-world-cities-v1.p.rapidapi.com/?searchby=city",
-//    	"method": "GET",
-//    	success:function(data){
-//
-//    	    data.forEach(element=>{
-//
-//                $('#city').append('<option></option>')
-//    	    })
-//
-//    	},
-//    	"headers": {
-//    		"X-RapidAPI-Host": "andruxnet-world-cities-v1.p.rapidapi.com",
-//    		"X-RapidAPI-Key": "fd7e9504damsh27a26980b4e7967p169cfbjsne2a780fa7ea1"
-//    	}
-//    };
-
-
-
     var auth_token;
     $(document).ready(function(){
          $.ajax({
@@ -391,6 +371,12 @@ function checkEmailAjax(emailajax) {
                  },
 
                 })
+                $('#country').change(function(){
+                    getState(auth_token);
+                })
+                $('#state').change(function(){
+                    getCity(auth_token);
+                })
        })
 
 
@@ -401,19 +387,51 @@ function checkEmailAjax(emailajax) {
         type: 'get',
         url:'https://www.universal-tutorial.com/api/countries/',
         success:function(data){
-
             data.forEach(element=>{
-
                 $('#country').append('<option value='+element.country_name+'>'+element.country_name+'</option>')
-
-            })},
+            })
+            getState(auth_token);
+            },
             headers: {
                 "Authorization": "Bearer "+auth_token,
                 "Accept": "application/json"
             }
-
-
-
         })
-
     }
+
+    function getState(auth_token){
+         let country_name=$('#country').val()+"/";
+         $.ajax({
+            type: 'get',
+            url:'https://www.universal-tutorial.com/api/states/'+country_name,
+            success:function(data){
+                $('#state').empty();
+                data.forEach(element=>{
+                    $('#state').append('<option value='+element.state_name+'>'+element.state_name+'</option>')
+                });
+                getCity(auth_token);
+                },
+                headers: {
+                    "Authorization": "Bearer "+auth_token,
+                    "Accept": "application/json"
+                }
+            })
+        }
+
+         function getCity(auth_token){
+                 var state_name=$('#state').val()+"/";
+                 $.ajax({
+                    type: 'get',
+                    url:'https://www.universal-tutorial.com/api/cities/' + state_name,
+                    success:function(data){
+                        $('#city').empty();
+                        data.forEach(element=>{
+                            $('#city').append('<option value='+element.city_name+'>'+element.city_name+'</option>')
+                        })
+                        },
+                        headers: {
+                            "Authorization": "Bearer "+auth_token,
+                            "Accept": "application/json"
+                        }
+                    })
+                }

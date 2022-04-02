@@ -50,7 +50,7 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(LocalDate birthDate, UserType userType, String userName, String email, List<String> interests, String country, String city, String detailedAddress, String phoneNumber, double wallet, String job, String password) {
+    public User(int id, LocalDate birthDate, UserType userType, String userName, String email, List<String> interests, String country, String city, String detailedAddress, String phoneNumber, double wallet, String job, String password) {
         this.id = id;
         this.birthDate = birthDate;
         this.userType = userType;
