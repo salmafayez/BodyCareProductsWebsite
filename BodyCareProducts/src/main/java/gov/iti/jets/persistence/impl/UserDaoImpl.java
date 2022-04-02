@@ -42,6 +42,8 @@ public class UserDaoImpl implements UserDao {
         Query query = entityManager.createQuery(select);
         query.setParameter("email", email);
         user = (User) query.getSingleResult();
+        return user;
+    }
     public boolean insert(User user) {
 
         EntityTransaction transaction = entityManager.getTransaction();
@@ -49,8 +51,6 @@ public class UserDaoImpl implements UserDao {
         entityManager.persist(user);
         transaction.commit();
         entityManager.close();
-        return user;
-    }
 
         return true;
     }
