@@ -31,7 +31,7 @@
                                 <div class="register-form">
                                     <h2>Register</h2>
 
-                                    <form method="post" action="registeruser" id="myRegisterForm" name="myRegisterForm" class="row g-3" >
+                                    <form method="post" action="register" id="myRegisterForm" name="myRegisterForm" class="row g-3" >
 
                                         <!--     USERNAME -->
 

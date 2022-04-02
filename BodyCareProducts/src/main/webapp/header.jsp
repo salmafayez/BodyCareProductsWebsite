@@ -96,9 +96,7 @@
                 <%
                 }
                 %>
-                             </div>
-                            <a href="login.jsp"><button class="btn primary-btn sign-in">Sign in</button></a>
-                            <a href="registeruser"><button class="btn primary-btn sign-in">Sign up</button></a>
+                            
                         </div>
                     </div>
                 </div>
