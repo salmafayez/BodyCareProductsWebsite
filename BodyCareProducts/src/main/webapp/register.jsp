@@ -126,12 +126,12 @@
 
                                          <!-- COUNTRY -->
 
-                                        <div class="col-md-6 defaultBorders">
+                                        <div class="col-md-12 defaultBorders">
                                             <label for="countriesLabel"
                                                 class="form-label registerLabel">Countries</label>
                                             <select id="country" name="country" class="form-select selectRegion"
                                                 style="margin-top: 13px;border-radius: 15px;">
-                                                <option value="Afghanistan">Afghanistan</option>
+                                                <%-- <option value="Afghanistan">Afghanistan</option>
                                                 <option value="Åland Islands">Åland Islands</option>
                                                 <option value="Albania">Albania</option>
                                                 <option value="Algeria">Algeria</option>
@@ -394,25 +394,35 @@
                                                 <option value="Western Sahara">Western Sahara</option>
                                                 <option value="Yemen">Yemen</option>
                                                 <option value="Zambia">Zambia</option>
-                                                <option value="Zimbabwe">Zimbabwe</option>
+                                                <option value="Zimbabwe">Zimbabwe</option> --%>
                                             </select>
 
-                                             <!-- CITY -->
+                                             
 
                                         </div>
+                                        
+                                            <!-- STATE -->
+                                        <div class="col-md-6 ">
+
+                                            <label for="statesLabel"
+                                                class="form-label registerLabel">states</label>
+                                            <select id="state" name="state" class="form-select selectRegion"style="margin-top: 13px;border-radius: 15px;">
+
+                                            </select>
+
+                                        </div>
+                                            <!-- CITY -->
                                         <div class="col-md-6 ">
 
                                             <label for="citiesLabel"
                                                 class="form-label registerLabel">Cities</label>
                                             <select id="city" name="city" class="form-select selectRegion"style="margin-top: 13px;border-radius: 15px;">
-                                                <option value="Cairo">Cairo</option>
-                                                <option value="Alexandria">Alexandria</option>
-                                                <option value="Mansoura">Mansoura</option>
-                                                <option value="Tanta">Tanta</option>
-                                                <option value="Monoofia">Monoofia</option>  
+
                                             </select>
 
                                         </div>
+
+                                        
 
                                          <!-- ADDRESS -->
 
