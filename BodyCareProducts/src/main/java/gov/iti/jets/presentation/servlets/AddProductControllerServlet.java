@@ -1,6 +1,10 @@
 package gov.iti.jets.presentation.servlets;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.presentation.requestdtomappers.requestdtomappersimpl.ProductDtoMapper;
@@ -12,6 +16,7 @@ import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 
 @MultipartConfig
 public class AddProductControllerServlet extends HttpServlet{
@@ -25,6 +30,7 @@ public class AddProductControllerServlet extends HttpServlet{
     }    
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Product product = productMapper.map(request);
+        uploadImage(request);
         boolean result = DomainFacade.addProduct(product);
         request.setAttribute("addProduct", result);
         log(result+"");
@@ -32,4 +38,16 @@ public class AddProductControllerServlet extends HttpServlet{
         requestDispatcher.forward(request, response);
 
     }  
+
+    private void uploadImage(HttpServletRequest request) throws IOException, ServletException{
+        Part part =request.getPart("productImage");
+        String path = request.getServletContext().getRealPath("img") + File.separator+"products"+File.separator+ part.getSubmittedFileName();
+        System.out.println(path);
+        FileOutputStream fos = new FileOutputStream(path);
+        InputStream is = part.getInputStream();
+        byte [] data = new byte [is.available()];
+        is.read(data);
+        fos.write(data);
+        fos.close();
+    }
 }
