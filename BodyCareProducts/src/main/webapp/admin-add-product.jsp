@@ -12,7 +12,7 @@
     <%@ include file="commons-styles.jsp" %>
 </head>
 
-<body>
+<body onload = "loadCategories();">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -84,9 +84,7 @@
                                                 class="form-label registerLabel">Categories *</label>
                                             <select id="category" name="category" class="form-select selectRegion"
                                                 style="margin-top: 13px;border-radius: 15px;">
-                                                <option value="bath">Bath & Shower</option>
-                                                <option value="fragrance">Fragrance</option>
-                                                <option value="candles">Candles</option>
+                                                
                                             </select>
                                         </div>
                                         <!-- PHONENUMBER -->
@@ -131,6 +129,7 @@
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
+     <script src="js/categories.js" type="text/javascript"></script>
 </body>
 
 </html>

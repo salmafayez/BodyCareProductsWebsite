@@ -32,6 +32,9 @@ public class Product implements Serializable {
      @Column(name="product_image")
      private String image;
 
+     @Column(name="category_name")
+     private String categoryName;
+
      @ManyToOne(fetch=FetchType.LAZY)
      private Category category;
 
@@ -113,6 +116,14 @@ public class Product implements Serializable {
 
     public void setCartProductsList(List<CartProducts> cartProductsList) {
         this.cartProductsList = cartProductsList;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     @Override

@@ -18,7 +18,7 @@ public class CategoryDaoImpl implements CategoryDao{
     public List<Category> getAll() {
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        String select = "SELECT c FROM categories c";
+        String select = "SELECT c FROM Category c";
         Query query = entityManager.createQuery(select);
         List<Category> categoryList = query.getResultList();
         entityManager.close();;
@@ -44,7 +44,6 @@ public class CategoryDaoImpl implements CategoryDao{
         Query query = entityManager.createQuery(select,Category.class);
         query.setParameter("categoryName", categoryName);
         Category category = (Category) query.getSingleResult();
-        Category category2 = entityManager.find(Category.class, 1);
         entityManager.close();
         return category;
     }

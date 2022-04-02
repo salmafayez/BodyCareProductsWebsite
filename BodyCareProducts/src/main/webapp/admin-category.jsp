@@ -54,7 +54,7 @@
                                 </tbody>
                             </table>
                             <div class="m-auton text-center">
-                                <a href="admin-add-category.jsp"><button class="site-btn login-btn defaultBorders">Add Category</button></a>
+                                <a href="addcategory"><button class="site-btn login-btn defaultBorders">Add Category</button></a>
                             </div>
                         </div>
                     </div>

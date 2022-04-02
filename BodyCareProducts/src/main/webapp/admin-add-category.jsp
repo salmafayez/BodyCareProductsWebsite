@@ -31,7 +31,7 @@
                             <div class="card-body">
                                 <div class="login-form">
                                     <h2>Add Category</h2>
-                                    <form action="add-category" method="post" id="categoru-form">
+                                    <form action="addcategory" method="post" id="category-form">
                                         <div class="group-input">
                                             <label for="category-name">Category Name *</label>
                                             <input type="text" id="category-name" name="category-name" class="defaultBorders">
