@@ -2,12 +2,11 @@ package gov.iti.jets.persistence.util;
 
 import jakarta.persistence.*;
 
-public class EntityFactory {
+public class ManagerFactory {
     
     private static final EntityManagerFactory  entityManagerFactory = Persistence.createEntityManagerFactory("myapp");
     
-    public static EntityManager getEntityManager(){
-        return entityManagerFactory.createEntityManager();
-    }
-    
+    public static EntityManagerFactory getEntityManagerFactory(){
+        return entityManagerFactory;
+    } 
 }

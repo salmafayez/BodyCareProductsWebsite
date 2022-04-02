@@ -1,30 +1,24 @@
 package gov.iti.jets.persistence.impl;
 
 import java.util.List;
-import java.util.Optional;
-
 import gov.iti.jets.persistence.UserDao;
 import gov.iti.jets.persistence.entities.User;
+import gov.iti.jets.persistence.util.ManagerFactory;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
-
-import java.util.List;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
 
 public class UserDaoImpl implements UserDao {
 
-    private final EntityManager entityManager;
-
-    public UserDaoImpl (EntityManager entityManager){
-        this.entityManager = entityManager;
-    }
+    private final static EntityManagerFactory entityManagerFactory = ManagerFactory.getEntityManagerFactory();
 
     @Override
     public boolean checkEmail(String email) {
 
-        List<User> userList = entityManager.createQuery(
-                        "select e from User e where e.email = ?1")
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        List<User> userList = entityManager.createQuery("select e from User e where e.email = ?1")
                 .setParameter(1, email)
                 .getResultList();
 
@@ -35,23 +29,23 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User login(String email) throws NoResultException {
-        EntityTransaction entityTransaction = entityManager.getTransaction();
-        entityTransaction.begin();
-        User user = null;
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
         String select = "SELECT user FROM User user WHERE user.email=:email";
         Query query = entityManager.createQuery(select);
         query.setParameter("email", email);
-        user = (User) query.getSingleResult();
+        User user = (User) query.getSingleResult();
+        entityManager.close();
         return user;
     }
-    public boolean insert(User user) {
 
+    @Override
+    public boolean insert(User user) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
         entityManager.persist(user);
         transaction.commit();
         entityManager.close();
-
         return true;
     }
 }

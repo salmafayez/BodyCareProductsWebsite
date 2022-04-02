@@ -7,6 +7,6 @@ import jakarta.persistence.NoResultException;
 public interface UserDao {
     boolean checkEmail (String email);
     boolean insert(User user);
-    public User login(String email) throws NoResultException;
+    User login(String email) throws NoResultException;
 
 }
