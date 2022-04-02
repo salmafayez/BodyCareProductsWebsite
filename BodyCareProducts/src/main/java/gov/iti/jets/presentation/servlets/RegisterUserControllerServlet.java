@@ -1,5 +1,7 @@
 package gov.iti.jets.presentation.servlets;
 
+import java.io.IOException;
+
 import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.presentation.requestdtomappers.RequestMapper;
 import gov.iti.jets.presentation.requestdtomappers.requestdtomappersimpl.ProductDtoMapper;

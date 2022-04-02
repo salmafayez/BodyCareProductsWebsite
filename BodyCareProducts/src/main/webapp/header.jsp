@@ -1,4 +1,5 @@
 <!-- Header Section Begin -->
+
     <header class="header-section">
         <div class="container">
             <div class="inner-header">
@@ -77,6 +78,25 @@
 
                     <div class="col-lg-3 col-md-3">
                         <div>
+                <%
+                String userAuth = (String) session.getAttribute("AuthToken");
+                if(userAuth != null){
+                %>
+
+                    <span class="account-name"><%= (String)session.getAttribute("userName") %></span>
+                    <a href="logout"><button class="btn primary-btn sign-in mx-3">Sign out</button></a>
+
+                <%
+                }
+                else{
+                %>
+                    <a href="login"><button class="btn primary-btn sign-in">Sign in</button></a>
+                    <a href="register"><button class="btn primary-btn sign-in">Sign up</button></a>
+
+                <%
+                }
+                %>
+                             </div>
                             <a href="login.jsp"><button class="btn primary-btn sign-in">Sign in</button></a>
                             <a href="registeruser"><button class="btn primary-btn sign-in">Sign up</button></a>
                         </div>

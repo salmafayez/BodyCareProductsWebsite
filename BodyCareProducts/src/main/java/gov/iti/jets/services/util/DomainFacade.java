@@ -5,6 +5,8 @@ import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.services.AddProductService;
 import gov.iti.jets.services.RegisterUserService;
 import gov.iti.jets.services.impl.AddProductServiceImpl;
+import gov.iti.jets.services.impl.LoginServiceImpl;
+import jakarta.persistence.NoResultException;
 import gov.iti.jets.services.impl.RegisterUserServiceImpl;
 
 public class DomainFacade {
@@ -18,6 +20,8 @@ public class DomainFacade {
 
     public static boolean checkEmail(String email) {
         return registerUserService.checkEmail(email);
+    public static User login(String email) throws NoResultException{
+        return loginService.login(email);
     }
 
     public static boolean addUser(User user){return  registerUserService.addUser(user);}
