@@ -12,8 +12,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-import java.io.IOException;
 
 public class RegisterUserControllerServlet extends HttpServlet {
 
@@ -21,20 +21,27 @@ public class RegisterUserControllerServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
-        requestDispatcher.forward(request, response);
+        HttpSession session = request.getSession(false);
+        if(session!=null){
+            if ((String) session.getAttribute("AuthToken") == null){
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
+                requestDispatcher.forward(request, response);
+            }else{
+                response.sendRedirect("index.jsp");
+            }
+        }else{
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
+            requestDispatcher.forward(request, response);
+        }
 
     }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         User user=userMapper.map(request);
-        System.out.println("user="+user);
+        System.out.println(user);
         boolean  isUserInserted= DomainFacade.addUser(user);
 
         if (isUserInserted){
-
-            System.out.println("doneeeee");
-
             response.sendRedirect("index.jsp");
         }else {
             System.out.println("errorrrrrr");

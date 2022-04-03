@@ -14,10 +14,10 @@ public class CheckEmailAjaxServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
-        System.out.println("hereeeeeeeeeee CheckEmailAjaxServlet");
+
         String email = request.getParameter("email");
         boolean result = DomainFacade.checkEmail(email);
-        System.out.println(result);
+        System.out.println("ajex" + result);
         response.getWriter().write(result+"");
 
     }

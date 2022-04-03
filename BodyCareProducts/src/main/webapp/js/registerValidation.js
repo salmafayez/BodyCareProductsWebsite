@@ -7,7 +7,7 @@ const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
 const birthday = document.getElementById("birthday");
 const job = document.getElementById("job");
-//const country = document.getElementById("country");
+//var country = document.getElementById("country");
 //const city = document.getElementById("city");
 const address = document.getElementById("address");
 const creditLimit = document.getElementById("creditLimit");
@@ -89,18 +89,23 @@ function validatePhoneNumber(){
 }
 
 function validateEmail(){
+            console.log("hereerrerererre 1 Email");
 
     var emailValue = email.value.trim();
     if(emailValue ===''){
             console.log("emptyUser Email");
+                        console.log("hereerrerererre 2 Email");
+
             setErrorMessage(email,'Field can not be blank!!');
 
-
         }else if(!isEmail(emailValue)){
+
+            console.log("hereerrerererre 3 Email");
 
             setErrorMessage(email,'Email format is not valid !!');
         }
         else{
+            console.log("hereerrerererre 4 Email");
 
             checkEmailAjax(emailValue);
 
@@ -314,22 +319,18 @@ function checkEmailAjax(emailajax) {
     console.log("hree");
     req = new XMLHttpRequest();
     req.open("POST","checkemail?email="+emailajax);
-    req.send();
     req.onreadystatechange = handleCheckMail;
-
+    req.send();
 
 
 }
     function handleCheckMail() {
         if (req.readyState == 4){
-
         if (req.status == 200){
-
             console.log("reeee"+req.responseText);
             console.log(typeof req.responseText);
 
             if(req.responseText=='true'){
-
                 console.log("faileddddddd");
                 setErrorMessage(email,'Email already exists!!');
 
@@ -352,3 +353,85 @@ function checkEmailAjax(emailajax) {
 
     }
 
+    var auth_token;
+    $(document).ready(function(){
+         $.ajax({
+                type: 'get',
+                 url:'https://www.universal-tutorial.com/api/getaccesstoken',
+                 success:function(data){
+
+                    auth_token=data.auth_token;
+                    getCountries(auth_token);
+
+                 },
+                 headers: {
+                    "Accept": "application/json",
+                    "api-token":"kEs5h1bPeNjpuHjC-LLQJiKhENJnhBVet3qhYMYQP27AcvDgFZEK32oKa4IboSDhGto",
+                    "user-email":"1998hend@gmail.com"
+                 },
+
+                })
+                $('#country').change(function(){
+                    getState(auth_token);
+                })
+                $('#state').change(function(){
+                    getCity(auth_token);
+                })
+       })
+
+
+    function getCountries(auth_token){
+
+     var countryName=$('#country').val();
+     $.ajax({
+        type: 'get',
+        url:'https://www.universal-tutorial.com/api/countries/',
+        success:function(data){
+            data.forEach(element=>{
+                $('#country').append('<option value='+element.country_name+'>'+element.country_name+'</option>')
+            })
+            getState(auth_token);
+            },
+            headers: {
+                "Authorization": "Bearer "+auth_token,
+                "Accept": "application/json"
+            }
+        })
+    }
+
+    function getState(auth_token){
+         let country_name=$('#country').val()+"/";
+         $.ajax({
+            type: 'get',
+            url:'https://www.universal-tutorial.com/api/states/'+country_name,
+            success:function(data){
+                $('#state').empty();
+                data.forEach(element=>{
+                    $('#state').append('<option value='+element.state_name+'>'+element.state_name+'</option>')
+                });
+                getCity(auth_token);
+                },
+                headers: {
+                    "Authorization": "Bearer "+auth_token,
+                    "Accept": "application/json"
+                }
+            })
+        }
+
+         function getCity(auth_token){
+                 var state_name=$('#state').val()+"/";
+                 $.ajax({
+                    type: 'get',
+                    url:'https://www.universal-tutorial.com/api/cities/' + state_name,
+                    success:function(data){
+                        $('#city').empty();
+                        data.forEach(element=>{
+                            $('#city').append('<option value='+element.city_name+'>'+element.city_name+'</option>')
+                        })
+                        },
+                        headers: {
+                            "Authorization": "Bearer "+auth_token,
+                            "Accept": "application/json"
+                        }
+                    })
+                }
