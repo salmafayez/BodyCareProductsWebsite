@@ -14,7 +14,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-import java.io.IOException;
 
 public class RegisterUserControllerServlet extends HttpServlet {
 
@@ -39,13 +38,10 @@ public class RegisterUserControllerServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         User user=userMapper.map(request);
-        System.out.println("user="+user);
+        System.out.println(user);
         boolean  isUserInserted= DomainFacade.addUser(user);
 
         if (isUserInserted){
-
-            System.out.println("doneeeee");
-
             response.sendRedirect("index.jsp");
         }else {
             System.out.println("errorrrrrr");
