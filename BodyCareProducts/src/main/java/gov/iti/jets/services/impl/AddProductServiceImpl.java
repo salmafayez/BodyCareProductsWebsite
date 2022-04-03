@@ -7,10 +7,10 @@ import gov.iti.jets.services.AddProductService;
 
 public class AddProductServiceImpl implements AddProductService {
 
+
     @Override
     public boolean addProduct(Product product) {
         ProductDao productDao = new ProductDaoImpl();
-        return productDao.insert(product);
-        
+        return productDao.insert(product);  
     }
 }

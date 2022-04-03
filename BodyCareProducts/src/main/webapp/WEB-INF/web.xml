@@ -24,6 +24,16 @@
   </servlet>
 
   <servlet>
+    <servlet-name>CategoryLoadAjaxServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.CategoryLoadAjaxServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>AddCategoryServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AddCategoryServlet</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>LogoutControllerServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.LogoutControllerServlet</servlet-class>
   </servlet>
@@ -44,6 +54,11 @@
   </servlet-mapping>
 
   <servlet-mapping>
+    <servlet-name>CategoryLoadAjaxServlet</servlet-name>
+    <url-pattern>/categoryload</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
     <servlet-name>LogoutControllerServlet</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
@@ -52,6 +67,13 @@
     <servlet-name>LoginControllerServlet</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>AddCategoryServlet</servlet-name>
+    <url-pattern>/addcategory</url-pattern>
+  </servlet-mapping>
+
 
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.MyAppListener </listener-class>
