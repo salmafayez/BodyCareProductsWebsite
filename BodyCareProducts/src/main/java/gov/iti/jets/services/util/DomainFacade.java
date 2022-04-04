@@ -21,7 +21,7 @@ public class DomainFacade {
     private static final RegisterUserService registerUserService = new RegisterUserServiceImpl();
     private static final LoginService loginService= new LoginServiceImpl();
     private static final CategoryService categoryService = new CategoryServiceImpl();
-
+    
     public static boolean addProduct(Product product){
         Category category = categoryService.getcategory(product.getCategoryName());
         product.setCategory(category);
@@ -47,5 +47,10 @@ public class DomainFacade {
     public static List<Category> loadCategories() {
         return categoryService.getCategoryList();
     }
+    
+    public static List<Product> loadAllProducts(){
+        return addProductService.loadAllProducts();
+    }
 
+  
 }

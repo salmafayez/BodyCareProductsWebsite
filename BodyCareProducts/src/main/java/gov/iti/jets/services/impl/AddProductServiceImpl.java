@@ -1,5 +1,7 @@
 package gov.iti.jets.services.impl;
 
+import java.util.List;
+
 import gov.iti.jets.persistence.ProductDao;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.impl.ProductDaoImpl;
@@ -12,5 +14,11 @@ public class AddProductServiceImpl implements AddProductService {
     public boolean addProduct(Product product) {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.insert(product);  
+    }
+
+    @Override
+    public List<Product> loadAllProducts() {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.load();
     }
 }
