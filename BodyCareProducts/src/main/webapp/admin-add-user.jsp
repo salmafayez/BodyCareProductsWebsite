@@ -33,10 +33,10 @@
                         <br>
                         <ul class="my-account">
                             <li>
-                                <a href="user-history-admin.html">User Details</a>
+                                <a href="user-history-admin.jsp">User Details</a>
                             </li>
                             <li>
-                                <a href="add-user-admin.html"class="active" >Add a user</a>
+                                <a href="add-user-admin.jsp"class="active" >Add a user</a>
                             </li>
                         </ul>
                 

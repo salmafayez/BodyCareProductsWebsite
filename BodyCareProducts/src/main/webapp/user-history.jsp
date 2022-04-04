@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="./index.jsp">
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>
@@ -119,8 +119,8 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./shop.html">Shop</a></li>
+                        <li><a href="./index.jsp">Home</a></li>
+                        <li><a href="./shop.jsp">Shop</a></li>
                         <!--
                             <li><a href="#">Collection</a>
                                 <ul class="dropdown">
@@ -129,21 +129,21 @@
                                     <li><a href="#">Kid's</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./blog.jsp">Blog</a></li>
                         -->
-                        <li><a href="./contact.html">Contact</a></li>
-                        <li><a href="./contact.html"> Cart</a></li>
-                        <li><a href="./contact.html">Wishlist</a></li>
-                        <li><a href="./contact.html">Check-out</a></li>
+                        <li><a href="./contact.jsp">Contact</a></li>
+                        <li><a href="./contact.jsp"> Cart</a></li>
+                        <li><a href="./contact.jsp">Wishlist</a></li>
+                        <li><a href="./contact.jsp">Check-out</a></li>
                         <!--
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                <li><a href="./check-out.html">Checkout</a></li>
-                                <li><a href="./faq.html">Faq</a></li>
-                                <li><a href="./register.html">Register</a></li>
-                                <li><a href="./login.html">Login</a></li>
+                                <li><a href="./blog-details.jsp">Blog Details</a></li>
+                                <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
+                                <li><a href="./check-out.jsp">Checkout</a></li>
+                                <li><a href="./faq.jsp">Faq</a></li>
+                                <li><a href="./register.jsp">Register</a></li>
+                                <li><a href="./login.jsp">Login</a></li>
                             </ul>
                         </li>
                         -->
@@ -162,8 +162,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text product-more">
-                        <a href="./home.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./shop.html">Shop</a>
+                        <a href="./home.jsp"><i class="fa fa-home"></i> Home</a>
+                        <a href="./shop.jsp">Shop</a>
                         <span>Shopping Cart</span>
                     </div>
                 </div>
@@ -185,10 +185,10 @@
                         <br>
                         <ul class="my-account">
                             <li>
-                                <a href="order-history-admin.html" class="active">User Details</a>
+                                <a href="order-history-admin.jsp" class="active">User Details</a>
                             </li>
                             <li>
-                                <a href="add-user-admin.html" >Add a user</a>
+                                <a href="add-user-admin.jsp" >Add a user</a>
                             </li>
                         </ul>
                 

@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="./index.jsp">
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>
@@ -127,7 +127,7 @@
                                     <li><a href="#">Kid's</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./blog.jsp">Blog</a></li>
                         -->
                         <li><a href="contact.jsp">Contact</a></li>
                         <li><a href="shopping-cart.jsp"> Cart</a></li>
@@ -136,12 +136,12 @@
                         <!--
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                <li><a href="./check-out.html">Checkout</a></li>
-                                <li><a href="./faq.html">Faq</a></li>
-                                <li><a href="./register.html">Register</a></li>
-                                <li><a href="./login.html">Login</a></li>
+                                <li><a href="./blog-details.jsp">Blog Details</a></li>
+                                <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
+                                <li><a href="./check-out.jsp">Checkout</a></li>
+                                <li><a href="./faq.jsp">Faq</a></li>
+                                <li><a href="./register.jsp">Register</a></li>
+                                <li><a href="./login.jsp">Login</a></li>
                             </ul>
                         </li>
                         -->

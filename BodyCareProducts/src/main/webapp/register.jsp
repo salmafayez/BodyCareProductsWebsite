@@ -239,7 +239,7 @@
 
                                     </form>
                                     <div class="switch-login">
-                                        <a href="./login.html" class="or-login">Or Login</a>
+                                        <a href="./login.jsp" class="or-login">Or Login</a>
                                     </div>
                                 </div>
                             </div>

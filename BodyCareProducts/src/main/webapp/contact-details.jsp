@@ -34,10 +34,10 @@
                         <br>
                         <ul class="my-account">
                             <li>
-                                <a href="order-history.html">Orders</a>
+                                <a href="order-history.jsp">Orders</a>
                             </li>
                             <li>
-                                <a href="contact-details.html"class="active" >Contact Details</a>
+                                <a href="contact-details.jsp"class="active" >Contact Details</a>
                             </li>
                         </ul>
                 

@@ -32,10 +32,10 @@
                         <br>
                         <ul class="my-account">
                             <li>
-                                <a href="order-history.html" class="active">Orders</a>
+                                <a href="order-history.jsp" class="active">Orders</a>
                             </li>
                             <li>
-                                <a href="contact-details.html" >Contact Details</a>
+                                <a href="contact-details.jsp" >Contact Details</a>
                             </li>
                         </ul>
                 
