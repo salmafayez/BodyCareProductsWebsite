@@ -18,7 +18,6 @@
         <div class="loader"></div>
     </div>
 
-   <%@ include file="header.jsp" %>
 
     <!-- Register Section Begin -->
     <div class="container-fluid pageBody ">
@@ -30,35 +29,21 @@
                             style="color:white;width: 35rem;border-radius: 15px;background-color: #f5f5f5;">
                             <div class="card-body">
                                 <div class="login-form">
-                                    <h2>Login</h2>
+                                    <h2>Confirmation</h2>
                                     <%@ include file="error.jsp" %>
-                                    <form action="login" method="post" id="loginform">
+                                    <form action="verify" method="post">
                                         <div class="group-input">
-                                            <label for="email">Email *</label>
-                                            <input type="email" id="email" name="email" class="defaultBorders">
+                                            <label for="authcode">Code *</label>
+                                            <input type="text" id="authcode" name="authcode" class="defaultBorders">
                                             <i class="fa fa-check-circle" aria-hidden="true" ></i><br>
                                             <i class="fa fa-exclamation-circle" aria-hidden="true" ></i>
                                             <small  style="color: rgb(238, 0, 0);font-size: 12px;"></small>
 
                                         </div>
-                                        <div class="group-input">
-                                            <label for="password">Password *</label>
-                                            <input type="password" id="password" name="password" class="defaultBorders">
-                                        </div>
-                                        <div class="group-input gi-check">
-                                            <div class="gi-more">
-                                                <label for="save-pass">
-                                                    Save Password
-                                                    <input type="checkbox" name="remember" id="save-pass">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <a href="#" class="forget-pass">Forget your Password</a>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="site-btn login-btn defaultBorders">Sign In</button>
+                                        <button type="submit" class="site-btn login-btn defaultBorders">Verify</button>
                                     </form>
                                     <div class="switch-login">
-                                        <a href="./register.jsp" class="or-login">Or Create An Account</a>
+                                        <a href="./register.jsp" class="or-login">Back</a>
                                     </div>
                                 </div>
                             </div>
@@ -69,8 +54,8 @@
         </div>
     </div>
     <!-- Register Form Section End -->
-
     <%@ include file="footer.jsp" %>
+
     <%@ include file="commons-js.jsp" %>
 
 

@@ -26,6 +26,11 @@
     <servlet-class>gov.iti.jets.presentation.servlets.LogoutControllerServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>VerifyCode</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.VerifyCodeControllerServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>AddProductServlet</servlet-name>
     <url-pattern>/addproduct</url-pattern>
@@ -49,6 +54,11 @@
   <servlet-mapping>
     <servlet-name>LoginControllerServlet</servlet-name>
     <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>VerifyCode</servlet-name>
+    <url-pattern>/verify</url-pattern>
   </servlet-mapping>
 
 
