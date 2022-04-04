@@ -118,7 +118,7 @@
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li><a href="index.jsp">Home</a></li>
-                        <li><a href="shop.jsp">Shop</a></li>
+                        <li><a href="products">Shop</a></li>
                         <!--
                             <li><a href="#">Collection</a>
                                 <ul class="dropdown">

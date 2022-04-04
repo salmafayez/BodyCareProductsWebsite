@@ -14,8 +14,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
 import static java.lang.System.out;
+
 
 
 public class RegisterUserControllerServlet extends HttpServlet {
@@ -24,8 +24,18 @@ public class RegisterUserControllerServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
-        requestDispatcher.forward(request, response);
+        HttpSession session = request.getSession(false);
+        if(session!=null){
+            if ((String) session.getAttribute("AuthToken") == null){
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
+                requestDispatcher.forward(request, response);
+            }else{
+                response.sendRedirect("index.jsp");
+            }
+        }else{
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
+            requestDispatcher.forward(request, response);
+        }
 
     }
     @Override
