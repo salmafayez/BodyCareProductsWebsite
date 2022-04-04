@@ -34,5 +34,15 @@ public class ProductDaoImpl implements ProductDao {
         entityManager.close();
         return result;
     }
+
+    @Override
+    public List<Product> loadByCategory(String category) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        TypedQuery<Product> query = entityManager.createQuery("select p from Product p where p.categoryName =:categoryName",Product.class);
+        query.setParameter("categoryName",category);
+        List<Product> result =query.getResultList();
+        entityManager.close();
+        return result;
+    }
     
 }
