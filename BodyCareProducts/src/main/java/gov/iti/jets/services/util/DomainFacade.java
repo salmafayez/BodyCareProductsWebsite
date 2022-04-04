@@ -51,4 +51,6 @@ public class DomainFacade {
     public static List<Product> loadAllProducts(){
         return addProductService.loadAllProducts();
     }
+
+  
 }

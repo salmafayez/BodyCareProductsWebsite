@@ -9,10 +9,13 @@
     <title>Fashi | Template</title>
 
    <%@ include file="commons-styles.jsp" %>
+
 </head>
 
-<body>
+<body onload = "loadCategories();">
     <!-- Page Preloder -->
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
     <div id="preloder">
         <div class="loader"></div>
     </div>
@@ -26,12 +29,13 @@
                 <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
-                        <ul class="filter-catagories">
-                            <li><a href="#">Bath & Shower</a></li>
+                        <ul class="filter-catagories" id="list" name="list">
+                            <%-- <li><a href="#">Bath & Shower</a></li>
                             <li><a href="#">Fragrance</a></li>
-                            <li><a href="#">Candles</a></li>
+                            <li><a href="#">Candles</a></li> --%>
                         </ul>
                     </div>
+                    
                     <!--
                     <div class="filter-widget">
                         <h4 class="fw-title">Brand</h4>
@@ -167,21 +171,20 @@
                             </div>
                         </div>
                     </div> --%>
+                     <div class="col-lg-9 order-1 order-lg-2">
                     <div class="product-list">
                         <div class="row">
-         
                             <c:forEach items="${products}" var="product">
                                     <div class="col-lg-4 col-sm-6">
                                         <div class="product-item">
                                             <div class="pi-pic">
-                                                <img src="img/products/${product.image}" alt="">
+                                                <img src="img/products/product-3.jpg" alt="">
                                                 <div class="icon">
                                                     <i class="icon_heart_alt"></i>
                                                 </div>
                                                 <ul>
                                                     <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
                                                     <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                                
                                                 </ul>
                                             </div>
                                             <div class="pi-text">
@@ -205,11 +208,15 @@
                 </div>
             </div>
         </div>
+  
+          
     </section>
+
     <!-- Product Shop Section End -->
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
+    <script src="js/shop-categories.js" type="text/javascript"></script>
 </body>
 
 </html>
