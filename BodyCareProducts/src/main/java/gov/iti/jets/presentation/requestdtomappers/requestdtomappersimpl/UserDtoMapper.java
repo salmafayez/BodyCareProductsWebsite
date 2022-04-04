@@ -31,6 +31,9 @@ public class UserDtoMapper implements RequestMapper<User> {
 
         System.out.println("hereee mapper " + userPassword);
 
+        System.out.println((String) request.getAttribute("code"));
+        user.setCode((String) request.getAttribute("code"));
+
         user.setBirthDate(LocalDate.parse(request.getParameter("birthday")));
         user.setJob(request.getParameter("job"));
         user.setCountry(request.getParameter("country"));

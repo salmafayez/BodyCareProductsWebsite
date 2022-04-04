@@ -41,6 +41,9 @@ public class User implements Serializable {
     private String job;
     private String password;
 
+    @Transient
+    private String code;
+
     @OneToMany(fetch=FetchType.LAZY, mappedBy="user")
     private List<CartProducts> cartProductsList = new ArrayList<>();
 
@@ -186,6 +189,14 @@ public class User implements Serializable {
         this.orderList = orderList;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -202,6 +213,7 @@ public class User implements Serializable {
                 ", wallet=" + wallet +
                 ", job='" + job + '\'' +
                 ", password='" + password + '\'' +
+                ", code='" + code + '\'' +
                 ", cartProductsList=" + cartProductsList +
                 ", orderList=" + orderList +
                 '}';
