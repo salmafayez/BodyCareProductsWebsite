@@ -29,6 +29,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>WishlistAddAjaxServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.WishlistAddAjaxServlet</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>AddCategoryServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.AddCategoryServlet</servlet-class>
   </servlet>
@@ -83,6 +88,11 @@
   <servlet-mapping>
     <servlet-name>ProductLoadControllerServlet</servlet-name>
     <url-pattern>/products</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>WishlistAddAjaxServlet</servlet-name>
+    <url-pattern>/wishlist</url-pattern>
   </servlet-mapping>
 
   <listener>

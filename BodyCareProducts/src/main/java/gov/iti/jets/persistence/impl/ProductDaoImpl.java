@@ -34,5 +34,13 @@ public class ProductDaoImpl implements ProductDao {
         entityManager.close();
         return result;
     }
+
+    @Override
+    public Product getProduct(int id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Product product = entityManager.find(Product.class, id);
+        entityManager.close();
+        return product;
+    }
     
 }

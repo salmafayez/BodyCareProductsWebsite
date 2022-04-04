@@ -18,7 +18,7 @@
     </div>
 
     <%@ include file="header.jsp" %>
-
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- Product Shop Section Begin -->
     <section class="product-shop spad">
         <div class="container">
@@ -149,7 +149,7 @@
                 -->
                 </div>
         
-                <%-- <div class="col-lg-9 order-1 order-lg-2">
+                <%--
                     <div class="product-show-option">
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
@@ -167,6 +167,7 @@
                             </div>
                         </div>
                     </div> --%>
+                     <div class="col-lg-9 order-1 order-lg-2">
                     <div class="product-list">
                         <div class="row">
          
@@ -174,9 +175,9 @@
                                     <div class="col-lg-4 col-sm-6">
                                         <div class="product-item">
                                             <div class="pi-pic">
-                                                <img src="img/products/${product.image}" alt="">
+                                                <img src="img/products/product-3.jpg" alt="">
                                                 <div class="icon">
-                                                    <i class="icon_heart_alt"></i>
+                                                    <i class="icon_heart_alt wishlist-icon" onclick="addToWishlist(${product.id})"></i>
                                                 </div>
                                                 <ul>
                                                     <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
@@ -193,7 +194,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                             </c:forEach>
 
                     <div class="loading-more">
@@ -210,6 +210,7 @@
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
+    <script src="js/wishlist.js" type="text/javascript"></script>
 </body>
 
 </html>

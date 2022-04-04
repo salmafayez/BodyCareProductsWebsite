@@ -24,7 +24,7 @@
                         <ul class="nav-right">
                             <li class="heart-icon"><a href="#">
                                     <i class="icon_heart_alt"></i>
-                                    <span>1</span>
+                                    <span id="wishlistNumber"></span>
                                 </a>
                             </li>
                             <li class="cart-icon"><a href="#">

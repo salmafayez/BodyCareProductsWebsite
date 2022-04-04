@@ -21,4 +21,10 @@ public class AddProductServiceImpl implements AddProductService {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.load();
     }
+
+    @Override
+    public Product getProduct(int id) {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.getProduct(id);
+    }
 }
