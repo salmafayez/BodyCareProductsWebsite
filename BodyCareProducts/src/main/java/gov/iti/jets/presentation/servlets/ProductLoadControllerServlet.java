@@ -14,8 +14,17 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ProductLoadControllerServlet extends HttpServlet {  
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        List<Product> products = DomainFacade.loadAllProducts();   
-        request.setAttribute("products", products);
+        String category = request.getParameter("category");
+        if(category==null){
+            List<Product> products1 = DomainFacade.loadAllProducts();   
+            request.setAttribute("products", products1);
+            
+        }
+        else{
+            System.out.println("EL STRING AHWHAAAA " + category);
+            List<Product> products2 = DomainFacade.loadProductsByCategory(category);   
+            request.setAttribute("products", products2);
+        }
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop.jsp");
         requestDispatcher.forward(request, response);
     }
