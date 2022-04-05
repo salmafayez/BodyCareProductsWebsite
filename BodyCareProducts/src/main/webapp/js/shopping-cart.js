@@ -10,24 +10,33 @@ proQty.on('click', '.qtybtn', function () {
 
     var $button = $(this);
     var oldValue = $button.parent().find('input').val();
-    if ($button.hasClass('inc') && parseFloat(oldValue) < parseFloat(10)) {
-        console.log("in" + oldValue);
-        var newVal = parseFloat(oldValue) + 1;
-        console.log("in copy main jquery")
-        //   updateTotalPrice()  
-    } else {
-        // Don't allow decrementing below zero
-        if (oldValue > 0) {
-            var newVal = parseFloat(oldValue) - 1;
+    if (parseFloat(oldValue) <= parseFloat(10)) {
+        if ($button.hasClass('inc')) {
+            console.log("in" + oldValue);
 
+            if (parseFloat(oldValue) == parseFloat(10)) {
+                newVal = 10;
+            } else {
+                var newVal = parseFloat(oldValue) + 1;
+            }
+
+
+            console.log("in copy main jquery")
+            //   updateTotalPrice()  
         } else {
-            newVal = 0;
+            // Don't allow decrementing below zero
+            if (oldValue > 0) {
+                var newVal = parseFloat(oldValue) - 1;
+            } else {
+                newVal = 0;
+            }
         }
-    }
 
-    $button.parent().find('input').val(newVal);
-    $button.parent().find('input').change(updateTotalPrice());
-});
+
+
+        $button.parent().find('input').val(newVal);
+        $button.parent().find('input').change(updateTotalPrice());
+    }});
 
 var deleteButton = $('.ti-close');
 deleteButton.on('click', function () {
