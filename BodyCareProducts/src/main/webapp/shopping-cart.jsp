@@ -58,7 +58,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="total-price first-row">$60.00</td>
+                                        <td class="total-price first-row">$65.50</td>
                                         <td class="close-td first-row"><i class="ti-close"></i></td>
                                     </tr>
                                     <tr class="cart-row">
@@ -107,8 +107,8 @@
                         <div class="col-lg-4 offset-lg-8">
                                 <div class="proceed-checkout">
                                     <ul style="border-radius: 15px;">
-                                        <li class="subtotal">Subtotal <span>$240.00</span></li>
-                                        <li class="cart-total">Total <span>$240.00</span></li>
+                                        <li class="subtotal">Subtotal <span>$325.00</span></li>
+                                        <li class="cart-total">Total <span>$325.50</span></li>
                                     </ul>
                                     <%-- <a href="#" class="proceed-btn" style="border-radius: 0px 0px 15px 15px;"></a> --%>
                                 </div>
@@ -116,8 +116,7 @@
                         <div class="row" style="margin-top:30px;">
                             <div class="col-lg-12 " style="display: flex;align-items: center;justify-content: center;">
                                 <div class="cart-buttons">
-                                    <a href="#" class="primary-btn continue-shop" style="border-radius: 15px;">Continue
-                                        shopping</a>
+                                    <a href="#" class="primary-btn continue-shop" style="border-radius: 15px;">UPDATE CART</a>
                                     <a href="#" class="primary-btn up-cart" style="border-radius: 15px;">PROCEED TO
                                         CHECK OUT</a>
                                 </div>

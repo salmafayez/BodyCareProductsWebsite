@@ -4,7 +4,7 @@ console.log("wroking cart");
 /*-------------------
         Quantity change
     --------------------- */
-    
+
 var proQty = $('.pro-qty');
 proQty.on('click', '.qtybtn', function () {
 
@@ -26,7 +26,16 @@ proQty.on('click', '.qtybtn', function () {
     }
 
     $button.parent().find('input').val(newVal);
-    $button.parent().find('input').change(updateTotalPrice()); 
+    $button.parent().find('input').change(updateTotalPrice());
+});
+
+var deleteButton = $('.ti-close');
+deleteButton.on('click', function () {
+    console.log("in delete");
+    var $button = $(this);
+    $button.parent().parent().remove();
+    updateTotalPrice();
+
 });
 
 
