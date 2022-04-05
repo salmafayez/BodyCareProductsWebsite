@@ -42,6 +42,8 @@
 
     <servlet-name>VerifyCode</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.VerifyCodeControllerServlet</servlet-class>
+  </servlet>
+  <servlet>
 
     <servlet-name>ProductLoadControllerServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.ProductLoadControllerServlet</servlet-class>
