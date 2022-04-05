@@ -44,13 +44,13 @@ public class UpdatePasswordControllerServlet extends HttpServlet {
                 // int rowCount = pst.executeUpdate();
 				String userPassword = HashManager.INSTANCE.generateSecurePassword(newPassword);
 				boolean updatePassword = DomainFacade.updatePassword(email,userPassword);
-				
-				if (2> 0) {
+				if(updatePassword){
 					request.setAttribute("status", "resetSuccess");
 					dispatcher = request.getRequestDispatcher("login.jsp");
-				} else {
+				}
+				else{
 					request.setAttribute("status", "resetFailed");
-					dispatcher = request.getRequestDispatcher("login.jsp");
+					dispatcher = request.getRequestDispatcher("updatepassword.jsp");
 				}
 				dispatcher.forward(request, response);
 			} catch (Exception e) {
