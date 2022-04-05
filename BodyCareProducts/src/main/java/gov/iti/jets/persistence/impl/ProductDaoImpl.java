@@ -8,6 +8,7 @@ import gov.iti.jets.persistence.util.ManagerFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
@@ -38,9 +39,13 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public Product getProduct(int id) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        Product product = entityManager.find(Product.class, id);
+        String select = "SELECT p FROM Product p where p.id=:id";
+        Query query = entityManager.createQuery(select);
+        query.setParameter("id", id);
+        List<Product> product = query.getResultList();
+        System.out.println(product.size());
         entityManager.close();
-        return product;
+        return product.get(0);
     }
     
 }

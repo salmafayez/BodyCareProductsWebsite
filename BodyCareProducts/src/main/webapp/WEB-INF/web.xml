@@ -95,6 +95,16 @@
     <url-pattern>/wishlist</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>WishlistControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.WishlistControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>WishlistControllerServlet</servlet-name>
+    <url-pattern>/wishlist-list</url-pattern>
+  </servlet-mapping>
+
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.MyAppListener </listener-class>
 </listener>

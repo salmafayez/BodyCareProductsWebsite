@@ -22,9 +22,9 @@
                     </div>
                     <div class="col-lg-2 text-right col-md-2">
                         <ul class="nav-right">
-                            <li class="heart-icon"><a href="#">
+                            <li class="heart-icon"><a href="wishlist-list">
                                     <i class="icon_heart_alt"></i>
-                                    <span id="wishlistNumber"></span>
+                                    <span id="wishlistNumber">0</span>
                                 </a>
                             </li>
                             <li class="cart-icon"><a href="#">
@@ -131,7 +131,7 @@
                         -->
                         <li><a href="contact.jsp">Contact</a></li>
                         <li><a href="shopping-cart.jsp"> Cart</a></li>
-                        <li><a href="addproduct">Wishlist</a></li>
+                        <li><a href="wishlist-list">Wishlist</a></li>
                         <li><a href="check-out.jsp">Check-out</a></li>
                         <!--
                         <li><a href="#">Pages</a>
