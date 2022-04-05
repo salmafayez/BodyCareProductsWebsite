@@ -30,10 +30,9 @@ public class ForgetPasswordControllerServlet extends HttpServlet{
        int otp = 0;
        RequestDispatcher requestDispatcher = null;
        HttpSession mySession = request.getSession();
-       if(email!=null || email.equals("")){
+       if(email!=null){
            Random rand = new Random();
            otp = rand.nextInt(1288223);
-          
            Properties props = new Properties();
            props.put("mail.smtp.host","smtp.gmail.com");
            props.put("mail.smtp.socketFactory.port", "465");
@@ -60,12 +59,12 @@ public class ForgetPasswordControllerServlet extends HttpServlet{
         catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-        requestDispatcher = request.getRequestDispatcher("login.jsp");
+        //requestDispatcher = request.getRequestDispatcher("login.jsp");
         request.setAttribute("message","OTP is sent to your email id");
         //request.setAttribute("connection", con);
         mySession.setAttribute("otp",otp); 
         mySession.setAttribute("email",email); 
-        requestDispatcher.forward(request, response);
+        //requestDispatcher.forward(request, response);
         //request.setAttribute("status", "success");
     
        }
