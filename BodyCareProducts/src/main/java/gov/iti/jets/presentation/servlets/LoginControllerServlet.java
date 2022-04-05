@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpSession;
 
 public class LoginControllerServlet extends HttpServlet{
 
-    private InputValidation validator = new InputValidation();
+    private InputValidation validator = InputValidation.getInstance();;
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

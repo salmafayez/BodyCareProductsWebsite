@@ -96,6 +96,67 @@
     <url-pattern>/products</url-pattern>
   </servlet-mapping>
 
+
+  <!-- ////////////  Filters ///////// -->
+
+  <filter>
+    <filter-name> LoginPageFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.LoginPageFilter </filter-class>
+  </filter>
+
+
+  <filter-mapping>
+      <filter-name> LoginPageFilter </filter-name>
+      <url-pattern> /login </url-pattern>
+  </filter-mapping>
+
+
+  <filter>
+    <filter-name> RegisterPageFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.RegisterPageFilter </filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name> RegisterPageFilter </filter-name>
+    <url-pattern> /register </url-pattern>
+  </filter-mapping>
+
+
+  <filter>
+    <filter-name> AddCategoryPageFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.AddCategoryPageFilter  </filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name> AddCategoryPageFilter </filter-name>
+    <url-pattern> /addcategory </url-pattern>
+  </filter-mapping>
+
+
+  <filter>
+    <filter-name> AddProductPageFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.AddProductPageFilter </filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name> AddProductPageFilter </filter-name>
+    <url-pattern> /addproduct </url-pattern>
+  </filter-mapping>
+
+
+  <filter>
+    <filter-name> ContactPageFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.ContactPageFilter </filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name> ContactPageFilter </filter-name>
+    <url-pattern> /contact </url-pattern>
+  </filter-mapping>
+
+
+  <!--  //////////// Listenrns  ////////  -->
+
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.MyAppListener </listener-class>
 </listener>
