@@ -34,14 +34,6 @@ public class UpdatePasswordControllerServlet extends HttpServlet {
 		if (newPassword != null && confPassword != null && newPassword.equals(confPassword)) {
 
 			try {
-				// Class.forName("com.mysql.jdbc.Driver");
-				// Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/youtube?useSSL=false", "root",
-				// 		"root");
-				// PreparedStatement pst = con.prepareStatement("update users set upwd = ? where uemail = ? ");
-				// pst.setString(1, newPassword);
-				// pst.setString(2, (String) session.getAttribute("email"));
-
-                // int rowCount = pst.executeUpdate();
 				String userPassword = HashManager.INSTANCE.generateSecurePassword(newPassword);
 				boolean updatePassword = DomainFacade.updatePassword(email,userPassword);
 				if(updatePassword){
@@ -50,7 +42,7 @@ public class UpdatePasswordControllerServlet extends HttpServlet {
 				}
 				else{
 					request.setAttribute("status", "resetFailed");
-					dispatcher = request.getRequestDispatcher("updatepassword.jsp");
+					dispatcher = request.getRequestDispatcher("new-password.jsp");
 				}
 				dispatcher.forward(request, response);
 			} catch (Exception e) {
@@ -60,3 +52,5 @@ public class UpdatePasswordControllerServlet extends HttpServlet {
 	}
 
 }
+
+		//827ccb0eea8a706c4c34a16891f84e7b	

@@ -7,9 +7,8 @@ import gov.iti.jets.services.UpdatePasswordService;
 public class UpdatePasswordServiceImpl implements UpdatePasswordService{
     @Override
     public boolean updatePassword (String email , String password){
-    //     UserDao userDao = new UserDaoImpl();
-    //     return userDao.updatePassword(String email , String password);
-    // }
-    return false;
-    }
+        UserDao userDao = new UserDaoImpl();
+        return userDao.updatePassword(email , password);
+   
+}
 }

@@ -59,10 +59,9 @@ public class UserDaoImpl implements UserDao {
         query.setParameter("email", email);
         User user = (User) query.getSingleResult();
         user.setPassword(password);
-        entityManager.merge(user);
+        entityManager.persist(user);
         transaction.commit();
         entityManager.close();
-
         return true;
     }
     

@@ -32,7 +32,7 @@
                                 <div class="login-form">
                                     <h2>Set Your Password</h2>
                                     <%@ include file="error.jsp" %>
-                                    <form action="savepassword" method="post" id="savepasswordform">
+                                    <form action="updatepassword" method="post" id="savepasswordform">
                                         <div class="group-input">
                                             <label for="password">Password</label>
                                             <input type="password" id="password" name="password" class="defaultBorders">
@@ -43,7 +43,7 @@
                                         </div>
                                         <div class="group-input">
                                             <label for="confPassword">Confirm password</label>
-                                            <input type="confPassword" id="confPassword" name="confPassword" class="defaultBorders">
+                                            <input type="password" id="confPassword" name="confPassword" class="defaultBorders">
                                         </div>
                                         
                                         <button type="submit" class="site-btn login-btn defaultBorders">Submit</button>
