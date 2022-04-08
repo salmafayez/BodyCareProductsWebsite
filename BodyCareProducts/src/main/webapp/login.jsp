@@ -35,7 +35,7 @@
                                     <form action="login" method="post" id="loginform">
                                         <div class="group-input">
                                             <label for="email">Email *</label>
-                                            <input type="email" id="email" name="email" class="defaultBorders">
+                                            <input type="text" id="email" name="email" class="defaultBorders">
                                             <i class="fa fa-check-circle" aria-hidden="true" ></i><br>
                                             <i class="fa fa-exclamation-circle" aria-hidden="true" ></i>
                                             <small  style="color: rgb(238, 0, 0);font-size: 12px;"></small>
