@@ -97,14 +97,13 @@ public final class InputValidation {
         return false;
     }
 
-    public boolean validateMessage(String message){
-        String validator = "^[A-Za-z][A-Za-z0-9_]{15,200}$";
-        Pattern reg = Pattern.compile(validator);
-        Matcher match = reg.matcher(message);
-        if (match.find()){
-            return true;
+    public String validateMessage(String message){
+        if ( isEmpty(message) ){
+            return "Message shouldn't be emtpy";
+        }else if( message.length() < 15  && message.length() > 200){
+            return "Too long message";
         }
-        return false;
+        return "";
     }
 
     public boolean validateProductName(String name){

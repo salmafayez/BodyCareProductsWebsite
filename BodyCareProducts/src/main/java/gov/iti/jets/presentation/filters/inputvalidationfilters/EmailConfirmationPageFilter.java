@@ -1,7 +1,6 @@
 package gov.iti.jets.presentation.filters.inputvalidationfilters;
 
 import java.io.IOException;
-import java.net.http.HttpRequest;
 import gov.iti.jets.presentation.util.InputValidation;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
