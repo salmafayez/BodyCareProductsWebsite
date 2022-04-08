@@ -30,36 +30,24 @@
                             style="color:white;width: 35rem;border-radius: 15px;background-color: #f5f5f5;">
                             <div class="card-body">
                                 <div class="login-form">
-                                    <h2>Login</h2>
+                                    <h2>Set Your Password</h2>
                                     <%@ include file="error.jsp" %>
-                                    <form action="login" method="post" id="loginform">
+                                    <form action="updatepassword" method="post" id="savepasswordform">
                                         <div class="group-input">
-                                            <label for="email">Email *</label>
-                                            <input type="text" id="email" name="email" class="defaultBorders">
+                                            <label for="password">Password</label>
+                                            <input type="password" id="password" name="password" class="defaultBorders">
                                             <i class="fa fa-check-circle" aria-hidden="true" ></i><br>
                                             <i class="fa fa-exclamation-circle" aria-hidden="true" ></i>
                                             <small  style="color: rgb(238, 0, 0);font-size: 12px;"></small>
 
                                         </div>
                                         <div class="group-input">
-                                            <label for="password">Password *</label>
-                                            <input type="password" id="password" name="password" class="defaultBorders">
+                                            <label for="confPassword">Confirm password</label>
+                                            <input type="password" id="confPassword" name="confPassword" class="defaultBorders">
                                         </div>
-                                        <div class="group-input gi-check">
-                                            <div class="gi-more">
-                                                <label for="save-pass">
-                                                    Save Password
-                                                    <input type="checkbox" name="remember" id="save-pass">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <a href="forgetpassword.jsp" class="forget-pass">Forget your Password</a>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="site-btn login-btn defaultBorders">Sign In</button>
+                                        
+                                        <button type="submit" class="site-btn login-btn defaultBorders">Submit</button>
                                     </form>
-                                    <div class="switch-login">
-                                        <a href="./register.jsp" class="or-login">Or Create An Account</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
