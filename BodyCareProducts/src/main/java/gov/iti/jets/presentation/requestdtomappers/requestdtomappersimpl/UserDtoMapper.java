@@ -4,6 +4,7 @@ import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.persistence.entities.UserType;
 import gov.iti.jets.presentation.requestdtomappers.RequestMapper;
+import gov.iti.jets.presentation.util.HashManager;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.Part;
@@ -23,7 +24,16 @@ public class UserDtoMapper implements RequestMapper<User> {
         user.setUserName(request.getParameter("username"));
         user.setPhoneNumber(request.getParameter("phoneNumber"));
         user.setEmail(request.getParameter("email"));
-        user.setPassword(request.getParameter("password"));
+
+        String password = request.getParameter("password");
+        String userPassword = HashManager.INSTANCE.generateSecurePassword(password);
+        user.setPassword(userPassword);
+
+        System.out.println("hereee mapper " + userPassword);
+
+        System.out.println((String) request.getAttribute("code"));
+        user.setCode((String) request.getAttribute("code"));
+
         user.setBirthDate(LocalDate.parse(request.getParameter("birthday")));
         user.setJob(request.getParameter("job"));
         user.setCountry(request.getParameter("country"));
