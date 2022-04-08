@@ -2,7 +2,6 @@ package gov.iti.jets.presentation.filters.inputvalidationfilters;
 
 import java.io.IOException;
 import java.net.http.HttpRequest;
-
 import gov.iti.jets.presentation.util.InputValidation;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
@@ -12,8 +11,8 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
 
-public class LoginPageFilter implements Filter {
-   
+public class EmailConfirmationPageFilter implements Filter {
+
     private InputValidation validator= InputValidation.getInstance();
     private RequestDispatcher requestDispatcher;
     private String errorMessage="";
@@ -37,4 +36,5 @@ public class LoginPageFilter implements Filter {
             chain.doFilter(httpRequest, response); 
         }
     }
+    
 }

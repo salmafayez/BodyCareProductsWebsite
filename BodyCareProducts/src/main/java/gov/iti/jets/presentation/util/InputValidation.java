@@ -1,5 +1,6 @@
 package gov.iti.jets.presentation.util;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,86 +13,78 @@ public final class InputValidation {
 
     }
     
+
     public static InputValidation getInstance(){
         return INSTANCE;
     }
     
-    public boolean EmailValidation (String email){
+    public String EmailValidation (String email){
         String validator = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-        Pattern reg = Pattern.compile(validator);
-        Matcher match = reg.matcher(email);
-        if (match.find()){
-            return true;
+        if ( isEmpty(email) ){
+            return "Email shouldn't be emtpy";
+        }else if ( !isValid(email,validator) ) {
+            return "Email format not valid";
         }
-        return false;
+        return "";
     }
 
-    public boolean validateUserName(String userName){
-        String validator = "^[A-Za-z][A-Za-z0-9_]{5,15}$";
-        Pattern reg = Pattern.compile(validator);
-        Matcher match = reg.matcher(userName);
-        if (match.find()){
-            return true;
+    public String validateUserName(String userName){
+        if ( isEmpty(userName) ){
+            return "Username  shouldn't be emtpy";
         }
-        return false;
+        return "";
     }
 
-    public boolean validatePhoneNumber(String phoneNumber){
+    public String validatePhoneNumber(String phoneNumber){
         String validator = "^(010|011|012)\\d{8}$";
-        Pattern reg = Pattern.compile(validator);
-        Matcher match = reg.matcher(phoneNumber);
-        if (match.find()){
-            return true;
+        if ( isEmpty(phoneNumber) ){
+            return "Phonenumber  shouldn't be emtpy";
+        }else if ( isValid(phoneNumber,validator) ) {
+            return "Phonenumber format not valid";
         }
-        return false;
+        return "";
     }
 
-    public boolean validatePassword(String password){
+    public String validatePassword(String password){
         String validator = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
-        Pattern reg = Pattern.compile(validator);
-        Matcher match = reg.matcher(password);
-        if (match.find()){
-            return true;
+        if ( isEmpty(password) ){
+            return "Password shouldn't be emtpy";
+        }else if ( isValid(password,validator) ) {
+            return "Password should contain at least 1 uppercase letter and 1 lowercase letter and 1 specail characters";
         }
-        return false;
+        return "";
     }
 
-    public boolean validateBirthDate(String birthDate){
-        String validator = "\\s+(?:19\\d{2}|20[01][0-9]|2010)[-/.](?:0[1-9]|1[012])[-/.](?:0[1-9]|[12][0-9]|3[01])\\b";
-        Pattern reg = Pattern.compile(validator);
-        Matcher match = reg.matcher(birthDate);
-        if (match.find()){
-            return true;
-        }
-        return false;
-    }
+    // public String validateBirthDate(LocalDate birthDate){
+    //     String validator = "\\s+(?:19\\d{2}|20[01][0-9]|2010)[-/.](?:0[1-9]|1[012])[-/.](?:0[1-9]|[12][0-9]|3[01])\\b";
+    //     if ( isEmpty(birthDate) ){
+    //         return "Password shouldn't be emtpy";
+    //     }else if ( isValid(birthDate,validator) ) {
+    //         return "Password should contain at least 1 uppercase letter and 1 lowercase letter and 1 specail characters";
+    //     }
+    //     return "";
+    // }
 
-    public boolean validateJob(String job){
-        String validator = "^[A-Za-z][A-Za-z0-9_]{5,15}$";
-        Pattern reg = Pattern.compile(validator);
-        Matcher match = reg.matcher(job);
-        if (match.find()){
-            return true;
+    public String validateJob(String job){
+        if ( isEmpty(job) ){
+            return "Job shouldn't be emtpy";
         }
-        return false;
+        return "";
     }
-    public boolean validateAddress(String address){
-        String validator = "^^[A-Za-z][A-Za-z0-9_]{15,50}$";
-        Pattern reg = Pattern.compile(validator);
-        Matcher match = reg.matcher(address);
-        if (match.find()){
-            return true;
+    public String validateAddress(String address){
+        String validator = "^^[A-Za-z]{15,50}$";
+        if ( isEmpty(address) ){
+            return "Address shouldn't be emtpy";
+        }else if ( isValid(address,validator) ) {
+            return "Too long address";
         }
-        return false;
+        return "";
     }
-    public boolean validateCreditLimit(String creditLimit){
-        String validator = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-        Pattern reg = Pattern.compile(validator);
-        Matcher match = reg.matcher(creditLimit);
-        if (match.find()){
-            return true;
+    public String validateCreditLimit(double creditLimit){
+        if ( creditLimit < 1000 || creditLimit > 100000 ){
+            return "Credit limit should be between 1000 and 100000";
         }
-        return false;
+        return "";
     }
 
     public boolean validateSearchKeyword(String searchKeyword){
@@ -152,10 +145,33 @@ public final class InputValidation {
         return false;
     }
 
-    public boolean validateCategoryname(String name){
-        String validator = "^[A-Za-z][A-Za-z0-9_]{5,20}$";
+    public String validateCategoryname(String name){
+        if ( isEmpty(name) ){
+            return "Category name  shouldn't be emtpy";
+        }else if( name.length() < 4){
+            return "Category name  shouldn't be less than 4 characters";
+        }
+        return "";
+    }
+
+    public String validateOTP(String otp){
+        if ( isEmpty(otp) ){
+            return "Code  shouldn't be emtpy";
+        }else if(otp.length()!=6){
+            return "Code  should is incoorect";
+        }
+        return "";
+    }
+
+    private boolean isEmpty(String input){
+        if (input == null || "".equals(input)) 
+            return true;
+        return false;
+    }
+
+    private boolean isValid ( String input , String validator){
         Pattern reg = Pattern.compile(validator);
-        Matcher match = reg.matcher(name);
+        Matcher match = reg.matcher(input);
         if (match.find()){
             return true;
         }

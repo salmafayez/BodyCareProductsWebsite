@@ -1,8 +1,6 @@
 package gov.iti.jets.presentation.filters.inputvalidationfilters;
 
 import java.io.IOException;
-import java.net.http.HttpRequest;
-
 import gov.iti.jets.presentation.util.InputValidation;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
@@ -12,8 +10,10 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
 
-public class LoginPageFilter implements Filter {
-   
+
+public class EmailAuthenticationOTPPageFilter implements Filter{
+
+    
     private InputValidation validator= InputValidation.getInstance();
     private RequestDispatcher requestDispatcher;
     private String errorMessage="";
@@ -24,8 +24,8 @@ public class LoginPageFilter implements Filter {
         requestDispatcher = httpRequest.getRequestDispatcher("login.jsp");
         
         if(httpRequest.getMethod().toLowerCase().equals("post")){
-            String email = httpRequest.getParameter("email");
-            errorMessage = validator.EmailValidation(email);
+            String otp = httpRequest.getParameter("otp");
+            errorMessage = validator.validateOTP(otp);
 
             if (!errorMessage.isEmpty()) {
                 httpRequest.setAttribute("errorMessage", errorMessage);
@@ -37,4 +37,5 @@ public class LoginPageFilter implements Filter {
             chain.doFilter(httpRequest, response); 
         }
     }
+    
 }
