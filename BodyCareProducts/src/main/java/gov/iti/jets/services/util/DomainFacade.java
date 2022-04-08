@@ -46,10 +46,6 @@ public class DomainFacade {
         return updatePasswordService.updatePassword(email, password);
     }
 
-    public static boolean addUser(User user){
-        return registerUserService.addUser(user);
-    }
-
     public static boolean addCategory(Category category) {
         return categoryService.addCategory(category);
     }
