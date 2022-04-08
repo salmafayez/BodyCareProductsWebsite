@@ -3,6 +3,7 @@
           xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
                       https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" 
         version="5.0" metadata-complete="true">
+  
   <servlet>
     <servlet-name>AddProductServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.AddProductControllerServlet</servlet-class>
@@ -39,14 +40,28 @@
   </servlet>
 
   <servlet>
+    <servlet-name>ForgetPasswordControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ForgetPasswordControllerServlet</servlet-class>
+  </servlet>
 
+  <servlet>
+    <servlet-name>ValidateOtpControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ValidateOtpControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>UpdatePasswordControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.UpdatePasswordControllerServlet</servlet-class>
+</servlet>
+  
+<servlet>
     <servlet-name>VerifyCode</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.VerifyCodeControllerServlet</servlet-class>
   </servlet>
+  
   <servlet>
     <servlet-name>ProductLoadControllerServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.ProductLoadControllerServlet</servlet-class>
-
   </servlet>
 
   <servlet-mapping>
@@ -78,7 +93,22 @@
     <servlet-name>LoginControllerServlet</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ForgetPasswordControllerServlet</servlet-name>
+    <url-pattern>/forgetpassword</url-pattern>
+  </servlet-mapping>
 
+  <servlet-mapping>
+    <servlet-name>ValidateOtpControllerServlet</servlet-name>
+    <url-pattern>/validateotp</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>UpdatePasswordControllerServlet</servlet-name>
+    <url-pattern>/updatepassword</url-pattern>
+  </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>VerifyCode</servlet-name>
     <url-pattern>/verify</url-pattern>
@@ -160,4 +190,5 @@
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.MyAppListener </listener-class>
 </listener>
+
 </web-app>
