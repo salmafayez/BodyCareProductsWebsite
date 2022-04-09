@@ -161,8 +161,8 @@
         <!-- Contact Section End -->
 
         <%@ include file="footer.jsp" %>
-            <%@ include file="commons-js.jsp" %>
-                <script src="js/contact.js" type="text/javascript"></script>
+        <%@ include file="commons-js.jsp" %>
+        <script src="js/contactValidation.js" type="text/javascript"></script>
 
 </body>
 

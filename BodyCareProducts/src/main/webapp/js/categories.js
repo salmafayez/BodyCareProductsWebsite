@@ -1,4 +1,6 @@
 var loadCategories = function(){
+    console.log("categro!!");
+
     if(window.XMLHttpRequest){
         request = new XMLHttpRequest();
     }else if(window.ActiveXObject){
@@ -8,6 +10,7 @@ var loadCategories = function(){
     request.onreadystatechange = getCategoryList
     request.open('GET','categoryload?t='+new Date().getTime(),true);
     request.send(null);
+
 }
 
 var getCategoryList = function(){
