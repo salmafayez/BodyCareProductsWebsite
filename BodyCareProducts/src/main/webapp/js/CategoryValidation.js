@@ -48,6 +48,8 @@ function isInputValid() {
 }
 
 function setSuccess(input) {
+
+    input.style.borderColor = 'rgb(0, 112, 47)';
     const groupInput = input.parentElement;
 
     groupInput.className = 'group-input success';
@@ -55,6 +57,8 @@ function setSuccess(input) {
 }
 
 function setErrorMessage(input, message) {
+
+    input.style.borderColor = 'rgb(238, 0, 0)';
     const groupInput = input.parentElement;//.group-input
     const small = groupInput.querySelector('small');
     small.innerText = message;

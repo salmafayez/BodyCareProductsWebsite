@@ -53,7 +53,7 @@
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
-    <script src="js/js-admin-addCategoryValidation.js" type="text/javascript"></script>
+    <script src="js/CategoryValidation.js" type="text/javascript"></script>
 
 </body>
 
