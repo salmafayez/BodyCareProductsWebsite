@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
@@ -8,35 +9,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fashi | Template</title>
 
-   <%@ include file="commons-styles.jsp" %>
+    <%@ include file="commons-styles.jsp" %>
 
 </head>
 
-<body onload = "loadCategories();">
+<body onload="loadCategories();">
     <!-- Page Preloder -->
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
 
-    <%@ include file="header.jsp" %>
+        <%@ include file="header.jsp" %>
 
-    <!-- Product Shop Section Begin -->
-    <section class="product-shop spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
-                    <div class="filter-widget">
-                        <h4 class="fw-title">Categories</h4>
-                        <ul class="filter-catagories" id="list" name="list">
-                            <%-- <li><a href="#">Bath & Shower</a></li>
-                            <li><a href="#">Fragrance</a></li>
-                            <li><a href="#">Candles</a></li> --%>
-                        </ul>
-                    </div>
-                    
-                    <!--
+            <!-- Product Shop Section Begin -->
+            <section class="product-shop spad">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
+                            <div class="filter-widget">
+                                <h4 class="fw-title">Categories</h4>
+                                <ul class="filter-catagories" id="list" name="list">
+                                    <%-- <li><a href="#">Bath & Shower</a></li>
+                                        <li><a href="#">Fragrance</a></li>
+                                        <li><a href="#">Candles</a></li> --%>
+                                </ul>
+                            </div>
+
+                            <!--
                     <div class="filter-widget">
                         <h4 class="fw-title">Brand</h4>
                         <div class="fw-brand-check">
@@ -151,72 +152,75 @@
                         </div>
                     </div>
                 -->
-                </div>
-        
-                <%-- <div class="col-lg-9 order-1 order-lg-2">
-                    <div class="product-show-option">
-                        <div class="row">
-                            <div class="col-lg-7 col-md-7">
-                                <div class="select-option">
-                                    <select class="sorting">
-                                        <option value="">Default Sorting</option>
-                                    </select>
-                                    <select class="p-show">
-                                        <option value="">Show:</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 text-right">
-                                <p>Show 01- 09 Of 36 Product</p>
-                            </div>
                         </div>
-                    </div> --%>
-                     <div class="col-lg-9 order-1 order-lg-2">
-                    <div class="product-list">
-                        <div class="row">
-                            <c:forEach items="${products}" var="product">
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="product-item">
-                                            <div class="pi-pic">
-                                                <img src="img/products/product-3.jpg" alt="">
-                                                <div class="icon">
-                                                    <i class="icon_heart_alt"></i>
-                                                </div>
-                                                <ul>
-                                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="pi-text">
-                                                <div class="catagory-name">${product.categoryName}</div>
-                                                <a href="#">
-                                                    <h5>${product.name}</h5>
-                                                </a>
-                                                <div class="product-price">${product.price}</div>
-                                            </div>
+
+                        <%-- <div class="col-lg-9 order-1 order-lg-2">
+                            <div class="product-show-option">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7">
+                                        <div class="select-option">
+                                            <select class="sorting">
+                                                <option value="">Default Sorting</option>
+                                            </select>
+                                            <select class="p-show">
+                                                <option value="">Show:</option>
+                                            </select>
                                         </div>
                                     </div>
+                                    <div class="col-lg-5 col-md-5 text-right">
+                                        <p>Show 01- 09 Of 36 Product</p>
+                                    </div>
+                                </div>
+                            </div> --%>
+                            <div class="col-lg-9 order-1 order-lg-2">
+                                <div class="product-list">
+                                    <div class="row">
+                                        <c:forEach items="${products}" var="product">
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="product-item">
+                                                    <div class="pi-pic">
+                                                        <img src="img/products/product-3.jpg" alt="">
+                                                        <div class="icon">
+                                                            <i class="icon_heart_alt"></i>
+                                                        </div>
 
-                            </c:forEach>
+                                                        <ul>
+                                                            <li class="w-icon active"><a href="shopping-cart.jsp"><i
+                                                                        class="icon_bag_alt"></i></a></li>
+                                                            <li class="quick-view" onclick="addToCart(${product.id})"> <a href="#"> + ADD TO
+                                                                CART</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="pi-text">
+                                                        <div class="catagory-name">${product.categoryName}</div>
+                                                        <a href="#">
+                                                            <h5>${product.name}</h5>
+                                                        </a>
+                                                        <div class="product-price">${product.price}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                    <div class="loading-more">
-                        <i class="icon_loading"></i>
-                        <a href="#">
-                            Loading More
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-  
-          
-    </section>
+                                        </c:forEach>
 
-    <!-- Product Shop Section End -->
+                                        <div class="loading-more">
+                                            <i class="icon_loading"></i>
+                                            <a href="#">
+                                                Loading More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-    <%@ include file="footer.jsp" %>
-    <%@ include file="commons-js.jsp" %>
-    <script src="js/shop-categories.js" type="text/javascript"></script>
+
+            </section>
+
+            <!-- Product Shop Section End -->
+
+            <%@ include file="footer.jsp" %>
+                <%@ include file="commons-js.jsp" %>
+                    <script src="js/shop-categories.js" type="text/javascript"></script>
 </body>
 
 </html>

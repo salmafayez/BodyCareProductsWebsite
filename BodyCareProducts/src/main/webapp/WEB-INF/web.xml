@@ -50,6 +50,11 @@
 
   </servlet>
 
+  <servlet>
+    <servlet-name>AddProductToCartServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AddProductToCartServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>AddProductServlet</servlet-name>
     <url-pattern>/addproduct</url-pattern>
@@ -95,6 +100,11 @@
   <servlet-mapping>
     <servlet-name>ProductLoadControllerServlet</servlet-name>
     <url-pattern>/products</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>AddProductToCartServlet</servlet-name>
+    <url-pattern>/addproducttocart</url-pattern>
   </servlet-mapping>
 
   <listener>

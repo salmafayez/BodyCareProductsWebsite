@@ -38,7 +38,7 @@
                                         <th>Price</th>
                                         <th>Quantity</th>
                                         <th>Total</th>
-                                        <th><i class="ti-close"></i></th>
+                                        <!--th><i class="ti-close"></i></th-->
                                     </tr>
                                 </thead>
                                 <tbody class="cart-items">

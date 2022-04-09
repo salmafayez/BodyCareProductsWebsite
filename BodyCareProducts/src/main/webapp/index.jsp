@@ -141,7 +141,7 @@
                                 </div>
                                 <ul>
                                     <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="quick-view"><a href="#">+ ADD TO CART</a></li>
                                 </ul>
                             </div>
                             <div class="pi-text">
@@ -163,7 +163,7 @@
                                 </div>
                                 <ul>
                                     <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="quick-view"><a href="#">+ ADD TO CART</a></li>
                                 </ul>
                             </div>
                             <div class="pi-text">
@@ -184,7 +184,7 @@
                                 </div>
                                 <ul>
                                     <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="quick-view"><a href="#">+ ADD TO CART</a></li>
                                 </ul>
                             </div>
                             <div class="pi-text">
