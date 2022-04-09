@@ -54,6 +54,17 @@
     <url-pattern>/addproduct</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>ContactMessageServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ContactMessageServlet</servlet-class>
+
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ContactMessageServlet</servlet-name>
+    <url-pattern>/contactmessage</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>RegisterUserControllerServlet</servlet-name>
     <url-pattern>/register</url-pattern>

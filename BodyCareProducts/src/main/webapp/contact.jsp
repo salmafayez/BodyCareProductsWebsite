@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body onload="checkInputs()">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -21,8 +21,8 @@
     <%@ include file="header.jsp" %>
 
 
-    <!-- Map Section Begin -->
-    <!-- <div class="map spad">
+        <!-- Map Section Begin -->
+        <!-- <div class="map spad">
         <div class="container">
             <div class="map-inner">
                 <iframe
@@ -35,83 +35,135 @@
             </div>
         </div>
     </div> -->
-    <!-- Map Section Begin -->
+        <!-- Map Section Begin -->
 
-    <!-- Contact Section Begin -->
-    <div class="container-fluid" style="background-image: url(img/background_img.jpg); background-repeat: no-repeat; background-size: cover;">
-        <section class="contact-section spad"> 
-            
-            <!-- <div class="container px-5 py-5"  style="background-color: #f5f5f5"> -->
-            <div class="container px-5 py-5" style="border-style:solid; border-radius: 30px; background-color: #f5f5f5; border-color: #f5f5f5;">
-                <div class="row">
-                    
-                    <div class="col-lg-5" >
-                        <div class="contact-title">
-                            <h4>Contacts us</h4>
-                            <!-- <p>We always here for you :).</p> -->
-                        </div>
-                        <div class="contact-widget">
-                            <div class="cw-item">
-                                <div class="ci-icon">
-                                    <i class="ti-location-pin"></i>
-                                </div>
-                                <div class="ci-text">
-                                    <span>Address:</span>
-                                    <p>60-49 Road 11378 New York</p>
-                                </div>
+        <!-- Contact Section Begin -->
+        <div class="container-fluid"
+            style="background-image: url(img/background_img.jpg); background-repeat: no-repeat; background-size: cover;">
+            <section class="contact-section spad">
+
+                <!-- <div class="container px-5 py-5"  style="background-color: #f5f5f5"> -->
+                <div class="container px-5 py-5"
+                    style="border-style:solid; border-radius: 30px; background-color: #f5f5f5; border-color: #f5f5f5;">
+                    <div class="row">
+
+                        <div class="col-lg-5">
+                            <div class="contact-title">
+                                <h4>Contacts us</h4>
+                                <!-- <p>We always here for you :).</p> -->
                             </div>
-                            <div class="cw-item">
-                                <div class="ci-icon">
-                                    <i class="ti-mobile"></i>
-                                </div>
-                                <div class="ci-text">
-                                    <span>Phone:</span>
-                                    <p>+65 11.188.888</p>
-                                </div>
-                            </div>
-                            <div class="cw-item">
-                                <div class="ci-icon">
-                                    <i class="ti-email"></i>
-                                </div>
-                                <div class="ci-text">
-                                    <span>Email:</span>
-                                    <p>fatakat@gmail.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 offset-lg-1">
-                        <div class="contact-form">
-                            <div class="leave-comment">
-                                <h4>Leave a comment</h4>
-                                <p>Our staff will call back later and answer your questions.</p>
-                                <form action="#" class="comment-form">
-                                    <div class="row">
-                                        <div class="ci-icon">
-                                        <div  class="ci-text">
-                                            <input type="text" style="border-color: #f5f5f5; border-radius: 10px;" placeholder="Your name">
-                                        <div class="ci-text">
-                                            <input type="text" style="border-color: #f5f5f5; border-radius: 10px;" placeholder="Your email">
-                                        </div></div>
-                                        <div class="ci-text">
-                                            <textarea placeholder="Your message"  style="border-color: #f5f5f5; border-radius: 10px;"></textarea>
-                                            <button type="submit" class="site-btn" style="border-style:solid; border-radius: 10px;  border-color: #f5f5f5;">Send message</button>
-                                        </div>
-                                        </div></div>
+                            <div class="contact-widget">
+                                <div class="cw-item">
+                                    <div class="ci-icon">
+                                        <i class="ti-location-pin"></i>
                                     </div>
+                                    <div class="ci-text">
+                                        <span>Address:</span>
+                                        <p>60-49 Road 11378 New York</p>
+                                    </div>
+                                </div>
+                                <div class="cw-item">
+                                    <div class="ci-icon">
+                                        <i class="ti-mobile"></i>
+                                    </div>
+                                    <div class="ci-text">
+                                        <span>Phone:</span>
+                                        <p>+65 11.188.888</p>
+                                    </div>
+                                </div>
+                                <div class="cw-item">
+                                    <div class="ci-icon">
+                                        <i class="ti-email"></i>
+                                    </div>
+                                    <div class="ci-text">
+                                        <span>Email:</span>
+                                        <p>fatakat@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 offset-lg-1">
+                            <div class="contact-form ">
+                                <div class="leave-comment">
+                                    <h4>Leave a comment</h4>
+                                    <p>Our staff will call back later and answer your questions.</p>
+                                    <form method="post" action="contactmessage" class="comment-form" id="contactForm" >
+                                        <div class="row">
+                                            <div class="ci-icon">
+                                                <div class="ci-text ">
+                                                    <div class="col-md-12">
+                                                        <div class="group-input ">
+                                                        
+                                                            <input type="text"
+                                                                style="margin-top:5px;border-color: #f5f5f5; border-radius: 10px;"
+                                                                placeholder="Your name" name="contactName"
+                                                                id="contactName" >
+                                                                
+                                                            <i class="fa fa-check-circle" aria-hidden="true"
+                                                                style="top: 20px;right: 30px;"></i><br>
+                                                            <i class="fa fa-exclamation-circle" aria-hidden="true"
+                                                                style="top: 20px;right: 30px;"></i>
+                                                            <small
+                                                                style="color: rgb(238, 0, 0);font-size: 12px;"></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ci-text ">
+                                                        <div class="col-md-12">
+                                                            <div class="group-input ">
+
+                                                             
+                                                             <input style="margin-top:5px;border-color: #f5f5f5; border-radius: 10px;" type="email" id="contactEmail" name="contactEmail" placeholder="Your email" class="defaultBorders" required>
+                                                               
+                                                                  
+                                                                <i class="fa fa-check-circle" aria-hidden="true"
+                                                                    style="top: 20px;right: 30px;"></i><br>
+                                                                <i class="fa fa-exclamation-circle" aria-hidden="true"
+                                                                    style="top: 20px;right: 30px;"></i>
+                                                                 <small
+                                                                    style="color: rgb(238, 0, 0);font-size: 12px;"></small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ci-text ">
+                                                    <div class="col-md-12">
+                                                        <div class="group-input ">
+                                                         
+                                                            <textarea placeholder="Your message"
+                                                                style="border-color: #f5f5f5; border-radius: 10px;margin-top:5px"
+                                                                name="contactMessage" id="contactMessage"></textarea>
+                                                            <i class="fa fa-check-circle" aria-hidden="true"
+                                                                style="top: 20px;right: 30px;"></i><br>
+                                                            <i class="fa fa-exclamation-circle" aria-hidden="true"
+                                                                style="top: 20px;right: 30px;"></i>
+                                                           <small
+                                                                style="color: rgb(238, 0, 0);font-size: 12px;"></small>
+
+                                                              </div>
+                                                                </div>   
+                                                            <button type="submit" class="site-btn"
+                                                                style="border-style:solid; border-radius: 10px;  border-color: #f5f5f5;">Send
+                                                                message</button>
+                                                       
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
 
         </section>
-    </div>
-    <!-- Contact Section End -->
+        </div>
+        <!-- Contact Section End -->
 
-   <%@ include file="footer.jsp" %>
-    <%@ include file="commons-js.jsp" %>
+        <%@ include file="footer.jsp" %>
+            <%@ include file="commons-js.jsp" %>
+                <script src="js/contact.js" type="text/javascript"></script>
+
 </body>
 
 </html>

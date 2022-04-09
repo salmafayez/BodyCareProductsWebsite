@@ -190,7 +190,7 @@
                                             <div class="pi-text">
                                                 <div class="catagory-name">${product.categoryName}</div>
                                                 <a href="#">
-                                                    <h5>${product.name}</h5>
+                                                    <h5>${product.id}</h5>
                                                 </a>
                                                 <div class="product-price">${product.price}</div>
                                             </div>

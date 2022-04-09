@@ -129,7 +129,7 @@
                             </li>
                             <li><a href="./blog.html">Blog</a></li>
                         -->
-                        <li><a href="contact.jsp">Contact</a></li>
+                        <li><a href="contactmessage">Contact</a></li>
                         <li><a href="shopping-cart.jsp"> Cart</a></li>
                         <li><a href="addproduct">Wishlist</a></li>
                         <li><a href="check-out.jsp">Check-out</a></li>
