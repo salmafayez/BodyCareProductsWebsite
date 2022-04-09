@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
@@ -9,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fashi | Template</title>
 
-    <%@ include file="commons-styles.jsp" %>
+    <%@ include file="commons.jsp" %>
     </head>
 
 <body>
@@ -30,36 +29,25 @@
                             style="color:white;width: 35rem;border-radius: 15px;background-color: #f5f5f5;">
                             <div class="card-body">
                                 <div class="login-form">
-                                    <h2>Login</h2>
+                                    <h2>Account recovery</h2>
                                     <%@ include file="error.jsp" %>
-                                    <form action="login" method="post" id="loginform">
+
+
+                                    <form action="validateotp" method="post" id="addotpform">
                                         <div class="group-input">
-                                            <label for="email">Email *</label>
-                                            <input type="text" id="email" name="email" class="defaultBorders">
+                                            <label for="otp">Enter your secuirty code</label>
+                                            <input type="text" id="otp" name="otp" class="defaultBorders" placeholder="Enter code">
                                             <i class="fa fa-check-circle" aria-hidden="true" ></i><br>
                                             <i class="fa fa-exclamation-circle" aria-hidden="true" ></i>
                                             <small  style="color: rgb(238, 0, 0);font-size: 12px;"></small>
-
+                                             
                                         </div>
-                                        <div class="group-input">
-                                            <label for="password">Password *</label>
-                                            <input type="password" id="password" name="password" class="defaultBorders">
-                                        </div>
-                                        <div class="group-input gi-check">
-                                            <div class="gi-more">
-                                                <label for="save-pass">
-                                                    Save Password
-                                                    <input type="checkbox" name="remember" id="save-pass">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <a href="forgetpassword.jsp" class="forget-pass">Forget your Password</a>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="site-btn login-btn defaultBorders">Sign In</button>
+                                       
+                                        <button type="submit" class="site-btn login-btn defaultBorders">Reset password</button>
                                     </form>
-                                    <div class="switch-login">
-                                        <a href="./register.jsp" class="or-login">Or Create An Account</a>
-                                    </div>
+                                    <%-- <div class="switch-login">
+                                        <a href="login.jsp" class="or-login">Or Back to login</a>
+                                    </div> --%>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +60,6 @@
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
-
 
 </body>
 

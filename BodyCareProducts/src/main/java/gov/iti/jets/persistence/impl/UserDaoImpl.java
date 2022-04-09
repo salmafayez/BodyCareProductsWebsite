@@ -48,4 +48,21 @@ public class UserDaoImpl implements UserDao {
         entityManager.close();
         return true;
     }
+
+    @Override
+    public boolean updatePassword(String email , String password) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        String select = "SELECT user FROM User user WHERE user.email=:email";
+        Query query = entityManager.createQuery(select);
+        query.setParameter("email", email);
+        User user = (User) query.getSingleResult();
+        user.setPassword(password);
+        entityManager.persist(user);
+        transaction.commit();
+        entityManager.close();
+        return true;
+    }
+    
 }

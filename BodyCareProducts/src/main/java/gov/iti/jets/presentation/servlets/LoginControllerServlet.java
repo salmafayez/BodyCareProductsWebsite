@@ -18,11 +18,12 @@ import jakarta.servlet.http.HttpSession;
 
 public class LoginControllerServlet extends HttpServlet{
 
-    private InputValidation validator = new InputValidation();
+    private InputValidation validator = InputValidation.getInstance();;
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-      
+        System.out.println("inside get");
+        
         HttpSession session = request.getSession(false);
         if(session!=null){
             if ((String) session.getAttribute("AuthToken") == null){
@@ -40,14 +41,17 @@ public class LoginControllerServlet extends HttpServlet{
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        System.out.println("inside post");
+        
+        
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        if(!validator.EmailValidation(email)){
-            request.setAttribute("error", "Wrong email format");
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
-            requestDispatcher.forward(request, response);
-            return;
-        }
+        // if(!validator.EmailValidation(email)){
+        //     request.setAttribute("error", "Wrong email format");
+        //     RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
+        //     requestDispatcher.forward(request, response);
+        //     return;
+        // }
        
         try{
             User user = DomainFacade.login(email);
