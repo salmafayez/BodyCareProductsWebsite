@@ -200,10 +200,13 @@
                             </c:forEach>
 
                     <div class="loading-more">
-                        <i class="icon_loading"></i>
-                        <a href="#">
-                            Loading More
-                        </a>
+                
+                        <c:if test="${currentPage != 1}">
+                            <a href="products?page=${currentPage-1}" class="previous" style="text-decoration:none;display: inline-block;padding: 8px 16px;background-color: #2B394A;color: black;" disabled>&laquo; Previous</a>                        
+                        </c:if>
+                        <c:if test="${currentPage lt noOfPages}"> 
+                            <a href="products?page=${currentPage+1}" class="next" style="text-decoration:none;display: inline-block;padding: 8px 16px; background-color:#d79681; color: white;" disabled>Next &raquo;</a>
+                        </c:if>
                     </div>
                 </div>
             </div>

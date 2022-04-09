@@ -54,12 +54,16 @@ public class DomainFacade {
         return categoryService.getCategoryList();
     }
     
-    public static List<Product> loadAllProducts(){
-        return addProductService.loadAllProducts();
+    public static List<Product> loadAllProducts(int offset, int noOfRecords){
+        return addProductService.loadAllProducts(offset, noOfRecords);
     }
 
-    public static List<Product> loadProductsByCategory(String category){
-        return addProductService.loadProductsByCategory(category);
+    public static List<Product> loadProductsByCategory(String category, int offset, int noOfRecords){
+        return addProductService.loadProductsByCategory(category, offset, noOfRecords);
+    }
+
+    public static Long getNoOfRecords(){
+        return addProductService.getNoOfRecords();
     }
 
 }

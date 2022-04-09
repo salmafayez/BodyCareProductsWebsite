@@ -2,6 +2,8 @@ package gov.iti.jets.persistence.impl;
 
 import java.util.List;
 
+import org.hibernate.bytecode.enhance.internal.tracker.NoopCollectionTracker;
+
 import gov.iti.jets.persistence.ProductDao;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.util.ManagerFactory;
@@ -14,6 +16,7 @@ import jakarta.persistence.TypedQuery;
 public class ProductDaoImpl implements ProductDao {
 
     private final static EntityManagerFactory entityManagerFactory = ManagerFactory.getEntityManagerFactory();
+    private static Long noOfRecords;
 
     @Override
     public boolean insert(Product product) {
@@ -27,22 +30,35 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public List<Product> load() {
+    public List<Product> load(int offset, int noOfRecords) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        TypedQuery<Product> query = entityManager.createQuery("select p from Product p",Product.class);
+        TypedQuery<Product> query = entityManager.createQuery("select p from Product p ",Product.class).setMaxResults(noOfRecords).setFirstResult(offset);
         List<Product> result =query.getResultList();
+        Query query2 = entityManager.createQuery("select count(p) from Product p");
+        Long result2 = (Long) query2.getSingleResult();
+        this.noOfRecords=result2;
+        entityManager.close();
+        return result;
+    }
+    
+
+    @Override
+    public List<Product> loadByCategory(String category, int offset, int noOfRecords) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        TypedQuery<Product> query = entityManager.createQuery("select p from Product p where p.categoryName =:categoryName",Product.class).setMaxResults(noOfRecords).setFirstResult(offset);
+        query.setParameter("categoryName",category);
+        List<Product> result =query.getResultList();
+        Query query2 = entityManager.createQuery("select count(p) from Product p where p.categoryName =:categoryName");
+        query2.setParameter("categoryName",category);
+        Long result2 = (Long) query2.getSingleResult();
+        this.noOfRecords=result2;
         entityManager.close();
         return result;
     }
 
     @Override
-    public List<Product> loadByCategory(String category) {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        TypedQuery<Product> query = entityManager.createQuery("select p from Product p where p.categoryName =:categoryName",Product.class);
-        query.setParameter("categoryName",category);
-        List<Product> result =query.getResultList();
-        entityManager.close();
-        return result;
+    public Long getNoOfRecords() {
+       return noOfRecords;
     }
     
 }
