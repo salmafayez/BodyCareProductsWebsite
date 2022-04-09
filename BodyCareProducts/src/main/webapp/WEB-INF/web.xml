@@ -127,6 +127,37 @@
     <url-pattern>/products</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>PageNotFoundServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.PageNotFoundServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>PageNotFoundServlet</servlet-name>
+    <url-pattern>/page-not-found</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>Home</servlet-name>
+    <jsp-file>/home.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>Home</servlet-name>
+      <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BeforeHome</servlet-name>
+    <jsp-file>/beforeHome.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>BeforeHome</servlet-name>
+      <url-pattern>/beforeHome</url-pattern>
+  </servlet-mapping>
+
 
   <!-- ////////////  Filters ///////// -->
 
@@ -186,10 +217,28 @@
   </filter-mapping>
 
 
+  <filter>
+    <filter-name> JSPFilesFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.authenticationfilters.JSPFilesFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name> JSPFilesFilter </filter-name>
+    <url-pattern> *.jsp </url-pattern>
+  </filter-mapping>
+
+
+  
+
   <!--  //////////// Listenrns  ////////  -->
 
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.MyAppListener </listener-class>
 </listener>
+
+
+<welcome-file-list>
+  <welcome-file>beforeHome</welcome-file>
+</welcome-file-list>
 
 </web-app>
