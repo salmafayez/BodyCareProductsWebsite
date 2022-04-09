@@ -66,4 +66,7 @@ public class DomainFacade {
         return addProductService.getNoOfRecords();
     }
 
+    public static List<Product> searchProducts(String searchProduct, int offset, int noOfRecords){
+        return addProductService.searchProducts(searchProduct, offset, noOfRecords);
+    }
 }

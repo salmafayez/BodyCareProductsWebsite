@@ -65,6 +65,11 @@
     <servlet-class>gov.iti.jets.presentation.servlets.ProductLoadControllerServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>SearchControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.SearchControllerServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>AddProductServlet</servlet-name>
     <url-pattern>/addproduct</url-pattern>
@@ -126,7 +131,11 @@
     <servlet-name>ProductLoadControllerServlet</servlet-name>
     <url-pattern>/products</url-pattern>
   </servlet-mapping>
-
+  
+  <servlet-mapping>
+    <servlet-name>SearchControllerServlet</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
 
   <!-- ////////////  Filters ///////// -->
 

@@ -33,4 +33,10 @@ public class AddProductServiceImpl implements AddProductService {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.getNoOfRecords();
     }
+
+    @Override
+    public List<Product> searchProducts(String searchProduct, int offset, int noOfRecords) {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.searchProducts(searchProduct, offset, noOfRecords);
+    }
 }

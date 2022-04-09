@@ -9,6 +9,6 @@ public interface AddProductService {
     public List<Product> loadAllProducts(int offset, int noOfRecords);
     public List<Product> loadProductsByCategory(String category, int offset, int noOfRecords);
     public Long getNoOfRecords();
-   
+    public List<Product> searchProducts(String searchProduct, int offset, int noOfRecords);
    
 }

@@ -60,5 +60,19 @@ public class ProductDaoImpl implements ProductDao {
     public Long getNoOfRecords() {
        return noOfRecords;
     }
+
+    @Override
+    public List<Product> searchProducts(String searchProduct, int offset, int noOfRecords) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        TypedQuery<Product> query = entityManager.createQuery("select p from Product p where p.name like : name ",Product.class).setMaxResults(noOfRecords).setFirstResult(offset);
+        query.setParameter("name","%" + searchProduct + "%");
+        List<Product> result =query.getResultList();
+        Query query2 = entityManager.createQuery("select count(p) from Product p where p.name like : name ");
+        query2.setParameter("name","%" + searchProduct + "%");
+        Long result2 = (Long) query2.getSingleResult();
+        this.noOfRecords=result2;
+        entityManager.close();
+        return result;
+    }
     
 }
