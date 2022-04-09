@@ -8,4 +8,5 @@ public interface UserDao {
     boolean insert(User user);
     User login(String email) throws NoResultException;
 
+
 }

@@ -65,6 +65,31 @@
     <url-pattern>/contactmessage</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>LoadUsersServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.UsersHistoryLoadControllerServlet</servlet-class>
+
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LoadUsersServlet</servlet-name>
+    <url-pattern>/loadusers</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>LoadContactMessagesServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ContactMessagesLoadControllerServlet</servlet-class>
+
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LoadContactMessagesServlet</servlet-name>
+    <url-pattern>/loadcontactmessages</url-pattern>
+  </servlet-mapping>
+
+
   <servlet-mapping>
     <servlet-name>RegisterUserControllerServlet</servlet-name>
     <url-pattern>/register</url-pattern>

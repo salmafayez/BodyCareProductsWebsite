@@ -6,6 +6,9 @@ import gov.iti.jets.persistence.util.ManagerFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.TypedQuery;
+
+import java.util.List;
 
 public class ContactMessageDaoImpl implements ContactMessageDao {
 
@@ -19,5 +22,13 @@ public class ContactMessageDaoImpl implements ContactMessageDao {
         transaction.commit();
         entityManager.close();
         return true;
+    }
+
+    @Override
+    public List<ContactMessage> loadMessages() {
+        EntityManager entityManager =entityManagerFactory.createEntityManager();
+        TypedQuery<ContactMessage> query = entityManager.createQuery("select m from ContactMessage m",ContactMessage.class);
+        List<ContactMessage> messages =query.getResultList();
+        return messages ;
     }
 }

@@ -28,41 +28,39 @@
             <div class="container">
                 <div class="row" style="justify-content: center;">
                     <div class="col-lg-12" style="background-color: #f5f5f5; border-radius: 15px">
-                        <h2 class="text-center px-4 py-4" style="color: #2B394A;">Users</h2>
+                        <h2 class="text-center px-4 py-4" style="color: #2B394A;">Messages</h2>
                         <div class="order-history-table">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>User ID</th>
-                                        <th>User Name</th>
-                                        <th>Email</th>
-                                        <th>Phone number</th>
-                                        <th>City</th>
-                                        <th> </th>
+                                        <th>Contact ID</th>
+                                        <th>Contact Name</th>
+                                        <th>Contact Email</th>
+                                        <th>Contact Message</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
                                 
-                                <c:if test="${!empty users }">
-                                 <c:forEach items="${users}" var="user">
+                                <c:if test="${!empty messages }">
+                                 <c:forEach items="${messages}" var="message">
                                     <tr>
-                                       <td>${user.id}</td>
-                                        <td>${user.userName}</td>
-                                        <td>${user.email}</td>
-                                        <td>${user.phoneNumber}</td>
-                                        <td>${user.city}</td>
-                                        <td> <a href="admin-add-user.jsp"><button class="site-btn login-btn defaultBorders">Promoto to admin</button></a></td>
+                                       <td>${message.id}</td>
+                                        <td>${message.contactName}</td>
+                                        <td>${message.contactEmail}</td>
+                                        <td>${message.contactMessage}</td>
+
                                     </tr>
                                 </c:forEach>
                                 </c:if>
-                                <c:if test="${users==null}">
+                                <c:if test="${messages==null}">
                                 <tr>
                                 <td colspan="6" style="text-align: center;">
-                                <p style="padding:50px;font-size: 30px;font-weight: bold;">NO USERS EXIST!!</p>
+                                <p style="padding:50px;font-size: 30px;font-weight: bold;">NO MESSAGES EXIST</p>
                                 </td>
                                 
                                 </tr>
-                                   </c:if>
+                                </c:if>
 
                                 </tbody>
                             </table>

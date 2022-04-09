@@ -17,6 +17,7 @@ public class DomainFacade {
     private static final LoginService loginService= new LoginServiceImpl();
     private static final CategoryService categoryService = new CategoryServiceImpl();
     private static final ContactMessageService contactMessageService = new ContactMessageServiceImpl();
+    private static final UsersHistoryService usersHistoryService = new UsersHistroyServiceImpl();
 
     public static boolean addProduct(Product product){
         Category category = categoryService.getcategory(product.getCategoryName());
@@ -49,6 +50,13 @@ public class DomainFacade {
     
     public static List<Product> loadAllProducts(){
         return addProductService.loadAllProducts();
+    }
+
+    public static List<User> loadAllUses(){
+        return usersHistoryService.loadAllUsers();
+    }
+    public static List<ContactMessage> loadAllMessages(){
+        return contactMessageService.loadAllMessages();
     }
 
     public static List<Product> loadProductsByCategory(String category){

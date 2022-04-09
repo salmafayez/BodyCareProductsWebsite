@@ -7,11 +7,19 @@ import gov.iti.jets.persistence.impl.ContactMessageDaoImpl;
 import gov.iti.jets.persistence.impl.UserDaoImpl;
 import gov.iti.jets.services.ContactMessageService;
 
+import java.util.List;
+
 public class ContactMessageServiceImpl implements ContactMessageService {
     @Override
     public boolean addContactMessage(ContactMessage contactMessage) {
 
         ContactMessageDao contactMessageDao = new ContactMessageDaoImpl();
         return contactMessageDao.insert(contactMessage);
+    }
+
+    @Override
+    public List<ContactMessage> loadAllMessages() {
+        ContactMessageDao contactMessageDao =new ContactMessageDaoImpl() ;
+        return contactMessageDao.loadMessages();
     }
 }
