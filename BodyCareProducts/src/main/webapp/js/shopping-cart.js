@@ -36,7 +36,8 @@ proQty.on('click', '.qtybtn', function () {
 
         $button.parent().find('input').val(newVal);
         $button.parent().find('input').change(updateTotalPrice());
-    }});
+    }
+});
 
 var deleteButton = $('.ti-close');
 deleteButton.on('click', function () {

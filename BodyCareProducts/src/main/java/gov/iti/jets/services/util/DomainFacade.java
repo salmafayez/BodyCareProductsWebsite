@@ -2,29 +2,23 @@ package gov.iti.jets.services.util;
 
 import java.util.List;
 
+import gov.iti.jets.persistence.entities.CartProducts;
 import gov.iti.jets.persistence.entities.Category;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.entities.User;
-import gov.iti.jets.services.AddProductService;
-import gov.iti.jets.services.CategoryService;
-import gov.iti.jets.services.LoginService;
-import gov.iti.jets.services.RegisterUserService;
-import gov.iti.jets.services.UpdatePasswordService;
-import gov.iti.jets.services.impl.AddProductServiceImpl;
-import gov.iti.jets.services.impl.CategoryServiceImpl;
-import gov.iti.jets.services.impl.LoginServiceImpl;
+import gov.iti.jets.services.*;
+import gov.iti.jets.services.impl.*;
 import jakarta.persistence.NoResultException;
-import gov.iti.jets.services.impl.RegisterUserServiceImpl;
-import gov.iti.jets.services.impl.UpdatePasswordServiceImpl;
 
 public class DomainFacade {
 
-    private static final AddProductService addProductService = new AddProductServiceImpl();
+    private static final ProductService addProductService = new ProductServiceImpl();
     private static final RegisterUserService registerUserService = new RegisterUserServiceImpl();
     private static final LoginService loginService= new LoginServiceImpl();
     private static final UpdatePasswordService updatePasswordService= new UpdatePasswordServiceImpl();
     private static final CategoryService categoryService = new CategoryServiceImpl();
-    
+    private static final CartProductsService cartProductsService = new CartProductsServiceImpl();
+
     public static boolean addProduct(Product product){
         Category category = categoryService.getcategory(product.getCategoryName());
         product.setCategory(category);
@@ -39,9 +33,6 @@ public class DomainFacade {
         return loginService.login(email);
     }
 
-    public static boolean addUser(User user){return
-                registerUserService.addUser(user);}
-    
     public static boolean updatePassword(String email , String password){
         return updatePasswordService.updatePassword(email, password);
     }
@@ -61,6 +52,27 @@ public class DomainFacade {
     public static List<Product> loadAllProducts(){
         return addProductService.loadAllProducts();
     }
+
+    public static Product getProductById(int id){
+        return addProductService.getProductById(id);
+    }
+
+    public static User getUser(int id){
+        return registerUserService.getUser(id);
+    }
+
+    public static boolean chechIfProductExist(Integer userId, Integer productId){
+        return cartProductsService.chechIfProductExist(userId, productId);
+    }
+
+    public static boolean updateProduct(int productId, int userId, int quantity){
+        return cartProductsService.updateProduct(productId,userId, productId);
+    }
+
+    public static boolean addProductToCart(CartProducts cartProducts){
+        return cartProductsService.addProductToCart(cartProducts);
+    }
+
 
     public static List<Product> loadProductsByCategory(String category){
         return addProductService.loadProductsByCategory(category);

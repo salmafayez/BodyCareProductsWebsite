@@ -187,8 +187,10 @@
                                                         <ul>
                                                             <li class="w-icon active"><a href="shopping-cart.jsp"><i
                                                                         class="icon_bag_alt"></i></a></li>
-                                                            <li class="quick-view" onclick="addToCart(${product.id})"> <a href="#"> + ADD TO
-                                                                CART</a></li>
+                                                            <li class="quick-view" onclick="addToCart(${product.id})">
+                                                                <a href="#"> + ADD TO
+                                                                    CART</a>
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                     <div class="pi-text">

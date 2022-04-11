@@ -30,20 +30,41 @@ var getCategoryList = function () {
 }
 
 var req;
-function addToCart(productId) {
+function addToCart(product) {
     if (window.XMLHttpRequest)
         req = new XMLHttpRequest();
     else if (window.ActiveXObject)
         req = new ActiveXObject(Microsoft.XMLHTTP);
-
-    url = "addproducttocart" + "?productid=" + productId + "&timeStamp=" + new Date().getTime();
+    var add = "add";
+    url = "addproducttocart" + "?productid=" + product + "&action="+ add;
     req.open("GET", url, true);
     req.onreadystatechange = handleStateChange;
-    req.send();
+    req.send(null);
 
 }
 
 function handleStateChange() {
+        if (req.readyState == 4 && req.status == 200) {
+//            xmlvalue = req.responseText;
+//            document.getElementById("status").value = xmlvalue;
+              console.log("haraaaaaaaa");
+        }
+    }
+
+function removeFromCart(product) {
+    if (window.XMLHttpRequest)
+        req = new XMLHttpRequest();
+    else if (window.ActiveXObject)
+        req = new ActiveXObject(Microsoft.XMLHTTP);
+    var deleteFromCarrt = "delete";
+    url = "addproducttocart" + "?productid=" + product + "&action="+ deleteFromCarrt;
+    req.open("GET", url, true);
+    req.onreadystatechange = handleStateChangeDelete;
+    req.send(null);
+
+}
+
+function handleStateChangeDelete() {
         if (req.readyState == 4 && req.status == 200) {
 //            xmlvalue = req.responseText;
 //            document.getElementById("status").value = xmlvalue;
