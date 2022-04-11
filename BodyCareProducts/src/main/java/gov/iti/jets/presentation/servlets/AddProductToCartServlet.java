@@ -28,7 +28,8 @@ public class AddProductToCartServlet extends HttpServlet {
         Product product1 = DomainFacade.getProductById(productId);
 
         System.out.println("Herrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" + action + product);
-        if(action.equals("add")) {
+        if (action.equals("addplus")) {
+            System.out.println("addplus");
             if (session.getAttribute("cart") == null) {
                 List<CartItemDto> cart = new ArrayList<>();
                 cart.add(new CartItemDto(product1, 1));
@@ -47,8 +48,33 @@ public class AddProductToCartServlet extends HttpServlet {
                 }
                 session.setAttribute("cart", cart);
             }
+            found = false;
+
         }
-        if(action.equals("delete")){
+
+        if (action.equals("addminus")) {
+            System.out.println("addminus");
+            if (session.getAttribute("cart") == null) {
+
+            } else {
+                List<CartItemDto> cart = (List<CartItemDto>) session.getAttribute("cart");
+                for (CartItemDto cartItemDto : cart) {
+                    if (cartItemDto.getProduct().getId() == productId) {
+                        int quantity = cartItemDto.getQuantity();
+                        cartItemDto.setQuantity(--quantity);
+                        found = true;
+                    }
+                }
+                if (!found) {
+                    cart.add(new CartItemDto(product1, 1));
+                }
+                session.setAttribute("cart", cart);
+            }
+            found = false;
+
+        }
+        if (action.equals("delete")) {
+            System.out.println("delete");
             List<CartItemDto> cart = (List<CartItemDto>) session.getAttribute("cart");
             for (CartItemDto cartItemDto : cart) {
                 if (cartItemDto.getProduct().getId() == productId) {
@@ -57,11 +83,10 @@ public class AddProductToCartServlet extends HttpServlet {
             }
         }
 
-
-        for(CartItemDto cartItemDto: (List<CartItemDto>)session.getAttribute("cart"))
-        {
+        for (CartItemDto cartItemDto : (List<CartItemDto>) session.getAttribute("cart")) {
             System.out.println("productName: " + cartItemDto.getProduct().getImage());
-            System.out.println("cart " + cartItemDto.getQuantity() + "productName: " + cartItemDto.getProduct().getName());
+            System.out.println(
+                    "cart " + cartItemDto.getQuantity() + "productName: " + cartItemDto.getProduct().getName());
         }
         System.out.println("product " + product1.getName());
 

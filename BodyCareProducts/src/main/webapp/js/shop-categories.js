@@ -35,21 +35,27 @@ function addToCart(product) {
         req = new XMLHttpRequest();
     else if (window.ActiveXObject)
         req = new ActiveXObject(Microsoft.XMLHTTP);
-    var add = "add";
-    url = "addproducttocart" + "?productid=" + product + "&action="+ add;
+    var add = "addplus";
+    url = "addproducttocart" + "?productid=" + product + "&action=" + add + "&timeStamp=" + new Date().getTime();
     req.open("GET", url, true);
-    req.onreadystatechange = handleStateChange;
+    req.onreadystatechange = handleStateChange(product);
     req.send(null);
 
 }
 
-function handleStateChange() {
-        if (req.readyState == 4 && req.status == 200) {
-//            xmlvalue = req.responseText;
-//            document.getElementById("status").value = xmlvalue;
-              console.log("haraaaaaaaa");
-        }
+function handleStateChange(product) {
+    if (req.readyState == 4 && req.status == 200) {
+        //        document.getElementById('addalert').innerHTML += `
+        //        <div class="alert success">
+        //            <span class="closebtn">&times;</span>
+        //            <strong>Success!</strong> product ${product} successfully added to your cart.
+        //        </div>`;
+
+        //            xmlvalue = req.responseText;
+        //            document.getElementById("status").value = xmlvalue;
+        console.log("haraaaaaaaa");
     }
+}
 
 function removeFromCart(product) {
     if (window.XMLHttpRequest)
@@ -57,7 +63,7 @@ function removeFromCart(product) {
     else if (window.ActiveXObject)
         req = new ActiveXObject(Microsoft.XMLHTTP);
     var deleteFromCarrt = "delete";
-    url = "addproducttocart" + "?productid=" + product + "&action="+ deleteFromCarrt;
+    url = "addproducttocart" + "?productid=" + product + "&action=" + deleteFromCarrt;
     req.open("GET", url, true);
     req.onreadystatechange = handleStateChangeDelete;
     req.send(null);
@@ -65,9 +71,9 @@ function removeFromCart(product) {
 }
 
 function handleStateChangeDelete() {
-        if (req.readyState == 4 && req.status == 200) {
-//            xmlvalue = req.responseText;
-//            document.getElementById("status").value = xmlvalue;
-              console.log("haraaaaaaaa");
-        }
+    if (req.readyState == 4 && req.status == 200) {
+        //            xmlvalue = req.responseText;
+        //            document.getElementById("status").value = xmlvalue;
+        console.log("haraaaaaaaa");
     }
+}

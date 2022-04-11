@@ -191,6 +191,8 @@
                                                                 <a href="#"> + ADD TO
                                                                     CART</a>
                                                             </li>
+                                                            <div id="addalert"></div>
+
                                                         </ul>
                                                     </div>
                                                     <div class="pi-text">

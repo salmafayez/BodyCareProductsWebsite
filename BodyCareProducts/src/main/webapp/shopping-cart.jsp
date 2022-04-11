@@ -82,10 +82,10 @@
                                                             <td class="qua-col first-row">
                                                                 <div class="quantity">
                                                                     <div class="pro-qty">
-                                                                        <span class="dec qtybtn">-</span>
+                                                                        <span onclick="addToCartProduct(${cart.product.id})" class="dec qtybtn">-</span>
                                                                         <input class="pro-qty-input" type="text"
-                                                                            value="1">
-                                                                        <a class="inc qtybtn">+</a>
+                                                                            value="${cart.quantity}">
+                                                                        <a onclick="addToCartProduct(${cart.product.id})" class="inc qtybtn">+</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
