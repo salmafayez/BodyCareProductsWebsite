@@ -17,9 +17,9 @@
                     <div class="col-lg-5 col-md-5">
                         <div class="advanced-search" >
                             <!-- <button type="button" class="category-btn">All Categories</button> -->
-                            <form action="#" class="input-group">
-                                <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
+                            <form action="search" class="input-group" method="post">
+                                <input type="text" placeholder="What do you need?" name="searchProduct" id="searchProduct">
+                                <button type="submit"><i class="ti-search"></i></button>
                             </form>
                         </div>
                     </div>

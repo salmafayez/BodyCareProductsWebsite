@@ -17,15 +17,27 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> loadAllProducts() {
+    public List<Product> loadAllProducts(int offset, int noOfRecords) {
         ProductDao productDao = new ProductDaoImpl();
-        return productDao.load();
+        return productDao.load(offset, noOfRecords);
     }
 
     @Override
-    public List<Product> loadProductsByCategory(String category) {
+    public List<Product> loadProductsByCategory(String category, int offset, int noOfRecords) {
         ProductDao productDao = new ProductDaoImpl();
-        return productDao.loadByCategory(category);
+        return productDao.loadByCategory(category, offset, noOfRecords);
+    }
+
+    @Override
+    public Long getNoOfRecords() {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.getNoOfRecords();
+    }
+
+    @Override
+    public List<Product> searchProducts(String searchProduct, int offset, int noOfRecords) {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.searchProducts(searchProduct, offset, noOfRecords);
     }
 
     @Override

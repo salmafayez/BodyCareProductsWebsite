@@ -36,7 +36,6 @@ public class DomainFacade {
     public static User login(String email) throws NoResultException{
         return loginService.login(email);
     }
-
     public static boolean updatePassword(String email , String password){
         return updatePasswordService.updatePassword(email, password);
     }
@@ -52,8 +51,12 @@ public class DomainFacade {
         return categoryService.getCategoryList();
     }
     
-    public static List<Product> loadAllProducts(){
-        return addProductService.loadAllProducts();
+    public static List<Product> loadAllProducts(int offset, int noOfRecords){
+        return addProductService.loadAllProducts(offset, noOfRecords);
+    }
+
+    public static List<Product> loadProductsByCategory(String category, int offset, int noOfRecords){
+        return addProductService.loadProductsByCategory(category, offset, noOfRecords);
     }
 
     public static List<User> loadAllUses(){
@@ -84,8 +87,11 @@ public class DomainFacade {
         return cartProductsService.addProductToCart(cartProducts);
     }
 
-    public static List<Product> loadProductsByCategory(String category){
+    public static List<Product> loadProductsByCategory(String category) {
         return addProductService.loadProductsByCategory(category);
+    }
+    public static Long getNoOfRecords(){
+        return addProductService.getNoOfRecords();
     }
 
     public static boolean addUser(User user) {
@@ -95,5 +101,8 @@ public class DomainFacade {
 
     public static Product getProduct(int id){
         return addProductService.getProduct(id);
+    }
+    public static List<Product> searchProducts(String searchProduct, int offset, int noOfRecords){
+        return addProductService.searchProducts(searchProduct, offset, noOfRecords);
     }
 }

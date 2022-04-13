@@ -6,11 +6,11 @@ import gov.iti.jets.persistence.entities.Product;
 
 public interface ProductService {
     public boolean addProduct(Product product);
-    public List<Product> loadAllProducts();
-    public List<Product> loadProductsByCategory(String category);
     public Product getProductById(int id);
-   
-   
+    public List<Product> loadAllProducts(int offset, int noOfRecords);
+    public List<Product> loadProductsByCategory(String category, int offset, int noOfRecords);
+    public Long getNoOfRecords();
+    public List<Product> searchProducts(String searchProduct, int offset, int noOfRecords);
     public Product getProduct(int id);
 
 }

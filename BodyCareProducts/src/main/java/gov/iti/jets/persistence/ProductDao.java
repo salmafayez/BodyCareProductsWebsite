@@ -6,8 +6,12 @@ import gov.iti.jets.persistence.entities.Product;
 
 public interface ProductDao {
     boolean insert (Product product);
-    List <Product> load();
-    List <Product> loadByCategory(String category);
     public Product getProductById(int id);
     Product getProduct(int id);
+    List <Product> load(int offset, int noOfRecords);
+    List <Product> loadByCategory(String category, int offset, int noOfRecords);
+    List <Product> searchProducts(String searchProduct, int offset, int noOfRecords);
+    Long getNoOfRecords();
+
+
 }
