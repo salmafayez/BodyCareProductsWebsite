@@ -33,4 +33,10 @@ public class ProductServiceImpl implements ProductService {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.getProductById(id);
     }
+
+    @Override
+    public Product getProduct(int id) {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.getProduct(id);
+    }
 }

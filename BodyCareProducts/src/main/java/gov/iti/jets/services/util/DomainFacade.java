@@ -36,6 +36,9 @@ public class DomainFacade {
         return loginService.login(email);
     }
 
+    public static boolean addUser(User user){
+        return registerUserService.addUser(user);
+    }
     public static boolean updatePassword(String email , String password){
         return updatePasswordService.updatePassword(email, password);
     }
@@ -87,4 +90,8 @@ public class DomainFacade {
         return addProductService.loadProductsByCategory(category);
     }
 
+
+    public static Product getProduct(int id){
+        return addProductService.getProduct(id);
+    }
 }
