@@ -3,73 +3,23 @@
   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
                       https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
   version="5.0" metadata-complete="true">
-  <servlet>
-    <servlet-name>AddProductServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.AddProductControllerServlet</servlet-class>
-  </servlet>
 
-  <servlet>
-    <servlet-name>RegisterUserControllerServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.RegisterUserControllerServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>LoginControllerServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.LoginControllerServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>CheckEmailAjaxServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.ajaxservlet.CheckEmailAjaxServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>CategoryLoadAjaxServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.ajaxservlet.CategoryLoadAjaxServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>WishlistAddAjaxServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.ajaxservlet.WishlistAddAjaxServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>WishlistRemoveAjaxServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.ajaxservlet.WishlistRemoveAjaxServlet</servlet-class>
-  </servlet>
-
+  <!-- Add Category Servlet -->
   <servlet>
     <servlet-name>AddCategoryServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.AddCategoryServlet</servlet-class>
   </servlet>
 
+  <servlet-mapping>
+    <servlet-name>AddCategoryServlet</servlet-name>
+    <url-pattern>/addcategory</url-pattern>
+  </servlet-mapping>
+
+
+<!-- Add product Servlet -->
   <servlet>
-    <servlet-name>LogoutControllerServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.LogoutControllerServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-
-    <servlet-name>VerifyCode</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.VerifyCodeControllerServlet</servlet-class>
-  </servlet>
-  <servlet>
-
-    <servlet-name>ProductLoadControllerServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.ProductLoadControllerServlet</servlet-class>
-
-  </servlet>
-
-  <servlet>
-
-    <servlet-name>AddProductToCartServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.AddProductToCartServlet</servlet-class>
-
-  </servlet>
-
-  <servlet>
-    <servlet-name>SearchControllerServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.SearchControllerServlet</servlet-class>
+    <servlet-name>AddProductServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AddProductControllerServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -77,10 +27,23 @@
     <url-pattern>/addproduct</url-pattern>
   </servlet-mapping>
 
+
+<!-- Add product to cart servlet -->
+  <servlet>
+    <servlet-name>AddProductToCartServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AddProductToCartServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AddProductToCartServlet</servlet-name>
+    <url-pattern>/addproducttocart</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- Contact message servlet -->
   <servlet>
     <servlet-name>ContactMessageServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.ContactMessageServlet</servlet-class>
-
   </servlet>
 
   <servlet-mapping>
@@ -88,7 +51,89 @@
     <url-pattern>/contactmessage</url-pattern>
   </servlet-mapping>
 
+<!-- Load contact message servlet -->
+  <servlet>
+    <servlet-name>LoadContactMessagesServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ContactMessagesLoadControllerServlet</servlet-class>
+  </servlet>
 
+  <servlet-mapping>
+    <servlet-name>LoadContactMessagesServlet</servlet-name>
+    <url-pattern>/loadcontactmessages</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- Forget password servlet -->
+
+
+
+
+  <!-- Login servlet -->
+  <servlet>
+    <servlet-name>LoginControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.LoginControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LoginControllerServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+
+<!-- Logout servlet -->
+  <servlet>
+    <servlet-name>LogoutControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.LogoutControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LogoutControllerServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+
+
+<!-- Product load Controller servlet -->
+  <servlet>
+    <servlet-name>ProductLoadControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ProductLoadControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ProductLoadControllerServlet</servlet-name>
+    <url-pattern>/products</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- Register servlet -->
+  <servlet>
+    <servlet-name>RegisterUserControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.RegisterUserControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>RegisterUserControllerServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- Search controller servlet -->
+  <servlet>
+    <servlet-name>SearchControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.SearchControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SearchControllerServlet</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- Update password controller servlet -->
+
+  
+
+
+  <!-- User history load controller servlet -->
   <servlet>
     <servlet-name>LoadUsersServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.UsersHistoryLoadControllerServlet</servlet-class>
@@ -101,42 +146,15 @@
   </servlet-mapping>
 
 
+  <!-- Validate otpc controller servlet -->
+
+
+
+<!-- Verify code controller servlet -->
   <servlet>
-    <servlet-name>LoadContactMessagesServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.ContactMessagesLoadControllerServlet</servlet-class>
-
+    <servlet-name>VerifyCode</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.VerifyCodeControllerServlet</servlet-class>
   </servlet>
-
-  <servlet-mapping>
-    <servlet-name>LoadContactMessagesServlet</servlet-name>
-    <url-pattern>/loadcontactmessages</url-pattern>
-  </servlet-mapping>
-
-
-  <servlet-mapping>
-    <servlet-name>RegisterUserControllerServlet</servlet-name>
-    <url-pattern>/register</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>CheckEmailAjaxServlet</servlet-name>
-    <url-pattern>/checkemail</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>CategoryLoadAjaxServlet</servlet-name>
-    <url-pattern>/categoryload</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>LogoutControllerServlet</servlet-name>
-    <url-pattern>/logout</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>LoginControllerServlet</servlet-name>
-    <url-pattern>/login</url-pattern>
-  </servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>VerifyCode</servlet-name>
@@ -144,38 +162,7 @@
   </servlet-mapping>
 
 
-  <servlet-mapping>
-    <servlet-name>AddCategoryServlet</servlet-name>
-    <url-pattern>/addcategory</url-pattern>
-  </servlet-mapping>
-
-
-  <servlet-mapping>
-    <servlet-name>ProductLoadControllerServlet</servlet-name>
-    <url-pattern>/products</url-pattern>
-  </servlet-mapping>
-
-
-  <servlet-mapping>
-    <servlet-name>AddProductToCartServlet</servlet-name>
-    <url-pattern>/addproducttocart</url-pattern>
-  </servlet-mapping>
-  
-  <servlet-mapping>
-    <servlet-name>SearchControllerServlet</servlet-name>
-    <url-pattern>/search</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>WishlistAddAjaxServlet</servlet-name>
-    <url-pattern>/wishlist</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>WishlistRemoveAjaxServlet</servlet-name>
-    <url-pattern>/wishlist-remove</url-pattern>
-  </servlet-mapping>
-
+  <!-- Wishlist controller servlet -->
   <servlet>
     <servlet-name>WishlistControllerServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.WishlistControllerServlet</servlet-class>
@@ -186,10 +173,117 @@
     <url-pattern>/wishlist-list</url-pattern>
   </servlet-mapping>
 
+
+  <!-- Category load ajax servlet-->
+  <servlet>
+    <servlet-name>CategoryLoadAjaxServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.CategoryLoadAjaxServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>CategoryLoadAjaxServlet</servlet-name>
+    <url-pattern>/categoryload</url-pattern>
+  </servlet-mapping>
+
+
+<!-- Check email controller servlet -->
+  <servlet>
+    <servlet-name>CheckEmailAjaxServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.CheckEmailAjaxServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>CheckEmailAjaxServlet</servlet-name>
+    <url-pattern>/checkemail</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- Wishlist add ajax servlet -->
+  <servlet>
+    <servlet-name>WishlistAddAjaxServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.WishlistAddAjaxServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>WishlistAddAjaxServlet</servlet-name>
+    <url-pattern>/wishlist</url-pattern>
+  </servlet-mapping>
+
+  
+  <!-- Wishlist remove ajax servlet -->
+  <servlet>
+    <servlet-name>WishlistRemoveAjaxServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.WishlistRemoveAjaxServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>WishlistRemoveAjaxServlet</servlet-name>
+    <url-pattern>/wishlist-remove</url-pattern>
+  </servlet-mapping>
+
+
+
+  
+
+ 
+
+ 
+
+  
+
+  
+
+ 
+
+ 
+
+  
+
+ 
+
+
+  
+
+
+ 
+
+
+ 
+
+ 
+
+  
+
+ 
+
+  
+
+ 
+
+
+ 
+
+
+  
+
+
+  <!-- Input validation filters -->
+  
+  
+  <!-- Authentication filters -->
+  
+
+  <!-- Jsp pages filters -->
+
+
+  
+  <!-- Listeners -->
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.MyAppListener </listener-class>
   </listener>
+
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.SessionListener </listener-class>
   </listener>
+
 </web-app>
