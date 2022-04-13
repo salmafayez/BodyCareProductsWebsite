@@ -17,4 +17,10 @@ public class RegisterUserServiceImpl implements RegisterUserService {
         UserDao userDao = new UserDaoImpl();
         return userDao.insert(user);
     }
+
+    @Override
+    public User getUser(int id) {
+        UserDao userDao = new UserDaoImpl();
+        return userDao.getUser(id);
+    }
 }
