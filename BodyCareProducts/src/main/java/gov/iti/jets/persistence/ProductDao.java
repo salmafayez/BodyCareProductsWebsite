@@ -9,7 +9,5 @@ public interface ProductDao {
     List <Product> load();
     List <Product> loadByCategory(String category);
     public Product getProductById(int id);
-
-
     Product getProduct(int id);
 }

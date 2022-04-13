@@ -1,4 +1,7 @@
 <!-- Header Section Begin -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
     <header class="header-section">
         <div class="container">
@@ -24,7 +27,7 @@
                         <ul class="nav-right">
                             <li class="heart-icon"><a href="#">
                                     <i class="icon_heart_alt"></i>
-                                    <span>1</span>
+                                    <span id="wishlistNumber">0</span>
                                 </a>
                             </li>
                            <li class="cart-icon"><a href="#">
@@ -144,7 +147,7 @@
                         -->
                         <li><a href="contact.jsp">Contact</a></li>
                         <li><a href="shopping-cart.jsp"> Cart</a></li>
-                        <li><a href="addproduct">Wishlist</a></li>
+                        <li><a href="wishlist-list">Wishlist</a></li>
                         <li><a href="check-out.jsp">Check-out</a></li>
                         <!--
                         <li><a href="#">Pages</a>

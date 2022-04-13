@@ -15,7 +15,6 @@
 
 <body onload="loadCategories();">
     <!-- Page Preloder -->
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
         <div id="preloder">
             <div class="loader"></div>
@@ -181,7 +180,7 @@
                                                     <div class="pi-pic">
                                                         <img src="img/products/product-3.jpg" alt="">
                                                         <div class="icon">
-                                                            <i class="icon_heart_alt"></i>
+                                                            <i class="icon_heart_alt" onclick="addToWishlist(${product.id})"></i>
                                                         </div>
 
                                                         <ul>
@@ -225,6 +224,7 @@
             <%@ include file="footer.jsp" %>
                 <%@ include file="commons-js.jsp" %>
                     <script src="js/shop-categories.js" type="text/javascript"></script>
+                    <script src="js/wishlist.js" type="text/javascript"></script>
 
 </body>
 
