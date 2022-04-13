@@ -104,16 +104,5 @@ public class ProductDaoImpl implements ProductDao {
         return product.get(0);
     }
 
-    @Override
-    public List<Product> loadByCategory(String category) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public List<Product> load() {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
 }

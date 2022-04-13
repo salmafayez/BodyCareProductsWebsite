@@ -86,11 +86,6 @@ public class DomainFacade {
         return cartProductsService.addProductToCart(cartProducts);
     }
 
-    public static List<Product> loadProductsByCategory(String category){
-        return addProductService.loadProductsByCategory(category);
-    }
-
-
     public static Product getProduct(int id){
         return addProductService.getProduct(id);
     }
