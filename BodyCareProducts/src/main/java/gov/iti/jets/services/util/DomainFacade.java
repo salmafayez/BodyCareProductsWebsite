@@ -4,6 +4,7 @@ import java.util.List;
 
 import gov.iti.jets.persistence.entities.CartProducts;
 import gov.iti.jets.persistence.entities.Category;
+import gov.iti.jets.persistence.entities.ContactMessage;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.services.*;
@@ -17,6 +18,8 @@ public class DomainFacade {
     private static final LoginService loginService= new LoginServiceImpl();
     private static final UpdatePasswordService updatePasswordService= new UpdatePasswordServiceImpl();
     private static final CategoryService categoryService = new CategoryServiceImpl();
+    private static final ContactMessageService contactMessageService = new ContactMessageServiceImpl();
+    private static final UsersHistoryService usersHistoryService = new UsersHistroyServiceImpl();
     private static final CartProductsService cartProductsService = new CartProductsServiceImpl();
 
     public static boolean addProduct(Product product){
@@ -40,6 +43,9 @@ public class DomainFacade {
     public static boolean addCategory(Category category) {
         return categoryService.addCategory(category);
     }
+    public static boolean addContactMessage(ContactMessage contactMessage) {
+        return contactMessageService.addContactMessage(contactMessage);
+    }
 
     public static List<Category> loadCategories() {
         return categoryService.getCategoryList();
@@ -48,6 +54,14 @@ public class DomainFacade {
     public static List<Product> loadAllProducts(){
         return addProductService.loadAllProducts();
     }
+
+    public static List<User> loadAllUses(){
+        return usersHistoryService.loadAllUsers();
+    }
+    public static List<ContactMessage> loadAllMessages(){
+        return contactMessageService.loadAllMessages();
+    }
+
 
     public static Product getProductById(int id){
         return addProductService.getProductById(id);
@@ -68,7 +82,6 @@ public class DomainFacade {
     public static boolean addProductToCart(CartProducts cartProducts){
         return cartProductsService.addProductToCart(cartProducts);
     }
-
 
     public static List<Product> loadProductsByCategory(String category){
         return addProductService.loadProductsByCategory(category);

@@ -12,7 +12,7 @@
     <%@ include file="commons-styles.jsp" %>
     </head>
 
-<body>
+<body onload="checkInput();">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -29,17 +29,17 @@
                         <div class="card px-4 py-4"
                             style="color:white;width: 35rem;border-radius: 15px;background-color: #f5f5f5;">
                             <div class="card-body">
-                                <div class="login-form">
+                                <div class="register-form">
                                     <h2>Add Category</h2>
                                     <form action="addcategory" method="post" id="category-form">
                                         <div class="group-input">
                                             <label for="category-name">Category Name *</label>
-                                            <input type="text" id="category-name" name="category-name" class="defaultBorders">
-                                            <i class="fa fa-check-circle" aria-hidden="true" ></i><br>
-                                            <i class="fa fa-exclamation-circle" aria-hidden="true" ></i>
+                                            <input type="text" id="category-name" name="category-name"  class="defaultBorders"  required>
+                                            <i class="fa fa-check-circle" aria-hidden="true" style="top: 173px;right: 55px;"></i><br>
+                                            <i class="fa fa-exclamation-circle" aria-hidden="true" style="top: 173px;right: 55px;" ></i>
                                             <small  style="color: rgb(238, 0, 0);font-size: 12px;"></small>
                                         </div>
-                                        <button type="submit" class="site-btn login-btn defaultBorders">Add</button>
+                                        <button type="submit" class="site-btn login-btn defaultBorders" id="addButton" >Add</button>
                                     </form>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
-
+    <script src="js/CategoryValidation.js" type="text/javascript"></script>
 
 </body>
 

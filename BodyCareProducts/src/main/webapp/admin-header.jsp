@@ -26,10 +26,11 @@
                
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="./admin-user-history.jsp">Users</a></li>
+                        <li><a href="./loadusers">Users</a></li>
                         <li><a href="./admin-product.jsp">Products</a></li>
                         <li><a href="./admin-order-history.jsp">Orders</a></li>
                         <li><a href="./admin-category.jsp">Categories</a></li>
+                        <li><a href="./loadcontactmessages">Messages</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
