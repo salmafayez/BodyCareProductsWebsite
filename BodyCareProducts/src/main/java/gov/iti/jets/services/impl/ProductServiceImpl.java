@@ -51,4 +51,16 @@ public class ProductServiceImpl implements ProductService {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.getProduct(id);
     }
+
+    @Override
+    public List<Product> loadAllProducts() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<Product> loadProductsByCategory(String category) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
