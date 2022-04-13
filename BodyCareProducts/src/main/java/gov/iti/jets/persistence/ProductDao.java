@@ -13,5 +13,4 @@ public interface ProductDao {
     List <Product> searchProducts(String searchProduct, int offset, int noOfRecords);
     Long getNoOfRecords();
 
-
 }

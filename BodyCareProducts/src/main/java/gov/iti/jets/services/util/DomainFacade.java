@@ -87,9 +87,6 @@ public class DomainFacade {
         return cartProductsService.addProductToCart(cartProducts);
     }
 
-    public static List<Product> loadProductsByCategory(String category) {
-        return addProductService.loadProductsByCategory(category);
-    }
     public static Long getNoOfRecords(){
         return addProductService.getNoOfRecords();
     }
