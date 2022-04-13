@@ -54,8 +54,8 @@ public class DomainFacade {
         return categoryService.getCategoryList();
     }
     
-    public static List<Product> loadAllProducts(){
-        return addProductService.loadAllProducts();
+    public static List<Product> loadAllProducts(int offset, int noOfRecords){
+        return addProductService.loadAllProducts(offset, noOfRecords);
     }
 
     public static List<User> loadAllUses(){
@@ -93,5 +93,16 @@ public class DomainFacade {
 
     public static Product getProduct(int id){
         return addProductService.getProduct(id);
+    }
+    public static List<Product> loadProductsByCategory(String category, int offset, int noOfRecords){
+        return addProductService.loadProductsByCategory(category, offset, noOfRecords);
+    }
+
+    public static Long getNoOfRecords(){
+        return addProductService.getNoOfRecords();
+    }
+
+    public static List<Product> searchProducts(String searchProduct, int offset, int noOfRecords){
+        return addProductService.searchProducts(searchProduct, offset, noOfRecords);
     }
 }
