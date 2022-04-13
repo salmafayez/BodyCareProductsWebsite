@@ -32,6 +32,8 @@ public class LoginPageFilter implements Filter {
                 chain.doFilter(httpRequest, response); 
             }
         }else{
+            System.out.println(httpRequest.getRequestURI());
+            System.out.println(httpRequest.getServletPath());
             chain.doFilter(httpRequest, response); 
         }
     }

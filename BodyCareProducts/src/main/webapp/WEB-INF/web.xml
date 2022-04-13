@@ -1,8 +1,9 @@
-<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
-                      https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
-  version="5.0" metadata-complete="true">
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" 
+        version="5.0" metadata-complete="true">
+  
   <servlet>
     <servlet-name>AddProductServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.AddProductControllerServlet</servlet-class>
@@ -39,12 +40,27 @@
   </servlet>
 
   <servlet>
+    <servlet-name>ForgetPasswordControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ForgetPasswordControllerServlet</servlet-class>
+  </servlet>
 
+  <servlet>
+    <servlet-name>ValidateOtpControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ValidateOtpControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>UpdatePasswordControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.UpdatePasswordControllerServlet</servlet-class>
+</servlet>
+  
+<servlet>
     <servlet-name>VerifyCode</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.VerifyCodeControllerServlet</servlet-class>
   </servlet>
-  <servlet>
 
+  
+  <servlet>
     <servlet-name>ProductLoadControllerServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.ProductLoadControllerServlet</servlet-class>
 
@@ -86,7 +102,22 @@
     <servlet-name>LoginControllerServlet</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ForgetPasswordControllerServlet</servlet-name>
+    <url-pattern>/forgetpassword</url-pattern>
+  </servlet-mapping>
 
+  <servlet-mapping>
+    <servlet-name>ValidateOtpControllerServlet</servlet-name>
+    <url-pattern>/validateotp</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>UpdatePasswordControllerServlet</servlet-name>
+    <url-pattern>/updatepassword</url-pattern>
+  </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>VerifyCode</servlet-name>
     <url-pattern>/verify</url-pattern>
@@ -98,21 +129,130 @@
     <url-pattern>/addcategory</url-pattern>
   </servlet-mapping>
 
-
+  
   <servlet-mapping>
     <servlet-name>ProductLoadControllerServlet</servlet-name>
     <url-pattern>/products</url-pattern>
   </servlet-mapping>
-
   <servlet-mapping>
     <servlet-name>AddProductToCartServlet</servlet-name>
     <url-pattern>/addproducttocart</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>PageNotFoundServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.PageNotFoundServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>PageNotFoundServlet</servlet-name>
+    <url-pattern>/page-not-found</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>Home</servlet-name>
+    <jsp-file>/home.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>Home</servlet-name>
+      <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BeforeHome</servlet-name>
+    <jsp-file>/beforeHome.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>BeforeHome</servlet-name>
+      <url-pattern>/beforeHome</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- ////////////  Filters ///////// -->
+
+  <filter>
+    <filter-name> LoginPageFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.LoginPageFilter </filter-class>
+  </filter>
+
+
+  <filter-mapping>
+      <filter-name> LoginPageFilter </filter-name>
+      <url-pattern> /login </url-pattern>
+  </filter-mapping>
+
+
+  <filter>
+    <filter-name> RegisterPageFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.RegisterPageFilter </filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name> RegisterPageFilter </filter-name>
+    <url-pattern> /register </url-pattern>
+  </filter-mapping>
+
+
+  <filter>
+    <filter-name> AddCategoryPageFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.AddCategoryPageFilter  </filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name> AddCategoryPageFilter </filter-name>
+    <url-pattern> /addcategory </url-pattern>
+  </filter-mapping>
+
+
+  <filter>
+    <filter-name> AddProductPageFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.AddProductPageFilter </filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name> AddProductPageFilter </filter-name>
+    <url-pattern> /addproduct </url-pattern>
+  </filter-mapping>
+
+
+  <filter>
+    <filter-name> ContactPageFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.ContactPageFilter </filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name> ContactPageFilter </filter-name>
+    <url-pattern> /contact </url-pattern>
+  </filter-mapping>
+
+
+  <filter>
+    <filter-name> JSPFilesFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.authenticationfilters.JSPFilesFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name> JSPFilesFilter </filter-name>
+    <url-pattern> *.jsp </url-pattern>
+  </filter-mapping>
+
+
+
+
+  <!--  //////////// Listenrns  ////////  -->
 
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.MyAppListener </listener-class>
-  </listener>
+</listener>
+
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.SessionListener </listener-class>
   </listener>
+
+  <welcome-file-list>
+    <welcome-file>beforeHome</welcome-file>
+  </welcome-file-list>
+
 </web-app>
