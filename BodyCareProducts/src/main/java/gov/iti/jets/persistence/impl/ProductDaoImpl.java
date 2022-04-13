@@ -3,6 +3,7 @@ package gov.iti.jets.persistence.impl;
 import java.util.List;
 
 import gov.iti.jets.persistence.ProductDao;
+import gov.iti.jets.persistence.entities.Category;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.util.ManagerFactory;
 import jakarta.persistence.EntityManager;
@@ -10,6 +11,9 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 
 public class ProductDaoImpl implements ProductDao {
 
@@ -44,5 +48,17 @@ public class ProductDaoImpl implements ProductDao {
         entityManager.close();
         return result;
     }
-    
+
+    @Override
+    public Product getProductById(int id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        CriteriaBuilder cb = entityManagerFactory.getCriteriaBuilder();
+        CriteriaQuery<Product> query = cb.createQuery(Product.class);
+        Root<Product> productRoot = query.from(Product.class);
+        query.select(productRoot).where(cb.equal(productRoot.get("id"),id));
+
+        List<Product> result1 = entityManager.createQuery(query).getResultList();
+        return result1.get(0);
+    }
+
 }

@@ -2,6 +2,7 @@ package gov.iti.jets.persistence.impl;
 
 import java.util.List;
 import gov.iti.jets.persistence.UserDao;
+import gov.iti.jets.persistence.entities.Category;
 import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.persistence.util.ManagerFactory;
 import jakarta.persistence.EntityManager;
@@ -64,5 +65,16 @@ public class UserDaoImpl implements UserDao {
         entityManager.close();
         return true;
     }
-    
+
+    @Override
+    public User getUser(int id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        String select = "SELECT c FROM User c WHERE c.id=:userid";
+        Query query = entityManager.createQuery(select, User.class);
+        query.setParameter("userid", id);
+        User user = (User) query.getSingleResult();
+        entityManager.close();
+        return user;
+    }
+
 }
