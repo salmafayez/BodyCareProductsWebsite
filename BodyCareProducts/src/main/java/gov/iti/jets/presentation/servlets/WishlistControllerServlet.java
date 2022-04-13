@@ -20,12 +20,12 @@ public class WishlistControllerServlet extends HttpServlet {
    
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        HttpSession session= request.getSession(false);
-        List<Product> productsList = (List<Product>)session.getAttribute("wishlist-product-list");
-        // if(productsList == null){
-            
+        // HttpSession session= request.getSession(true);
+        // List<Product> productsList = (List<Product>)session.getAttribute("wishlist-product-list");
+        // System.out.println(productsList.size());
+        // if(productsList != null){
+        //     request.setAttribute("wishlist-product-list", productsList);
         // }
-        request.setAttribute("wishlist-product", productsList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("wishlist.jsp");
         requestDispatcher.forward(request, response);
     }

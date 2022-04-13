@@ -32,6 +32,10 @@ public class ProductDaoImpl implements ProductDao {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         TypedQuery<Product> query = entityManager.createQuery("select p from Product p",Product.class);
         List<Product> result =query.getResultList();
+        System.out.println("hh");
+        System.out.println(result);
+        System.out.println(result.size());
+        System.out.println("ppp");
         entityManager.close();
         return result;
     }
@@ -43,7 +47,6 @@ public class ProductDaoImpl implements ProductDao {
         Query query = entityManager.createQuery(select);
         query.setParameter("id", id);
         List<Product> product = query.getResultList();
-        System.out.println(product.size());
         entityManager.close();
         return product.get(0);
     }

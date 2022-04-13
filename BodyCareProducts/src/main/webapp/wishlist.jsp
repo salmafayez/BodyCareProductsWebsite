@@ -10,6 +10,7 @@
 
    
     <%@ include file="commons-styles.jsp" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 
 <body>
@@ -25,39 +26,55 @@
         style="background-image: url(img/background_img.jpg); background-repeat: no-repeat; background-size: cover;">
         <section class="shopping-cart spad">
             <div class="container">
-                <div class="row px-2 py-3" style="background-color: #f5f5f5; border-radius: 15px;">
-                    <div class="col-lg-8">
+                <div class="col-lg-10 row px-2 py-3 m-auto" style="background-color: #f5f5f5; border-radius: 15px;">
+                    <div class="">
                         <div class="cart-table">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
-                                        <th class="p-name">Product Name</th>
+                                        <th class="px-4">Image</th>
+                                        <th class="p-name ">Product Name</th>
+                                        <th class="p-name">Category</th>
                                         <th>Price</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${wishlist-product}" var="product">
-                                    <tr>
-                                        <td class="cart-pic first-row"><img src="img/cart-page/product-1.jpg" alt=""
-                                                style="border-radius: 15px;"></td>
-                                        <td class="cart-title first-row">
-                                            <h5>${product.name}</h5>
-                                        </td>
-                                        <td class="p-price first-row">${product.price}</td>
-                                        <td class="close-td first-row"><i class="ti-close"></i></td>
-                                    </tr>
-                                </c:forEach>
+                                 <c:if test="${wishlist != null}">
+                                    <c:if test="${!empty wishlist}">
+                                        <c:forEach items="${wishlist}" var="product">
+                                            <tr>
+                                                <td class="cart-pic first-row px-4"><img src="img/cart-page/product-1.jpg" alt=""
+                                                     style="border-radius: 15px;">
+                                                </td>
+                                                <td class="cart-title first-row">
+                                                    <h5>${product.name}</h5>
+                                                </td>
+                                                <td class="cart-title first-row">
+                                                    <h5>${product.categoryName}</h5>
+                                                </td>
+                                                <td class="p-price first-row">${product.price}</td>
+                                                <td class="close-td first-row">
+                                                <i class="ti-close" onclick="removeFromWishlist(${product.id})">
+                                                </i>
+                                                </td>
+                                            </tr> 
+                                        </c:forEach>  
+                                    </c:if> 
+                                </c:if> 
+
+                                <c:if test="${wishlist == null}">
+                                    <c:if test="${empty wishlist}">
+                                        <p> No products in wishlist </p>
+                                    </c:if>
+                                </c:if>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="row">
+                        <div class="row m-auto">
                             <div class="col-lg-4 content-center m-auto">
                                 <div class="cart-buttons">
-                                    <a href="#" class="primary-btn continue-shop" style="border-radius: 15px;">Continue
-                                        shopping</a>
-                                    <a href="#" class="primary-btn up-cart" style="border-radius: 15px;">Update cart</a>
+                                    <a href="#" class="primary-btn continue-shop" style="border-radius: 15px;">Continue shopping</a>
                                 </div>
                             </div>
                         </div>
@@ -71,6 +88,7 @@
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
+    <script src="js/wishlist.js" type="text/javascript"></script>
 </body>
 
 </html>

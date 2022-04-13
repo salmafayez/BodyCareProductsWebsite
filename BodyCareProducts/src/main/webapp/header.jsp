@@ -1,5 +1,6 @@
 <!-- Header Section Begin -->
 
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <header class="header-section">
         <div class="container">
             <div class="inner-header">
@@ -24,6 +25,9 @@
                         <ul class="nav-right">
                             <li class="heart-icon"><a href="wishlist-list">
                                     <i class="icon_heart_alt"></i>
+                                    <%-- <c:if test="${wishlistsize != null}">
+                                            <span id="wishlistNumber">{$wishlistsize}</span>
+                                    </c:if> --%>
                                     <span id="wishlistNumber">0</span>
                                 </a>
                             </li>

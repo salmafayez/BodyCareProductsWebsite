@@ -6,7 +6,6 @@
     Version: 1.0
     Created: Colorlib
 ---------------------------------------------------------  */
-window.location.reload(true);
 'use strict';
 
 (function ($) {
