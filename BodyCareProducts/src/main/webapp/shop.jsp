@@ -203,19 +203,6 @@
                                                         <div class="product-price">${product.price}</div>
                                                     </div>
                                                 </div>
-
-                                                <ul>
-                                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="pi-text">
-                                                <div class="catagory-name">${product.categoryName}</div>
-                                                <a href="#">
-                                                    <h5>${product.id}</h5>
-                                                </a>
-                                                <div class="product-price">${product.price}</div>
-
                                             </div>
 
                                         </c:forEach>

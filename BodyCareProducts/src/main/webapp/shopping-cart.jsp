@@ -189,7 +189,7 @@
 
                 <%@ include file="footer.jsp" %>
                     <%@ include file="commons-js.jsp" %>
-                        <script src="js/shopping-cart.js" type="text/javascript"></script>
+                        <script src="js/shopping-cart.js?version=1.1" type="text/javascript"></script>
 </body>
 
 </html>

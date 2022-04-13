@@ -264,7 +264,7 @@
   </filter-mapping>
 
 
-  <filter>
+  <!-- <filter>
     <filter-name> JSPFilesFilter </filter-name>
     <filter-class> gov.iti.jets.presentation.filters.authenticationfilters.JSPFilesFilter</filter-class>
   </filter>
@@ -272,7 +272,7 @@
   <filter-mapping>
     <filter-name> JSPFilesFilter </filter-name>
     <url-pattern> *.jsp </url-pattern>
-  </filter-mapping>
+  </filter-mapping> -->
 
 
 
