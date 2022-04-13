@@ -10,6 +10,7 @@ import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.services.*;
 import gov.iti.jets.services.impl.*;
 import jakarta.persistence.NoResultException;
+import gov.iti.jets.services.impl.RegisterUserServiceImpl;
 
 public class DomainFacade {
 
@@ -91,4 +92,8 @@ public class DomainFacade {
         return registerUserService.addUser(user);
     }
 
+
+    public static Product getProduct(int id){
+        return addProductService.getProduct(id);
+    }
 }

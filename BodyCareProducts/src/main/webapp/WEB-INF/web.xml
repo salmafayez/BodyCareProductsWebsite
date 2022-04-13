@@ -30,6 +30,16 @@
   </servlet>
 
   <servlet>
+    <servlet-name>WishlistAddAjaxServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.WishlistAddAjaxServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>WishlistRemoveAjaxServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.WishlistRemoveAjaxServlet</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>AddCategoryServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.AddCategoryServlet</servlet-class>
   </servlet>
@@ -278,6 +288,26 @@
 
 
   <!--  //////////// Listenrns  ////////  -->
+
+  <servlet-mapping>
+    <servlet-name>WishlistAddAjaxServlet</servlet-name>
+    <url-pattern>/wishlist</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>WishlistRemoveAjaxServlet</servlet-name>
+    <url-pattern>/wishlist-remove</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>WishlistControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.WishlistControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>WishlistControllerServlet</servlet-name>
+    <url-pattern>/wishlist-list</url-pattern>
+  </servlet-mapping>
 
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.MyAppListener </listener-class>

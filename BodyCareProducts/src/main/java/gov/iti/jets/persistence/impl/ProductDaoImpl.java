@@ -9,6 +9,7 @@ import gov.iti.jets.persistence.util.ManagerFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -35,6 +36,10 @@ public class ProductDaoImpl implements ProductDao {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         TypedQuery<Product> query = entityManager.createQuery("select p from Product p",Product.class);
         List<Product> result =query.getResultList();
+        System.out.println("hh");
+        System.out.println(result);
+        System.out.println(result.size());
+        System.out.println("ppp");
         entityManager.close();
         return result;
     }
@@ -59,6 +64,18 @@ public class ProductDaoImpl implements ProductDao {
 
         List<Product> result1 = entityManager.createQuery(query).getResultList();
         return result1.get(0);
+    }
+
+
+    @Override
+    public Product getProduct(int id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        String select = "SELECT p FROM Product p where p.id=:id";
+        Query query = entityManager.createQuery(select);
+        query.setParameter("id", id);
+        List<Product> product = query.getResultList();
+        entityManager.close();
+        return product.get(0);
     }
 
 }

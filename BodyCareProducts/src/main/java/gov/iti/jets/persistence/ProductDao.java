@@ -11,4 +11,5 @@ public interface ProductDao {
     public Product getProductById(int id);
 
 
+    Product getProduct(int id);
 }

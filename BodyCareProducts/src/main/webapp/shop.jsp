@@ -225,6 +225,7 @@
             <%@ include file="footer.jsp" %>
                 <%@ include file="commons-js.jsp" %>
                     <script src="js/shop-categories.js" type="text/javascript"></script>
+
 </body>
 
 </html>

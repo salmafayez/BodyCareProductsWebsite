@@ -9,6 +9,7 @@
 
 
 'use strict';
+
 (function ($) {
 
     /*------------------
@@ -236,8 +237,8 @@
 	// 	var oldValue = $button.parent().find('input').val();
 	// 	if ($button.hasClass('inc') && oldValue <= 10) {
     //         console.log("in main jquery")
-    //           var newVal = parseFloat(oldValue) + 1;  
-            
+    //           var newVal = parseFloat(oldValue) + 1;
+
 	// 	} else {
 	// 		// Don't allow decrementing below zero
 	// 		if (oldValue > 0) {
