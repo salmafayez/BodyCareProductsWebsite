@@ -74,4 +74,8 @@ public class DomainFacade {
         return addProductService.loadProductsByCategory(category);
     }
 
+    public static boolean addUser(User user) {
+        return registerUserService.addUser(user);
+    }
+
 }
