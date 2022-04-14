@@ -1,6 +1,8 @@
 <!-- Header Section Begin -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
     <header class="header-section">
         <div class="container">
             <div class="inner-header">
@@ -23,62 +25,72 @@
                     </div>
                     <div class="col-lg-2 text-right col-md-2">
                         <ul class="nav-right">
-                            <li class="heart-icon"><a href="wishlist-list">
+                            <li class="heart-icon"><a href="#">
                                     <i class="icon_heart_alt"></i>
-                                    <%-- <c:if test="${wishlistsize != null}">
-                                            <span id="wishlistNumber">{$wishlistsize}</span>
-                                    </c:if> --%>
                                     <span id="wishlistNumber">0</span>
                                 </a>
                             </li>
-                            <li class="cart-icon"><a href="#">
-                                    <i class="icon_bag_alt"></i>
-                                    <span>3</span>
-                                </a>
-                                <div class="cart-hover">
-                                    <div class="select-items">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="select-total">
-                                        <span>total:</span>
-                                        <h5>$120.00</h5>
-                                    </div>
-                                    <div class="select-button">
-                                        <a href="shopping-cart" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="check-out.jsp" class="primary-btn checkout-btn">CHECK OUT</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="cart-price">$150.00</li>
-                        </ul>
-                    </div>
+                           <li class="cart-icon"><a href="#">
+                                                                   <i class="icon_bag_alt"></i>
+                                                                   <c:set var="cartlength" value="${fn:length(cart)}" />
+                                                                   <span>${cartlength}</span>
+                                                               </a>
+                                                               <div class="cart-hover">
+                                                                   <c:if test="${fn:length(cart)>0}">
+
+                                                                       <div class="select-items">
+
+                                                                           <table>
+                                                                               <tbody>
+                                                                                   <tr>
+                                                                                       <td class="si-pic"><img src="img/select-product-1.jpg"
+                                                                                               alt=""></td>
+                                                                                       <td class="si-text">
+                                                                                           <div class="product-selected">
+                                                                                               <p>$60.00 x 1</p>
+                                                                                               <h6>Kabino Bedside Table</h6>
+                                                                                           </div>
+                                                                                       </td>
+                                                                                       <td class="si-close">
+                                                                                           <i class="ti-close"></i>
+                                                                                       </td>
+                                                                                   </tr>
+                                                                                   <!-- <tr>
+                                                                               <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
+                                                                               <td class="si-text">
+                                                                                   <div class="product-selected">
+                                                                                       <p>$60.00 x 1</p>
+                                                                                       <h6>Kabino Bedside Table</h6>
+                                                                                   </div>
+                                                                               </td>
+                                                                               <td class="si-close">
+                                                                                   <i class="ti-close"></i>
+                                                                               </td>
+                                                                           </tr> -->
+                                                                               </tbody>
+                                                                           </table>
+                                                                       </div>
+                                                                   </c:if>
+                                                                   <c:if test="${fn:length(cart)>0}">
+
+                                                                       <div class="select-total">
+                                                                           <span>total:</span>
+                                                                           <h5>$120.00</h5>
+                                                                       </div>
+                                                                       <div class="select-button">
+                                                                           <a href="shopping-cart" class="primary-btn view-card">VIEW CARD</a>
+                                                                           <a href="check-out.jsp" class="primary-btn checkout-btn">CHECK OUT</a>
+                                                                       </div>
+                                                                   </c:if>
+
+                                                               </div>
+                                                           </li>
+                                                           <c:if test="${fn:length(cart)>0}">
+                                                               <li class="cart-price">$150.00</li>
+                                                           </c:if>
+                                                       </ul>
+                                                   </div>
+
 
                     <div class="col-lg-3 col-md-3">
                         <div>
@@ -135,7 +147,7 @@
                         -->
                         <li><a href="contact.jsp">Contact</a></li>
                         <li><a href="shopping-cart.jsp"> Cart</a></li>
-                        <li><a href="addproduct">Wishlist</a></li>
+                        <li><a href="wishlist-list">Wishlist</a></li>
                         <li><a href="check-out.jsp">Check-out</a></li>
                         <!--
                         <li><a href="#">Pages</a>

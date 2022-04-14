@@ -51,5 +51,4 @@ public class ProductServiceImpl implements ProductService {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.getProduct(id);
     }
-
 }

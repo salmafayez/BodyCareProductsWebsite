@@ -17,8 +17,7 @@
 
 <body>
     <!-- Page Preloder -->
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+    
 
             <div id="preloder">
                 <div class="loader"></div>
@@ -189,7 +188,7 @@
 
                 <%@ include file="footer.jsp" %>
                     <%@ include file="commons-js.jsp" %>
-                        <script src="js/shopping-cart.js" type="text/javascript"></script>
+                        <script src="js/shopping-cart.js?version=1.1" type="text/javascript"></script>
 </body>
 
 </html>

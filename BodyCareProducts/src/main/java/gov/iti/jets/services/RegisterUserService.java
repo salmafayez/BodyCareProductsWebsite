@@ -6,5 +6,4 @@ public interface RegisterUserService {
     boolean addUser (User user);
     User getUser (int id);
 
-
 }

@@ -2,12 +2,16 @@ package gov.iti.jets.persistence.impl;
 
 import java.util.List;
 
+import org.hibernate.bytecode.enhance.internal.tracker.NoopCollectionTracker;
+
 import gov.iti.jets.persistence.ProductDao;
+import gov.iti.jets.persistence.entities.Category;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.util.ManagerFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -45,7 +49,7 @@ public class ProductDaoImpl implements ProductDao {
         entityManager.close();
         return result;
     }
-    
+
 
     @Override
     public List<Product> loadByCategory(String category, int offset, int noOfRecords) {
@@ -103,6 +107,5 @@ public class ProductDaoImpl implements ProductDao {
         entityManager.close();
         return product.get(0);
     }
-
 
 }
