@@ -181,11 +181,13 @@
                                             <div class="pi-pic">
                                                 <img src="img/products/product-3.jpg" alt="">
                                                 <div class="icon">
-                                                    <i class="icon_heart_alt"></i>
+                                                    <i class="icon_heart_alt" onclick="addToWishlist(${product.id})"></i>
                                                 </div>
-                                                <ul>
-                                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                                 <ul>
+                                                    <li class="w-icon active"><a href="shopping-cart.jsp"><i
+                                                                class="icon_bag_alt"></i></a></li>
+                                                    <li class="quick-view" onclick="addToCart(${product.id})"> <a href="#"> + ADD TO
+                                                        CART</a></li>
                                                 </ul>
                                             </div>
                                             <div class="pi-text">
