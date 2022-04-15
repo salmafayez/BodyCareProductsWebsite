@@ -1,7 +1,6 @@
 package gov.iti.jets.services;
 
 import gov.iti.jets.persistence.entities.ContactMessage;
-import gov.iti.jets.persistence.entities.User;
 
 import java.util.List;
 

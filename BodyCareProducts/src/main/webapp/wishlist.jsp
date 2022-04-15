@@ -87,7 +87,7 @@
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
-    <script src="js/wishlist.js" type="text/javascript"></script>
+    <script src="js/wishlist-ajax.js" type="text/javascript"></script>
 </body>
 
 </html>
