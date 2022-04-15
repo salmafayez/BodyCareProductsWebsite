@@ -58,7 +58,7 @@
         <div class="astronaut__wrist-right"></div>
 
         <div class="astronaut__cord">
-            <canvas id="cord" height="500px" width="500px"></canvas>
+            <canvas id="cord" height="300px" width="250px"></canvas>
         </div>
 
         <div class="astronaut__head">
