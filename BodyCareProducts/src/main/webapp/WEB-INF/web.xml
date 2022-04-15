@@ -180,6 +180,16 @@
     <url-pattern>/addcategory</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>CheckoutControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.CheckoutControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>CheckoutControllerServlet</servlet-name>
+      <url-pattern>/checkout</url-pattern>
+  </servlet-mapping>
+
   
   <servlet-mapping>
     <servlet-name>ProductLoadControllerServlet</servlet-name>
@@ -245,10 +255,10 @@
     <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.RegisterPageFilter </filter-class>
   </filter>
 
-  <filter-mapping>
+  <!-- <filter-mapping>
     <filter-name> RegisterPageFilter </filter-name>
     <url-pattern> /register </url-pattern>
-  </filter-mapping>
+  </filter-mapping> -->
 
 
   <filter>
@@ -283,6 +293,16 @@
     <url-pattern> /contact </url-pattern>
   </filter-mapping>
 
+
+  <servlet>
+    <servlet-name>PlaceOrderControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.PlaceOrderControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>PlaceOrderControllerServlet</servlet-name>
+    <url-pattern>/order</url-pattern>
+  </servlet-mapping>
 
   <!-- <filter>
     <filter-name> JSPFilesFilter </filter-name>

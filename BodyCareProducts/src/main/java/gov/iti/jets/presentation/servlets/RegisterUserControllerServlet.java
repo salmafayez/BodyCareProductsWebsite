@@ -24,8 +24,10 @@ public class RegisterUserControllerServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        System.out.println("inside get");
         HttpSession session = request.getSession(false);
         if(session!=null){
+            System.out.println("inside get 0000");
             if ((String) session.getAttribute("AuthToken") == null){
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
                 requestDispatcher.forward(request, response);
@@ -33,6 +35,7 @@ public class RegisterUserControllerServlet extends HttpServlet {
                 response.sendRedirect("index.jsp");
             }
         }else{
+            System.out.println("inside get 1111 ");
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
             requestDispatcher.forward(request, response);
         }
@@ -41,23 +44,25 @@ public class RegisterUserControllerServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
+        //System.out.println("inside post");
         SendEmail sm = new SendEmail();
-
+       // System.out.println("1");
         String code = sm.getRandom();
         request.setAttribute("code", code);
-
+       // System.out.println("2");
         User user=userMapper.map(request);
-
+       // System.out.println("3");
         boolean test = sm.sendEmail(user);
-
+       // System.out.println("4");
         if(test){
             HttpSession session  = request.getSession();
             session.setAttribute("authcode", user.getCode());
             session.setAttribute("user", user);
-
+            System.out.println("5");
             response.sendRedirect("verify.jsp");
         }else{
             out.println("Failed to send verification email");
+            System.out.println("6");
         }
 
     }

@@ -119,8 +119,8 @@
             </div>
         </div>
         <div class="nav-item ">
-            <div class="container">
-                <div class="nav-depart">
+            <div class="container text-center">
+                <%-- <div class="nav-depart">
                     <div class="depart-btn">
                         <i class="ti-menu"></i>
                         <span>All Categories</span>
@@ -130,10 +130,10 @@
                             <li><a href="#">Candles</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --%>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="home">Home</a></li>
                         <li><a href="products">Shop</a></li>
                         <!--
                             <li><a href="#">Collection</a>
@@ -148,7 +148,8 @@
                         <li><a href="contact.jsp">Contact</a></li>
                         <li><a href="shopping-cart.jsp"> Cart</a></li>
                         <li><a href="wishlist-list">Wishlist</a></li>
-                        <li><a href="check-out.jsp">Check-out</a></li>
+                        <li><a href="checkout">Check-out</a></li>
+                        <li><a href="checkout">Orders</a></li>
                         <!--
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
