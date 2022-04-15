@@ -137,6 +137,7 @@ body {
   cursor: pointer;
   transition-duration: 0.2s;
   font-size: 0.75em;
+  font-family: 'Karla', sans-serif;
   font-family: 'Righteous', cursive;
 }
 
@@ -144,10 +145,17 @@ body {
   color: #21252c;
 }
 
+a:link {
+  text-decoration: none;
+
+}
+
 .error__button--active {
   background-color: #d79681;
   border: 2px solid #d79681;
   color: white;
+  text-decoration: none;
+
 }
 
 .error__button--active:hover {

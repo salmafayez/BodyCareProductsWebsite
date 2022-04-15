@@ -35,8 +35,9 @@
         <div class="error__title">404</div>
         <div class="error__subtitle">Hmmm...</div>
         <div class="error__description">It looks like one of the developers fell asleep</div>
-        <a href="home" class="error__button error__button--active">HOME</a>
-        <a href="contact.jsp" class="error__button">CONTACT</a>
+        <br>
+        <a href="home" style="text-decoration: none;" class="error__button error__button--active">HOME</a>
+        <a href="contact.jsp" style="text-decoration: none;" class="error__button">CONTACT</a>
     </div>
 
     <div class="astronaut">
