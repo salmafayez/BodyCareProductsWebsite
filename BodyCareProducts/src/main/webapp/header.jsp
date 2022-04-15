@@ -27,7 +27,15 @@
                             <ul class="nav-right">
                                 <li class="heart-icon"><a href="#">
                                         <i class="icon_heart_alt"></i>
-                                        <span id="wishlistNumber">0</span>
+                                        <c:if test="${empty wishlist}">
+                                            <c:set var="wishlistlength" value="${0}" />
+                                        </c:if>
+                                        <c:if test="${fn:length(wishlist)>0}">
+                                            <c:set var="wishlistlength" value="${fn:length(wishlist)}" />
+                                        </c:if>
+                                        <!--span id="wishlistNumber">0</span-->
+                                        <span id="wishlistNumber">${wishlistlength}</span>
+
                                     </a>
                                 </li>
                                 <li class="cart-icon"><a href="#">
@@ -36,9 +44,7 @@
                                             <c:set var="cartlength" value="${0}" />
                                         </c:if>
                                         <c:if test="${fn:length(cart)>0}">
-                                            <c:forEach items="${cart}" var="cart">
-                                                <c:set var="cartlength" value="${cartlength + (cart.quantity)}" />
-                                            </c:forEach>
+                                            <c:set var="cartlength" value="${fn:length(cart)}" />
                                         </c:if>
                                         <span id="cartNumber">${cartlength}</span>
                                     </a>
@@ -98,9 +104,16 @@
 
                                     </div>
                                 </li>
-                                <c:if test="${fn:length(cart)>0}">
-                                    <li class="cart-price">$150.00</li>
+                                <c:if test="${empty cart}">
+                                    <c:set var="price" value="${0}" />
                                 </c:if>
+                                <c:if test="${fn:length(cart)>0}">
+                                    <c:forEach items="${cart}" var="cart">
+                                        <c:set var="price" value="${price + (cart.quantity*cart.product.price)}" />
+                                    </c:forEach>
+                                </c:if>
+                                <li class="cart-price">$ ${price}</li>
+
                             </ul>
                         </div>
 
@@ -140,7 +153,7 @@
                     </div>
                     <nav class="nav-menu mobile-menu">
                         <ul>
-                            <li><a href="index.jsp">Home</a></li>
+                            <li><a href="home">Home</a></li>
                             <li><a href="products">Shop</a></li>
                             <!--
                             <li><a href="#">Collection</a>
