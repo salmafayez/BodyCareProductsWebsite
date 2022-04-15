@@ -1,20 +1,23 @@
 const form = document.getElementById("myRegisterForm");
-const registerButton = document.getElementById("register");
+const updateButton = document.getElementById("updateButton");
 const username = document.getElementById("username");
 const phoneNumber = document.getElementById("phoneNumber");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
-const birthday = document.getElementById("birthday");
-const job = document.getElementById("job");
-//var country = document.getElementById("country");
-//const city = document.getElementById("city");
-const address = document.getElementById("address");
-const creditLimit = document.getElementById("creditLimit");
-const gender = document.getElementById("gender");
+const address = document.getElementById("userAddress");
+const creditLimit = document.getElementById("userCreditLimit");
+
 
 var counterSuccess = 0;
 var passwordValue;
+var cityName;
+var counterChangeCity=0;
+const userEmailValue=email.value.trim();
+function getCityName(city){
+    cityName=city;
+    console.log(cityName);
+}
 
 form.addEventListener('submit', (e) => {
 
@@ -27,6 +30,13 @@ form.addEventListener('submit', (e) => {
 
 function checkInputs() {
 
+    username.parentElement.className='group-input success';
+    phoneNumber.parentElement.className='group-input success';
+    
+    email.parentElement.className='group-input success';
+    address.parentElement.className='group-input success';
+    creditLimit.parentElement.className='group-input success';
+
 
     username.addEventListener('blur', validateUserName);
 
@@ -37,10 +47,6 @@ function checkInputs() {
     password.addEventListener('blur', validatePassword);
 
     confirmPassword.addEventListener('blur', validateConfirmPassword);
-
-    birthday.addEventListener('blur', validateBirthday);
-
-    job.addEventListener('blur', validateJob);
 
     address.addEventListener('blur', validateAddress);
 
@@ -106,8 +112,16 @@ function validateEmail() {
     }
     else {
         console.log("hereerrerererre 4 Email");
+        console.log("user email before"+userEmailValue);
+        if(userEmailValue.localeCompare(email)){
+            console.log("user email"+userEmailValue);
+            setSuccess(email);
+        }
+        else{
 
-        checkEmailAjax(emailValue);
+            checkEmailAjax(emailValue);
+        }
+        
 
     }
 }
@@ -151,37 +165,9 @@ function validateConfirmPassword() {
     }
 }
 
-function validateBirthday() {
-    var birthdayValue = birthday.value.trim();
-    if (birthdayValue === '') {
 
-        setErrorMessage(birthday, 'Field can not be blank!!');
 
-    }
-    else if (!isValidBirthday(birthdayValue)) {
-        setErrorMessage(birthday, 'not a valid date of birth,you should be over 12 years old!!');
-    }
-    else {
 
-        setSuccess(birthday);
-    }
-}
-
-function validateJob() {
-
-    var jobValue = job.value.trim();
-    if (jobValue === '') {
-
-        setErrorMessage(job, 'Field can not be blank!!');
-
-    } else if (jobValue.length < 5) {
-        setErrorMessage(job, 'Specify enough information about your job ');
-    }
-    else {
-
-        setSuccess(job);
-    }
-}
 
 function validateAddress() {
 
@@ -278,50 +264,50 @@ function isAllInputsValid() {
     var phoneNumberClassName = phoneNumber.parentElement.className;
     var passwordClassName = password.parentElement.className;
     var confirmPasswordClassName = confirmPassword.parentElement.className;
-    var birthdayClassName = birthday.parentElement.className;
-    var jobClassName = job.parentElement.className;
+    var emailClassName = email.parentElement.className;
     var addressClassName = address.parentElement.className;
     var creditLimitClassName = creditLimit.parentElement.className;
-    var emailClassName = email.parentElement.className;
 
 
-    if (usernameClassName == 'group-input success') {
+    if (usernameClassName === 'group-input success') {
         counterSuccess++;
+        console.log("here1")
     }
 
-    if (phoneNumberClassName == 'group-input success') {
+    if (phoneNumberClassName === 'group-input success') {
         counterSuccess++;
+        console.log("here2")
     }
 
-    if (passwordClassName == 'group-input success') {
+    if (passwordClassName === 'group-input success') {
         counterSuccess++;
+        console.log("here3")
     }
 
-    if (confirmPasswordClassName == 'group-input success') {
+    if (confirmPasswordClassName === 'group-input success') {
         counterSuccess++;
+        console.log("here4")
+    }
+    
+
+    if (creditLimitClassName === 'group-input success') {
+        counterSuccess++;
+        console.log("here6")
     }
 
-    if (birthdayClassName == 'group-input success') {
+    if (addressClassName === 'group-input success') {
         counterSuccess++;
+        console.log("here5")
     }
 
-    if (jobClassName == 'group-input success') {
+
+    if (emailClassName === 'group-input success') {
         counterSuccess++;
+        console.log("here7")
     }
 
-    if (addressClassName == 'group-input success') {
-        counterSuccess++;
-    }
-
-    if (creditLimitClassName == 'group-input success') {
-        counterSuccess++;
-    }
-    if (emailClassName == 'group-input success') {
-        counterSuccess++;
-    }
-
-    console.log(counterSuccess == 9)
-    return counterSuccess == 9;
+    console.log(counterSuccess == 7)
+    return counterSuccess == 7;
 
 }
 
@@ -436,8 +422,16 @@ function getCity(auth_token) {
         url: 'https://www.universal-tutorial.com/api/cities/' + state_name,
         success: function (data) {
             $('#city').empty();
+            if(counterChangeCity!=1){
+                $('#city').prepend('<option value=' + cityName + '>' + cityName + '</option>')
+            }
+            counterChangeCity=1;
             data.forEach(element => {
-                $('#city').append('<option value=' + element.city_name + '>' + element.city_name + '</option>')
+                if(element.city_Name!=cityName){
+                    
+                    $('#city').append('<option value=' + element.city_name + '>' + element.city_name + '</option>')
+
+                }
             })
         },
         headers: {
@@ -445,4 +439,6 @@ function getCity(auth_token) {
             "Accept": "application/json"
         }
     })
+
+    
 }

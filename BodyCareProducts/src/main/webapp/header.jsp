@@ -99,7 +99,7 @@
                 if(userAuth != null){
                 %>
 
-                    <span class="account-name"><%= (String)session.getAttribute("userName") %></span>
+                    <a href="userprofile" id="userNameLink"><%= (String)session.getAttribute("userName") %></a>
                     <a href="logout"><button class="btn primary-btn sign-in mx-3">Sign out</button></a>
 
                 <%

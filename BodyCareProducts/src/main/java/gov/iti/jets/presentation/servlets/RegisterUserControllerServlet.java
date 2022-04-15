@@ -41,24 +41,33 @@ public class RegisterUserControllerServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        SendEmail sm = new SendEmail();
+        //SendEmail sm = new SendEmail();
 
-        String code = sm.getRandom();
-        request.setAttribute("code", code);
+        //String code = sm.getRandom();
+       // request.setAttribute("code", code);
 
         User user=userMapper.map(request);
+        Boolean isUserInserted = DomainFacade.addUser(user);
 
-        boolean test = sm.sendEmail(user);
-
-        if(test){
-            HttpSession session  = request.getSession();
-            session.setAttribute("authcode", user.getCode());
-            session.setAttribute("user", user);
-
-            response.sendRedirect("verify.jsp");
-        }else{
-            out.println("Failed to send verification email");
+        if(isUserInserted){
+            response.sendRedirect("home");
         }
+
+
+//        boolean test = sm.sendEmail(user);
+//
+//        if(test){
+//            System.out.println("success email");
+//
+//            HttpSession session  = request.getSession();
+//            session.setAttribute("authcode", user.getCode());
+//            session.setAttribute("user", user);
+//
+//            response.sendRedirect("verify.jsp");
+//        }else{
+//            System.out.println("failed email");
+//            out.println("Failed to send verification email");
+//        }
 
     }
 
