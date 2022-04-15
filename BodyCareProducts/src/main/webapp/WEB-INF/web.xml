@@ -195,6 +195,16 @@
     <url-pattern>/addcategory</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>CheckoutControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.CheckoutControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>CheckoutControllerServlet</servlet-name>
+      <url-pattern>/checkout</url-pattern>
+  </servlet-mapping>
+
   
   <servlet-mapping>
     <servlet-name>ProductLoadControllerServlet</servlet-name>
@@ -226,6 +236,26 @@
     <url-pattern>/page-not-found</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>ReviewPaymentControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ReviewPaymentControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ReviewPaymentControllerServlet</servlet-name>
+    <url-pattern>/review-payment</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ExecutePaymentControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ExecutePaymentControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ExecutePaymentControllerServlet</servlet-name>
+    <url-pattern>/execute_payment</url-pattern>
+  </servlet-mapping>
+
 
   <servlet>
     <servlet-name>Home</servlet-name>
@@ -246,6 +276,8 @@
       <servlet-name>BeforeHome</servlet-name>
       <url-pattern>/beforeHome</url-pattern>
   </servlet-mapping>
+
+
 
 
   <servlet-mapping>
@@ -283,10 +315,10 @@
     <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.RegisterPageFilter </filter-class>
   </filter>
 
-  <filter-mapping>
+  <!-- <filter-mapping>
     <filter-name> RegisterPageFilter </filter-name>
     <url-pattern> /register </url-pattern>
-  </filter-mapping>
+  </filter-mapping> -->
 
 
   <filter>
@@ -321,6 +353,16 @@
     <url-pattern> /contact </url-pattern>
   </filter-mapping>
 
+
+  <servlet>
+    <servlet-name>PlaceOrderControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.PlaceOrderControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>PlaceOrderControllerServlet</servlet-name>
+    <url-pattern>/order</url-pattern>
+  </servlet-mapping>
 
   <!-- <filter>
     <filter-name> JSPFilesFilter </filter-name>

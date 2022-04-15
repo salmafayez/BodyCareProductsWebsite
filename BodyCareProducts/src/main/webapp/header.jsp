@@ -121,6 +121,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="nav-item ">
                 <div class="container">
                     <nav class="nav-menu mobile-menu">
@@ -131,7 +132,7 @@
                             <li><a href="shopping-cart"> Cart</a></li>
                             <li><a href="wishlist">Wishlist</a></li>
                             <li><a href="check-out.jsp">Check-out</a></li>
-                            <li><a href="check-out.jsp">Orders</a></li>
+                          <li><a href="check-out.jsp">Orders</a></li>
                         </ul>
                     </nav>
                     <div id="mobile-menu-wrap"></div>
