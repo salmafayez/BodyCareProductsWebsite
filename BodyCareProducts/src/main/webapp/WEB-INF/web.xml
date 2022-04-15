@@ -253,6 +253,17 @@
     <url-pattern>/search</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>CartPage</servlet-name>
+    <jsp-file>/shopping-cart.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>CartPage</servlet-name>
+      <url-pattern>/shopping-cart</url-pattern>
+  </servlet-mapping>
+
   <!-- ////////////  Filters ///////// -->
 
   <filter>
@@ -328,7 +339,7 @@
 
   <servlet-mapping>
     <servlet-name>WishlistAddAjaxServlet</servlet-name>
-    <url-pattern>/wishlist</url-pattern>
+    <url-pattern>/wishlist-add</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
@@ -343,7 +354,7 @@
 
   <servlet-mapping>
     <servlet-name>WishlistControllerServlet</servlet-name>
-    <url-pattern>/wishlist-list</url-pattern>
+    <url-pattern>/wishlist</url-pattern>
   </servlet-mapping>
 
   <listener>
