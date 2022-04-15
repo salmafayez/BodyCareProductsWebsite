@@ -1,10 +1,8 @@
 package gov.iti.jets.presentation.servlets;
 
 import gov.iti.jets.persistence.entities.ContactMessage;
-import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.presentation.requestdtomappers.RequestMapper;
 import gov.iti.jets.presentation.requestdtomappers.requestdtomappersimpl.ContactMessageDtoMapper;
-import gov.iti.jets.presentation.requestdtomappers.requestdtomappersimpl.UserDtoMapper;
 import gov.iti.jets.services.util.DomainFacade;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

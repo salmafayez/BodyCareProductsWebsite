@@ -4,11 +4,8 @@ import java.io.IOException;
 
 import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.presentation.requestdtomappers.RequestMapper;
-import gov.iti.jets.presentation.requestdtomappers.requestdtomappersimpl.ProductDtoMapper;
 import gov.iti.jets.presentation.requestdtomappers.requestdtomappersimpl.UserDtoMapper;
 import gov.iti.jets.presentation.util.SendEmail;
-import gov.iti.jets.services.util.DomainFacade;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,22 +21,16 @@ public class RegisterUserControllerServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        System.out.println("inside get");
         HttpSession session = request.getSession(false);
-        if(session!=null){
-            System.out.println("inside get 0000");
+        if(session != null){
             if ((String) session.getAttribute("AuthToken") == null){
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
-                requestDispatcher.forward(request, response);
+                request.getRequestDispatcher("register.jsp").forward(request, response);
             }else{
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("home");
             }
         }else{
-            System.out.println("inside get 1111 ");
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
-            requestDispatcher.forward(request, response);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         }
-
     }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
