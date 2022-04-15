@@ -26,7 +26,7 @@
     <div class="container-fluid" style="background-image: url(img/background_img.jpg); background-repeat: no-repeat; background-size: cover;">
     <section class="checkout-section spad">
         <div class="container">
-            <form action="order" class="checkout-form">
+            <form action="order" class="checkout-form" method="POST">
                 <div class="row" style="justify-content: center;">
 
                     <div class="col-lg-6 px-5 py-5" style="background-color: #f5f5f5; border-radius: 15px;">

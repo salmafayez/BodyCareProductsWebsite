@@ -22,7 +22,7 @@ public class Order implements Serializable {
     private User user;
 
     @Column(name = "total_price")
-    private int totalPrice;
+    private double totalPrice;
 
     @Column(name="order_time", length=10)
     private LocalDate orderTime;
@@ -56,11 +56,11 @@ public class Order implements Serializable {
         this.user = user;
     }
 
-    public int getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(int totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
 

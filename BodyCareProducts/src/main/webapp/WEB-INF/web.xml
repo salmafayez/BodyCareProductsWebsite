@@ -209,6 +209,26 @@
     <url-pattern>/page-not-found</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>ReviewPaymentControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ReviewPaymentControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ReviewPaymentControllerServlet</servlet-name>
+    <url-pattern>/review-payment</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ExecutePaymentControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ExecutePaymentControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ExecutePaymentControllerServlet</servlet-name>
+    <url-pattern>/execute_payment</url-pattern>
+  </servlet-mapping>
+
 
   <servlet>
     <servlet-name>Home</servlet-name>
@@ -229,6 +249,8 @@
       <servlet-name>BeforeHome</servlet-name>
       <url-pattern>/beforeHome</url-pattern>
   </servlet-mapping>
+
+
 
 
   <servlet-mapping>
