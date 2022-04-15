@@ -33,7 +33,7 @@
                            <li class="cart-icon"><a href="#">
                                                                    <i class="icon_bag_alt"></i>
                                                                    <c:set var="cartlength" value="${fn:length(cart)}" />
-                                                                   <span>${cartlength}</span>
+                                                                   <span id="cartNumber">${cartlength}</span>
                                                                </a>
                                                                <div class="cart-hover">
                                                                    <c:if test="${fn:length(cart)>0}">

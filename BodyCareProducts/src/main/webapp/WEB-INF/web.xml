@@ -79,7 +79,7 @@
   <servlet>
 
     <servlet-name>AddProductToCartServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.AddProductToCartServlet</servlet-class>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.AddProductToCartAjaxServlet</servlet-class>
 
   </servlet>
 
