@@ -138,38 +138,22 @@
                     </div>
                 </div>
             </div>
-            <div class="nav-item ">
-                <div class="container">
-                    <div class="nav-depart">
-                        <div class="depart-btn">
-                            <i class="ti-menu"></i>
-                            <span>All Categories</span>
-                            <ul class="depart-hover">
-                                <li class="active"><a href="#">Bath & Shower</a></li>
-                                <li><a href="#">Fragrance</a></li>
-                                <li><a href="#">Candles</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <nav class="nav-menu mobile-menu">
-                        <ul>
-                            <li><a href="home">Home</a></li>
-                            <li><a href="products">Shop</a></li>
-                            <!--
-                            <li><a href="#">Collection</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Men's</a></li>
-                                    <li><a href="#">Women's</a></li>
-                                    <li><a href="#">Kid's</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                        -->
-                            <li><a href="contact.jsp">Contact</a></li>
-                            <li><a href="shopping-cart.jsp"> Cart</a></li>
-                            <li><a href="wishlist-list">Wishlist</a></li>
-                            <li><a href="check-out.jsp">Check-out</a></li>
-                            <!--
+
+        </div>
+        <div class="nav-item ">
+            <div class="container text-center">
+                <nav class="nav-menu mobile-menu">
+                    <ul>
+                        <li><a href="home">Home</a></li>
+                        <li><a href="products">Shop</a></li>
+                     
+                        <li><a href="contact.jsp">Contact</a></li>
+                        <li><a href="shopping-cart.jsp"> Cart</a></li>
+                        <li><a href="wishlist-list">Wishlist</a></li>
+                        <li><a href="checkout">Check-out</a></li>
+                        <li><a href="checkout">Orders</a></li>
+                   
+
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="./blog-details.html">Blog Details</a></li>
