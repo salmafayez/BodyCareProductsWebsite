@@ -1,10 +1,5 @@
 package gov.iti.jets.presentation.ajaxservlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.presentation.dtos.CartItemDto;
 import gov.iti.jets.services.util.DomainFacade;
@@ -14,13 +9,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-public class AddProductToCartAjaxServlet extends HttpServlet {
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+public class DecrementProductQuantityCartAjaxServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("here");
         HttpSession session = request.getSession(false);
         int productId = Integer.parseInt(request.getParameter("productId"));
+
         Boolean found = false;
         List<CartItemDto> cart;
 
@@ -35,7 +36,7 @@ public class AddProductToCartAjaxServlet extends HttpServlet {
                 for (CartItemDto cartItemDto : cart) {
                     if (cartItemDto.getProduct().getId() == productId) {
                         int quantity = cartItemDto.getQuantity();
-                        cartItemDto.setQuantity(++quantity);
+                        cartItemDto.setQuantity(--quantity);
                         found = true;
                     }
                 }

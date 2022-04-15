@@ -76,12 +76,27 @@
 
   </servlet>
 
+
   <servlet>
 
     <servlet-name>AddProductToCartServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.ajaxservlet.AddProductToCartAjaxServlet</servlet-class>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.IncrementProductQuantityCartAjaxServlet</servlet-class>
 
   </servlet>
+
+  <servlet>
+
+    <servlet-name>DecrementProductQuantityCartAjaxServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.DecrementProductQuantityCartAjaxServlet</servlet-class>
+
+  </servlet>
+
+  <servlet>
+
+  <servlet-name>RemoveProductFromCartAjaxServlet</servlet-name>
+  <servlet-class>gov.iti.jets.presentation.ajaxservlet.RemoveProductFromCartAjaxServlet</servlet-class>
+
+</servlet>
 
   <servlet>
     <servlet-name>SearchControllerServlet</servlet-name>
@@ -185,10 +200,22 @@
     <servlet-name>ProductLoadControllerServlet</servlet-name>
     <url-pattern>/products</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RemoveProductFromCartAjaxServlet</servlet-name>
+    <url-pattern>/removeproductfromcart</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>AddProductToCartServlet</servlet-name>
-    <url-pattern>/addproducttocart</url-pattern>
+    <url-pattern>/addproducttocartplus</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DecrementProductQuantityCartAjaxServlet</servlet-name>
+    <url-pattern>/addproducttocartminus</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <servlet-name>PageNotFoundServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.PageNotFoundServlet</servlet-class>
