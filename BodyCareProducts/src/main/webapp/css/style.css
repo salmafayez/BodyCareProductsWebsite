@@ -35,7 +35,24 @@
 	visibility: hidden;
 } */
 
+#userNameLink{
+	color: #d79681;
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase; 
+	
+}
 
+#userNameLink:link{
+	color: #d79681;
+	
+}
+
+#userNameLink:hover{
+	
+	font-size: 22px;
+	
+}
 
 .group-input i {
 
@@ -93,6 +110,7 @@
 	border: 1px solid #ebebeb;
 	height: 50px;
 	width: 100%;
+	
 }
 
 html,
@@ -1874,7 +1892,7 @@ ol {
 	top: 0;
 	width: 10px;
 	height: 8px;
-	border: solid white;
+	/* border: solid white; */
 	border-width: 3px 3px 0px 0px;
 	-webkit-transform: rotate(127deg);
 	-ms-transform: rotate(127deg);

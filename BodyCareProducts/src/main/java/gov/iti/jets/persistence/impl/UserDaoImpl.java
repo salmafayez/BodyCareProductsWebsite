@@ -5,6 +5,7 @@ import gov.iti.jets.persistence.UserDao;
 import gov.iti.jets.persistence.entities.Category;
 import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.persistence.util.ManagerFactory;
+import gov.iti.jets.presentation.dtos.UpdatedUserDto;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -75,6 +76,31 @@ public class UserDaoImpl implements UserDao {
         User user = (User) query.getSingleResult();
         entityManager.close();
         return user;
+    }
+
+    @Override
+    public boolean updateUser(Integer id, UpdatedUserDto updatedUserDto) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        String select = "SELECT user FROM User user WHERE user.id=:id";
+        Query query = entityManager.createQuery(select);
+        query.setParameter("id", id);
+        User user = (User) query.getSingleResult();
+
+        user.setUserName(updatedUserDto.getUserName());
+        user.setPhoneNumber(updatedUserDto.getPhoneNumber());
+        user.setEmail(updatedUserDto.getEmail());
+        user.setPassword(updatedUserDto.getPassword());
+        user.setCity(updatedUserDto.getCity());
+        user.setCountry(updatedUserDto.getCountry());
+        user.setDetailedAddress(updatedUserDto.getDetailedAddress());
+        user.setWallet(updatedUserDto.getWallet());
+
+        entityManager.persist(user);
+        transaction.commit();
+        entityManager.close();
+        return true;
     }
 
 }

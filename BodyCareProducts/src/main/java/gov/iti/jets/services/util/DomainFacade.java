@@ -2,11 +2,16 @@ package gov.iti.jets.services.util;
 
 import java.util.List;
 
+import com.paypal.api.payments.Payment;
+import com.paypal.base.rest.PayPalRESTException;
+
 import gov.iti.jets.persistence.entities.CartProducts;
 import gov.iti.jets.persistence.entities.Category;
 import gov.iti.jets.persistence.entities.ContactMessage;
+import gov.iti.jets.persistence.entities.Order;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.entities.User;
+import gov.iti.jets.presentation.dtos.UpdatedUserDto;
 import gov.iti.jets.services.*;
 import gov.iti.jets.services.impl.*;
 import jakarta.persistence.NoResultException;
@@ -22,6 +27,9 @@ public class DomainFacade {
     private static final ContactMessageService contactMessageService = new ContactMessageServiceImpl();
     private static final UsersHistoryService usersHistoryService = new UsersHistroyServiceImpl();
     private static final CartProductsService cartProductsService = new CartProductsServiceImpl();
+    private static final UserUpdateProfileService userUpdateProfileService = new UserUpdateProfileServiceImpl();
+    private static final PaymentService paymentService = new PaymentServiceImpl();
+
 
     public static boolean addProduct(Product product){
         Category category = categoryService.getcategory(product.getCategoryName());
@@ -94,6 +102,9 @@ public class DomainFacade {
     public static boolean addUser(User user) {
         return registerUserService.addUser(user);
     }
+    public static boolean updateUser(Integer id , UpdatedUserDto updatedUserDto) {
+        return userUpdateProfileService.isUserUpdated(id,updatedUserDto);
+    }
 
 
     public static Product getProduct(int id){
@@ -101,5 +112,17 @@ public class DomainFacade {
     }
     public static List<Product> searchProducts(String searchProduct, int offset, int noOfRecords){
         return addProductService.searchProducts(searchProduct, offset, noOfRecords);
+    }
+
+    public static String authorizePayment (Order order) throws PayPalRESTException{
+        return paymentService.authorizePayment(order);
+    }
+
+    public static Payment getPaymentDetails(String id) throws PayPalRESTException {
+        return paymentService.getPaymentDetails(id);
+    }
+
+    public static Payment executePayment(String paymentId, String payerId)throws PayPalRESTException {
+        return paymentService.executePayment(paymentId,payerId);
     }
 }

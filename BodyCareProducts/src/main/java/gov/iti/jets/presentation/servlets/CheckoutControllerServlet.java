@@ -6,11 +6,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+public class CheckoutControllerServlet extends HttpServlet{
 
-public class HomePageServlet extends HttpServlet{
-
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-       response.sendRedirect("home");
-    }   
-     
+        request.getRequestDispatcher("check-out.jsp").forward(request, response);
+    }
+
 }
