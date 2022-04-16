@@ -8,6 +8,7 @@ import com.paypal.base.rest.APIContext;
 import com.paypal.base.rest.PayPalRESTException;
 import gov.iti.jets.persistence.entities.Order;
 import gov.iti.jets.persistence.entities.User;
+import gov.iti.jets.presentation.dtos.OrderDto;
 import gov.iti.jets.services.PaymentService;
 
 public class PaymentServiceImpl implements PaymentService{
@@ -17,21 +18,17 @@ public class PaymentServiceImpl implements PaymentService{
     private static final String MODE = "sandbox";
 
     @Override
-    public String authorizePayment(Order order) throws PayPalRESTException {
-
-        Payer payer = getPayerInformation(order.getUser());
+    public String authorizePayment(OrderDto orderDto) throws PayPalRESTException {
+        Payer payer = getPayerInformation(orderDto.getUser());
         RedirectUrls redirectUrls = getRedirectURLs();
-        List<Transaction> listTransaction = getTransactionInformation(order);
+        List<Transaction> listTransaction = getTransactionInformation(orderDto);
         Payment requestPayment = new Payment();
         requestPayment.setTransactions(listTransaction);
         requestPayment.setRedirectUrls(redirectUrls);
         requestPayment.setPayer(payer);
         requestPayment.setIntent("authorize");
- 
         APIContext apiContext = new APIContext(CLIENT_ID, CLIENT_SECRET, MODE);
- 
         Payment approvedPayment = requestPayment.create(apiContext);
- 
         return getApprovalLink(approvedPayment);
     }
 
@@ -55,7 +52,7 @@ public class PaymentServiceImpl implements PaymentService{
         payer.setPaymentMethod("paypal");
         PayerInfo payerInfo = new PayerInfo();
         payerInfo.setFirstName(user.getUserName())
-                    .setEmail("william.peterson@company.com");
+                    .setEmail("salma.fayezhimida@gmail.com");
      
         payer.setPayerInfo(payerInfo);
         return payer;
@@ -70,7 +67,7 @@ public class PaymentServiceImpl implements PaymentService{
     }
 
     @Override
-    public List<Transaction> getTransactionInformation(Order order) {
+    public List<Transaction> getTransactionInformation(OrderDto orderDto) {
         Details details = new Details();
         details.setShipping("0");
         details.setSubtotal("1");
@@ -83,14 +80,14 @@ public class PaymentServiceImpl implements PaymentService{
 
         Transaction transaction = new Transaction();
         transaction.setAmount(amount);
-        transaction.setDescription("salma");
+        transaction.setDescription("");
 
         ItemList itemList = new ItemList();
         List<Item> items = new ArrayList<>();
 
         Item item = new Item();
         item.setCurrency("USD");
-        item.setName("salma fayez");
+        item.setName(orderDto.getLineItemList().get(0).getProductName());
         item.setPrice("1");
         item.setTax("0");
         item.setQuantity("1");
@@ -110,17 +107,11 @@ public class PaymentServiceImpl implements PaymentService{
         return Payment.get(apiContext, paymentId);
     }
 
-    public Payment executePayment(String paymentId, String payerId)
-            throws PayPalRESTException {
-        System.out.println("paymentId" + paymentId);
-        System.out.println("payerId" + payerId);
+    public Payment executePayment(String paymentId, String payerId) throws PayPalRESTException {
         PaymentExecution paymentExecution = new PaymentExecution();
         paymentExecution.setPayerId(payerId);
-
         Payment payment = new Payment().setId(paymentId);
-
         APIContext apiContext = new APIContext(CLIENT_ID, CLIENT_SECRET, MODE);
-
         return payment.execute(apiContext, paymentExecution);
     }
     

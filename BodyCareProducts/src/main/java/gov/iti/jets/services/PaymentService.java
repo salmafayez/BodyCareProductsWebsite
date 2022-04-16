@@ -10,13 +10,14 @@ import com.paypal.base.rest.PayPalRESTException;
 
 import gov.iti.jets.persistence.entities.Order;
 import gov.iti.jets.persistence.entities.User;
+import gov.iti.jets.presentation.dtos.OrderDto;
 
 public interface PaymentService {
 
-    String authorizePayment(Order order) throws PayPalRESTException;
+    String authorizePayment(OrderDto orderDto) throws PayPalRESTException;
     Payer getPayerInformation(User user);
     RedirectUrls getRedirectURLs();
-    List<Transaction> getTransactionInformation(Order order);
+    List<Transaction> getTransactionInformation(OrderDto orderDto);
     String getApprovalLink(Payment approvedPayment);
     Payment getPaymentDetails(String paymentId) throws PayPalRESTException;
     Payment executePayment(String paymentId, String payerId)throws PayPalRESTException ;

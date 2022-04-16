@@ -10,19 +10,29 @@
 
     <%@ include file="commons-styles.jsp" %>
     </head>
-
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+<%@ include file="header.jsp" %>
 
-        <p>Receipt page </p>
+          <div class="container-fluid" style="background-image: url(img/background_img.jpg); background-repeat: no-repeat; background-size: cover;">
+             <section class="checkout-section spad">
+                 <div class="container">
+                    <div class="row" style="justify-content: center;">
+                         <div class="col-lg-6 px-5 py-5" style="background-color: #f5f5f5; border-radius: 15px;">
+                             <div class="place-order">
+                                 <div style="display: flex;justify-content: center;">
+                                 <h4> Thank you for purchasing our products</h4>
+                             </div>
+                             <div>
+                             <a href="home"><button class="site-btn place-btn">Home</button></a>
+                            </div>
+                         </div>
+                    </div>
+                 </div>
+             </section>
+         </div>
+         <%@ include file="footer.jsp" %>
+        <%@ include file="commons-js.jsp" %>
 
- </form>
-    <%@ include file="commons-js.jsp" %>
-
-
-</body>
+    </body>
 
 </html>

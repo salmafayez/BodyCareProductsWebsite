@@ -10,8 +10,6 @@
     <title>Fashi | Template</title>
 
     <%@ include file="commons.jsp" %>
-    <%@ page import="java.util.List" %>
-    <%@ page import="gov.iti.jets.presentation.dtos.CartItemDto" %>
 </head>
 
 <body>
@@ -56,14 +54,13 @@
                                             <c:set var="total" value="${cartItem.product.price * cartItem.quantity}"/>
                                             <li class="fw-normal">${cartItem.product.name} x ${cartItem.quantity} <span> ${cartItem.product.price * cartItem.quantity} </span></li>
                                         </c:forEach>
-                                        <% List<CartItemDto> cartItems = (List<CartItemDto>) session.getAttribute("cart");
-                                        
-                                            double totalPrice = 0;
-                                            for (int i= 0 ;i <cartItems.size() ; i++){
-                                                totalPrice += cartItems.get(i).getProduct().getPrice()*cartItems.get(i).getQuantity();
-                                            } 
-                                         %>
-                                        <li class="total-price">Total <span><%= totalPrice %></span></li>
+
+                                        <c:if test="${fn:length(cart)>0}">
+                                            <c:forEach  items="${cart}" var="cartItem">
+                                                <c:set var="order-price" value="${order-price + (cartItem.product.price * cartItem.quantity)}" />
+                                            </c:forEach>
+                                        </c:if>
+                                        <li class="total-price">Total <span>$ ${price}</span></li>
                                     </ul>
                                    
                                     <a href="order"><button class="site-btn place-btn">Place Order</button></a>
