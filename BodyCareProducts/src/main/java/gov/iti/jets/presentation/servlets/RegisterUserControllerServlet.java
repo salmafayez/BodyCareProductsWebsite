@@ -6,6 +6,7 @@ import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.presentation.requestdtomappers.RequestMapper;
 import gov.iti.jets.presentation.requestdtomappers.requestdtomappersimpl.UserDtoMapper;
 import gov.iti.jets.presentation.util.SendEmail;
+import gov.iti.jets.services.util.DomainFacade;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;

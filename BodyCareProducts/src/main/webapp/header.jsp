@@ -104,8 +104,6 @@
                             </ul>
                         </div>
 
-                  
-                    <a href="logout"><button class="btn primary-btn sign-in mx-3">Sign out</button></a>
 
 
                         <div class="col-lg-3 col-md-3">
