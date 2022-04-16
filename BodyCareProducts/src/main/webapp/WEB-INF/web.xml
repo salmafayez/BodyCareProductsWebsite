@@ -267,6 +267,28 @@
     <servlet-name>WishlistControllerServlet</servlet-name>
     <url-pattern>/wishlist</url-pattern>
   </servlet-mapping>
+  
+  
+<!--  User profile update servlet  -->
+  
+    <servlet>
+    <servlet-name>UserProfileServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.UserProfileServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserProfileServlet</servlet-name>
+    <url-pattern>/userprofile</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UserUpdateProfileServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.UserUpdateProfileServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserUpdateProfileServlet</servlet-name>
+    <url-pattern>/userupdateprofile</url-pattern>
+  </servlet-mapping>
 
 
   <!-- Category load ajax servlet-->
@@ -395,10 +417,12 @@
     <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.RegisterPageFilter </filter-class>
   </filter>
 
+
   <!-- <filter-mapping>
     <filter-name> RegisterPageFilter </filter-name>
     <url-pattern> /register </url-pattern>
   </filter-mapping> -->
+
 
 
   <filter>

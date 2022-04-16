@@ -35,26 +35,34 @@ public class RegisterUserControllerServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        //System.out.println("inside post");
-        SendEmail sm = new SendEmail();
-       // System.out.println("1");
-        String code = sm.getRandom();
-        request.setAttribute("code", code);
-       // System.out.println("2");
+
+        //SendEmail sm = new SendEmail();
+
+        //String code = sm.getRandom();
+       // request.setAttribute("code", code);
+
         User user=userMapper.map(request);
-       // System.out.println("3");
-        boolean test = sm.sendEmail(user);
-       // System.out.println("4");
-        if(test){
-            HttpSession session  = request.getSession();
-            session.setAttribute("authcode", user.getCode());
-            session.setAttribute("user", user);
-            System.out.println("5");
-            response.sendRedirect("verify.jsp");
-        }else{
-            out.println("Failed to send verification email");
-            System.out.println("6");
+        Boolean isUserInserted = DomainFacade.addUser(user);
+
+        if(isUserInserted){
+            response.sendRedirect("home");
         }
+
+
+//        boolean test = sm.sendEmail(user);
+//
+//        if(test){
+//            System.out.println("success email");
+//
+//            HttpSession session  = request.getSession();
+//            session.setAttribute("authcode", user.getCode());
+//            session.setAttribute("user", user);
+//
+//            response.sendRedirect("verify.jsp");
+//        }else{
+//            System.out.println("failed email");
+//            out.println("Failed to send verification email");
+//        }
 
     }
 
