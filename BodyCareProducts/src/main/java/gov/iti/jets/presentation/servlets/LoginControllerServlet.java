@@ -48,6 +48,7 @@ public class LoginControllerServlet extends HttpServlet{
                 UUID uuid = UUID.randomUUID();
                 String randomUUIDString = uuid.toString();
                 session.setAttribute("AuthToken", randomUUIDString);
+                session.setAttribute("currentUser", user);
                 CookieHandler.addCookie("AuthToken", randomUUIDString, 60*60*24*365, response);
                 session.setAttribute("userId", user.getId());
                 session.setAttribute("userName", user.getUserName());
@@ -55,13 +56,16 @@ public class LoginControllerServlet extends HttpServlet{
                 if(request.getParameter("remember")!=null){
                     session.setAttribute("rememberme", "true");
                 }
-                
-                if(user.getUserType() == UserType.CLIENT){
-                    response.sendRedirect("products");
-                }else{
-                    session.setAttribute("isAdmin", "true");
-                    response.sendRedirect("admin-dashboard.jsp");
-                }  
+                if((String) session.getAttribute("previous-page") != null){
+                    response.sendRedirect("order");
+                }else {
+                    if (user.getUserType() == UserType.CLIENT) {
+                        response.sendRedirect("products");
+                    } else {
+                        session.setAttribute("isAdmin", "true");
+                        response.sendRedirect("admin-dashboard.jsp");
+                    }
+                }
             }
             else{
                 request.setAttribute("errorMessage", "Wrong email or password");

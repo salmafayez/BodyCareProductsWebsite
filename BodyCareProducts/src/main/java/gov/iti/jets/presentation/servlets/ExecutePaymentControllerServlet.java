@@ -16,13 +16,10 @@ public class ExecutePaymentControllerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String paymentId = request.getParameter("paymentId");
-        System.out.println("paymentId"+ paymentId +"inside servlet");
         String payerId = request.getParameter("PayerID");
-        System.out.println("payerId"+ payerId +"inside servlet");
 
         try {
             Payment payment = DomainFacade.executePayment(paymentId, payerId);
-
             PayerInfo payerInfo = payment.getPayer().getPayerInfo();
             Transaction transaction = payment.getTransactions().get(0);
 

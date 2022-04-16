@@ -11,6 +11,7 @@ import gov.iti.jets.persistence.entities.ContactMessage;
 import gov.iti.jets.persistence.entities.Order;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.entities.User;
+import gov.iti.jets.presentation.dtos.OrderDto;
 import gov.iti.jets.presentation.dtos.UpdatedUserDto;
 import gov.iti.jets.services.*;
 import gov.iti.jets.services.impl.*;
@@ -114,8 +115,8 @@ public class DomainFacade {
         return addProductService.searchProducts(searchProduct, offset, noOfRecords);
     }
 
-    public static String authorizePayment (Order order) throws PayPalRESTException{
-        return paymentService.authorizePayment(order);
+    public static String authorizePayment (OrderDto orderDto) throws PayPalRESTException{
+        return paymentService.authorizePayment(orderDto);
     }
 
     public static Payment getPaymentDetails(String id) throws PayPalRESTException {
