@@ -12,6 +12,7 @@ import gov.iti.jets.persistence.entities.Order;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.presentation.dtos.OrderDto;
+import gov.iti.jets.presentation.dtos.UpdatedUserDto;
 import gov.iti.jets.services.*;
 import gov.iti.jets.services.impl.*;
 import jakarta.persistence.NoResultException;
@@ -27,7 +28,9 @@ public class DomainFacade {
     private static final ContactMessageService contactMessageService = new ContactMessageServiceImpl();
     private static final UsersHistoryService usersHistoryService = new UsersHistroyServiceImpl();
     private static final CartProductsService cartProductsService = new CartProductsServiceImpl();
+    private static final UserUpdateProfileService userUpdateProfileService = new UserUpdateProfileServiceImpl();
     private static final PaymentService paymentService = new PaymentServiceImpl();
+
 
     public static boolean addProduct(Product product){
         Category category = categoryService.getcategory(product.getCategoryName());
@@ -99,6 +102,9 @@ public class DomainFacade {
 
     public static boolean addUser(User user) {
         return registerUserService.addUser(user);
+    }
+    public static boolean updateUser(Integer id , UpdatedUserDto updatedUserDto) {
+        return userUpdateProfileService.isUserUpdated(id,updatedUserDto);
     }
 
 
