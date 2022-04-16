@@ -242,7 +242,8 @@ function setErrorMessage(input, message) {
 
 function isEmail(emailValue) {
 
-    return /^[a-zA-Z0-9+&*-]+(?:.[a-zA-Z0-9+&-]+)@(?:[a-zA-Z0-9-]+.)+[a-zA-Z]{2,7}$/.test(emailValue);
+    return /^[a-zA-Z0-9_+&*-]+(?:\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$/.test(emailValue)
+    //return /^[a-zA-Z0-9+&*-]+(?:.[a-zA-Z0-9+&-]+)@(?:[a-zA-Z0-9-]+.)+[a-zA-Z]{2,15}$/.test(emailValue);
 }
 
 function isStrongPassword(passwordValue) {

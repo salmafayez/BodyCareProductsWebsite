@@ -1892,7 +1892,7 @@ ol {
 	top: 0;
 	width: 10px;
 	height: 8px;
-	border: solid white;
+	/* border: solid white; */
 	border-width: 3px 3px 0px 0px;
 	-webkit-transform: rotate(127deg);
 	-ms-transform: rotate(127deg);

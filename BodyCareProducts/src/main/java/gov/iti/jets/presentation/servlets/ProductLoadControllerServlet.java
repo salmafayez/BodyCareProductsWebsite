@@ -2,9 +2,6 @@ package gov.iti.jets.presentation.servlets;
 
 import java.io.IOException;
 import java.util.List;
-
-import org.hibernate.validator.internal.util.DomainNameUtil;
-
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.services.util.DomainFacade;
 import jakarta.servlet.RequestDispatcher;

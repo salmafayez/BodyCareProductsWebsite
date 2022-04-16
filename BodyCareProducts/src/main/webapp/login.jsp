@@ -31,7 +31,10 @@
                             <div class="card-body">
                                 <div class="login-form">
                                     <h2>Login</h2>
-                                    <%@ include file="error.jsp" %>
+                                    <c:if test="${errorMessage != null}">
+                                        <p class="text-danger text-center py-1">${errorMessage}</P>
+                                    </c:if>
+
                                     <form action="login" method="post" id="loginform">
                                         <div class="group-input">
                                             <label for="email">Email *</label>

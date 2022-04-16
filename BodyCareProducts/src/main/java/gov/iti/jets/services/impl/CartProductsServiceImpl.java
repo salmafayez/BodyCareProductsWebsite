@@ -1,11 +1,8 @@
 package gov.iti.jets.services.impl;
 
 import gov.iti.jets.persistence.CartProductsDao;
-import gov.iti.jets.persistence.CategoryDao;
 import gov.iti.jets.persistence.entities.CartProducts;
-import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.impl.CartProductsDaoImpl;
-import gov.iti.jets.persistence.impl.CategoryDaoImpl;
 import gov.iti.jets.services.CartProductsService;
 
 public class CartProductsServiceImpl implements CartProductsService {
