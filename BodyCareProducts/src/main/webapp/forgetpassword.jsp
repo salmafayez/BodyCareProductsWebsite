@@ -46,7 +46,7 @@
                                         <button type="submit" class="site-btn login-btn defaultBorders">Get new password</button>
                                     </form>
                                     <div class="switch-login">
-                                        <a href="login.jsp" class="or-login">Or Back to login</a>
+                                        <a href="login" class="or-login">Or Back to login</a>
                                     </div>
                                 </div>
                             </div>

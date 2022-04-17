@@ -12,28 +12,25 @@ import jakarta.servlet.http.HttpSession;
 
 @MultipartConfig
 public class ValidateOtpControllerServlet extends HttpServlet{
+
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		request.getRequestDispatcher("enter-otp.jsp").forward(request,response);
+	}
+
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int value=Integer.parseInt(request.getParameter("otp"));
 		HttpSession session=request.getSession();
 		int otp=(int)session.getAttribute("otp");
-		
-		RequestDispatcher dispatcher=null;
-			
 		if (value==otp) 
 		{
-			
-				request.setAttribute("email", request.getParameter("email"));
-				request.setAttribute("status", "success");
-			  dispatcher=request.getRequestDispatcher("new-password.jsp");
-			dispatcher.forward(request, response);
+			response.sendRedirect("updatepassword");
 		}
 		else
 		{
 			request.setAttribute("message","wrong otp");
-		   dispatcher=request.getRequestDispatcher("enter-otp.jsp");
-			dispatcher.forward(request, response);
-		
+			request.getRequestDispatcher("enter-otp.jsp").forward(request, response);
 		}
 		
 	}

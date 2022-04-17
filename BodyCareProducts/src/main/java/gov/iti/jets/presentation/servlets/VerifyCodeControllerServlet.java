@@ -24,7 +24,6 @@ public class VerifyCodeControllerServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             boolean  isUserInserted = false;
-            System.out.println("VerifyCode");
 
             HttpSession session = request.getSession();
             String code= (String) session.getAttribute("authcode");
@@ -32,7 +31,6 @@ public class VerifyCodeControllerServlet extends HttpServlet {
 
             User user = (User) session.getAttribute("user");
 
-            System.out.println(user);
             if(usercode.equals(code)){
 
                 isUserInserted = DomainFacade.addUser(user);
@@ -43,7 +41,7 @@ public class VerifyCodeControllerServlet extends HttpServlet {
             }
 
             if (isUserInserted){
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("login");
             }else {
                 request.setAttribute("error", "cannot insert user");
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("verify.jsp");
@@ -54,7 +52,7 @@ public class VerifyCodeControllerServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("verify.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("verify");
         requestDispatcher.forward(request, response);
     }
 

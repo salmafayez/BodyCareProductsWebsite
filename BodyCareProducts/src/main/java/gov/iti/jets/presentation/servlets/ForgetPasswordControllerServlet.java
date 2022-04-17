@@ -11,6 +11,8 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import gov.iti.jets.presentation.util.SendEmailForForgetPassword;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -22,23 +24,22 @@ import jakarta.servlet.http.HttpSession;
 
 @MultipartConfig
 public class ForgetPasswordControllerServlet extends HttpServlet{
+
+    SendEmailForForgetPassword emailService = new SendEmailForForgetPassword();
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.getRequestDispatcher("forgetpassword.jsp").forward(request,response);
+    }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
        String email = request.getParameter("email");
-        String to = email;
-        
+
        int otp = 0;
-       RequestDispatcher requestDispatcher = null;
        HttpSession mySession = request.getSession();
        if(email!=null){
            Random rand = new Random();
            otp = rand.nextInt(1288223);
-           Properties props = new Properties();
-           props.put("mail.smtp.host","smtp.gmail.com");
-           props.put("mail.smtp.socketFactory.port", "465");
-           props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-           props.put("mail.smtp.auth","true");
-           props.put("mail.smtp.port","465");
+           Properties props = emailService.getProperties();
            Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
                protected PasswordAuthentication getPasswordAuthentication() {
                    return new PasswordAuthentication("sondoss.salahh@gmail.com","rpuqnxlkiescyzhw");
@@ -46,28 +47,22 @@ public class ForgetPasswordControllerServlet extends HttpServlet{
            });
 
            try {
-            MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(email));// change accordingly
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.setSubject("Verify your email address");
-            message.setText("To verify your email address use this secuirty code: " + otp);
-            // send message
+           Message message = emailService.createMessage(session,email,otp);
             Transport.send(message);
             System.out.println("message sent successfully");
             request.setAttribute("message","OTP is sent to your email id");
-            mySession.setAttribute("otp",otp); 
-            mySession.setAttribute("email",email);  
-            requestDispatcher = request.getRequestDispatcher("enter-otp.jsp");
-            requestDispatcher.forward(request, response);
+            mySession.setAttribute("otp",otp);
+            mySession.setAttribute("email",email);
+            response.sendRedirect("validateotp");
                 
         }
 
         catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-         
+
         // request.setAttribute("status", "success");
-    
+
        }
     }    
 }

@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Fashi Template">
-    <meta name="keywords" content="Fashi, unica, creative, html">
+    <meta name="description" content="Body Care">
+    <meta name="keywords" content="body care, products, ecommerce">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>Login </title>
 
     <%@ include file="commons-styles.jsp" %>
     </head>
@@ -55,13 +55,13 @@
                                                     <input type="checkbox" name="remember" id="save-pass">
                                                     <span class="checkmark"></span>
                                                 </label>
-                                                <a href="forgetpassword.jsp" class="forget-pass">Forget your Password</a>
+                                                <a href="forgetpassword" class="forget-pass">Forget your Password</a>
                                             </div>
                                         </div>
                                         <button type="submit" class="site-btn login-btn defaultBorders">Sign In</button>
                                     </form>
                                     <div class="switch-login">
-                                        <a href="./register.jsp" class="or-login">Or Create An Account</a>
+                                        <a href="register" class="or-login">Or Create An Account</a>
                                     </div>
                                 </div>
                             </div>
