@@ -51,4 +51,10 @@ public class ProductServiceImpl implements ProductService {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.getProduct(id);
     }
+
+    @Override
+    public boolean removeProduct(int id) {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.removeProduct(id);
+    }
 }

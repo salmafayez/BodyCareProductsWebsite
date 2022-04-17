@@ -10,9 +10,29 @@
   </servlet>
 
   <servlet>
+    <servlet-name>AdminProductLoadControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AdminProductLoadControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminProductLoadControllerServlet</servlet-name>
+    <url-pattern>/adminproducts</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>RegisterUserControllerServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.RegisterUserControllerServlet</servlet-class>
   </servlet>
+
+  <servlet>
+    <servlet-name>AdminRemoveProductControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AdminRemoveProductControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminRemoveProductControllerServlet</servlet-name>
+    <url-pattern>/removeproduct</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>LoginControllerServlet</servlet-name>
@@ -131,18 +151,15 @@
     <url-pattern>/loadusers</url-pattern>
   </servlet-mapping>
 
-
   <servlet>
     <servlet-name>LoadContactMessagesServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.ContactMessagesLoadControllerServlet</servlet-class>
-
   </servlet>
 
   <servlet-mapping>
     <servlet-name>LoadContactMessagesServlet</servlet-name>
     <url-pattern>/loadcontactmessages</url-pattern>
   </servlet-mapping>
-
 
   <servlet-mapping>
     <servlet-name>RegisterUserControllerServlet</servlet-name>

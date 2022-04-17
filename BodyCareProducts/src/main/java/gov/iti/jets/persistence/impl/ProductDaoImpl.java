@@ -108,4 +108,19 @@ public class ProductDaoImpl implements ProductDao {
         return product.get(0);
     }
 
+    @Override
+    public boolean removeProduct(int id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        String select = "SELECT p FROM Product p where p.id=:id";
+        Query query = entityManager.createQuery(select);
+        query.setParameter("id", id);
+        List<Product> product = query.getResultList();
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        entityManager.remove(product.get(0));
+        transaction.commit();
+        entityManager.close();
+        return true;
+    }
+
 }

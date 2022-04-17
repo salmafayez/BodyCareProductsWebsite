@@ -95,11 +95,15 @@ public class DomainFacade {
         return registerUserService.addUser(user);
     }
 
-
     public static Product getProduct(int id){
         return addProductService.getProduct(id);
     }
+
     public static List<Product> searchProducts(String searchProduct, int offset, int noOfRecords){
         return addProductService.searchProducts(searchProduct, offset, noOfRecords);
+    }
+
+    public static boolean removeProduct(int id){
+        return addProductService.removeProduct(id);
     }
 }
