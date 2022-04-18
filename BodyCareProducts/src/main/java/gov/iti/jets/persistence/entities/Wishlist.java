@@ -8,7 +8,7 @@ public class Wishlist {
     @AttributeOverrides( {
             @AttributeOverride(name="userId", column=@Column(name="user_id", nullable=false) ),
             @AttributeOverride(name="productId", column= @Column(name="product_id", nullable=false) ) } )
-    private CartId cartId;
+    private WishlistId wishlistId;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_id", insertable = false, updatable = false)
@@ -18,18 +18,21 @@ public class Wishlist {
     @JoinColumn(name="product_id", insertable = false, updatable = false)
     private Product product;
 
-    public Wishlist(CartId cartId, User user, Product product) {
-        this.cartId = cartId;
+    public Wishlist() {
+    }
+
+    public Wishlist(WishlistId wishlistId, User user, Product product) {
+        this.wishlistId = wishlistId;
         this.user = user;
         this.product = product;
     }
 
-    public CartId getCartId() {
-        return cartId;
+    public WishlistId getCartId() {
+        return wishlistId;
     }
 
-    public void setCartId(CartId cartId) {
-        this.cartId = cartId;
+    public void setCartId(WishlistId wishlistId) {
+        this.wishlistId = wishlistId;
     }
 
     public User getUser() {

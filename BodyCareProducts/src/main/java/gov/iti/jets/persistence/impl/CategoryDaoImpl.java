@@ -1,7 +1,6 @@
 package gov.iti.jets.persistence.impl;
 
 import java.util.List;
-
 import gov.iti.jets.persistence.CategoryDao;
 import gov.iti.jets.persistence.entities.Category;
 import gov.iti.jets.persistence.util.ManagerFactory;

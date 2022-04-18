@@ -2,7 +2,6 @@ package gov.iti.jets.persistence.impl;
 
 import java.util.List;
 import gov.iti.jets.persistence.UserDao;
-import gov.iti.jets.persistence.entities.Category;
 import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.persistence.util.ManagerFactory;
 import gov.iti.jets.presentation.dtos.UpdatedUserDto;
