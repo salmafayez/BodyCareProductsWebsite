@@ -12,10 +12,9 @@ import java.util.List;
 public class LoadUsersDaoImpl implements LoadUsersDao {
 
     private final static EntityManagerFactory entityManagerFactory = ManagerFactory.getEntityManagerFactory();
-
+    private final EntityManager entityManager = entityManagerFactory.createEntityManager();
     @Override
     public List<User> loadUsers() {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
         TypedQuery<User> query = entityManager.createQuery("select u from User u ",User.class);
         List<User> users =query.getResultList();
         return users;

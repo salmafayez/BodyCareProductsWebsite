@@ -17,8 +17,6 @@ public class ContactMessagesLoadControllerServlet extends HttpServlet{
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
        List<ContactMessage> messages = DomainFacade.loadAllMessages();
-
-        System.out.println("arrived in contact messages");
         request.setAttribute("messages", messages);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin-contact-messages.jsp");
         requestDispatcher.forward(request, response);
