@@ -32,7 +32,7 @@ public class ContactMessageServlet extends HttpServlet {
         Boolean test = DomainFacade.addContactMessage(contactMessage);
         if(test){
 
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("home");
         }else{
             out.println("<script>alert('message failed please try again !!')</script>");
         }
