@@ -35,6 +35,16 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>AdminEditProductControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AdminEditProductControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminEditProductControllerServlet</servlet-name>
+    <url-pattern>/editproduct</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>LoginControllerServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.LoginControllerServlet</servlet-class>
   </servlet>

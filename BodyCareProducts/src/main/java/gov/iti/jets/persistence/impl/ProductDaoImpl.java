@@ -123,4 +123,31 @@ public class ProductDaoImpl implements ProductDao {
         return true;
     }
 
+    @Override
+    public boolean editProduct(Product product) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        String select = "SELECT product FROM Product product WHERE product.id=:id";
+        Query query = entityManager.createQuery(select);
+        query.setParameter("id", product.getId());
+        
+        List<Product> products = query.getResultList();
+        Product updatedProduct = products.get(0);
+      
+        updatedProduct.setName(product.getName());
+        updatedProduct.setCategory(product.getCategory());
+        updatedProduct.setCartProductsList(product.getCartProductsList());
+        updatedProduct.setCategoryName(product.getCategoryName());
+        updatedProduct.setDescription(product.getDescription());
+        //updatedProduct.setImage(product.getImage());
+        updatedProduct.setPrice(product.getPrice());
+        updatedProduct.setQuantity(product.getQuantity());
+
+        entityManager.persist(updatedProduct);
+        transaction.commit();
+        entityManager.close();
+        return true;
+    }
+
 }

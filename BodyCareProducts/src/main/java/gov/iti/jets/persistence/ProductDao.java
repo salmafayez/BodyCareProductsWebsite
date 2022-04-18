@@ -13,5 +13,6 @@ public interface ProductDao {
     List <Product> searchProducts(String searchProduct, int offset, int noOfRecords);
     Long getNoOfRecords();
     boolean removeProduct(int id);
+    boolean editProduct(Product product);
 
 }

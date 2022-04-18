@@ -106,4 +106,8 @@ public class DomainFacade {
     public static boolean removeProduct(int id){
         return addProductService.removeProduct(id);
     }
+
+    public static boolean editProduct(Product product){
+        return addProductService.editProduct(product);
+    }
 }

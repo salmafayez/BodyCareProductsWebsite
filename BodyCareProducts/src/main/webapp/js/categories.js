@@ -20,6 +20,6 @@ var getCategoryList = function(){
         for (var i = 0; i < categories.length; i++) {
             temp+="<option value=\""+categories[i].categoryName+"\">"+categories[i].categoryName+"</option>";
         }
-        document.getElementById("category").innerHTML = temp;
+        document.getElementById("category").innerHTML += temp;
     }
 }
