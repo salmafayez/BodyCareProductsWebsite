@@ -49,12 +49,15 @@ public class LoginControllerServlet extends HttpServlet{
                 String randomUUIDString = uuid.toString();
                 session.setAttribute("AuthToken", randomUUIDString);
                 session.setAttribute("currentUser", user);
-                CookieHandler.addCookie("AuthToken", randomUUIDString, 60*60*24*365, response);
                 session.setAttribute("userId", user.getId());
                 session.setAttribute("userName", user.getUserName());
 
                 if(request.getParameter("remember")!=null){
-                    session.setAttribute("rememberme", "true");
+                    CookieHandler.addCookie("AuthToken", randomUUIDString, 60*60*24*365, response);
+                    CookieHandler.addCookie("currentUser", randomUUIDString, 60*60*24*365, response);
+                    CookieHandler.addCookie("userId", user.getId()+"", 60*60*24*365, response);
+                    CookieHandler.addCookie("userName", randomUUIDString, 60*60*24*365, response);
+
                 }
                 if((String) session.getAttribute("previous-page") != null){
                     response.sendRedirect("order");

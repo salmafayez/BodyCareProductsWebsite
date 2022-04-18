@@ -70,11 +70,15 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User getUser(int id) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        String select = "SELECT c FROM User c WHERE c.id=:userid";
-        Query query = entityManager.createQuery(select, User.class);
-        query.setParameter("userid", id);
-        User user = (User) query.getSingleResult();
-        entityManager.close();
+        //String select = "SELECT c FROM User c WHERE c.id=:userid";
+        //Query query = entityManager.createQuery(select, User.class);
+        //query.setParameter("userid", id);
+         User user =entityManager.find(User.class,id);
+        System.out.println("hiiiiiiiiiiiiiiii");
+        System.out.println(user);
+        //User user = (User) (query.getResultList()).get(0);
+       // entityManager.detach(user);
+        //entityManager.close();
         return user;
     }
 
