@@ -377,12 +377,12 @@
 
   <!-- Befor home jsp -->
   <servlet>
-    <servlet-name>BeforeHome</servlet-name>
-    <jsp-file>/beforeHome.jsp</jsp-file>
+    <servlet-name>BeforeHomePageServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.BeforeHomePageServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
-      <servlet-name>BeforeHome</servlet-name>
+      <servlet-name>BeforeHomePageServlet</servlet-name>
       <url-pattern>/beforeHome</url-pattern>
   </servlet-mapping>
 

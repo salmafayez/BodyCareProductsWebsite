@@ -54,10 +54,8 @@ public class LoginControllerServlet extends HttpServlet{
 
                 if(request.getParameter("remember")!=null){
                     CookieHandler.addCookie("AuthToken", randomUUIDString, 60*60*24*365, response);
-                    CookieHandler.addCookie("currentUser", randomUUIDString, 60*60*24*365, response);
                     CookieHandler.addCookie("userId", user.getId()+"", 60*60*24*365, response);
-                    CookieHandler.addCookie("userName", randomUUIDString, 60*60*24*365, response);
-
+                    CookieHandler.addCookie("userName", user.getUserName(), 60*60*24*365, response);
                 }
                 if((String) session.getAttribute("previous-page") != null){
                     response.sendRedirect("order");
