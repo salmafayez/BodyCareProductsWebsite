@@ -47,6 +47,9 @@
                                         <div class="group-input">
                                             <label for="password">Password *</label>
                                             <input type="password" id="password" name="password" class="defaultBorders">
+                                            <i class="fa fa-check-circle" aria-hidden="true" ></i><br>
+                                            <i class="fa fa-exclamation-circle" aria-hidden="true" ></i>
+                                            <small  style="color: rgb(238, 0, 0);font-size: 12px;"></small>
                                         </div>
                                         <div class="group-input gi-check">
                                             <div class="gi-more">

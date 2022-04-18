@@ -1,14 +1,20 @@
 console.log("wroking cart");
-
+updateTotalPrice();
 
 /*-------------------
         Quantity change
     --------------------- */
 var proQty = $('.pro-qty');
 proQty.on('click', '.qtybtn', function () {
-    var productId = document.getElementById('productid').value;
-    console.log(productId);
+    // var productId = document.getElementById('productid').value;
+    // console.log(productId);
     var $button = $(this);
+    // var parentId =$button.parent().parent().parent().id;
+    var parentId =$button.closest("tr").attr("id");
+     var productId =parentId.substring(10);
+    console.log("in button click product id = "+ parentId);
+    console.log("in button click product id = "+ productId);
+    
         var oldValue = $button.parent().find('input').val();
         if (parseFloat(oldValue) <= parseFloat(10)) {
             if ($button.hasClass('inc')) {
@@ -58,10 +64,16 @@ proQty.on('click', '.qtybtn', function () {
 
 var deleteButton = $('.ti-close');
 deleteButton.on('click', function () {
-    var productId = document.getElementById('productid').value
-    console.log("in delete");
+    
     var $button = $(this);
+    
+    var parentId =$button.closest("tr").attr("id");
+     var productId =parentId.substring(10);
+
+    console.log("in delete product id = "+ parentId);
+    console.log("in delete product id = "+ productId);
     $button.parent().parent().remove();
+    
     updateTotalPrice();
     $.ajax({
             url: 'removeproductfromcart?t='+new Date().getTime(),
@@ -69,7 +81,7 @@ deleteButton.on('click', function () {
             data: jQuery.param({ productId: productId}) ,
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
             success: function (response) {
-                document.getElementById("cartNumber").innerText=response;
+                // document.getElementById("cartNumber").innerText=response;
             },
         });
 
@@ -98,17 +110,18 @@ function updateTotalPrice() {
 
 
     }
-    var cartTotal = document.getElementsByClassName('cart-total')[0].children[0].innerHTML = "$" + parseFloat(totalPriceSummation);
+    // cart total:
+     document.getElementsByClassName('cart-total')[0].children[0].innerHTML = "$" + parseFloat(totalPriceSummation);
 }
 
-$( "#cartNumber" ).load(function() {
-  $.ajax({
-          url: 'addproducttocartplus?t='+new Date().getTime(),
-          type: 'GET',
-          data: jQuery.param({ productId: id}) ,
-          contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-          success: function (response) {
-              document.getElementById("cartNumber").innerText=response;
-          },
-      });
-});
+// $( "#cartNumber" ).load(function() {
+//   $.ajax({
+//           url: 'addproducttocartplus?t='+new Date().getTime(),
+//           type: 'GET',
+//           data: jQuery.param({ productId: id}) ,
+//           contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+//           success: function (response) {
+//               document.getElementById("cartNumber").innerText=response;
+//           },
+//       });
+// });

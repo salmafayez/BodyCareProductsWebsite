@@ -4,7 +4,7 @@ const category = document.getElementById("category-name");
 
 form.addEventListener('submit', (e) => {
 
-    if (!isInputValid()) {
+    if (isInputNotValid()) {
 
         e.preventDefault();
     }
@@ -35,16 +35,16 @@ function validateInput() {
 
 
 
-function isInputValid() {
+function isInputNotValid() {
 
-    var counterSuccess = 0;
+    var counterFailed = 0;
     var categoryClassName = category.parentElement.className;
-    if (categoryClassName == 'group-input success') {
-        counterSuccess++;
+    if (categoryClassName == 'group-input error') {
+        counterFailed++;
 
     }
 
-    return counterSuccess == 1;
+    return counterFailed >0;
 }
 
 function setSuccess(input) {

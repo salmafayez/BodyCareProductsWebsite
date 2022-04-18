@@ -69,8 +69,8 @@
                                         </thead>
                                         <tbody class="cart-items">
                                             <c:forEach items="${cart}" var="cart">
-                                                <input type=hidden id="productid" value="${cart.product.id}" />
-                                                <tr class="cart-row">
+                                                <%-- <input type=hidden value="${}" /> --%>
+                                                <tr class="cart-row" id="productid_${cart.product.id}" >
                                                     <td class="cart-pic first-row"><img
                                                             src="img/cart-page/product-1.jpg" alt=""
                                                             style="border-radius: 15px;"></td>
@@ -80,8 +80,8 @@
                                                     <td class="p-price first-row">${cart.product.price}</td>
                                                     <td class="qua-col first-row">
                                                         <div class="quantity">
-                                                            <div class="pro-qty">
-                                                                <span class="dec qtybtn">-</span>
+                                                            <div class="pro-qty" >
+                                                                <span class="dec qtybtn" >-</span>
                                                                 <input class="pro-qty-input" type="text"
                                                                     value="${cart.quantity}">
                                                                 <a class="inc qtybtn">+</a>
@@ -90,7 +90,7 @@
                                                     </td>
 
                                                     <td class="total-price first-row">${cart.product.price}</td>
-                                                    <td class="close-td first-row"><a class="ti-close"></a></td>
+                                                    <td class="close-td first-row"><a class="ti-close" style="cursor: pointer;"></a></td>
                                                 </tr>
                                             </c:forEach>
                                             <!--<tr class="cart-row">

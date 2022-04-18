@@ -74,4 +74,7 @@
                 </div>
             </div>
         </div>
+         <a className="btn  "   id="navigationButton" href="home">
+                <i class="fa fa-home" aria-hidden="true" style="font-size:40px"></i>
+                </a>
     </footer>
