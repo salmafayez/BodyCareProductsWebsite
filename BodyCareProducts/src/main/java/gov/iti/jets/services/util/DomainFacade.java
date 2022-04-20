@@ -28,6 +28,7 @@ public class DomainFacade {
     private static final ContactMessageService contactMessageService = new ContactMessageServiceImpl();
     private static final UsersHistoryService usersHistoryService = new UsersHistroyServiceImpl();
     private static final CartProductsService cartProductsService = new CartProductsServiceImpl();
+    private static final OrderService orderService = new OrderServiceImpl();
     private static final UserUpdateProfileService userUpdateProfileService = new UserUpdateProfileServiceImpl();
     private static final PaymentService paymentService = new PaymentServiceImpl();
 
@@ -125,5 +126,13 @@ public class DomainFacade {
 
     public static Payment executePayment(String paymentId, String payerId)throws PayPalRESTException {
         return paymentService.executePayment(paymentId,payerId);
+    }
+
+    public static List<Order> getAllOrders(){
+        return orderService.getAllOrders();
+
+    }
+    public static List<Order> getOrderByUserId(int id){
+        return orderService.getOrderByUserId(id);
     }
 }

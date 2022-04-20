@@ -87,7 +87,6 @@ public class Order implements Serializable {
                 ", user=" + user +
                 ", totalPrice=" + totalPrice +
                 ", orderTime=" + orderTime +
-                ", lineItemList=" + lineItemList +
                 '}';
     }
 }
