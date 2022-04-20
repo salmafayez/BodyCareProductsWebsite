@@ -105,13 +105,20 @@ public class DomainFacade {
         return userUpdateProfileService.isUserUpdated(id,updatedUserDto);
     }
 
-
     public static Product getProduct(int id){
         return addProductService.getProduct(id);
     }
+
     public static List<Product> searchProducts(String searchProduct, int offset, int noOfRecords){
         return addProductService.searchProducts(searchProduct, offset, noOfRecords);
     }
+
+    public static boolean removeProduct(int id){
+        return addProductService.removeProduct(id);
+    }
+
+    public static boolean editProduct(Product product){
+        return addProductService.editProduct(product);
 
     public static String authorizePayment (OrderDto orderDto) throws PayPalRESTException{
         return paymentService.authorizePayment(orderDto);
@@ -137,5 +144,5 @@ public class DomainFacade {
     }
     public static List<Wishlist>  getWishList(int id){
         return wishListService.getWishListList(id);
-    }
+   }
 }

@@ -11,5 +11,7 @@ public interface ProductDao {
     List <Product> loadByCategory(String category, int offset, int noOfRecords);
     List <Product> searchProducts(String searchProduct, int offset, int noOfRecords);
     Long getNoOfRecords();
+    boolean removeProduct(int id);
+    boolean editProduct(Product product);
 
 }
