@@ -118,8 +118,9 @@ public class DomainFacade {
         return addProductService.removeProduct(id);
     }
 
-    public static boolean editProduct(Product product){
+    public static boolean editProduct(Product product) {
         return addProductService.editProduct(product);
+    }
 
     public static String authorizePayment (OrderDto orderDto) throws PayPalRESTException{
         return paymentService.authorizePayment(orderDto);
