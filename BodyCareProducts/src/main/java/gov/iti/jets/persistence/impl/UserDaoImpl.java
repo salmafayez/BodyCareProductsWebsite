@@ -15,6 +15,7 @@ public class UserDaoImpl implements UserDao {
 
     private final static EntityManagerFactory entityManagerFactory = ManagerFactory.getEntityManagerFactory();
     private final EntityManager entityManager = entityManagerFactory.createEntityManager();
+
     @Override
     public boolean checkEmail(String email) {
         List<User> userList = entityManager.createQuery("select e from User e where e.email = ?1")

@@ -1,9 +1,12 @@
 package gov.iti.jets.presentation.servlets;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.persistence.entities.UserType;
+import gov.iti.jets.persistence.entities.Wishlist;
+import gov.iti.jets.presentation.dtos.CartItemDto;
 import gov.iti.jets.presentation.util.CookieHandler;
 import gov.iti.jets.presentation.util.HashManager;
 import gov.iti.jets.services.util.DomainFacade;
@@ -51,6 +54,12 @@ public class LoginControllerServlet extends HttpServlet{
                 session.setAttribute("currentUser", user);
                 session.setAttribute("userId", user.getId());
                 session.setAttribute("userName", user.getUserName());
+
+                List<Wishlist> wishlistList = DomainFacade.getWishList(user.getId());
+                List<CartItemDto> cartItemDtos = DomainFacade.getCart(user.getId());
+
+                session.setAttribute("cart",cartItemDtos);
+                session.setAttribute("wishlist",wishlistList);
 
                 if(request.getParameter("remember")!=null){
                     CookieHandler.addCookie("AuthToken", randomUUIDString, 60*60*24*365, response);

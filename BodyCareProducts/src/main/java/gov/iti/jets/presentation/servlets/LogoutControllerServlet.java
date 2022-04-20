@@ -1,6 +1,8 @@
 package gov.iti.jets.presentation.servlets;
 
 import java.io.IOException;
+
+import gov.iti.jets.presentation.util.CookieHandler;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.Cookie;
@@ -19,6 +21,7 @@ public class LogoutControllerServlet extends HttpServlet{
         if(session !=null){
             session.invalidate();
         }
+
         Cookie[] cookies = request.getCookies();
         if(cookies != null)
         {
@@ -26,6 +29,14 @@ public class LogoutControllerServlet extends HttpServlet{
             {
                 Cookie cookie = cookies[i];
                 if(cookie.getName().equals("AuthToken")){
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+                if(cookie.getName().equals("userId")){
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+                if(cookie.getName().equals("userName")){
                     cookie.setMaxAge(0);
                     response.addCookie(cookie);
                 }

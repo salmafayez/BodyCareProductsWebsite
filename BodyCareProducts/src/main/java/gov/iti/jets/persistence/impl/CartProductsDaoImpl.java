@@ -2,6 +2,7 @@ package gov.iti.jets.persistence.impl;
 
 import gov.iti.jets.persistence.CartProductsDao;
 import gov.iti.jets.persistence.entities.CartProducts;
+import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.persistence.util.ManagerFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -50,5 +51,12 @@ public class CartProductsDaoImpl implements CartProductsDao {
         entityManager.persist(cartProducts);
         transaction.commit();
         return true;
+    }
+
+    @Override
+    public List<CartProducts> getCartProductsList(int id) {
+        User user =entityManager.find(User.class,id);
+        List<CartProducts> cartProductsList = user.getCartProductsList();
+        return cartProductsList;
     }
 }
