@@ -1,7 +1,6 @@
 package gov.iti.jets.persistence.entities;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 
 @Entity

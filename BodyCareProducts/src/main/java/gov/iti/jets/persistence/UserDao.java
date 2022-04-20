@@ -10,6 +10,5 @@ public interface UserDao {
     User login(String email) throws NoResultException;
     boolean updatePassword(String email , String password);
     User getUser(int id);
-
     boolean updateUser(Integer id , UpdatedUserDto updatedUserDto);
 }

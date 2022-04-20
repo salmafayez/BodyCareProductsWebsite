@@ -53,7 +53,6 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public Long getNoOfRecords() {
-
         return noOfRecords;
     }
 
@@ -87,4 +86,47 @@ public class ProductDaoImpl implements ProductDao {
         List<Product> product = query.getResultList();
         return product.get(0);
     }
-}
+
+    @Override
+    public boolean removeProduct(int id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        String select = "SELECT p FROM Product p where p.id=:id";
+        Query query = entityManager.createQuery(select);
+        query.setParameter("id", id);
+        List<Product> product = query.getResultList();
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        entityManager.remove(product.get(0));
+        transaction.commit();
+        entityManager.close();
+        return true;
+    }
+
+    @Override
+    public boolean editProduct(Product product) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        String select = "SELECT product FROM Product product WHERE product.id=:id";
+        Query query = entityManager.createQuery(select);
+        query.setParameter("id", product.getId());
+        
+        List<Product> products = query.getResultList();
+        Product updatedProduct = products.get(0);
+      
+        updatedProduct.setName(product.getName());
+        updatedProduct.setCategory(product.getCategory());
+        updatedProduct.setCartProductsList(product.getCartProductsList());
+        updatedProduct.setCategoryName(product.getCategoryName());
+        updatedProduct.setDescription(product.getDescription());
+        //updatedProduct.setImage(product.getImage());
+        updatedProduct.setPrice(product.getPrice());
+        updatedProduct.setQuantity(product.getQuantity());
+
+        entityManager.persist(updatedProduct);
+        transaction.commit();
+        entityManager.close();
+        return true;
+    }
+
+

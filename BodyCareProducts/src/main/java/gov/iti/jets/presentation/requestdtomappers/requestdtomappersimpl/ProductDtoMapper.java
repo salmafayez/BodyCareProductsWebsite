@@ -18,8 +18,7 @@ public class ProductDtoMapper implements RequestMapper<Product> {
         product.setDescription(request.getParameter("description"));
         product.setQuantity(Integer.parseInt(request.getParameter("quantity")));
         product.setCategoryName(request.getParameter("category"));
-        Part part = request.getPart("productImage");
-        product.setImage(part.getSubmittedFileName());
+        product.setImage((String) request.getAttribute("imageUrl"));
         return product;
     }
     

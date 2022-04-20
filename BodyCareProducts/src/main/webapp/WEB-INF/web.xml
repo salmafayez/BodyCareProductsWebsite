@@ -30,6 +30,16 @@
 
   <!-- Check out servlet -->
   <servlet>
+    <servlet-name>AdminProductLoadControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AdminProductLoadControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminProductLoadControllerServlet</servlet-name>
+    <url-pattern>/adminproducts</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>CheckoutControllerServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.CheckoutControllerServlet</servlet-class>
   </servlet>
@@ -41,6 +51,26 @@
 
 
   <!-- Contact message servlet -->
+  <servlet>
+    <servlet-name>AdminRemoveProductControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AdminRemoveProductControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminRemoveProductControllerServlet</servlet-name>
+    <url-pattern>/removeproduct</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AdminEditProductControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AdminEditProductControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminEditProductControllerServlet</servlet-name>
+    <url-pattern>/editproduct</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <servlet-name>ContactMessageServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.ContactMessageServlet</servlet-class>
@@ -232,6 +262,18 @@
     <url-pattern>/loadusers</url-pattern>
   </servlet-mapping>
 
+<servlet>
+    <servlet-name>LoadContactMessagesServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ContactMessagesLoadControllerServlet</servlet-class> 
+  </seevlet>
+  
+  <servlet-mapping>
+    
+    
+    
+    
+    </servlet-mapping>
+
 
   <!-- Validate otpc controller servlet -->
   <servlet>
@@ -245,11 +287,13 @@
   </servlet-mapping>
 
 
+
   <!-- Verify code controller servlet -->
   <servlet>
     <servlet-name>VerifyCode</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.VerifyCodeControllerServlet</servlet-class>
   </servlet>
+
 
   <servlet-mapping>
     <servlet-name>VerifyCode</servlet-name>

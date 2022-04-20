@@ -12,7 +12,7 @@
     <%@ include file="commons-styles.jsp" %>
 </head>
 
-<body>
+<body onload="loadCategories();">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -30,14 +30,14 @@
                                 <div class="register-form">
                                     <h2>Edit product</h2>
 
-                                    <form action="#" id="myRegisterForm" name="myRegisterForm" class="row g-3">
+                                    <form action="editproduct?id=${product.id}"  method="POST" id="editProductForm" name="editProductForm" class="row g-3">
 
                                         <!--  Name -->
 
                                         <div class="col-md-6">
                                             <div class="group-input ">
                                                 <label for="productName" class="registerLabel">Name *</label>
-                                                <input type="text" id="productName" name="productName"
+                                                <input type="text" id="productName" name="productName" value=${product.name}
                                                     class="defaultBorders " required>
 
                                                 <i class="fa fa-check-circle" aria-hidden="true"></i><br>
@@ -52,7 +52,7 @@
                                         <div class="col-md-6">
                                             <div class="group-input defaultBorders ">
                                                 <label for="price" class="registerLabel">Price *</label>
-                                                <input type="text" id="price" name="price" class="defaultBorders "
+                                                <input type="text" id="price" name="price" class="defaultBorders " value=${product.price}
                                                     required>
                                                 <i class="fa fa-check-circle" aria-hidden="true"></i><br>
                                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -67,7 +67,7 @@
                                         <div class="col-md-12">
                                             <div class="group-input ">
                                                 <label for="description" class="registerLabel">Description *</label>
-                                                <input type="email" id="description" name="description"
+                                                <input type="email" id="description" name="description" value=${product.description}
                                                     class="defaultBorders" required>
                                                 <i class="fa fa-check-circle" aria-hidden="true"></i><br>
                                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -82,17 +82,15 @@
                                             <label for="countriesLabel"
                                                 class="form-label registerLabel">Categories *</label>
                                             <select id="category" name="category" class="form-select selectRegion"
-                                                style="margin-top: 13px;border-radius: 15px;">
-                                                <option value="Afghanistan">Bath & Shower</option>
-                                                <option value="Åland Islands">Fragrance</option>
-                                                <option value="Åland Islands">Candles</option>
-                                            </select>
+                                                    style="margin-top: 13px;border-radius: 15px;">
+                                                     <option value="${product.categoryName}" selected>${product.categoryName}</option>
+                                                </select>
                                         </div>
-                                        <!-- PHONENUMBER -->
+                                        <!-- QUANTITY -->
                                         <div class="col-md-6">
                                             <div class="group-input defaultBorders ">
                                                 <label for="quantity" class="registerLabel">Quantity *</label>
-                                                <input type="number" id="quantity" name="quantity"
+                                                <input type="number" id="quantity" name="quantity" value=${product.quantity}
                                                     class="defaultBorders " required>
                                                 <i class="fa fa-check-circle" aria-hidden="true"></i><br>
                                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -107,7 +105,7 @@
                                         <div class="col-md-12 mb-3">
                                             <div class="defaultBorders">
                                                 <label for="productImage" class="registerLabel">Image *</label>
-                                                <input class="form-control form-control-lg product-image" type="file" id="formFileMultiple" id="productImage"  class="defaultBorders" name="productImage" required>
+                                                <input class="form-control form-control-lg product-image" type="file" id="formFileMultiple" id="productImage"  class="defaultBorders" value="E:/_ITI.cc.png" name="productImage" required>
                                               
                                             </div>
                                         </div>
@@ -128,9 +126,10 @@
     </div>
     <!-- Register Form Section End -->
 
-
-    <%@ include file="footer.jsp" %>
-    <%@ include file="commons-js.jsp" %>
+        <%@ include file="footer.jsp" %>
+        <%@ include file="commons-js.jsp" %>
+        <script src="js/categories.js" type="text/javascript"></script>
+        <script src="js/admin-addProductValidation.js" type="text/javascript"></script>
 </body>
 
 </html>

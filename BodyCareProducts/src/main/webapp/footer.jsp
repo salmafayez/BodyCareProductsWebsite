@@ -6,7 +6,7 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                            <a href="#"><img src="img/6.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>
@@ -74,4 +74,7 @@
                 </div>
             </div>
         </div>
+         <a className="btn  "   id="navigationButton" href="home">
+                <i class="fa fa-home" aria-hidden="true" style="font-size:40px"></i>
+                </a>
     </footer>

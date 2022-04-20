@@ -2,10 +2,7 @@ package gov.iti.jets.presentation.listeners;
 
 import java.util.List;
 
-import gov.iti.jets.persistence.entities.CartId;
-import gov.iti.jets.persistence.entities.CartProducts;
-import gov.iti.jets.persistence.entities.Product;
-import gov.iti.jets.persistence.entities.User;
+import gov.iti.jets.persistence.entities.*;
 import gov.iti.jets.presentation.dtos.CartItemDto;
 import gov.iti.jets.presentation.util.CookieHandler;
 import gov.iti.jets.services.util.DomainFacade;
@@ -49,8 +46,19 @@ public class SessionListener implements HttpSessionListener {
                     cartProducts.setCartId(new CartId(user.getId(), cartItemDto.getProduct().getId()));
                     cartProducts.setUser(user);
                     DomainFacade.addProductToCart(cartProducts);
-                }
             }
+
+            List<Product> productsList = (List<Product>)session.getAttribute("wishlist");
+
+            productsList.forEach(p->{
+                Wishlist wishlist = new Wishlist();
+                wishlist.setProduct(p);
+                wishlist.setUser(user);
+                wishlist.setCartId(new WishlistId(user.getId(), p.getId()));
+                DomainFacade.saveWishList(wishlist);
+
+            });
+        }
 
         System.out.println("session destroyed");
 

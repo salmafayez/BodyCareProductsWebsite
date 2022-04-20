@@ -12,5 +12,7 @@ public interface ProductService {
     public Long getNoOfRecords();
     public List<Product> searchProducts(String searchProduct, int offset, int noOfRecords);
     public Product getProduct(int id);
+    public boolean removeProduct(int id);
+    public boolean editProduct(Product product);
 
 }

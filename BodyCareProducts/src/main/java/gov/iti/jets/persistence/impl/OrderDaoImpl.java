@@ -14,7 +14,7 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
-
+import jakarta.persistence.EntityTransaction;
 import java.util.List;
 
 public class OrderDaoImpl implements OrderDao {
@@ -38,5 +38,13 @@ public class OrderDaoImpl implements OrderDao {
         query.select(orderRoot).where(predicate);
         List<Order> result = entityManager.createQuery(query).getResultList();
         return result;
+      
+        @Override
+    public void saveOrder(Order order) {
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        entityManager.persist(order);
+        transaction.commit();
+
     }
 }

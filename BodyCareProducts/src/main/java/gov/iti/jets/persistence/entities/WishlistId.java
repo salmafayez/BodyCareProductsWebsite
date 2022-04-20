@@ -1,7 +1,6 @@
 package gov.iti.jets.persistence.entities;
 
 import java.io.Serializable;
-
 import jakarta.persistence.*;
 
 @Embeddable

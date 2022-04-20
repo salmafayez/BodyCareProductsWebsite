@@ -12,6 +12,10 @@ import java.util.List;
 
 public class OrderServiceImpl implements OrderService {
 
+      @Override
+    public void saveOrder(Order order) {
+        OrderDao orderDao = new OrderDaoImpl();
+        orderDao.saveOrder(order);
     @Override
     public List<Order> getAllOrders() {
         OrderDao orderDao = new OrderDaoImpl();
@@ -22,5 +26,6 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> getOrderByUserId(int id) {
         OrderDao orderDao = new OrderDaoImpl();
         return orderDao.getAllOrders();
+
     }
 }

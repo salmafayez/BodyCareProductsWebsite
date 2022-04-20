@@ -6,7 +6,6 @@ import gov.iti.jets.persistence.util.ManagerFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.TypedQuery;
-
 import java.util.List;
 
 public class LoadUsersDaoImpl implements LoadUsersDao {

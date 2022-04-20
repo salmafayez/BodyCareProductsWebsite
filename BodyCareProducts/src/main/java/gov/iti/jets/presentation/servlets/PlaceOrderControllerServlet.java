@@ -27,6 +27,7 @@ public class PlaceOrderControllerServlet extends HttpServlet {
             }else {
                 try {
                     OrderDto orderDto = orderMapper.map(request);
+                    session.setAttribute("order",orderDto);
                     String approvalLink = DomainFacade.authorizePayment(orderDto);
                     response.sendRedirect(approvalLink);
                 } catch (PayPalRESTException e) {
