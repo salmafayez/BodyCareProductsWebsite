@@ -30,10 +30,11 @@ var getCategoryList = function () {
 }
 
 function addToCart(id){
+    var no = document.getElementById("counting").innerText;
     $.ajax({
         url: 'addproducttocartplus?t='+new Date().getTime(),
         type: 'POST',
-        data: jQuery.param({ productId: id}) ,
+        data: jQuery.param({ productId: id }) ,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         success: function (response) {
             document.getElementById("cartNumber").innerText=response;

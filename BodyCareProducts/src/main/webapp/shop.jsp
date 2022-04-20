@@ -179,7 +179,10 @@
                                     <div class="col-lg-4 col-sm-6">
                                         <div class="product-item">
                                             <div class="pi-pic">
+                                                
+                                                <a href="product?id=${product.id}">
                                                 <img src="img/products/product-3.jpg" alt="">
+                                                </a>
                                                 <div class="icon">
                                                     <i class="icon_heart_alt" onclick="addToWishlist(${product.id})"></i>
                                                 </div>
@@ -192,8 +195,8 @@
                                             </div>
                                             <div class="pi-text">
                                                 <div class="catagory-name">${product.categoryName}</div>
-                                                <a href="#">
-                                                    <h5>${product.name}</h5>
+                                                <a href="product?id=${product.id}">
+                                                     <h5>${product.name}</h5>
                                                 </a>
                                                 <div class="product-price">${product.price}</div>
                                             </div>
