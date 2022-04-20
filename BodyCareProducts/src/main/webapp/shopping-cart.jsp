@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-    <title>Fashi | Template</title>
+    <title>Shopping Cart</title>
 
 
     <%@ include file="commons-styles.jsp" %>
@@ -33,14 +33,14 @@
                 <section class="shopping-cart spad">
                     <div class="container">
                         <div class="row px-2 py-3"
-                            style="background-color: #f5f5f5; border-radius: 15px; width: 1200px; height: 500px;">
+                            style="background-color: #f5f5f5; border-radius: 15px; width: 1200px; height: 400px;">
                             <div class="col-lg-12">
                                 <div class="cart-table">
                                     <center>
                                         <tbody class="cart-items">
-                                            <h2 style="margin-top: 225;">
-                                                <center>Empty CART</center>
-                                            </h2>
+                                            <h3 style="margin-top: 225;">
+                                                <center>Empty Cart</center>
+                                            </h3>
                                         </tbody>
 
                                     </center>
@@ -158,7 +158,7 @@
                                         <div class="cart-buttons">
                                             <!--a href="#" class="primary-btn continue-shop"
                                                         style="border-radius: 15px;">UPDATE CART</a-->
-                                            <a href="#" class="primary-btn up-cart" style="border-radius: 15px;">PROCEED
+                                            <a href="checkout" class="primary-btn up-cart" style="border-radius: 15px;">PROCEED
                                                 TO
                                                 CHECK OUT</a>
                                         </div>

@@ -6,7 +6,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>Admin Categories</title>
 
    <%@ include file="commons-styles.jsp" %>
     
@@ -18,7 +18,7 @@
         <div class="loader"></div>
     </div>
 
-    <%@ include file="header.jsp" %>
+    <%@ include file="admin-header.jsp" %>
 
     <!-- Shopping Cart Section Begin -->
     <div class="container-fluid"

@@ -38,7 +38,7 @@ public class OrderDaoImpl implements OrderDao {
         query.select(orderRoot).where(predicate);
         List<Order> result = entityManager.createQuery(query).getResultList();
         return result;
-      
+    }
         @Override
     public void saveOrder(Order order) {
         EntityTransaction transaction = entityManager.getTransaction();

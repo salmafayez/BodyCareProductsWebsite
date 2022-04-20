@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.paypal.api.payments.Payment;
 import com.paypal.base.rest.PayPalRESTException;
-
 import gov.iti.jets.persistence.entities.*;
 import gov.iti.jets.presentation.dtos.CartItemDto;
 import gov.iti.jets.presentation.dtos.OrderDto;
@@ -27,7 +26,6 @@ public class DomainFacade {
     private static final OrderService orderService = new OrderServiceImpl();
     private static final UserUpdateProfileService userUpdateProfileService = new UserUpdateProfileServiceImpl();
     private static final PaymentService paymentService = new PaymentServiceImpl();
-    private static final OrderService orderService = new OrderServiceImpl();
     private static final WishListService wishListService = new WishListServiceImpl();
 
 
@@ -153,8 +151,8 @@ public class DomainFacade {
     public static List<CartItemDto> getCart(int  id){
         return cartProductsService.getCartList(id);
     }
-    public static List<Wishlist>  getWishList(int id){
+    public static List<Wishlist> getWishList(int id){
         return wishListService.getWishListList(id);
-   }
+    }
 
 }
