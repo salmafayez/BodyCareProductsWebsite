@@ -44,11 +44,11 @@ public class OrderDaoImpl implements OrderDao {
         CriteriaBuilder cb = entityManagerFactory.getCriteriaBuilder();
         CriteriaQuery<Order> query = cb.createQuery(Order.class);
         Root<Order> userOrder = query.from(Order.class);
-        Predicate predicate = cb.equal (userOrder.get("user").<Integer>get("id"), id);
+        Predicate predicate = cb.equal(userOrder.get("user").<Integer>get("id"), id);
         query.select(userOrder).where(predicate);
         List<Order> result = entityManager.createQuery(query).getResultList();
         return result;
-      
+    }
         @Override
     public void saveOrder(Order order) {
         EntityTransaction transaction = entityManager.getTransaction();

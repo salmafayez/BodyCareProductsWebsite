@@ -27,7 +27,6 @@ public class DomainFacade {
     private static final OrderService orderService = new OrderServiceImpl();
     private static final UserUpdateProfileService userUpdateProfileService = new UserUpdateProfileServiceImpl();
     private static final PaymentService paymentService = new PaymentServiceImpl();
-    private static final OrderService orderService = new OrderServiceImpl();
     private static final WishListService wishListService = new WishListServiceImpl();
 
 
@@ -118,9 +117,9 @@ public class DomainFacade {
         return addProductService.removeProduct(id);
     }
 
-    public static boolean editProduct(Product product){
+    public static boolean editProduct(Product product) {
         return addProductService.editProduct(product);
-
+    }
     public static String authorizePayment (OrderDto orderDto) throws PayPalRESTException{
         return paymentService.authorizePayment(orderDto);
     }
