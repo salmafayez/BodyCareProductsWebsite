@@ -11,7 +11,7 @@
     <%@ include file="commons.jsp" %>
     </head>
 
-<body>
+<body onload="checkInput();">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -37,8 +37,10 @@
                                         <div class="group-input">
                                             <label for="email">Email *</label>
                                             <input type="email" id="email" name="email" class="defaultBorders">
-                                            <i class="fa fa-check-circle" aria-hidden="true" ></i><br>
-                                            <i class="fa fa-exclamation-circle" aria-hidden="true" ></i>
+                                            <i class="fa fa-check-circle" aria-hidden="true"
+                                                style="top: 170px;right: 60px;"></i><br>
+                                            <i class="fa fa-exclamation-circle" aria-hidden="true"
+                                                style="top: 170px;right: 60px;"></i>
                                             <small  style="color: rgb(238, 0, 0);font-size: 12px;"></small>
                                              
                                         </div>
@@ -60,6 +62,8 @@
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
+        <script src="js/forgetPasswordValidation.js?version=1.1" type="text/javascript"></script>
+
 
 </body>
 
