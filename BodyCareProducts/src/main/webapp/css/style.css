@@ -35,7 +35,24 @@
 	visibility: hidden;
 } */
 
+#userNameLink{
+	color: #d79681;
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase; 
+	
+}
 
+#userNameLink:link{
+	color: #d79681;
+	
+}
+
+#userNameLink:hover{
+	
+	font-size: 22px;
+	
+}
 
 .group-input i {
 
@@ -84,6 +101,30 @@
 
 
 
+#navigationButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 20px;
+    right: 4vw;
+    left: 92vw;
+    color: white;
+    /* width: 6vw;
+    height: 6vh; */
+    background-color: #d79681;
+	padding:1vh 4vh ;
+    border: rgba(66 ,103 ,178,0.6);
+    border-radius: 90%;
+    opacity: 0.7;
+	text-decoration:none;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+	position: fixed;
+    /* right: 0;
+    bottom: 0; */
+	z-index: 1030;
+	
+}
+
 
 .defaultBorders {
 	border-radius: 15px;
@@ -93,6 +134,7 @@
 	border: 1px solid #ebebeb;
 	height: 50px;
 	width: 100%;
+	
 }
 
 html,
@@ -1874,7 +1916,7 @@ ol {
 	top: 0;
 	width: 10px;
 	height: 8px;
-	border: solid white;
+	/* border: solid white; */
 	border-width: 3px 3px 0px 0px;
 	-webkit-transform: rotate(127deg);
 	-ms-transform: rotate(127deg);
@@ -2778,7 +2820,7 @@ ol {
 
 
 
- 
+
 
 
 /*---------------------
@@ -3852,7 +3894,7 @@ ol {
 	border-radius: 5px;
 	padding-left: 20px;
 	padding-top: 10px;
-	
+
 }
 
 .contact-form .leave-comment .comment-form .site-btn {
@@ -4793,30 +4835,38 @@ form .group-input .error input {
 
 
 .alert {
-  padding: 20px;
-  background-color: #d79681;
-  color: white;
-  opacity: 1;
-  transition: opacity 0.6s;
-  margin-bottom: 15px;
+	padding: 20px;
+	background-color: #d79681;
+	color: white;
+	opacity: 1;
+	transition: opacity 0.6s;
+	margin-bottom: 15px;
 }
 
-.alert.success {background-color: #04AA6D;}
-.alert.info {background-color: #2196F3;}
-.alert.warning {background-color: #ff9800;}
+.alert.success {
+	background-color: #04AA6D;
+}
+
+.alert.info {
+	background-color: #2196F3;
+}
+
+.alert.warning {
+	background-color: #ff9800;
+}
 
 .closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
 .closebtn:hover {
-  color: black;
+	color: black;
 
 }

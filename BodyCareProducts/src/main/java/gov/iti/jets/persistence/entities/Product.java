@@ -1,9 +1,6 @@
 package gov.iti.jets.persistence.entities;
 
-
-
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +42,6 @@ public class Product implements Serializable {
     }
 
     public Product(String name, double price, int quantity, String description, String image, Category category) {
-        this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;

@@ -31,10 +31,9 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
                         <ul class="filter-catagories" id="list" name="list">
-                            <%-- <li><a href="#">Bath & Shower</a></li>
-                            <li><a href="#">Fragrance</a></li>
-                            <li><a href="#">Candles</a></li> --%>
+                           
                         </ul>
+
                     </div> 
 <%--                     
                     <div class="filter-widget">
@@ -175,6 +174,12 @@
                     </div> --%>
 
                     </div>
+                  </div>
+                    
+                    
+                </div>
+        
+               
                      <div class="col-lg-9 order-1 order-lg-2">
                     <div class="product-list">
                         <div class="row">
@@ -182,7 +187,7 @@
                                     <div class="col-lg-4 col-sm-6">
                                         <div class="product-item">
                                             <div class="pi-pic">
-                                                <img src="img/products/product-3.jpg" alt="">
+                                                <img src="${product.image}" alt="productImage" style="width: 270px;height: 303px;">
                                                 <div class="icon">
                                                     <i class="icon_heart_alt" onclick="addToWishlist(${product.id})"></i>
                                                 </div>
@@ -226,7 +231,7 @@
             <%@ include file="footer.jsp" %>
                 <%@ include file="commons-js.jsp" %>
                     <script src="js/shop-categories.js" type="text/javascript"></script>
-                    <script src="js/wishlist.js" type="text/javascript"></script>
+                    <script src="js/wishlist-ajax.js" type="text/javascript"></script>
 
 </body>
 

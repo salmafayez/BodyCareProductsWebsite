@@ -1,7 +1,6 @@
 package gov.iti.jets.persistence.entities;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 
 @Entity
@@ -16,10 +15,10 @@ public class LineItem implements Serializable {
     private String productName;
 
     @Column(name = "product_quantity")
-    private String productQuantity;
+    private int productQuantity;
 
     @Column(name = "product_price")
-    private String productPrice;
+    private Double productPrice;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="order_id")
@@ -28,8 +27,7 @@ public class LineItem implements Serializable {
     public LineItem() {
     }
 
-    public LineItem(String productName, String productQuantity, String productPrice, Order order) {
-        this.id = id;
+    public LineItem(String productName, int productQuantity, Double productPrice, Order order) {
         this.productName = productName;
         this.productQuantity = productQuantity;
         this.productPrice = productPrice;
@@ -52,19 +50,19 @@ public class LineItem implements Serializable {
         this.productName = productName;
     }
 
-    public String getProductQuantity() {
+    public int getProductQuantity() {
         return productQuantity;
     }
 
-    public void setProductQuantity(String productQuantity) {
+    public void setProductQuantity(int productQuantity) {
         this.productQuantity = productQuantity;
     }
 
-    public String getProductPrice() {
+    public double getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(String productPrice) {
+    public void setProductPrice(double productPrice) {
         this.productPrice = productPrice;
     }
 

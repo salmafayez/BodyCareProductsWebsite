@@ -253,7 +253,7 @@
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
-    <script src="js/registerValidation.js" type="text/javascript"></script>
+    <script src="js/registerValidation.js?version=1.1" type="text/javascript"></script>
     
 </body>
 

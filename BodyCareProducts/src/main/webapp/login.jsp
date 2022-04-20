@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Fashi Template">
-    <meta name="keywords" content="Fashi, unica, creative, html">
+    <meta name="description" content="Body Care">
+    <meta name="keywords" content="body care, products, ecommerce">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>Login </title>
 
     <%@ include file="commons-styles.jsp" %>
     </head>
@@ -31,7 +31,10 @@
                             <div class="card-body">
                                 <div class="login-form">
                                     <h2>Login</h2>
-                                    <%@ include file="error.jsp" %>
+                                    <c:if test="${errorMessage != null}">
+                                        <p class="text-danger text-center py-1">${errorMessage}</P>
+                                    </c:if>
+
                                     <form action="login" method="post" id="loginform">
                                         <div class="group-input">
                                             <label for="email">Email *</label>
@@ -44,6 +47,9 @@
                                         <div class="group-input">
                                             <label for="password">Password *</label>
                                             <input type="password" id="password" name="password" class="defaultBorders">
+                                            <i class="fa fa-check-circle" aria-hidden="true" ></i><br>
+                                            <i class="fa fa-exclamation-circle" aria-hidden="true" ></i>
+                                            <small  style="color: rgb(238, 0, 0);font-size: 12px;"></small>
                                         </div>
                                         <div class="group-input gi-check">
                                             <div class="gi-more">
@@ -52,13 +58,13 @@
                                                     <input type="checkbox" name="remember" id="save-pass">
                                                     <span class="checkmark"></span>
                                                 </label>
-                                                <a href="forgetpassword.jsp" class="forget-pass">Forget your Password</a>
+                                                <a href="forgetpassword" class="forget-pass">Forget your Password</a>
                                             </div>
                                         </div>
                                         <button type="submit" class="site-btn login-btn defaultBorders">Sign In</button>
                                     </form>
                                     <div class="switch-login">
-                                        <a href="./register.jsp" class="or-login">Or Create An Account</a>
+                                        <a href="register" class="or-login">Or Create An Account</a>
                                     </div>
                                 </div>
                             </div>
