@@ -3,7 +3,6 @@ package gov.iti.jets.persistence.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import jakarta.persistence.*;
 
 @Entity

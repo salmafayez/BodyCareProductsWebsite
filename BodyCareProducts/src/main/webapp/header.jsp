@@ -9,7 +9,7 @@
                         <div class="col-lg-2 col-md-2">
                             <div class="logo">
                                 <a href="./home">
-                                    <img src="img/logo.png" alt="">
+                                    <img src="img/5.png" alt="">
                                 </a>
                             </div>
                         </div>

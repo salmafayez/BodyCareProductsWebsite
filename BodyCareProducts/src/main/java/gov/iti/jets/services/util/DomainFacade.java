@@ -5,12 +5,8 @@ import java.util.List;
 import com.paypal.api.payments.Payment;
 import com.paypal.base.rest.PayPalRESTException;
 
-import gov.iti.jets.persistence.entities.CartProducts;
-import gov.iti.jets.persistence.entities.Category;
-import gov.iti.jets.persistence.entities.ContactMessage;
-import gov.iti.jets.persistence.entities.Order;
-import gov.iti.jets.persistence.entities.Product;
-import gov.iti.jets.persistence.entities.User;
+import gov.iti.jets.persistence.entities.*;
+import gov.iti.jets.presentation.dtos.CartItemDto;
 import gov.iti.jets.presentation.dtos.OrderDto;
 import gov.iti.jets.presentation.dtos.UpdatedUserDto;
 import gov.iti.jets.services.*;
@@ -31,6 +27,8 @@ public class DomainFacade {
     private static final OrderService orderService = new OrderServiceImpl();
     private static final UserUpdateProfileService userUpdateProfileService = new UserUpdateProfileServiceImpl();
     private static final PaymentService paymentService = new PaymentServiceImpl();
+    private static final OrderService orderService = new OrderServiceImpl();
+    private static final WishListService wishListService = new WishListServiceImpl();
 
 
     public static boolean addProduct(Product product){
@@ -108,13 +106,20 @@ public class DomainFacade {
         return userUpdateProfileService.isUserUpdated(id,updatedUserDto);
     }
 
-
     public static Product getProduct(int id){
         return addProductService.getProduct(id);
     }
+
     public static List<Product> searchProducts(String searchProduct, int offset, int noOfRecords){
         return addProductService.searchProducts(searchProduct, offset, noOfRecords);
     }
+
+    public static boolean removeProduct(int id){
+        return addProductService.removeProduct(id);
+    }
+
+    public static boolean editProduct(Product product){
+        return addProductService.editProduct(product);
 
     public static String authorizePayment (OrderDto orderDto) throws PayPalRESTException{
         return paymentService.authorizePayment(orderDto);
@@ -128,6 +133,7 @@ public class DomainFacade {
         return paymentService.executePayment(paymentId,payerId);
     }
 
+
     public static List<Order> getAllOrders(){
         return orderService.getAllOrders();
 
@@ -135,4 +141,19 @@ public class DomainFacade {
     public static List<Order> getOrderByUserId(int id){
         return orderService.getOrderByUserId(id);
     }
+
+    public static void saveOrder(Order order){
+        orderService.saveOrder(order);
+    }
+    public static void saveWishList(Wishlist wishlist){
+        wishListService.saveWishList(wishlist);
+    }
+
+    public static List<CartItemDto> getCart(int  id){
+        return cartProductsService.getCartList(id);
+    }
+    public static List<Wishlist>  getWishList(int id){
+        return wishListService.getWishListList(id);
+   }
+
 }

@@ -1,9 +1,6 @@
 package gov.iti.jets.persistence.entities;
 
-
-
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

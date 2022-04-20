@@ -15,7 +15,7 @@
 <body>
     <!-- Page Preloder -->
    
-
+           
             <!-- Page Preloder -->
             <div id="preloder">
                 <div class="loader"></div>
@@ -23,8 +23,10 @@
 
             <%@ include file="header.jsp" %>
                 <!-- Hero Section Begin -->
-                <section class="hero-section">
-                    <div class="hero-items owl-carousel">
+                
+                <section class="hero-section" >
+                
+                    <div class="hero-items owl-carousel" >
                         <div class="single-hero-items set-bg" data-setbg="img/index/slider2.jpg">
                             <div class="container">
                                 <div class="row">
@@ -450,7 +452,7 @@
 -->
                 <!-- Instagram Section End -->
 
-                <!-- Latest Blog Section Begin -->
+                <!-- Latest Blog Section Begin --> 
                 <section class="latest-blog spad">
                     <div class="container">
                         <div class="row">
@@ -511,10 +513,15 @@
                             </div>
                         </div>
                     </div>
+       
                 </section>
                 <!-- Latest Blog Section End -->
+                <%-- <a className="btn  "   id="navigationButton" href="home">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                </a> --%>
 
                 <%@ include file="footer.jsp" %>
+
                     <%@ include file="commons-js.jsp" %>
 </body>
 
