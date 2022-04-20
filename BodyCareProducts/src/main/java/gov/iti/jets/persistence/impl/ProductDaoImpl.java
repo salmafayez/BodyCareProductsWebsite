@@ -53,7 +53,6 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public Long getNoOfRecords() {
-
         return noOfRecords;
     }
 

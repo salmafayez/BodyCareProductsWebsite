@@ -45,6 +45,10 @@ public class AddProductControllerServlet extends HttpServlet{
     private void uploadImage(HttpServletRequest request) throws IOException, ServletException{
         Part part =request.getPart("productImage");
         String path = request.getServletContext().getRealPath("img") + File.separator+"products"+File.separator+ part.getSubmittedFileName();
+
+        //upload image
+        // call method to download //-----------
+
         System.out.println(path);
         //FileOutputStream fos = new FileOutputStream(path);
         InputStream is = part.getInputStream();
