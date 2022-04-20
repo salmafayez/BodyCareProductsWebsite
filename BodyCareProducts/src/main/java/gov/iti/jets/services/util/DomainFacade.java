@@ -24,6 +24,7 @@ public class DomainFacade {
     private static final ContactMessageService contactMessageService = new ContactMessageServiceImpl();
     private static final UsersHistoryService usersHistoryService = new UsersHistroyServiceImpl();
     private static final CartProductsService cartProductsService = new CartProductsServiceImpl();
+    private static final OrderService orderService = new OrderServiceImpl();
     private static final UserUpdateProfileService userUpdateProfileService = new UserUpdateProfileServiceImpl();
     private static final PaymentService paymentService = new PaymentServiceImpl();
     private static final OrderService orderService = new OrderServiceImpl();
@@ -132,6 +133,15 @@ public class DomainFacade {
         return paymentService.executePayment(paymentId,payerId);
     }
 
+
+    public static List<Order> getAllOrders(){
+        return orderService.getAllOrders();
+
+    }
+    public static List<Order> getOrderByUserId(int id){
+        return orderService.getOrderByUserId(id);
+    }
+
     public static void saveOrder(Order order){
         orderService.saveOrder(order);
     }
@@ -145,4 +155,5 @@ public class DomainFacade {
     public static List<Wishlist>  getWishList(int id){
         return wishListService.getWishListList(id);
    }
+
 }
