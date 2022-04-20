@@ -9,6 +9,7 @@ import java.io.InputStream;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.presentation.requestdtomappers.requestdtomappersimpl.ProductDtoMapper;
 import gov.iti.jets.presentation.requestdtomappers.RequestMapper;
+import gov.iti.jets.presentation.util.AwsImageService;
 import gov.iti.jets.services.util.DomainFacade;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -29,13 +30,15 @@ public class AddProductControllerServlet extends HttpServlet{
 
     }    
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        Product product = productMapper.map(request);
+
         uploadImage(request);
+        Product product = productMapper.map(request);
         boolean result = DomainFacade.addProduct(product);
         request.setAttribute("addProduct", result);
         log(result+"");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin-add-product.jsp");
-        requestDispatcher.forward(request, response);
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin-add-product.jsp");
+//        requestDispatcher.forward(request, response);
+        response.sendRedirect("home");
 
     }  
 
@@ -43,11 +46,17 @@ public class AddProductControllerServlet extends HttpServlet{
         Part part =request.getPart("productImage");
         String path = request.getServletContext().getRealPath("img") + File.separator+"products"+File.separator+ part.getSubmittedFileName();
         System.out.println(path);
-        FileOutputStream fos = new FileOutputStream(path);
+        //FileOutputStream fos = new FileOutputStream(path);
         InputStream is = part.getInputStream();
-        byte [] data = new byte [is.available()];
-        is.read(data);
-        fos.write(data);
-        fos.close();
+        AwsImageService awsImageService =AwsImageService.getInstance();
+        String url=awsImageService.uploadImage(is,part.getSubmittedFileName());
+        request.setAttribute("imageUrl",url);
+
+        System.out.println("url= :" +url);
+//        byte [] data = new byte [is.available()];
+//        is.read(data);
+//        fos.write(data);
+//        fos.close();
+
     }
 }
