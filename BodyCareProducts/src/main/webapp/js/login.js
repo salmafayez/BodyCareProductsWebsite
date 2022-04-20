@@ -4,6 +4,36 @@ const form = document.getElementById("loginform");
 
 email.addEventListener('blur',validateEmail);
 
+
+
+
+
+
+
+
+
+form.addEventListener('submit', (e) => {
+    if(isInputsNotValid()){
+        e.preventDefault();
+    }
+})
+
+
+function checkInputs() {
+
+
+    contactName.addEventListener('blur', validateContactName);
+    contactEmail.addEventListener('blur', validateContactEmail);
+    contactMessage.addEventListener('blur', validateContactMessage);
+
+
+}
+
+
+
+
+
+
 function validateEmail(){
     var emailValue = email.value.trim();
     if(emailValue ===''){
@@ -36,20 +66,16 @@ function setErrorMessage(input,message){
     groupInput.className='group-input error';
 }
 
-form.addEventListener('submit', (e) => {
-    if(!isAllInputsValid()){
-        e.preventDefault();
-    }
-})
 
-function isAllInputsValid(){
 
-    counterSuccess = 0;
+function isInputsNotValid(){
+
+    var counterFailed = 0;
     var emailClassName=email.parentElement.className;
 
-    if(emailClassName == 'group-input success'){
-        counterSuccess++;
+    if(emailClassName == 'group-input error'){
+        counterFailed++;
     }
-   return counterSuccess == 1;
+   return counterFailed > 0;
 }
 
