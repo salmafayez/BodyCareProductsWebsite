@@ -31,6 +31,7 @@
                     <div class="col-lg-6" style="background-color: #f5f5f5; border-radius: 15px">
                         <h2 class="text-center px-4 py-4" style="color: #2B394A;">Categories</h2>
                         <div class="order-history-table">
+                             
                             <table>
                                 <thead>
                                     <tr>
@@ -39,22 +40,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <c:forEach items="${categories}" var="category">
                                     <tr>
-                                        <td><a href="#">#10001</a></td>
-                                        <td>Bath & Shower</td>
+                                        <td><a href="#">${category.id}</a></td>
+                                        <td>${category.name}</td>
                                       </tr>
 
-                                      <tr>
-                                        <td><a href="#">#10001</a></td>
-                                        <td>Fragrance</td>
-                                      </tr>
-
-                                      <tr>
-                                        <td><a href="#">#10001</a></td>
-                                        <td>Candels</td>
-                                      </tr>
+                                     </c:forEach>  
                                 </tbody>
                             </table>
+                            
                             <div class="m-auton text-center">
                                 <a href="addcategory"><button class="site-btn login-btn defaultBorders">Add Category</button></a>
                             </div>

@@ -69,6 +69,7 @@ public class ProductServiceImpl implements ProductService {
     public double getMin() {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.getMin();
+    }
 
     public boolean removeProduct(int id) {
         ProductDao productDao = new ProductDaoImpl();

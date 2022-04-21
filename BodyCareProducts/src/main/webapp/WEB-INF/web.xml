@@ -165,6 +165,16 @@
     <url-pattern>/order-history</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>LoadAdminCategoriesControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.LoadAdminCategoriesControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LoadAdminCategoriesControllerServlet</servlet-name>
+    <url-pattern>/categories</url-pattern>
+  </servlet-mapping>
+
 
   <!-- Page not found servlet -->
   <servlet>
