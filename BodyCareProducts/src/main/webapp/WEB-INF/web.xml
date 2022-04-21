@@ -36,7 +36,7 @@
 
   <servlet-mapping>
     <servlet-name>AdminProductLoadControllerServlet</servlet-name>
-    <url-pattern>/adminproducts</url-pattern>
+    <url-pattern>/admin/adminproducts</url-pattern>
   </servlet-mapping>
 
   <servlet>
@@ -90,7 +90,7 @@
 
   <servlet-mapping>
     <servlet-name>LoadContactMessagesServlet</servlet-name>
-    <url-pattern>/loadcontactmessages</url-pattern>
+    <url-pattern>/admin/loadcontactmessages</url-pattern>
   </servlet-mapping>
 
 
@@ -119,7 +119,7 @@
 
 
   <!-- Home Page servlet -->
-  <servlet>
+  <!-- <servlet>
     <servlet-name>Home</servlet-name>
     <jsp-file>/home.jsp</jsp-file>
   </servlet>
@@ -127,7 +127,7 @@
   <servlet-mapping>
     <servlet-name>Home</servlet-name>
     <url-pattern>/home</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
 
 
   <!-- Login servlet -->
@@ -162,9 +162,29 @@
 
   <servlet-mapping>
     <servlet-name>OrderHistoryControllerServlet</servlet-name>
-    <url-pattern>/order-history</url-pattern>
+    <url-pattern>/admin/order-history</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>LoadAdminCategoriesControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.LoadAdminCategoriesControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LoadAdminCategoriesControllerServlet</servlet-name>
+    <url-pattern>/categories</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>UserOrderHistoryservlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.UserOrderHistoryservlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserOrderHistoryservlet</servlet-name>
+    <url-pattern>/order-history</url-pattern>
+  </servlet-mapping>
 
   <!-- Page not found servlet -->
   <servlet>
@@ -259,7 +279,7 @@
 
   <servlet-mapping>
     <servlet-name>LoadUsersServlet</servlet-name>
-    <url-pattern>/loadusers</url-pattern>
+    <url-pattern>/admin/loadusers</url-pattern>
   </servlet-mapping>
 
   <servlet>
@@ -448,6 +468,15 @@
     <url-pattern>/empty-wishlist</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>HomeControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.HomeControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>HomeControllerServlet</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
 
   <!-- Befor home jsp -->
   <servlet>
@@ -564,8 +593,8 @@
   </listener>
 
 
-  <welcome-file-list>
-    <welcome-file>beforeHome</welcome-file>
-  </welcome-file-list>
+<!--  <welcome-file-list>-->
+<!--    <welcome-file>beforeHome</welcome-file>-->
+<!--  </welcome-file-list>-->
 
 </web-app>
