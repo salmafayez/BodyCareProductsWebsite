@@ -40,7 +40,7 @@ public class PlaceOrderControllerServlet extends HttpServlet {
     
      @Override
      public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-    request.getRequestDispatcher("order.jsp").forward(request,response);
+    request.getRequestDispatcher("check-out.jsp").forward(request,response);
      }
       
 }

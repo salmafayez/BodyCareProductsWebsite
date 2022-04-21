@@ -262,18 +262,6 @@
     <url-pattern>/loadusers</url-pattern>
   </servlet-mapping>
 
-<servlet>
-    <servlet-name>LoadContactMessagesServlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.ContactMessagesLoadControllerServlet</servlet-class> 
-  </seevlet>
-  
-  <servlet-mapping>
-    
-    
-    
-    
-    </servlet-mapping>
-
 
   <!-- Validate otpc controller servlet -->
   <servlet>
@@ -429,6 +417,17 @@
   <servlet-mapping>
     <servlet-name>WishlistRemoveAjaxServlet</servlet-name>
     <url-pattern>/wishlist-remove</url-pattern>
+  </servlet-mapping>
+
+  <!-- Empty Wishlist  -->
+  <servlet>
+    <servlet-name>EmptyWishlist</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.EmptyWishlist</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>EmptyWishlist</servlet-name>
+    <url-pattern>/empty-wishlist</url-pattern>
   </servlet-mapping>
 
 

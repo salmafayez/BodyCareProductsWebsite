@@ -13,7 +13,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-5 col-md-5">
+                        <div class="col-lg-4 col-md-4">
                             <div class="advanced-search">
                                 <form action="search" class="input-group" method="post">
                                     <input type="text" placeholder="What do you need?" name="searchProduct"
@@ -43,7 +43,11 @@
                                             <c:set var="cartlength" value="${0}" />
                                         </c:if>
                                         <c:if test="${fn:length(cart)>0}">
-                                            <c:set var="cartlength" value="${fn:length(cart)}" />
+                                        <c:forEach items="${cart}" var="cart">
+                                            <c:set var="quantityTotal"
+                                                value="${quantityTotal + (cart.quantity)}" />
+                                            </c:forEach>
+                                          <!--  <c:set var="cartlength" value="${quantityTotal}" /> -->
                                         </c:if>
                                         <span id="cartNumber">${cartlength}</span>
                                     </a>
@@ -55,7 +59,7 @@
                                                         <c:forEach items="${cart}" var="cart">
 
                                                             <tr>
-                                                                <td class="si-pic"><img src="img/select-product-1.jpg"
+                                                                <td class="si-pic"><img src="${cart.product.image}"
                                                                         alt=""></td>
                                                                 <td class="si-text">
                                                                     <div class="product-selected">
@@ -106,7 +110,7 @@
 
 
 
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-4 col-md-4">
                             <div>
                                 <c:if test="${userName != null}">
                                     <a href="userprofile" id="userNameLink">${userName}</a>

@@ -130,8 +130,8 @@ function isEmail(emailValue) {
     console.log("email value here ="+emailValue)
 
     
+return /^[a-zA-Z0-9_+&*-]+(?:\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$/.test(emailValue)
 
-        return /^[a-zA-Z0-9+&*-]+(?:.[a-zA-Z0-9+&-]+)@(?:[a-zA-Z0-9-]+.)+[a-zA-Z]{2,7}$/.test(emailValue);
     
 }
 

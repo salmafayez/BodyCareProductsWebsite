@@ -7,7 +7,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>Home</title>
 
     <%@ include file="commons-styles.jsp" %>
 </head>
@@ -35,7 +35,7 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                             tempor
                                             incididunt ut labore et dolore</p>
-                                        <a href="#" class="primary-btn">Shop Now</a>
+                                        <a href="products" class="primary-btn">Shop Now</a>
                                     </div>
                                 </div>
                                 <!--
@@ -53,7 +53,7 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                             tempor
                                             incididunt ut labore et dolore</p>
-                                        <a href="#" class="primary-btn">Shop Now</a>
+                                        <a href="products" class="primary-btn">Shop Now</a>
                                     </div>
                                 </div>
                                 <!--
@@ -72,7 +72,7 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                             tempor
                                             incididunt ut labore et dolore</p>
-                                        <a href="#" class="primary-btn">Shop Now</a>
+                                        <a href="products" class="primary-btn">Shop Now</a>
                                     </div>
                                 </div>
                                 <!--

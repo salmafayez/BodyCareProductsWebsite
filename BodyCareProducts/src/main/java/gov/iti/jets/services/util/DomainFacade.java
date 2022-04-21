@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.paypal.api.payments.Payment;
 import com.paypal.base.rest.PayPalRESTException;
-
 import gov.iti.jets.persistence.entities.*;
 import gov.iti.jets.presentation.dtos.CartItemDto;
 import gov.iti.jets.presentation.dtos.OrderDto;
@@ -120,6 +119,7 @@ public class DomainFacade {
     public static boolean editProduct(Product product) {
         return addProductService.editProduct(product);
     }
+
     public static String authorizePayment (OrderDto orderDto) throws PayPalRESTException{
         return paymentService.authorizePayment(orderDto);
     }
@@ -151,8 +151,8 @@ public class DomainFacade {
     public static List<CartItemDto> getCart(int  id){
         return cartProductsService.getCartList(id);
     }
-    public static List<Wishlist>  getWishList(int id){
+    public static List<Wishlist> getWishList(int id){
         return wishListService.getWishListList(id);
-   }
+    }
 
 }

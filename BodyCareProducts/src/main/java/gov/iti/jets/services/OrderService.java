@@ -6,6 +6,6 @@ import java.util.List;
 public interface OrderService {
     public List<Order> getAllOrders();
     public List<Order> getOrderByUserId(int id);
-    public void saveOrder(Order order);
+    void saveOrder(Order order);
 
 }
