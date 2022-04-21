@@ -2,6 +2,7 @@ package gov.iti.jets.persistence.impl;
 
 import java.util.List;
 import gov.iti.jets.persistence.ProductDao;
+import gov.iti.jets.persistence.entities.Order;
 import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.util.ManagerFactory;
 import jakarta.persistence.EntityManager;
@@ -127,6 +128,13 @@ public class ProductDaoImpl implements ProductDao {
         transaction.commit();
         entityManager.close();
         return true;
+    }
+
+    @Override
+    public List<Product> getAllProducts() {
+        TypedQuery<Product> query = entityManager.createQuery("select m from Product m", Product.class);
+        List<Product> messages = query.getResultList();
+        return messages;
     }
 }
 

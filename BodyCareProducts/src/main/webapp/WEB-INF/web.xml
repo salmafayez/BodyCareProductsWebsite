@@ -441,7 +441,16 @@
     <servlet-name>BeforeHomePageServlet</servlet-name>
     <url-pattern>/beforeHome</url-pattern>
   </servlet-mapping>
+    <!--> admin ifoooo<-->
+  <servlet>
+    <servlet-name>LoadAdminDataServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.LoadAdminDataServlet</servlet-class>
+  </servlet>
 
+  <servlet-mapping>
+    <servlet-name>LoadAdminDataServlet</servlet-name>
+    <url-pattern>/loadadmindata</url-pattern>
+  </servlet-mapping>
 
   <!-- Cart page -->
   <servlet>
