@@ -14,5 +14,6 @@ public interface ProductService {
     public Product getProduct(int id);
     public boolean removeProduct(int id);
     public boolean editProduct(Product product);
+    public List<Product> getAllProducts();
 
 }

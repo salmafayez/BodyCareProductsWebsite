@@ -13,5 +13,6 @@ public interface ProductDao {
     Long getNoOfRecords();
     boolean removeProduct(int id);
     boolean editProduct(Product product);
+    public List<Product> getAllProducts();
 
 }

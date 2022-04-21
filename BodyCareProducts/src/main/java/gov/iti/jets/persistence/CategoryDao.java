@@ -7,4 +7,6 @@ public interface CategoryDao {
     List<Category> getAll ();
     boolean insert(Category category);
     Category getCategory(String categoryName);
-}
+    public List<Category> getAllCategories() ;
+
+    }
