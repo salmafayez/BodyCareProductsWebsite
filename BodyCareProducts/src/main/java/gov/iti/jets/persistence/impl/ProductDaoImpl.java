@@ -31,6 +31,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public List<Product> load(int offset, int noOfRecords) {
         TypedQuery<Product> query = entityManager.createQuery("select p from Product p ",Product.class).setMaxResults(noOfRecords).setFirstResult(offset);
+        
         List<Product> result =query.getResultList();
         Query query2 = entityManager.createQuery("select count(p) from Product p");
         Long result2 = (Long) query2.getSingleResult();
@@ -86,5 +87,34 @@ public class ProductDaoImpl implements ProductDao {
         query.setParameter("id", id);
         List<Product> product = query.getResultList();
         return product.get(0);
+    }
+
+    @Override
+    public List<Product> getProductByPrice(double max, double min, int offset, int noOfRecords) {
+        TypedQuery<Product> query = entityManager.createQuery("select p from Product p where p.price between : min and : max",Product.class).setMaxResults(noOfRecords).setFirstResult(offset);
+        query.setParameter("max",max);
+        query.setParameter("min",min);
+        List<Product> result =query.getResultList();
+       
+        Query query2 = entityManager.createQuery("select count(p) from Product p where p.price between : min and : max");
+        query2.setParameter("max",max);
+        query2.setParameter("min",min);
+        Long result2 = (Long) query2.getSingleResult();
+        this.noOfRecords=result2;
+        return result;
+    }
+
+    @Override
+    public double getMax() {
+        Query query2 = entityManager.createQuery("select max (x.price) from Product x");
+        double result2 = (double) query2.getSingleResult();
+        return result2;
+    }
+
+    @Override
+    public double getMin() {
+        Query query2 = entityManager.createQuery("select min (x.price) from Product x");
+        double result2 = (double) query2.getSingleResult();
+        return result2;
     }
 }

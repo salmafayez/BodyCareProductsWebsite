@@ -86,14 +86,14 @@
                                     <!-- adding button and heading to show the digits -->
                                     <!--increment() and decrement() functions on button click-->
                                          
-                                          <div class="inner">
+                                          <%-- <div class="inner">
                                          
                                             <button onclick="increment()"  class ="myButton" >+</button> </div> 
                                             <div class="inner"><h2 id="counting"></h2></div>
                                              
                                             <div class="inner"><button onclick="decrement()" class = "myButton">-</button></div>
                                           
-                                         </div>    
+                                         </div>     --%>
 
                                     </div>
                                     <br>

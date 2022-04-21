@@ -347,7 +347,15 @@
     <servlet-name>AddProductToCartServlet</servlet-name>
     <url-pattern>/addproducttocartplus</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>FilterProductsControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.FilterProductsControllerServlet</servlet-class>
+  </servlet>
 
+  <servlet-mapping>
+    <servlet-name>FilterProductsControllerServlet</servlet-name>
+    <url-pattern>/filterbyprice</url-pattern>
+  </servlet-mapping>
 
   <!-- Remove product from cart -->
   <servlet>

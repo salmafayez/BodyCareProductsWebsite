@@ -111,6 +111,11 @@ public class DomainFacade {
     public static Product getProduct(int id){
         return addProductService.getProduct(id);
     }
+
+    public static List<Product> searchByPrice(double max, double min, int offset, int noOfRecords){
+        return addProductService.searchByPrice(max, min,offset,noOfRecords);
+    }
+
     public static List<Product> searchProducts(String searchProduct, int offset, int noOfRecords){
         return addProductService.searchProducts(searchProduct, offset, noOfRecords);
     }
@@ -125,5 +130,11 @@ public class DomainFacade {
 
     public static Payment executePayment(String paymentId, String payerId)throws PayPalRESTException {
         return paymentService.executePayment(paymentId,payerId);
+    }
+    public static double getMax(){
+        return addProductService.getMax();
+    }
+    public static double getMin(){
+        return addProductService.getMin();
     }
 }

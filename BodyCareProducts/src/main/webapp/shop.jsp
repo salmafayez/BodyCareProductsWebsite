@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fashi | Template</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
     <%@ include file="commons-styles.jsp" %>
 
@@ -25,153 +26,44 @@
 
     <!-- Product Shop Section Begin -->
     <section class="product-shop spad">
+   
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
                         <ul class="filter-catagories" id="list" name="list">
-                            <%-- <li><a href="#">Bath & Shower</a></li>
-                            <li><a href="#">Fragrance</a></li>
-                            <li><a href="#">Candles</a></li> --%>
                         </ul>
                     </div>
-                    
-                    <!--
-                    <div class="filter-widget">
-                        <h4 class="fw-title">Brand</h4>
-                        <div class="fw-brand-check">
-                            <div class="bc-item">
-                                <label for="bc-calvin">
-                                    Calvin Klein
-                                    <input type="checkbox" id="bc-calvin">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="bc-item">
-                                <label for="bc-diesel">
-                                    Diesel
-                                    <input type="checkbox" id="bc-diesel">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="bc-item">
-                                <label for="bc-polo">
-                                    Polo
-                                    <input type="checkbox" id="bc-polo">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="bc-item">
-                                <label for="bc-tommy">
-                                    Tommy Hilfiger
-                                    <input type="checkbox" id="bc-tommy">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filter-widget">
+                     <form action="filterbyprice" class="input-group" method="post" onSubmit="return saveComment();">
+                                   
+                                   
+                <div class="filter-widget">
                         <h4 class="fw-title">Price</h4>
                         <div class="filter-range-wrap">
                             <div class="range-slider">
                                 <div class="price-input">
-                                    <input type="text" id="minamount">
-                                    <input type="text" id="maxamount">
+                                    <input type="text" id="minamount" name = "min">
+                                    <input type="text" id="maxamount" name = "max">
+                                   
                                 </div>
                             </div>
                             <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                data-min="33" data-max="98">
+                                data-min="<%= session.getAttribute("mini") %>" data-max="<%= session.getAttribute("maxi") %>">
                                 <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                             </div>
                         </div>
-                        <a href="#" class="filter-btn">Filter</a>
+                        <%-- <a href="filterbyprice" class="filter-btn">Filter</a> --%>
+                        <button class="btn primary-btn sign-in" type="submit">FILTER</button>
+                       
                     </div>
-                    <div class="filter-widget">
-                        <h4 class="fw-title">Color</h4>
-                        <div class="fw-color-choose">
-                            <div class="cs-item">
-                                <input type="radio" id="cs-black">
-                                <label class="cs-black" for="cs-black">Black</label>
-                            </div>
-                            <div class="cs-item">
-                                <input type="radio" id="cs-violet">
-                                <label class="cs-violet" for="cs-violet">Violet</label>
-                            </div>
-                            <div class="cs-item">
-                                <input type="radio" id="cs-blue">
-                                <label class="cs-blue" for="cs-blue">Blue</label>
-                            </div>
-                            <div class="cs-item">
-                                <input type="radio" id="cs-yellow">
-                                <label class="cs-yellow" for="cs-yellow">Yellow</label>
-                            </div>
-                            <div class="cs-item">
-                                <input type="radio" id="cs-red">
-                                <label class="cs-red" for="cs-red">Red</label>
-                            </div>
-                            <div class="cs-item">
-                                <input type="radio" id="cs-green">
-                                <label class="cs-green" for="cs-green">Green</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filter-widget">
-                        <h4 class="fw-title">Size</h4>
-                        <div class="fw-size-choose">
-                            <div class="sc-item">
-                                <input type="radio" id="s-size">
-                                <label for="s-size">s</label>
-                            </div>
-                            <div class="sc-item">
-                                <input type="radio" id="m-size">
-                                <label for="m-size">m</label>
-                            </div>
-                            <div class="sc-item">
-                                <input type="radio" id="l-size">
-                                <label for="l-size">l</label>
-                            </div>
-                            <div class="sc-item">
-                                <input type="radio" id="xs-size">
-                                <label for="xs-size">xs</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filter-widget">
-                        <h4 class="fw-title">Tags</h4>
-                        <div class="fw-tags">
-                            <a href="#">Towel</a>
-                            <a href="#">Shoes</a>
-                            <a href="#">Coat</a>
-                            <a href="#">Dresses</a>
-                            <a href="#">Trousers</a>
-                            <a href="#">Men's hats</a>
-                            <a href="#">Backpack</a>
-                        </div>
-                    </div>
-                -->
+
+                                </form>
+
+
                 </div>
-        
-                <%-- <div class="col-lg-9 order-1 order-lg-2">
-                    <div class="product-show-option">
-                        <div class="row">
-                            <div class="col-lg-7 col-md-7">
-                                <div class="select-option">
-                                    <select class="sorting">
-                                        <option value="">Default Sorting</option>
-                                    </select>
-                                    <select class="p-show">
-                                        <option value="">Show:</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 text-right">
-                                <p>Show 01- 09 Of 36 Product</p>
-                            </div>
-                        </div>
-                    </div> --%>
                      <div class="col-lg-9 order-1 order-lg-2">
                     <div class="product-list">
                         <div class="row">
@@ -192,6 +84,7 @@
                                                     <li class="quick-view" onclick="addToCart(${product.id})"> <a href="#"> + ADD TO
                                                         CART</a></li>
                                                 </ul>
+                                                
                                             </div>
                                             <div class="pi-text">
                                                 <div class="catagory-name">${product.categoryName}</div>
@@ -208,10 +101,10 @@
                     <div class="loading-more">
 
                         <c:if test="${currentPage != 1}">
-                            <a href="products?page=${currentPage-1}" class="previous" style="text-decoration:none;display: inline-block;padding: 8px 16px;background-color: #2B394A;color: black;" disabled>&laquo; Previous</a>
+                            <a href="filterbyprice?page=${currentPage-1}&max=<%= session.getAttribute("maxVal") %> &min=<%= session.getAttribute("minVal") %>" class="previous" style="text-decoration:none;display: inline-block;padding: 8px 16px;background-color: #2B394A;color: black;" disabled>&laquo; Previous</a>
                         </c:if>
                         <c:if test="${currentPage lt noOfPages}">
-                            <a href="products?page=${currentPage+1}" class="next" style="text-decoration:none;display: inline-block;padding: 8px 16px; background-color:#d79681; color: white;" disabled>Next &raquo;</a>
+                            <a href="filterbyprice?page=${currentPage+1}&max=<%= session.getAttribute("maxVal") %> &min=<%= session.getAttribute("minVal") %>" class="next" style="text-decoration:none;display: inline-block;padding: 8px 16px; background-color:#d79681; color: white;" disabled>Next &raquo;</a>
                         </c:if>
                     </div>
                 </div>
@@ -224,9 +117,16 @@
             <!-- Product Shop Section End -->
 
             <%@ include file="footer.jsp" %>
-                <%@ include file="commons-js.jsp" %>
-                    <script src="js/shop-categories.js" type="text/javascript"></script>
-                    <script src="js/wishlist-ajax.js" type="text/javascript"></script>
+            <%@ include file="commons-js.jsp" %>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+            <script src="js/shop-categories.js" type="text/javascript"></script>
+            <script src="js/wishlist-ajax.js" type="text/javascript"></script>
+            <script src="js/shopping-cart.js" type="text/javascript"></script>
+            <script src="js/IncrementProduct.js" type="text/javascript"></script>
+
+            <%-- <script src="js/price-store.js" type="text/javascript"></script> --%>
+
 
 </body>
 

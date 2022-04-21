@@ -51,4 +51,22 @@ public class ProductServiceImpl implements ProductService {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.getProduct(id);
     }
+
+    @Override
+    public List<Product> searchByPrice(double max, double min, int offset, int noOfRecords) {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.getProductByPrice(max, min, offset, noOfRecords);
+    }
+
+    @Override
+    public double getMax() {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.getMax();
+    }
+
+    @Override
+    public double getMin() {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.getMin();
+    }
 }
