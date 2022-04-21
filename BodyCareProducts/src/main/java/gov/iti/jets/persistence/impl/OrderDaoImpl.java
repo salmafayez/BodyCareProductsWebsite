@@ -24,6 +24,8 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public List<Order> getAllOrders() {
+        System.out.println("here on daooooooooooo" + "allaaaaaaaaa org=deee");
+
         TypedQuery<Order> query = entityManager.createQuery("select m from Order m", Order.class);
         List<Order> messages = query.getResultList();
         return messages;
@@ -31,11 +33,19 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public List<Order> getOrderByUserId(int id) {
+//        CriteriaBuilder cb = entityManagerFactory.getCriteriaBuilder();
+//        CriteriaQuery<Order> query = cb.createQuery(Order.class);
+//        Root<Order> orderRoot = query.from(Order.class);
+//        Predicate predicate = cb.equal(orderRoot.get("user").<Integer>get("id"), id);
+//        query.select(orderRoot).where(predicate);
+//        List<Order> result = entityManager.createQuery(query).getResultList();
+
+        System.out.println("here on daooooooooooo" + id);
         CriteriaBuilder cb = entityManagerFactory.getCriteriaBuilder();
         CriteriaQuery<Order> query = cb.createQuery(Order.class);
-        Root<Order> orderRoot = query.from(Order.class);
-        Predicate predicate = cb.equal(orderRoot.get("user").<Integer>get("id"), id);
-        query.select(orderRoot).where(predicate);
+        Root<Order> userOrder = query.from(Order.class);
+        Predicate predicate = cb.equal(userOrder.get("user").<Integer>get("id"), id);
+        query.select(userOrder).where(predicate);
         List<Order> result = entityManager.createQuery(query).getResultList();
         return result;
     }

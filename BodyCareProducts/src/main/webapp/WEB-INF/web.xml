@@ -322,6 +322,18 @@
     <url-pattern>/userupdateprofile</url-pattern>
   </servlet-mapping>
 
+   <!-- User Order History -->
+   <servlet>
+    <servlet-name>UserOrderHistoryServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.UserOrderHistoryServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserOrderHistoryServlet</servlet-name>
+    <url-pattern>/userorderhistory</url-pattern>
+  </servlet-mapping>
+
+
 
   <!-- Category load ajax servlet-->
   <servlet>
@@ -357,6 +369,7 @@
     <servlet-name>DecrementProductQuantityCartAjaxServlet</servlet-name>
     <url-pattern>/addproducttocartminus</url-pattern>
   </servlet-mapping>
+
 
 
   <!-- Increment product quantity -->
