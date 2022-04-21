@@ -7,7 +7,8 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Fashi | Template</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
     <%@ include file="commons-styles.jsp" %>
 </head>
@@ -15,7 +16,8 @@
 <body>
     <!-- Page Preloder -->
    
-           
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
             <!-- Page Preloder -->
             <div id="preloder">
                 <div class="loader"></div>
@@ -23,18 +25,15 @@
 
             <%@ include file="header.jsp" %>
                 <!-- Hero Section Begin -->
-                
-                <section class="hero-section" >
-                
-                    <div class="hero-items owl-carousel" >
+                <section class="hero-section">
+                    <div class="hero-items owl-carousel">
                         <div class="single-hero-items set-bg" data-setbg="img/index/slider2.jpg">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5">
                                         <h1>Body Care</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor
-                                            incididunt ut labore et dolore</p>
+                                        <p>FATAKAT Works is your go-to place for gifts & goodies that surprise & delight.
+                                       </p>
                                         <a href="products" class="primary-btn">Shop Now</a>
                                     </div>
                                 </div>
@@ -50,10 +49,11 @@
                                 <div class="row">
                                     <div class="col-lg-5">
                                         <h1>Body Care</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor
-                                            incididunt ut labore et dolore</p>
-                                        <a href="products" class="primary-btn">Shop Now</a>
+                                        <p> Fresh
+                                        fragrances to soothing skin care, we make finding your perfect something special
+                                        a
+                                        happy-memory-making experience.</p>
+                                        <a href="#" class="primary-btn">Shop Now</a>
                                     </div>
                                 </div>
                                 <!--
@@ -69,10 +69,10 @@
                                 <div class="row">
                                     <div class="col-lg-5">
                                         <h1>Body Care</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor
-                                            incididunt ut labore et dolore</p>
-                                        <a href="products" class="primary-btn">Shop Now</a>
+                                        <p> Oh! And while you're browsing, shop our latest &
+                                        greatest
+                                        selection of lotions, soaps and candles!</p>
+                                        <a href="#" class="primary-btn">Shop Now</a>
                                     </div>
                                 </div>
                                 <!--
@@ -91,29 +91,48 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-4">
+                            <a href="products?category=Bath and shower">
                                 <div class="single-banner">
+                               
+                                
                                     <img src="img/index/shower.jpg" alt="">
+                                   
                                     <div class="inner-text">
+
                                         <h4>Bath & Shower</h4>
                                     </div>
                                 </div>
+                                 </a>
                             </div>
+
+
+
                             <div class="col-lg-4">
+                            <a href="products?category=Fragrance">
                                 <div class="single-banner">
+                                
                                     <img src="img/index/fragrance.jpg" alt="">
-                                    <div class="inner-text">
+                                   
+                                    <div class="inner-text"> 
                                         <h4>Fragrance</h4>
                                     </div>
                                 </div>
+                                 </a>
                             </div>
+
+
                             <div class="col-lg-4">
+                            <a href="products?category=candels">
                                 <div class="single-banner">
+                                
                                     <img src="img/index/candles.jpg" alt="">
+                                   
                                     <div class="inner-text">
                                         <h4>Candles</h4>
-                                    </div>
-                                </div>
+                                </div> </div> </a>
                             </div>
+                                
+                           
                         </div>
                     </div>
                 </div>
@@ -125,59 +144,60 @@
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="product-large set-bg" data-setbg="img/index/sideImage.jpg">
-                                    <!--
-                            <h2>Women’s</h2>
-                            <a href="#">Discover More</a>
-                        -->
+                                   
                                 </div>
                             </div>
                             <div class="col-lg-8 offset-lg-1">
-                                <div class="filter-control">
-                                    <ul>
-                                        <li class="active">All</li>
-                                        <li>Bath & Shower</li>
-                                        <li>Fragrance</li>
-                                        <li>Candles</li>
-                                    </ul>
-                                </div>
+                               
                                 <div class="product-slider owl-carousel">
                                     <div class="product-item">
                                         <div class="pi-pic">
                                             <img src="img/index/woman1.jpg" alt="">
-                                            <div class="sale">Sale</div>
-                                            <div class="icon">
-                                                <i class="icon_heart_alt"></i>
-                                            </div>
-                                            <ul>
-                                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a>
-                                                </li>
-                                                <li class="quick-view"><a href="#">+ ADD TO CART</a></li>
-                                            </ul>
+                                            <%-- <div class="icon">
+                                                    <a href="#" class="heart-icon"><i class="icon_heart_alt"  onclick="addToWishlist(${product.id})"></i></a>
+                                            </div> --%>
+                                               <%-- <ul>
+                                                    <li class="w-icon active"><a href="shopping-cart.jsp"><i
+                                                                class="icon_bag_alt"></i></a></li>
+                                                   <a href="#"> <ul class="site-btn register-btn defaultBorders"
+                                                style="width: 20vw;" id="register" onclick="addToCart(${product.id})">ADD TO CART</ul></a>
+                                              
+                                                </ul> --%>
                                         </div>
+                                         <c:forEach items="${products}" var="product">  
+ 
                                         <div class="pi-text">
-                                            <div class="catagory-name">Coat</div>
-                                            <a href="#">
-                                                <h5>Pure Pineapple</h5>
+                                            <div class="catagory-name">${product.categoryName}</div>
+                                            <a href="product?id=${product.id}">
+                                                <h5>${product.name}</h5>
                                             </a>
                                             <div class="product-price">
-                                                $14.00
-                                                <span>$35.00</span>
+                                                ${product.price}
+                                                <%-- <span>$35.00</span> --%>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="product-item">
                                         <div class="pi-pic">
-                                            <img src="img/index/woman2.jpg" alt="">
+                                        <a href="product?id=${product.id}">
+                                            <img src=" ${product.price}" alt="">
+                                            <%-- </a>
                                             <div class="icon">
-                                                <i class="icon_heart_alt"></i>
-                                            </div>
-                                            <ul>
-                                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a>
-                                                </li>
-                                                <li class="quick-view"><a href="#">+ ADD TO CART</a></li>
-                                            </ul>
+                                               
+                                                <ul>
+                                                    <li class="w-icon active"><a href="shopping-cart.jsp"><i
+                                                                class="icon_bag_alt"></i></a></li>
+                                                     <a href="#"> <ul class="site-btn register-btn defaultBorders"
+                                                style="width: 20vw;" id="register" onclick="addToCart(${product.id})">ADD TO CART</ul></a>
+                                              
+                                                </ul>
+                                          
+                                        </div> --%>
                                         </div>
-                                        <div class="pi-text">
+                                        </c:forEach>
+
+                                        <%-- <div class="pi-text">
                                             <div class="catagory-name">Shoes</div>
                                             <a href="#">
                                                 <h5>Guangzhou sweater</h5>
@@ -187,6 +207,9 @@
                                             </div>
                                         </div>
                                     </div>
+
+
+
                                     <div class="product-item">
                                         <div class="pi-pic">
                                             <img src="img/index/woman3.jpg" alt="">
@@ -229,8 +252,8 @@
                                             <div class="product-price">
                                                 $34.00
                                             </div>
-                                        </div>
-                                    </div>
+                                        </div></div>
+                                     --%>
                                 </div>
                             </div>
                         </div>
@@ -238,221 +261,10 @@
                 </section>
                 <!-- Women Banner Section End -->
 
-                <!-- Deal Of The Week Section Begin-->
-                <!--
-    <section class="deal-of-week set-bg spad" data-setbg="img/time-bg.jpg">
-        <div class="container">
-            <div class="col-lg-6 text-center">
-                <div class="section-title">
-                    <h2>Deal Of The Week</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
-                        consectetur adipisicing elit </p>
-                    <div class="product-price">
-                        $35.00
-                        <span>/ HanBag</span>
-                    </div>
-                </div>
-                <div class="countdown-timer" id="countdown">
-                    <div class="cd-item">
-                        <span>56</span>
-                        <p>Days</p>
-                    </div>
-                    <div class="cd-item">
-                        <span>12</span>
-                        <p>Hrs</p>
-                    </div>
-                    <div class="cd-item">
-                        <span>40</span>
-                        <p>Mins</p>
-                    </div>
-                    <div class="cd-item">
-                        <span>52</span>
-                        <p>Secs</p>
-                    </div>
-                </div>
-                <a href="#" class="primary-btn">Shop Now</a>
-            </div>
-        </div>
-    </section>
--->
-                <!-- Deal Of The Week Section End -->
-
-                <!-- Man Banner Section Begin -->
-                <!--
-    <section class="man-banner spad">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="filter-control">
-                        <ul>
-                            <li class="active">Clothings</li>
-                            <li>HandBag</li>
-                            <li>Shoes</li>
-                            <li>Accessories</li>
-                        </ul>
-                    </div>
-                    <div class="product-slider owl-carousel">
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/man-1.jpg" alt="">
-                                <div class="sale">Sale</div>
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Coat</div>
-                                <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    $14.00
-                                    <span>$35.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/man-2.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Shoes</div>
-                                <a href="#">
-                                    <h5>Guangzhou sweater</h5>
-                                </a>
-                                <div class="product-price">
-                                    $13.00
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/man-3.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Towel</div>
-                                <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/man-4.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Towel</div>
-                                <a href="#">
-                                    <h5>Converse Shoes</h5>
-                                </a>
-                                <div class="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1">
-                    <div class="product-large set-bg m-large" data-setbg="img/products/man-large.jpg">
-                        <h2>Men’s</h2>
-                        <a href="#">Discover More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
--->
-                <!-- Man Banner Section End -->
-
-
-                <!-- Instagram Section Begin -->
-                <!--
-    <div class="instagram-photo">
-        <div class="insta-item set-bg" data-setbg="img/index/insta1.jpg">
-            <div class="inside-text">
-                
-                    <i class="ti-instagram"></i>
-                    <h5><a href="#">colorlib_Collection</a></h5>
-            
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="img/index/insta2.jpg">
-            <div class="inside-text">
-                
-                    <i class="ti-instagram"></i>
-                    <h5><a href="#">colorlib_Collection</a></h5>
-                
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="img/index/insta3.jpg">
-            <div class="inside-text">
-                <!--
-                    <i class="ti-instagram"></i>
-                    <h5><a href="#">colorlib_Collection</a></h5>
-                
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="img/index/insta4.jpg">
-            <div class="inside-text">
-                <!--
-                    <i class="ti-instagram"></i>
-                    <h5><a href="#">colorlib_Collection</a></h5>
-                
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="img/index/insta1.jpg">
-            <div class="inside-text">
-                <!--
-                    <i class="ti-instagram"></i>
-                    <h5><a href="#">colorlib_Collection</a></h5>
-                
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="img/index/insta6.jpg">
-            <div class="inside-text">
-                <!--
-                    <i class="ti-instagram"></i>
-                    <h5><a href="#">colorlib_Collection</a></h5>
-                
-            </div>
-        </div>
-    </div>
--->
+  
                 <!-- Instagram Section End -->
 
-                <!-- Latest Blog Section Begin --> 
+                <!-- Latest Blog Section Begin -->
                 <section class="latest-blog spad">
                     <div class="container">
                         <div class="row">
@@ -513,16 +325,18 @@
                             </div>
                         </div>
                     </div>
-       
                 </section>
                 <!-- Latest Blog Section End -->
-                <%-- <a className="btn  "   id="navigationButton" href="home">
-                <i class="fa fa-home" aria-hidden="true"></i>
-                </a> --%>
 
-                <%@ include file="footer.jsp" %>
+             <%@ include file="footer.jsp" %>
+            <%@ include file="commons-js.jsp" %>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+            <script src="js/shop-categories.js" type="text/javascript"></script>
+            <script src="js/wishlist-ajax.js" type="text/javascript"></script>
+            <script src="js/shopping-cart.js" type="text/javascript"></script>
+            <script src="js/IncrementProduct.js" type="text/javascript"></script>
 
-                    <%@ include file="commons-js.jsp" %>
 </body>
 
 </html>
