@@ -15,7 +15,7 @@
                     <div class="col-lg-3 col-md-3 ms-auto">
                         <div>
                             <span class="account-name">Salma Fayez</sapna>
-                            <button class="btn primary-btn sign-in mx-3">Sign out</button>
+                            <a href="logout"><button class="btn primary-btn sign-in mx-3">Sign out</button></a>
                         </div>
                     </div>
                 </div>
@@ -26,13 +26,13 @@
                
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="./loadusers">Users</a></li>
+                        <li><a href="./admin/loadusers">Users</a></li>
 
-                        <li><a href="./admin-product.jsp">Products</a></li>
-                        <li><a href="./order-history">Orders</a></li>
+                        <li><a href="./admin/adminproducts">Products</a></li>
+                        <li><a href="./admin/order-history">Orders</a></li>
 
-                        <li><a href="./admin-category.jsp">Categories</a></li>
-                        <li><a href="./loadcontactmessages">Messages</a></li>
+                        <li><a href="./admin/categories">Categories</a></li>
+                        <li><a href="./admin/loadcontactmessages">Messages</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>

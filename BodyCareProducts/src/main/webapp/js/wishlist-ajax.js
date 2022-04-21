@@ -18,16 +18,7 @@ function removeFromWishlist(id){
         data: jQuery.param({ productId: id}) ,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         success: function (response) {
-            var number = parseInt(response);
-            if(number != 0){
-                document.getElementById("wishlistNumber").innerText=response;
-            }else{
-            $.ajax({
-                    url: 'empty-wishlist?t='+new Date().getTime(),
-                    type: 'GET',
-                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                });
-            }
+            document.getElementById("wishlistNumber").innerText=response;
         },
     }); 
 }

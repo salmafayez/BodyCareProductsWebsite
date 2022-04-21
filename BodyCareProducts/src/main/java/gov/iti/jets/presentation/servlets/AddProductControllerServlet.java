@@ -38,7 +38,7 @@ public class AddProductControllerServlet extends HttpServlet{
         log(result+"");
 //        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin-add-product.jsp");
 //        requestDispatcher.forward(request, response);
-        response.sendRedirect("home");
+        response.sendRedirect("addproduct");
 
     }  
 

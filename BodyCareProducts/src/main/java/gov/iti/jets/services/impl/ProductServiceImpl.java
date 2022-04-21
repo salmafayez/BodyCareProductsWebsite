@@ -70,6 +70,7 @@ public class ProductServiceImpl implements ProductService {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.getMin();
     }
+
     public boolean removeProduct(int id) {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.removeProduct(id);
