@@ -117,7 +117,7 @@ public class ProductDaoImpl implements ProductDao {
         Query query2 = entityManager.createQuery("select min (x.price) from Product x");
         double result2 = (double) query2.getSingleResult();
         return result2;
-
+    }
     public boolean removeProduct(int id) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         String select = "SELECT p FROM Product p where p.id=:id";

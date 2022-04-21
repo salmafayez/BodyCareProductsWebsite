@@ -77,15 +77,15 @@ deleteButton.on('click', function () {
     
     updateTotalPrice();
     
-    $.ajax({
-            url: 'removeproductfromcart?t='+new Date().getTime(),
-            type: 'POST',
-            data: jQuery.param({ productId: productId}) ,
-            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-            success: function (response) {
-                // document.getElementById("cartNumber").innerText=response;
-            },
-        });
+    // $.ajax({
+    //         url: 'removeproductfromcart?t='+new Date().getTime(),
+    //         type: 'POST',
+    //         data: jQuery.param({ productId: productId}) ,
+    //         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    //         success: function (response) {
+    //             // document.getElementById("cartNumber").innerText=response;
+    //         },
+    //     });
 
    
 
@@ -120,9 +120,23 @@ function updateTotalPrice() {
      document.getElementsByClassName('cart-total')[0].children[0].innerHTML = "$" + parseFloat(totalPriceSummation);
      console.log("totalprice summation="+totalPriceSummation);
 
-     if(totalPriceSummation == 0){
+     if(totalPriceSummation == 0 || cartRows.length==0){
         console.log("hereeee 0")
-        window.location.replace("shopping-cart"); 
+        // document.location.href = "carty";
+        // window.location.assign("carty"); 
+        var child = document.getElementById("tableChild");
+        var parent = document.getElementById("tableParent");
+        var child2 = document.getElementById("childPriceDiv");
+        var parent2 = document.getElementById("totalPriceDiv");
+
+        
+
+        // Delete child
+        parent.removeChild(child);
+        parent2.removeChild(child2);
+        document.getElementById('checkoutButton').innerHTML='<h4>Emptyyy Cartt</h4>';
+
+       
      }
      
 }

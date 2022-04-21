@@ -236,6 +236,15 @@
     <servlet-name>SearchControllerServlet</servlet-name>
     <url-pattern>/search</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>CartServletServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.CartServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>CartServletServlet</servlet-name>
+    <url-pattern>/carty</url-pattern>
+  </servlet-mapping>
 
 
   <!-- Update password controller servlet -->

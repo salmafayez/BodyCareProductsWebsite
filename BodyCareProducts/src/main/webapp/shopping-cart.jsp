@@ -57,8 +57,8 @@
                     <div class="container">
                         <div class="row px-2 py-3" style="background-color: #f5f5f5; border-radius: 15px;">
                             <div class="col-lg-12">
-                                <div class="cart-table">
-                                    <table>
+                                <div class="cart-table" id="tableParent">
+                                    <table id="tableChild">
                                         <thead>
                                             <tr>
                                                 <th>Image</th>
@@ -69,7 +69,7 @@
                                                 <!--th><i class="ti-close"></i></th-->
                                             </tr>
                                         </thead>
-                                        <tbody class="cart-items">
+                                        <tbody class="cart-items" >
                                             <c:forEach items="${cart}" var="cart">
                                             
                                                 <%-- <input type=hidden value="${}" /> --%>
@@ -85,8 +85,12 @@
                                                         <div class="quantity">
                                                             <div class="pro-qty" >
                                                                 <span class="dec qtybtn" >-</span>
+                                                            
                                                                 <input class="pro-qty-input" type="text"
                                                                     value="${cart.quantity}">
+                                                                <%-- <c:if test="${cart.quantity == 0}">
+                                                                    <c:redirect url="shopping-cart.jsp"/>
+                                                                </c:if> --%>
                                                                 <a class="inc qtybtn">+</a>
                                                             </div>
                                                         </div>
@@ -141,9 +145,9 @@
                                     </table>
                                 </div>
 
-                                <div class="col-lg-4 offset-lg-8">
-                                    <div class="proceed-checkout">
-                                        <ul style="border-radius: 15px;">
+                                <div class="col-lg-4 offset-lg-8" >
+                                    <div class="proceed-checkout" id="totalPriceDiv">
+                                        <ul style="border-radius: 15px;" id="childPriceDiv">
                                             <!-- <li class="subtotal">Subtotal <span>$325.00</span></li> -->
                                             <c:forEach items="${cart}" var="cart">
                                                 <c:set var="priceTotal"
@@ -156,10 +160,10 @@
                                     </div>
                                 </div>
                                 
-                                <div class="row" style="margin-top:30px;">
+                                <div class="row" style="margin-top:30px;" >
                                     <div class="col-lg-12 "
                                         style="display: flex;align-items: center;justify-content: center;">
-                                        <div class="cart-buttons">
+                                        <div class="cart-buttons" id="checkoutButton">
                                             <!--a href="#" class="primary-btn continue-shop"
                                                         style="border-radius: 15px;">UPDATE CART</a-->
                                             <a href="checkout" class="primary-btn up-cart" style="border-radius: 15px;">PROCEED
