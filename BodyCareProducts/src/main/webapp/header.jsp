@@ -1,6 +1,5 @@
-
 <!-- Header Section Begin -->
-    <%@ taglib  prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
         <header class="header-section">
@@ -114,15 +113,15 @@
 
                         <div class="col-lg-4 col-md-4">
                             <div>
-                            <c:if test="${userName != null}">
-                                <a href="userprofile" id="userNameLink">${userName}</a>
-                                <a href="logout"><button class="btn primary-btn sign-in mx-3">Sign out</button></a>
-                            </c:if>
+                                <c:if test="${userName != null}">
+                                    <a href="userprofile" id="userNameLink">${userName}</a>
+                                    <a href="logout"><button class="btn primary-btn sign-in mx-3">Sign out</button></a>
+                                </c:if>
 
-                            <c:if test="${userName == null}">
-                                <a href="login"><button class="btn primary-btn sign-in">Sign in</button></a>
-                                <a href="register"><button class="btn primary-btn sign-in">Sign up</button></a>
-                            </c:if>
+                                <c:if test="${userName == null}">
+                                    <a href="login"><button class="btn primary-btn sign-in">Sign in</button></a>
+                                    <a href="register"><button class="btn primary-btn sign-in">Sign up</button></a>
+                                </c:if>
                             </div>
                         </div>
                     </div>
@@ -139,11 +138,11 @@
                             <li><a href="shopping-cart"> Cart</a></li>
                             <li><a href="wishlist">Wishlist</a></li>
                             <li><a href="checkout">Check-out</a></li>
-                          <li><a href="order-history">Orders</a></li>
+                            <li><a href="userorderhistory">Orders</a></li>
                         </ul>
                     </nav>
                     <div id="mobile-menu-wrap"></div>
                 </div>
             </div>
         </header>
- <!-- Header End -->
+        <!-- Header End -->

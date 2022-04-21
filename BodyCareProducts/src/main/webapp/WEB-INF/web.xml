@@ -262,6 +262,16 @@
     <url-pattern>/loadusers</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>ViewProductControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.ViewProductControllerServlet</servlet-class>
+
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ViewProductControllerServlet</servlet-name>
+    <url-pattern>/product</url-pattern>
+  </servlet-mapping>
 
   <!-- Validate otpc controller servlet -->
   <servlet>
@@ -322,6 +332,18 @@
     <url-pattern>/userupdateprofile</url-pattern>
   </servlet-mapping>
 
+   <!-- User Order History -->
+   <servlet>
+    <servlet-name>UserOrderHistoryServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.UserOrderHistoryServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserOrderHistoryServlet</servlet-name>
+    <url-pattern>/userorderhistory</url-pattern>
+  </servlet-mapping>
+
+
 
   <!-- Category load ajax servlet-->
   <servlet>
@@ -359,6 +381,7 @@
   </servlet-mapping>
 
 
+
   <!-- Increment product quantity -->
   <servlet>
     <servlet-name>AddProductToCartServlet</servlet-name>
@@ -369,7 +392,15 @@
     <servlet-name>AddProductToCartServlet</servlet-name>
     <url-pattern>/addproducttocartplus</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>FilterProductsControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.FilterProductsControllerServlet</servlet-class>
+  </servlet>
 
+  <servlet-mapping>
+    <servlet-name>FilterProductsControllerServlet</servlet-name>
+    <url-pattern>/filterbyprice</url-pattern>
+  </servlet-mapping>
 
   <!-- Remove product from cart -->
   <servlet>
@@ -428,7 +459,16 @@
     <servlet-name>BeforeHomePageServlet</servlet-name>
     <url-pattern>/beforeHome</url-pattern>
   </servlet-mapping>
+    <!--> admin ifoooo<-->
+  <servlet>
+    <servlet-name>LoadAdminDataServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.LoadAdminDataServlet</servlet-class>
+  </servlet>
 
+  <servlet-mapping>
+    <servlet-name>LoadAdminDataServlet</servlet-name>
+    <url-pattern>/loadadmindata</url-pattern>
+  </servlet-mapping>
 
   <!-- Cart page -->
   <servlet>

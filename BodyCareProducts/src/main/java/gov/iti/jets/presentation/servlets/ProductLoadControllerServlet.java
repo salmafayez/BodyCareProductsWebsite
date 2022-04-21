@@ -9,10 +9,17 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class ProductLoadControllerServlet extends HttpServlet {  
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        HttpSession session = request.getSession();
+        int max = (int) DomainFacade.getMax();
+        int min = (int) DomainFacade.getMin();
+        session.setAttribute("maxi", max);
+        session.setAttribute("mini", min);
+        
         String category = request.getParameter("category");
         int page=1;
         int recordsPerPage=9;
@@ -40,6 +47,7 @@ public class ProductLoadControllerServlet extends HttpServlet {
     }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+      
     }
 
 }

@@ -1,0 +1,68 @@
+.increment_container {
+    justify-content: left;
+    align-items: left;
+    height: 100%;
+    text-align: left;
+    display: block;
+   
+}
+  
+/*apply css properties to button tag*/
+  
+.myButton {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #d79681;
+    color: white;
+    text-align: center;
+    display: block;
+    border-radius: 20%;
+   
+}
+  
+
+#outer
+{ 
+    width:100%;
+    text-align: center;
+    display: block;
+}
+.inner
+{
+    display: inline-block;
+    
+   
+}
+.mid
+{
+    display: block;
+   
+}
+
+/*apply hover effect to button tag*/
+  
+.myButton:hover {
+    background-color:#404C5C;
+    color: white;
+    display: block;
+}
+  
+/*apply css properties to h2 tag*/
+  
+#counting {
+    color: black;
+    margin: 0 70px;
+    font-size: 25px;
+    text-align: justify;
+    display: block;
+}
+
+#center{
+    display: flex;
+  justify-content: center;
+}
+
+#addToCartButton{
+    text-align: center;
+}
