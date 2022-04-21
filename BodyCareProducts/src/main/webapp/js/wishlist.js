@@ -27,6 +27,17 @@ var deleteButton = $('.ti-close');
 deleteButton.on('click', function () {
     var $button = $(this);
     $button.parent().parent().remove();
+    
+   
+
+
+
+
+
+
+
+
+
 });
 
 
