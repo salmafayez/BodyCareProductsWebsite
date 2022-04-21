@@ -51,7 +51,7 @@ public class PaymentServiceImpl implements PaymentService{
         Payer payer = new Payer();
         payer.setPaymentMethod("paypal");
         PayerInfo payerInfo = new PayerInfo();
-        payerInfo.setFirstName(user.getUserName())
+        payerInfo.setFirstName("salma fayez")
                     .setEmail("salma.fayezhimida@gmail.com");
      
         payer.setPayerInfo(payerInfo);
