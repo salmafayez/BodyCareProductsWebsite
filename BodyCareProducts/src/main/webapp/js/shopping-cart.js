@@ -114,14 +114,17 @@ function updateTotalPrice() {
      document.getElementsByClassName('cart-total')[0].children[0].innerHTML = "$" + parseFloat(totalPriceSummation);
 }
 
-// $( "#cartNumber" ).load(function() {
-//   $.ajax({
-//           url: 'addproducttocartplus?t='+new Date().getTime(),
-//           type: 'GET',
-//           data: jQuery.param({ productId: id}) ,
-//           contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-//           success: function (response) {
-//               document.getElementById("cartNumber").innerText=response;
-//           },
-//       });
-// });
+
+$( "#cartNumber" ).load(function() {
+  $.ajax({
+          url: 'addproducttocartplus?t='+new Date().getTime(),
+          type: 'GET',
+          data: jQuery.param({ productId: id}) ,
+          contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+          success: function (response) {
+              document.getElementById("cartNumber").innerText=response;
+          },
+      });
+});
+
+

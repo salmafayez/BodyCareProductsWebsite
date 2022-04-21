@@ -53,6 +53,23 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+
+    public List<Product> searchByPrice(double max, double min, int offset, int noOfRecords) {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.getProductByPrice(max, min, offset, noOfRecords);
+    }
+
+    @Override
+    public double getMax() {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.getMax();
+    }
+
+    @Override
+    public double getMin() {
+        ProductDao productDao = new ProductDaoImpl();
+        return productDao.getMin();
+
     public boolean removeProduct(int id) {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.removeProduct(id);
@@ -63,8 +80,10 @@ public class ProductServiceImpl implements ProductService {
         ProductDao productDao = new ProductDaoImpl();
         return productDao.editProduct(product);
     }
+      
     public List<Product> getAllProducts(){
         ProductDao productDao = new ProductDaoImpl();
         return productDao.getAllProducts();
+
     }
 }

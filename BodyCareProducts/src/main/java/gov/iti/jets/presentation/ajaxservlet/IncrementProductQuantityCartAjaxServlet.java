@@ -21,7 +21,6 @@ public class IncrementProductQuantityCartAjaxServlet extends HttpServlet {
         System.out.println("here");
         HttpSession session = request.getSession(false);
         int productId = Integer.parseInt(request.getParameter("productId"));
-
         Boolean found = false;
         List<CartItemDto> cart;
 
@@ -30,6 +29,7 @@ public class IncrementProductQuantityCartAjaxServlet extends HttpServlet {
             if (session.getAttribute("cart") == null) {
                 cart = new ArrayList<>();
                 cart.add(new CartItemDto(product1, 1));
+                    
                 session.setAttribute("cart", cart);
             } else {
                 cart = (List<CartItemDto>) session.getAttribute("cart");

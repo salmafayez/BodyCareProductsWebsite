@@ -112,6 +112,12 @@ public class DomainFacade {
         return addProductService.getProduct(id);
     }
 
+
+    public static List<Product> searchByPrice(double max, double min, int offset, int noOfRecords){
+        return addProductService.searchByPrice(max, min,offset,noOfRecords);
+    }
+
+ 
     public static List<Product> searchProducts(String searchProduct, int offset, int noOfRecords) {
         return addProductService.searchProducts(searchProduct, offset, noOfRecords);
     }
@@ -154,6 +160,13 @@ public class DomainFacade {
         wishListService.saveWishList(wishlist);
     }
 
+    public static double getMax(){
+        return addProductService.getMax();
+    }
+    public static double getMin(){
+        return addProductService.getMin();
+    }
+
     public static List<CartItemDto> getCart(int id) {
         return cartProductsService.getCartList(id);
     }
@@ -170,3 +183,4 @@ public class DomainFacade {
     }
 
 }
+
