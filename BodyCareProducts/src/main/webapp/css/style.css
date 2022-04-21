@@ -1357,9 +1357,14 @@ ol {
 .product-item .pi-pic ul li.w-icon.active a {
 	background: #d79681;
 	color: #ffffff;
+	width: 20px;
+	padding: 16px 18px 12px 19px;
+	border-radius: 10px 0px 0px 0px;
+	margin-right: 2px;
+
 }
 
-.product-item .pi-pic ul li .adddd{
+.product-item .pi-pic ul li span{
 	font-size: 16px;
 	font-weight: 700;
 	color: #252525;

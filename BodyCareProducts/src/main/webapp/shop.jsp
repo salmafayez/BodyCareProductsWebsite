@@ -189,13 +189,13 @@
                                             <div class="pi-pic">
                                                 <img src="${product.image}" alt="productImage" style="width: 270px;height: 303px;">
                                                 <div class="icon">
-                                                    <i class="icon_heart_alt" onclick="addToWishlist(${product.id})"></i>
+                                                    <i  class="fa fa-heart" aria-hidden="true"  style="color: #d79681;" onclick="addToWishlist(${product.id})"></i>
                                                 </div>
                                                  <ul>
-                                                    <li class="w-icon active"><a href="shopping-cart.jsp"><i
-                                                                class="icon_bag_alt"></i></a></li>
-                                                    <li class="adddd" onclick="addToCart(${product.id})">  + ADD TO
-                                                        CART</li>
+                                                    <li class="w-icon active"><a href="shopping-cart.jsp">
+                                                    <i class="icon_bag_alt"></i></a>
+                                                    <li class="adddd" onclick="addToCart(${product.id})" style="cursor:pointer;" ><span>  + ADD TO
+                                                        CART</span></li>
                                                 </ul>
                                             </div>
                                             <div class="pi-text">
