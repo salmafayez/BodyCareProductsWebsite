@@ -75,7 +75,7 @@
                                                 <%-- <input type=hidden value="${}" /> --%>
                                                 <tr class="cart-row" id="productid_${cart.product.id}" >
                                                     <td class="cart-pic first-row"><img
-                                                            src="img/cart-page/product-1.jpg" alt=""
+                                                            src="${cart.product.image}" alt=""
                                                             style="border-radius: 15px;"></td>
                                                     <td class="cart-title first-row">
                                                         <h5>${cart.product.name}</h5>

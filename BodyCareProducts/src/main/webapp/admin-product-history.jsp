@@ -44,7 +44,7 @@
                                     <div class="col-lg-4 col-sm-6">
                                         <div class="product-item">
                                             <div class="pi-pic">
-                                                <img src="img/products/product-3.jpg" alt="">
+                                                <img src="${product.image}" alt="">
                                             
                                                  <ul>
                                                  

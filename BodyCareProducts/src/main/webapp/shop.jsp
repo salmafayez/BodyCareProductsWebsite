@@ -52,8 +52,7 @@
                                             </div>
                                         </div>
                                         <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                            data-min="<%= session.getAttribute(" minVal") %>" data-max="<%=
-                                                session.getAttribute("maxVal") %>">
+                                            data-min=0 data-max=300>
                                                 <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                                                 <span tabindex="0"
                                                     class="ui-slider-handle ui-corner-all ui-state-default"></span>

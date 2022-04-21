@@ -26,13 +26,13 @@
                
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="./admin/loadusers">Users</a></li>
+                        <li><a href="loadusers">Users</a></li>
 
-                        <li><a href="./admin/adminproducts">Products</a></li>
-                        <li><a href="./admin/order-history">Orders</a></li>
+                        <li><a href="adminproducts">Products</a></li>
+                        <li><a href="order-history">Orders</a></li>
 
-                        <li><a href="./admin/categories">Categories</a></li>
-                        <li><a href="./admin/loadcontactmessages">Messages</a></li>
+                        <li><a href="categories">Categories</a></li>
+                        <li><a href="loadcontactmessages">Messages</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
