@@ -16,6 +16,8 @@
 </head>
 
 <body>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
     <!-- Page Preloder -->
 
 
@@ -69,6 +71,7 @@
                                         </thead>
                                         <tbody class="cart-items">
                                             <c:forEach items="${cart}" var="cart">
+                                            
                                                 <%-- <input type=hidden value="${}" /> --%>
                                                 <tr class="cart-row" id="productid_${cart.product.id}" >
                                                     <td class="cart-pic first-row"><img
@@ -152,6 +155,7 @@
                                             </a> --%>
                                     </div>
                                 </div>
+                                
                                 <div class="row" style="margin-top:30px;">
                                     <div class="col-lg-12 "
                                         style="display: flex;align-items: center;justify-content: center;">

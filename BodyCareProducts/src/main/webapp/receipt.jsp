@@ -11,6 +11,8 @@
     <%@ include file="commons-styles.jsp" %>
     </head>
 <body>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ include file="header.jsp" %>
 
           <div class="container-fluid" style="background-image: url(img/background_img.jpg); background-repeat: no-repeat; background-size: cover;">

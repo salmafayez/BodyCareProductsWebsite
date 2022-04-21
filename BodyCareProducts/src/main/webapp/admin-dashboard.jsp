@@ -13,6 +13,7 @@
   <%@ include file="commons-styles.jsp" %>
 </head>
 
+
 <body onload="loadData();">
   <!-- Page Preloder -->
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -258,11 +259,14 @@
       <script src="js/misc.js"></script>
       <!-- Custom js for this page-->
 
-      <script src="js/dashboard.js"></script>
+    
+
+    <%@ include file="admin-footer.jsp" %>
+    <%@ include file="commons-js.jsp" %>
+        <script src="js/dashboard.js"></script>
       <script src="js/dash-board.js"></script>
-      <!-- End custom js for this page-->
-      <%@ include file="footer.jsp" %>
-        <%@ include file="commons-js.jsp" %>
+        
+
 </body>
 
 </html>

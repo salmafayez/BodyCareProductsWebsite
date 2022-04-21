@@ -13,6 +13,7 @@
 </head>
 
 <body onload="loadCategories();">
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
     <!-- Page Preloder -->
     <div id="preloder">
@@ -137,7 +138,7 @@
         </div>
         <!-- Register Form Section End -->
 
-        <%@ include file="footer.jsp" %>
+         <%@ include file="admin-footer.jsp" %>
         <%@ include file="commons-js.jsp" %>
         <script src="js/categories.js" type="text/javascript"></script>
         <script src="js/admin-addProductValidation.js" type="text/javascript"></script>

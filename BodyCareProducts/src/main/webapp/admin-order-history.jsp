@@ -94,7 +94,7 @@
             </section>
         </div>
 
-        <%@ include file="footer.jsp" %>
+        <%@ include file="admin-footer.jsp" %>
         <%@ include file="commons-js.jsp" %>
 </body>
 

@@ -13,6 +13,8 @@
     </head>
 
 <body onload="checkInput();">
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -51,7 +53,7 @@
     </div>
     <!-- Register Form Section End -->
 
-    <%@ include file="footer.jsp" %>
+    <%@ include file="admin-footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
     <script src="js/CategoryValidation.js" type="text/javascript"></script>
 

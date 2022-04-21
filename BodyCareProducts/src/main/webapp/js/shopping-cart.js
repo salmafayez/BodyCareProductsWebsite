@@ -4,6 +4,7 @@ updateTotalPrice();
 /*-------------------
         Quantity change
     --------------------- */
+
 var proQty = $('.pro-qty');
 proQty.on('click', '.qtybtn', function () {
     // var productId = document.getElementById('productid').value;
@@ -75,6 +76,7 @@ deleteButton.on('click', function () {
     $button.parent().parent().remove();
     
     updateTotalPrice();
+    
     $.ajax({
             url: 'removeproductfromcart?t='+new Date().getTime(),
             type: 'POST',
@@ -85,10 +87,14 @@ deleteButton.on('click', function () {
             },
         });
 
+   
+
 });
 
 
 function updateTotalPrice() {
+
+    
 
     var totalPriceSummation = 0;
     var cartItemContainer = document.getElementsByClassName('cart-items')[0];
@@ -112,6 +118,13 @@ function updateTotalPrice() {
     }
     // cart total:
      document.getElementsByClassName('cart-total')[0].children[0].innerHTML = "$" + parseFloat(totalPriceSummation);
+     console.log("totalprice summation="+totalPriceSummation);
+
+     if(totalPriceSummation == 0){
+        console.log("hereeee 0")
+        window.location.replace("shopping-cart"); 
+     }
+     
 }
 
 
