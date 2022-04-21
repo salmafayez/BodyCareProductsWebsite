@@ -26,7 +26,23 @@ function removeFromWishlist(id){
 var deleteButton = $('.ti-close');
 deleteButton.on('click', function () {
     var $button = $(this);
+    console.log("removeeeee");
     $button.parent().parent().remove();
+    var wishlistRows=document.getElementsByClassName('wichListRow');
+    console.log("rows"+wishlistRows);
+    if(wishlistRows.length == 0){
+        console.log("hi");
+        var child = document.getElementById("tableChild");
+        var parent = document.getElementById("tableParent");
+        
+
+        
+
+        // Delete child
+        parent.removeChild(child);
+        
+        document.getElementById('emptyMessage').innerHTML='<h4 style="display:flex;align-items: center;justify-content: center;">Emptyyy WishList</h4>';
+    }
 });
 
 

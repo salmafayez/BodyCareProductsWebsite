@@ -51,12 +51,12 @@
 
             <c:if test="${wishlist != null}">
                <c:if test="${!empty wishlist}">
-                <div class="col-lg-10 row px-2 py-3 m-auto" style="background-color: #f5f5f5; border-radius: 15px; width: 1200px; height: 400px;">
+                <div class="col-lg-10 row px-2 py-3 m-auto " style="background-color: #f5f5f5; border-radius: 15px; width: 1200px; height: 400px;">
                     <div class="">
-                        <div class="cart-table">
-                            <table>
+                        <div class="cart-table" id="tableParent">
+                            <table id="tableChild">
                                 <thead>
-                                    <tr>
+                                    <tr >
                                         <th class="px-4">Image</th>
                                         <th class="p-name ">Product Name</th>
                                         <th class="p-name">Category</th>
@@ -67,7 +67,7 @@
                                 <tbody>
 
                                         <c:forEach items="${wishlist}" var="product">
-                                            <tr>
+                                            <tr class="wichListRow">
                                                 <td class="cart-pic first-row px-4"><img src="img/cart-page/product-1.jpg" alt=""
                                                      style="border-radius: 15px;">
                                                 </td>
@@ -88,7 +88,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="row m-auto">
+                        <div class="row m-auto" id="emptyMessage" >
                             <div class="col-lg-4 content-center m-auto">
                                 <div class="cart-buttons">
                                     <a href="products" class="primary-btn continue-shop" style="border-radius: 15px;">Continue shopping</a>
@@ -107,7 +107,7 @@
 
     <%@ include file="footer.jsp" %>
     <%@ include file="commons-js.jsp" %>
-    <script src="js/wishlist-ajax.js" type="text/javascript"></script>
+    <script src="js/wishlist-ajax.js?ver=1." type="text/javascript"></script>
 </body>
 
 </html>
