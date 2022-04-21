@@ -26,7 +26,8 @@
                             <ul class="nav-right">
                                 <li class="heart-icon">
                                     <a href="#">
-                                        <i class="icon_heart_alt"></i>
+                                    
+                                        <i class="icon_heart_alt" ></i>
                                         <c:if test="${empty wishlist}">
                                             <c:set var="wishlistlength" value="${0}" />
                                         </c:if>

@@ -1,5 +1,3 @@
- <!-- Footer Section Begin -->
-
     <footer class="footer-section">
         <div class="container">
             <div class="row">
@@ -75,23 +73,12 @@
             </div>
         </div>
 
-         <c:choose>
-        <c:when test="${isAdmin == null}">
-            <a className="btn"   id="navigationButton" href="home" title="Home page">
+       
+        <a className="btn"   id="navigationButton" href="home" title="Home page">
             
                 <i class="fa fa-home" aria-hidden="true" style="font-size:40px"></i>
         </a>  
-        </c:when>
         
-        <c:otherwise>
-            <a className="btn"   id="navigationButton" href="admin-dashboard.jsp" title="admin dashboard">
-
-                <i class="fa fa-bar-chart" aria-hidden="true" style="font-size:35px"></i>
-        </a> 
-        </c:otherwise>
-        </c:choose>
-
         
-         
         </a>
     </footer>

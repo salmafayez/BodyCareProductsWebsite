@@ -77,13 +77,15 @@
                                                 <img src="img/products/product-3.jpg" alt="">
                                                 </a>
                                                 <div class="icon">
-                                                    <i class="icon_heart_alt" onclick="addToWishlist(${product.id})"></i>
+                                                    <i  class="fa fa-heart" aria-hidden="true"  style="color: #d79681;" onclick="addToWishlist(${product.id})"></i>
                                                 </div>
                                                  <ul>
-                                                    <li class="w-icon active"><a href="shopping-cart.jsp"><i
-                                                                class="icon_bag_alt"></i></a></li>
-                                                    <li class="quick-view" onclick="addToCart(${product.id})"> <a href="#"> + ADD TO
-                                                        CART</a></li>
+
+                                                    <li class="w-icon active"><a href="shopping-cart.jsp">
+                                                    <i class="icon_bag_alt"></i></a>
+                                                    <li class="adddd" onclick="addToCart(${product.id})" style="cursor:pointer;" ><span>  + ADD TO
+                                                        CART</span></li>
+
                                                 </ul>
                                                 
                                             </div>

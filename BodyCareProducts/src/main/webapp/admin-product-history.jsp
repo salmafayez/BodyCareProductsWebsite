@@ -131,7 +131,7 @@
 
             <!-- Product Shop Section End -->
 
-            <%@ include file="footer.jsp" %>
+             <%@ include file="admin-footer.jsp" %>
                 <%@ include file="commons-js.jsp" %>
                     <script src="js/shop-categories.js" type="text/javascript"></script>
                     <script src="js/wishlist.js" type="text/javascript"></script>
