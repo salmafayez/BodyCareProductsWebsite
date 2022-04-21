@@ -6,7 +6,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>WishList</title>
 
    
     <%@ include file="commons-styles.jsp" %>
@@ -25,7 +25,31 @@
         style="background-image: url(img/background_img.jpg); background-repeat: no-repeat; background-size: cover;">
         <section class="shopping-cart spad">
             <div class="container">
-                <div class="col-lg-10 row px-2 py-3 m-auto" style="background-color: #f5f5f5; border-radius: 15px;">
+            <c:if test="${empty wishlist}">
+                <section class="shopping-cart spad">
+                    <div class="container">
+                        <div class="row px-2 py-3"
+                            style="background-color: #f5f5f5; border-radius: 15px; width: 1200px; height: 400px;">
+                            <div class="col-lg-12">
+                                <div class="cart-table">
+                                    <center>
+                                        <tbody class="cart-items">
+                                            <h3 style="margin-top: 225;">
+                                                <center>Empty Wishlist</center>
+                                            </h3>
+                                        </tbody>
+
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </c:if>
+
+            <c:if test="${wishlist != null}">
+               <c:if test="${!empty wishlist}">
+                <div class="col-lg-10 row px-2 py-3 m-auto" style="background-color: #f5f5f5; border-radius: 15px; width: 1200px; height: 400px;">
                     <div class="">
                         <div class="cart-table">
                             <table>
@@ -39,8 +63,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                 <c:if test="${wishlist != null}">
-                                    <c:if test="${!empty wishlist}">
+
                                         <c:forEach items="${wishlist}" var="product">
                                             <tr>
                                                 <td class="cart-pic first-row px-4"><img src="img/cart-page/product-1.jpg" alt=""
@@ -59,27 +82,22 @@
                                                 </td>
                                             </tr> 
                                         </c:forEach>  
-                                    </c:if> 
-                                </c:if> 
 
-                                <c:if test="${wishlist == null}">
-                                    <c:if test="${empty wishlist}">
-                                        <p> No products in wishlist </p>
-                                    </c:if>
-                                </c:if>
                                 </tbody>
                             </table>
                         </div>
                         <div class="row m-auto">
                             <div class="col-lg-4 content-center m-auto">
                                 <div class="cart-buttons">
-                                    <a href="#" class="primary-btn continue-shop" style="border-radius: 15px;">Continue shopping</a>
+                                    <a href="products" class="primary-btn continue-shop" style="border-radius: 15px;">Continue shopping</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+           </c:if>
+       </c:if>
     </div>
     </section>
     </div>

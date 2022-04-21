@@ -1,9 +1,9 @@
-<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" 
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
-                      https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" 
-        version="5.0" metadata-complete="true">
-  
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+  version="5.0" metadata-complete="true">
+
   <!-- Add Category Servlet -->
   <servlet>
     <servlet-name>AddCategoryServlet</servlet-name>
@@ -16,7 +16,7 @@
   </servlet-mapping>
 
 
-<!-- Add product Servlet -->
+  <!-- Add product Servlet -->
   <servlet>
     <servlet-name>AddProductServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.AddProductControllerServlet</servlet-class>
@@ -30,17 +30,47 @@
 
   <!-- Check out servlet -->
   <servlet>
+    <servlet-name>AdminProductLoadControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AdminProductLoadControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminProductLoadControllerServlet</servlet-name>
+    <url-pattern>/adminproducts</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>CheckoutControllerServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.CheckoutControllerServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
-      <servlet-name>CheckoutControllerServlet</servlet-name>
-      <url-pattern>/checkout</url-pattern>
+    <servlet-name>CheckoutControllerServlet</servlet-name>
+    <url-pattern>/checkout</url-pattern>
   </servlet-mapping>
 
 
   <!-- Contact message servlet -->
+  <servlet>
+    <servlet-name>AdminRemoveProductControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AdminRemoveProductControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminRemoveProductControllerServlet</servlet-name>
+    <url-pattern>/removeproduct</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AdminEditProductControllerServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.AdminEditProductControllerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminEditProductControllerServlet</servlet-name>
+    <url-pattern>/editproduct</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <servlet-name>ContactMessageServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.ContactMessageServlet</servlet-class>
@@ -52,7 +82,7 @@
   </servlet-mapping>
 
 
-<!-- Load contact message servlet -->
+  <!-- Load contact message servlet -->
   <servlet>
     <servlet-name>LoadContactMessagesServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.ContactMessagesLoadControllerServlet</servlet-class>
@@ -95,8 +125,8 @@
   </servlet>
 
   <servlet-mapping>
-      <servlet-name>Home</servlet-name>
-      <url-pattern>/home</url-pattern>
+    <servlet-name>Home</servlet-name>
+    <url-pattern>/home</url-pattern>
   </servlet-mapping>
 
 
@@ -112,7 +142,7 @@
   </servlet-mapping>
 
 
-<!-- Logout servlet -->
+  <!-- Logout servlet -->
   <servlet>
     <servlet-name>LogoutControllerServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.LogoutControllerServlet</servlet-class>
@@ -218,7 +248,7 @@
     <servlet-name>UpdatePasswordControllerServlet</servlet-name>
     <url-pattern>/updatepassword</url-pattern>
   </servlet-mapping>
-  
+
 
   <!-- User history load controller servlet -->
   <servlet>
@@ -255,11 +285,13 @@
   </servlet-mapping>
 
 
+
   <!-- Verify code controller servlet -->
   <servlet>
     <servlet-name>VerifyCode</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.VerifyCodeControllerServlet</servlet-class>
   </servlet>
+
 
   <servlet-mapping>
     <servlet-name>VerifyCode</servlet-name>
@@ -277,11 +309,11 @@
     <servlet-name>WishlistControllerServlet</servlet-name>
     <url-pattern>/wishlist</url-pattern>
   </servlet-mapping>
-  
-  
-<!--  User profile update servlet  -->
-  
-    <servlet>
+
+
+  <!--  User profile update servlet  -->
+
+  <servlet>
     <servlet-name>UserProfileServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.servlets.UserProfileServlet</servlet-class>
   </servlet>
@@ -300,6 +332,18 @@
     <url-pattern>/userupdateprofile</url-pattern>
   </servlet-mapping>
 
+   <!-- User Order History -->
+   <servlet>
+    <servlet-name>UserOrderHistoryServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.UserOrderHistoryServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserOrderHistoryServlet</servlet-name>
+    <url-pattern>/userorderhistory</url-pattern>
+  </servlet-mapping>
+
+
 
   <!-- Category load ajax servlet-->
   <servlet>
@@ -313,7 +357,7 @@
   </servlet-mapping>
 
 
-<!-- Check email controller servlet -->
+  <!-- Check email controller servlet -->
   <servlet>
     <servlet-name>CheckEmailAjaxServlet</servlet-name>
     <servlet-class>gov.iti.jets.presentation.ajaxservlet.CheckEmailAjaxServlet</servlet-class>
@@ -335,6 +379,7 @@
     <servlet-name>DecrementProductQuantityCartAjaxServlet</servlet-name>
     <url-pattern>/addproducttocartminus</url-pattern>
   </servlet-mapping>
+
 
 
   <!-- Increment product quantity -->
@@ -380,7 +425,7 @@
     <url-pattern>/wishlist-add</url-pattern>
   </servlet-mapping>
 
-  
+
   <!-- Wishlist remove ajax servlet -->
   <servlet>
     <servlet-name>WishlistRemoveAjaxServlet</servlet-name>
@@ -392,6 +437,17 @@
     <url-pattern>/wishlist-remove</url-pattern>
   </servlet-mapping>
 
+  <!-- Empty Wishlist  -->
+  <servlet>
+    <servlet-name>EmptyWishlist</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.ajaxservlet.EmptyWishlist</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>EmptyWishlist</servlet-name>
+    <url-pattern>/empty-wishlist</url-pattern>
+  </servlet-mapping>
+
 
   <!-- Befor home jsp -->
   <servlet>
@@ -400,10 +456,19 @@
   </servlet>
 
   <servlet-mapping>
-      <servlet-name>BeforeHomePageServlet</servlet-name>
-      <url-pattern>/beforeHome</url-pattern>
+    <servlet-name>BeforeHomePageServlet</servlet-name>
+    <url-pattern>/beforeHome</url-pattern>
   </servlet-mapping>
+    <!--> admin ifoooo<-->
+  <servlet>
+    <servlet-name>LoadAdminDataServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.LoadAdminDataServlet</servlet-class>
+  </servlet>
 
+  <servlet-mapping>
+    <servlet-name>LoadAdminDataServlet</servlet-name>
+    <url-pattern>/loadadmindata</url-pattern>
+  </servlet-mapping>
 
   <!-- Cart page -->
   <servlet>
@@ -412,13 +477,13 @@
   </servlet>
 
   <servlet-mapping>
-      <servlet-name>CartPage</servlet-name>
-      <url-pattern>/shopping-cart</url-pattern>
+    <servlet-name>CartPage</servlet-name>
+    <url-pattern>/shopping-cart</url-pattern>
   </servlet-mapping>
 
 
   <!-- Input validation filters -->
-  <filter>
+  <!-- <filter>
     <filter-name> LoginPageFilter </filter-name>
     <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.LoginPageFilter </filter-class>
   </filter>
@@ -434,7 +499,7 @@
     <filter-name> RegisterPageFilter </filter-name>
     <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.RegisterPageFilter </filter-class>
   </filter>
-
+ -->
 
   <!-- <filter-mapping>
     <filter-name> RegisterPageFilter </filter-name>
@@ -442,8 +507,7 @@
   </filter-mapping> -->
 
 
-
-  <filter>
+  <!-- <filter>
     <filter-name> AddCategoryPageFilter </filter-name>
     <filter-class> gov.iti.jets.presentation.filters.inputvalidationfilters.AddCategoryPageFilter  </filter-class>
   </filter>
@@ -474,7 +538,7 @@
     <filter-name> ContactPageFilter </filter-name>
     <url-pattern> /contact </url-pattern>
   </filter-mapping>
-  
+   -->
   <!-- Authentication filters -->
 
   <!-- <filter>
@@ -490,7 +554,6 @@
   <!-- Jsp pages filters -->
 
 
-  
   <!-- Listeners -->
   <listener>
     <listener-class> gov.iti.jets.presentation.listeners.MyAppListener </listener-class>
@@ -504,5 +567,5 @@
   <welcome-file-list>
     <welcome-file>beforeHome</welcome-file>
   </welcome-file-list>
- 
+
 </web-app>

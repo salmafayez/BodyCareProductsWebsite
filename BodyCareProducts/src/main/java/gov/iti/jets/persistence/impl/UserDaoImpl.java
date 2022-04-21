@@ -2,7 +2,6 @@ package gov.iti.jets.persistence.impl;
 
 import java.util.List;
 import gov.iti.jets.persistence.UserDao;
-import gov.iti.jets.persistence.entities.Category;
 import gov.iti.jets.persistence.entities.User;
 import gov.iti.jets.persistence.util.ManagerFactory;
 import gov.iti.jets.presentation.dtos.UpdatedUserDto;
@@ -16,6 +15,7 @@ public class UserDaoImpl implements UserDao {
 
     private final static EntityManagerFactory entityManagerFactory = ManagerFactory.getEntityManagerFactory();
     private final EntityManager entityManager = entityManagerFactory.createEntityManager();
+
     @Override
     public boolean checkEmail(String email) {
         List<User> userList = entityManager.createQuery("select e from User e where e.email = ?1")

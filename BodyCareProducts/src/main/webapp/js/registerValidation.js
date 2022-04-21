@@ -13,13 +13,13 @@ const address = document.getElementById("address");
 const creditLimit = document.getElementById("creditLimit");
 const gender = document.getElementById("gender");
 
-var counterSuccess = 0;
+var counterFailed = 0;
 var passwordValue;
 
 form.addEventListener('submit', (e) => {
 
-    if (!isAllInputsValid()) {
-        console.log("successCounter=" + counterSuccess);
+    if (isInputNotValid()) {
+        console.log("failCounter=" + counterFailed);
         e.preventDefault();
     }
 
@@ -272,9 +272,9 @@ function isValidBirthday(birthdayValue) {
     return new Date(birthdayValue).getYear() <= date12YrsAgo.getYear();
 }
 
-function isAllInputsValid() {
+function isInputNotValid() {
 
-    counterSuccess = 0;
+    counterFailed = 0;
     var usernameClassName = username.parentElement.className;
     var phoneNumberClassName = phoneNumber.parentElement.className;
     var passwordClassName = password.parentElement.className;
@@ -286,43 +286,43 @@ function isAllInputsValid() {
     var emailClassName = email.parentElement.className;
 
 
-    if (usernameClassName == 'group-input success') {
-        counterSuccess++;
+    if (usernameClassName == 'group-input error') {
+        counterFailed++;
     }
 
-    if (phoneNumberClassName == 'group-input success') {
-        counterSuccess++;
+    if (phoneNumberClassName == 'group-input error') {
+        counterFailed++;
     }
 
-    if (passwordClassName == 'group-input success') {
-        counterSuccess++;
+    if (passwordClassName == 'group-input error') {
+        counterFailed++;
     }
 
-    if (confirmPasswordClassName == 'group-input success') {
-        counterSuccess++;
+    if (confirmPasswordClassName == 'group-input error') {
+        counterFailed++;
     }
 
-    if (birthdayClassName == 'group-input success') {
-        counterSuccess++;
+    if (birthdayClassName == 'group-input error') {
+        counterFailed++;
     }
 
-    if (jobClassName == 'group-input success') {
-        counterSuccess++;
+    if (jobClassName == 'group-input error') {
+        counterFailed++;
     }
 
-    if (addressClassName == 'group-input success') {
-        counterSuccess++;
+    if (addressClassName == 'group-input erro') {
+        counterFailed++;
     }
 
-    if (creditLimitClassName == 'group-input success') {
-        counterSuccess++;
+    if (creditLimitClassName == 'group-input error') {
+        counterFailed++;
     }
-    if (emailClassName == 'group-input success') {
-        counterSuccess++;
+    if (emailClassName == 'group-input error') {
+        counterFailed++;
     }
 
-    console.log(counterSuccess == 9)
-    return counterSuccess == 9;
+    console.log(counterFailed >0)
+    return counterFailed >0;
 
 }
 

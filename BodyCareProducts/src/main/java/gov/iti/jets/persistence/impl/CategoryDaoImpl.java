@@ -1,14 +1,11 @@
 package gov.iti.jets.persistence.impl;
 
 import java.util.List;
-
 import gov.iti.jets.persistence.CategoryDao;
 import gov.iti.jets.persistence.entities.Category;
+import gov.iti.jets.persistence.entities.Product;
 import gov.iti.jets.persistence.util.ManagerFactory;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Query;
+import jakarta.persistence.*;
 
 public class CategoryDaoImpl implements CategoryDao{
 
@@ -39,5 +36,12 @@ public class CategoryDaoImpl implements CategoryDao{
         query.setParameter("categoryName", categoryName);
         Category category = (Category) query.getSingleResult();
         return category;
+    }
+
+    @Override
+    public List<Category> getAllCategories() {
+        TypedQuery<Category> query = entityManager.createQuery("select m from Category m", Category.class);
+        List<Category> messages = query.getResultList();
+        return messages;
     }
 }

@@ -1,6 +1,5 @@
-
 <!-- Header Section Begin -->
-    <%@ taglib  prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
         <header class="header-section">
@@ -10,11 +9,11 @@
                         <div class="col-lg-2 col-md-2">
                             <div class="logo">
                                 <a href="./home">
-                                    <img src="img/logo.png" alt="">
+                                    <img src="img/5.png" alt="">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-5 col-md-5">
+                        <div class="col-lg-4 col-md-4">
                             <div class="advanced-search">
                                 <form action="search" class="input-group" method="post">
                                     <input type="text" placeholder="What do you need?" name="searchProduct"
@@ -44,7 +43,11 @@
                                             <c:set var="cartlength" value="${0}" />
                                         </c:if>
                                         <c:if test="${fn:length(cart)>0}">
-                                            <c:set var="cartlength" value="${fn:length(cart)}" />
+                                        <c:forEach items="${cart}" var="cart">
+                                            <c:set var="quantityTotal"
+                                                value="${quantityTotal + (cart.quantity)}" />
+                                            </c:forEach>
+                                          <!--  <c:set var="cartlength" value="${quantityTotal}" /> -->
                                         </c:if>
                                         <span id="cartNumber">${cartlength}</span>
                                     </a>
@@ -56,7 +59,7 @@
                                                         <c:forEach items="${cart}" var="cart">
 
                                                             <tr>
-                                                                <td class="si-pic"><img src="img/select-product-1.jpg"
+                                                                <td class="si-pic"><img src="${cart.product.image}"
                                                                         alt=""></td>
                                                                 <td class="si-text">
                                                                     <div class="product-selected">
@@ -107,17 +110,17 @@
 
 
 
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-4 col-md-4">
                             <div>
-                            <c:if test="${userName != null}">
-                                <a href="userprofile" id="userNameLink">${userName}</a>
-                                <a href="logout"><button class="btn primary-btn sign-in mx-3">Sign out</button></a>
-                            </c:if>
+                                <c:if test="${userName != null}">
+                                    <a href="userprofile" id="userNameLink">${userName}</a>
+                                    <a href="logout"><button class="btn primary-btn sign-in mx-3">Sign out</button></a>
+                                </c:if>
 
-                            <c:if test="${userName == null}">
-                                <a href="login"><button class="btn primary-btn sign-in">Sign in</button></a>
-                                <a href="register"><button class="btn primary-btn sign-in">Sign up</button></a>
-                            </c:if>
+                                <c:if test="${userName == null}">
+                                    <a href="login"><button class="btn primary-btn sign-in">Sign in</button></a>
+                                    <a href="register"><button class="btn primary-btn sign-in">Sign up</button></a>
+                                </c:if>
                             </div>
                         </div>
                     </div>
@@ -134,11 +137,11 @@
                             <li><a href="shopping-cart"> Cart</a></li>
                             <li><a href="wishlist">Wishlist</a></li>
                             <li><a href="checkout">Check-out</a></li>
-                          <li><a href="order-history">Orders</a></li>
+                            <li><a href="userorderhistory">Orders</a></li>
                         </ul>
                     </nav>
                     <div id="mobile-menu-wrap"></div>
                 </div>
             </div>
         </header>
- <!-- Header End -->
+        <!-- Header End -->

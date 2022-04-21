@@ -1,7 +1,6 @@
 package gov.iti.jets.persistence;
 
 import java.util.List;
-
 import gov.iti.jets.persistence.entities.Product;
 
 public interface ProductDao {
@@ -15,5 +14,8 @@ public interface ProductDao {
     List <Product> getProductByPrice(double max , double min,  int offset, int noOfRecords);
     double getMax();
     double getMin();
+    boolean removeProduct(int id);
+    boolean editProduct(Product product);
+    public List<Product> getAllProducts();
 
 }

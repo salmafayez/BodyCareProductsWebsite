@@ -18,6 +18,7 @@
     <!-- Page Preloder -->
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
     <div id="preloder">
         <div class="loader"></div>
     </div>
@@ -92,13 +93,28 @@
                                                      <h5>${product.name}</h5>
                                                 </a>
                                                 <div class="product-price">${product.price}</div>
+
                                             </div>
+                                            <ul>
+                                                <li class="w-icon active"><a href="shopping-cart.jsp"><i
+                                                            class="icon_bag_alt"></i></a></li>
+                                                <li class="adddd" onclick="addToCart(${product.id})"> + ADD TO
+                                                    CART</li>
+                                            </ul>
+                                        </div>
+                                        <div class="pi-text">
+                                            <div class="catagory-name">${product.categoryName}</div>
+                                            <a href="#">
+                                                <h5>${product.name}</h5>
+                                            </a>
+                                            <div class="product-price">${product.price}</div>
                                         </div>
                                     </div>
+                                </div>
 
                             </c:forEach>
 
-                    <div class="loading-more">
+                            <div class="loading-more">
 
                         <c:if test="${currentPage != 1}">
                             <a href="filterbyprice?page=${currentPage-1}&max=<%= session.getAttribute("maxVal") %> &min=<%= session.getAttribute("minVal") %>" class="previous" style="text-decoration:none;display: inline-block;padding: 8px 16px;background-color: #2B394A;color: black;" disabled>&laquo; Previous</a>
@@ -106,13 +122,15 @@
                         <c:if test="${currentPage lt noOfPages}">
                             <a href="filterbyprice?page=${currentPage+1}&max=<%= session.getAttribute("maxVal") %> &min=<%= session.getAttribute("minVal") %>" class="next" style="text-decoration:none;display: inline-block;padding: 8px 16px; background-color:#d79681; color: white;" disabled>Next &raquo;</a>
                         </c:if>
+
+                               
+                        
+
                     </div>
                 </div>
-            </div>
-        </div>
-  
-          
-    </section>
+
+
+            </section>
 
             <!-- Product Shop Section End -->
 

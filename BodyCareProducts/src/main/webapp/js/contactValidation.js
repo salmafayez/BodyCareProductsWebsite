@@ -6,17 +6,17 @@ const contactEmail = document.getElementById("contactEmail");
 const contactMessage = document.getElementById("contactMessage");
 
 
-var counterSuccess = 0;
+var counterFailed = 0;
 
 
 contactForm.addEventListener('submit', (e) => {
 
-    if (!isAllInputsValid()) {
-        console.log("COUNTERSuccess in if = " +counterSuccess);
+    if (isInputsNotValid()) {
+        console.log("COUNTERFail in if = " +counterFailed);
 
         e.preventDefault();
     }
-    console.log("COUNTERSuccess = out if" +counterSuccess);
+    console.log("COUNTERFailed = out if" +counterFailed);
 
 
 })
@@ -130,8 +130,8 @@ function isEmail(emailValue) {
     console.log("email value here ="+emailValue)
 
     
+return /^[a-zA-Z0-9_+&*-]+(?:\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$/.test(emailValue)
 
-        return /^[a-zA-Z0-9+&*-]+(?:.[a-zA-Z0-9+&-]+)@(?:[a-zA-Z0-9-]+.)+[a-zA-Z]{2,7}$/.test(emailValue);
     
 }
 
@@ -139,30 +139,30 @@ function isEmail(emailValue) {
 
 
 
-function isAllInputsValid() {
+function isInputsNotValid() {
 
-    counterSuccess = 0;
+    counterFailed = 0;
     var contactNameClassName = contactName.parentElement.className;
     var contactEmailClassName = contactEmail.parentElement.className;
     var contactMessageClassName = contactMessage.parentElement.className;
 
 
 
-    if (contactNameClassName == 'group-input success') {
-        counterSuccess++;
+    if (contactNameClassName == 'group-input error') {
+        counterFailed++;
     }
 
-    if (contactEmailClassName == 'group-input success') {
-        counterSuccess++;
+    if (contactEmailClassName == 'group-input error') {
+        counterFailed++;
     }
 
-    if (contactMessageClassName == 'group-input success') {
-        counterSuccess++;
+    if (contactMessageClassName == 'group-input error') {
+        counterFailed++;
     }
 
-console.log("COUNTERSuccess = " +counterSuccess);
-console.log("COUNTERSuccess ==3 " +counterSuccess==3);
-    return counterSuccess == 3;
+console.log("COUNTERfail = " +counterFailed);
+console.log("COUNTERfail ==3 " +counterFailed==3);
+    return counterFailed > 0;
 
 }
 

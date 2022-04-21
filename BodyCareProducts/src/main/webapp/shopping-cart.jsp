@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-    <title>Fashi | Template</title>
+    <title>Shopping Cart</title>
 
 
     <%@ include file="commons-styles.jsp" %>
@@ -33,14 +33,14 @@
                 <section class="shopping-cart spad">
                     <div class="container">
                         <div class="row px-2 py-3"
-                            style="background-color: #f5f5f5; border-radius: 15px; width: 1200px; height: 500px;">
+                            style="background-color: #f5f5f5; border-radius: 15px; width: 1200px; height: 400px;">
                             <div class="col-lg-12">
                                 <div class="cart-table">
                                     <center>
                                         <tbody class="cart-items">
-                                            <h2 style="margin-top: 225;">
-                                                <center>Empty CART</center>
-                                            </h2>
+                                            <h3 style="margin-top: 225;">
+                                                <center>Empty Cart</center>
+                                            </h3>
                                         </tbody>
 
                                     </center>
@@ -69,8 +69,8 @@
                                         </thead>
                                         <tbody class="cart-items">
                                             <c:forEach items="${cart}" var="cart">
-                                                <input type=hidden id="productid" value="${cart.product.id}" />
-                                                <tr class="cart-row">
+                                                <%-- <input type=hidden value="${}" /> --%>
+                                                <tr class="cart-row" id="productid_${cart.product.id}" >
                                                     <td class="cart-pic first-row"><img
                                                             src="img/cart-page/product-1.jpg" alt=""
                                                             style="border-radius: 15px;"></td>
@@ -80,8 +80,8 @@
                                                     <td class="p-price first-row">${cart.product.price}</td>
                                                     <td class="qua-col first-row">
                                                         <div class="quantity">
-                                                            <div class="pro-qty">
-                                                                <span class="dec qtybtn">-</span>
+                                                            <div class="pro-qty" >
+                                                                <span class="dec qtybtn" >-</span>
                                                                 <input class="pro-qty-input" type="text"
                                                                     value="${cart.quantity}">
                                                                 <a class="inc qtybtn">+</a>
@@ -90,7 +90,7 @@
                                                     </td>
 
                                                     <td class="total-price first-row">${cart.product.price}</td>
-                                                    <td class="close-td first-row"><a class="ti-close"></a></td>
+                                                    <td class="close-td first-row"><a class="ti-close" style="cursor: pointer;"></a></td>
                                                 </tr>
                                             </c:forEach>
                                             <!--<tr class="cart-row">
@@ -158,7 +158,7 @@
                                         <div class="cart-buttons">
                                             <!--a href="#" class="primary-btn continue-shop"
                                                         style="border-radius: 15px;">UPDATE CART</a-->
-                                            <a href="#" class="primary-btn up-cart" style="border-radius: 15px;">PROCEED
+                                            <a href="checkout" class="primary-btn up-cart" style="border-radius: 15px;">PROCEED
                                                 TO
                                                 CHECK OUT</a>
                                         </div>

@@ -6,7 +6,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>Admin User History</title>
 
    
     <%@ include file="commons-styles.jsp" %>
@@ -38,7 +38,6 @@
                                         <th>Email</th>
                                         <th>Phone number</th>
                                         <th>City</th>
-                                        <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,7 +50,6 @@
                                         <td>${user.email}</td>
                                         <td>${user.phoneNumber}</td>
                                         <td>${user.city}</td>
-                                        <td> <a href="admin-add-user.jsp"><button class="site-btn login-btn defaultBorders">Promoto to admin</button></a></td>
                                     </tr>
                                 </c:forEach>
                                 </c:if>

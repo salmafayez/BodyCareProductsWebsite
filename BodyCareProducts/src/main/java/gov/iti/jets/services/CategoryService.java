@@ -8,4 +8,6 @@ public interface CategoryService {
     boolean addCategory(Category category);
     Category getcategory (String categoryName);
     List<Category> getCategoryList();
-}
+    public List<Category> getAllCategories();
+
+    }

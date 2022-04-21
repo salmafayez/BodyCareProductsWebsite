@@ -1,13 +1,11 @@
 package gov.iti.jets.persistence.entities;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
+
 
 @Entity
 @Table(name = "orders", catalog = "skincareapp")
@@ -27,7 +25,7 @@ public class Order implements Serializable {
     @Column(name="order_time", length=10)
     private LocalDate orderTime;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="order")
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="order" ,cascade = CascadeType.ALL)
     private List<LineItem> lineItemList = new ArrayList<>();
 
     public Order() {
@@ -87,7 +85,6 @@ public class Order implements Serializable {
                 ", user=" + user +
                 ", totalPrice=" + totalPrice +
                 ", orderTime=" + orderTime +
-                ", lineItemList=" + lineItemList +
                 '}';
     }
 }
