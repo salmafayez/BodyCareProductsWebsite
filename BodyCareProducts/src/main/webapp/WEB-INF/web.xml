@@ -177,12 +177,12 @@
 
 
   <servlet>
-    <servlet-name>UserOrderHistoryservlet</servlet-name>
-    <servlet-class>gov.iti.jets.presentation.servlets.UserOrderHistoryservlet</servlet-class>
+    <servlet-name>UserOrderHistoryServlet</servlet-name>
+    <servlet-class>gov.iti.jets.presentation.servlets.UserOrderHistoryServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>UserOrderHistoryservlet</servlet-name>
+    <servlet-name>UserOrderHistoryServlet</servlet-name>
     <url-pattern>/userorderhistory</url-pattern>
   </servlet-mapping>
 
@@ -502,6 +502,16 @@
     <url-pattern>/shopping-cart</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>Dashboard</servlet-name>
+    <jsp-file>/admin-dashboard.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Dashboard</servlet-name>
+    <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
+
 
   <!-- Input validation filters -->
   <!-- <filter>
@@ -573,25 +583,23 @@
 <!--  </filter-mapping>-->
 
 
-<!--  <filter>-->
-<!--    <filter-name> AdminFilter </filter-name>-->
-<!--    <filter-class> gov.iti.jets.presentation.filters.authenticationfilters.AdminFilter</filter-class>-->
-<!--  </filter>-->
+  <filter>
+    <filter-name> AdminFilter </filter-name>
+    <filter-class> gov.iti.jets.presentation.filters.authenticationfilters.AdminFilter</filter-class>
+  </filter>
 
-<!--  <filter-mapping>-->
-<!--    <filter-name> AdminFilter </filter-name>-->
+  <filter-mapping>
+    <filter-name> AdminFilter </filter-name>
 <!--    <url-pattern> addproduct</url-pattern>-->
-<!--  </filter-mapping>-->
-
-<!--  <filter-mapping>-->
-<!--    <filter-name> AdminFilter </filter-name>-->
 <!--    <url-pattern> addcategory </url-pattern>-->
-<!--  </filter-mapping>-->
-
-<!--  <filter-mapping>-->
-<!--    <filter-name> AdminFilter </filter-name>-->
 <!--    <url-pattern> editproduct </url-pattern>-->
-<!--  </filter-mapping>-->
+    <servlet-name> Dashboard </servlet-name>
+    <servlet-name> AddProductServlet </servlet-name>
+    <servlet-name>AddCategoryServlet </servlet-name>
+    <servlet-name> AdminEditProductControllerServlet </servlet-name>
+
+  </filter-mapping>
+
 
   <!-- Jsp pages filters -->
 

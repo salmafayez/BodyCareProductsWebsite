@@ -24,7 +24,7 @@
                                  <div style="display: flex;justify-content: center;">
                                  <h4> Thank you for purchasing our products</h4>
                              </div>
-                             <div>
+                             <div class="text-center py-3">
                              <a href="home"><button class="site-btn place-btn">Home</button></a>
                             </div>
                          </div>

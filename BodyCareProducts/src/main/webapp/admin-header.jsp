@@ -16,6 +16,7 @@
                         <div>
                             <span class="account-name">Salma Fayez</sapna>
                             <a href="logout"><button class="btn primary-btn sign-in mx-3">Sign out</button></a>
+                             <a href="addproduct"><button class="btn primary-btn sign-in mx-3">Add Product</button></a>
                         </div>
                     </div>
                 </div>

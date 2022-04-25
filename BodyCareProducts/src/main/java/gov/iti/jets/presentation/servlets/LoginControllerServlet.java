@@ -73,7 +73,7 @@ public class LoginControllerServlet extends HttpServlet{
                         response.sendRedirect("products");
                     } else {
                         session.setAttribute("isAdmin", "true");
-                        response.sendRedirect("admin-dashboard.jsp");
+                        response.sendRedirect("dashboard");
                     }
                 }
             }
